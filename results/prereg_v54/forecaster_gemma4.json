@@ -1,0 +1,16 @@
+{
+  "actor": "gemma4",
+  "n_minus": 300,
+  "n_plus": 300,
+  "cv_auroc_by_depth": [
+    0.9084,
+    0.8962,
+    0.9022,
+    0.8869,
+    0.883
+  ],
+  "chosen_depth_index": 0,
+  "tau": -0.4812541604042053,
+  "dev_fire_rate_minus": 0.9966666666666667,
+  "dev_fire_rate_plus": 0.1
+}

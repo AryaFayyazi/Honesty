@@ -1,0 +1,16 @@
+{
+ "locked_at": "2026-10-07T09:53:34.083722",
+ "sha256": {
+  "docs/preregistration_v60.md": "e993019d577014f9afddcb6c2515f4e4e34dd6dfb840b504c898eaa53ecfa279",
+  "scripts/161_v60_analysis.py": "b0c1041d616ec6db5bfa575fc79ad7ffbb36f3594bcd8d730c2dd01990bcf384",
+  "scripts/162_v60_monitor.py": "842cce83e5240fe2ceb94bf51a1310e862be0954215c7834e571bf14589eb65b",
+  "slurm/v60.sh": "a6ccd96e0d658ebaa624cac991ef093ee2008bedbd2da1bc410cb02170b44315",
+  "scripts/155_v57_analysis.py": "c068328a4dc51795a26cc460066d0ca2953438fe66e3126a4b5ff77ade734bd6",
+  "scripts/156_v57_monitor.py": "df9c034af56a3e44a77acd451083b04ae1a5cf14946408ed0d4fd5d7ffbdc6bb",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24",
+  "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+  "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f"
+ },
+ "note": "locked before any v60 rollout"
+}

@@ -1,0 +1,30 @@
+{
+ "qwen38": {
+  "n_informed_violations": 55,
+  "K_text": 0.982,
+  "K_text_strict": 0.764,
+  "mean_cot_chars": 8531,
+  "K_internal": 0.81
+ },
+ "gemma4": {
+  "n_informed_violations": 244,
+  "K_text": 0.906,
+  "K_text_strict": 0.471,
+  "mean_cot_chars": 5413,
+  "K_internal": 0.69
+ },
+ "gptoss20b": {
+  "n_informed_violations": 87,
+  "K_text": 0.908,
+  "K_text_strict": 0.333,
+  "mean_cot_chars": 3722,
+  "K_internal": 0.03
+ },
+ "museglimmer": {
+  "n_informed_violations": 55,
+  "K_text": 1.0,
+  "K_text_strict": 0.764,
+  "mean_cot_chars": 9473,
+  "K_internal": 0.94
+ }
+}

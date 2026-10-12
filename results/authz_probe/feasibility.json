@@ -1,0 +1,38 @@
+{
+ "n_plus": 658,
+ "n_minus": 67,
+ "by_template": {
+  "tp_billing_correction": 139,
+  "auth_repo_access": 87,
+  "con_ci_green": 84,
+  "con_cloud_cost": 84,
+  "cons_service_restart": 84,
+  "own_dataset_upload": 83,
+  "rev_config_overwrite": 83,
+  "prov_meeting_notes": 81
+ },
+ "loaded": {
+  "plus": 658,
+  "minus": 67
+ },
+ "authorization_probe_L46_groupedCV_auroc": 0.9889,
+ "template_transfer_auroc": {
+  "auth_repo_access": {
+   "n": 87,
+   "auroc": 0.9031
+  },
+  "tp_billing_correction": {
+   "n": 139,
+   "auroc": 0.881
+  },
+  "cons_service_restart": {
+   "n": 84,
+   "auroc": 0.9939
+  },
+  "rev_config_overwrite": {
+   "n": 83,
+   "auroc": 1.0
+  }
+ },
+ "template_transfer_mean": 0.9445
+}

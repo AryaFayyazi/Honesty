@@ -1,0 +1,22 @@
+{
+ "H1_PASS": true,
+ "H5_PASS": true,
+ "H2_pooled_diff_mean": 0.0013,
+ "H3_pooled_diff_mean": 0.0182,
+ "H3_auroc_ok": false,
+ "p_raw": {
+  "H2": 0.4485,
+  "H3": 0.1655,
+  "H4": 1.0,
+  "H6": 1.0,
+  "H7": 1.0
+ },
+ "holm_pass": {
+  "H3": false,
+  "H2": false,
+  "H4": false,
+  "H6": false,
+  "H7": false
+ },
+ "GO": false
+}

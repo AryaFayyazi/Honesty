@@ -1,0 +1,224 @@
+{
+ "gemma4": {
+  "h0": {
+   "n_pos": 1500,
+   "n_neg": 2917,
+   "auroc_template": {
+    "I": 0.996,
+    "T": 0.892
+   },
+   "auroc_template_x_tool": {
+    "I": 0.995,
+    "T": 0.909
+   },
+   "pos_tools": {
+    "execute_mock_command": 889,
+    "upload_artifact": 491,
+    "send_message": 47,
+    "write_file": 39
+   },
+   "neg_tools": {
+    "execute_mock_command": 1146,
+    "query_database": 882,
+    "request_permission": 472,
+    "upload_artifact": 201
+   }
+  },
+  "h1": {
+   "n_pos": 1500,
+   "n_neg": 2902,
+   "auroc_template": {
+    "I": 0.772,
+    "T": 0.736
+   },
+   "auroc_template_x_tool": {
+    "I": 0.729,
+    "T": 0.736
+   },
+   "pos_tools": {
+    "execute_mock_command": 965,
+    "write_file": 319,
+    "query_database": 201,
+    "request_permission": 13
+   },
+   "neg_tools": {
+    "execute_mock_command": 1102,
+    "query_database": 808,
+    "request_permission": 591,
+    "write_file": 201
+   }
+  },
+  "h2": {
+   "n_pos": 1165,
+   "n_neg": 2268,
+   "auroc_template": {
+    "I": 0.682,
+    "T": 0.682
+   },
+   "auroc_template_x_tool": {
+    "I": 0.628,
+    "T": 0.661
+   },
+   "pos_tools": {
+    "execute_mock_command": 666,
+    "query_database": 305,
+    "write_file": 175,
+    "request_permission": 17
+   },
+   "neg_tools": {
+    "execute_mock_command": 844,
+    "query_database": 654,
+    "request_permission": 426,
+    "upload_artifact": 167
+   }
+  }
+ },
+ "gptoss20b": {
+  "h0": {
+   "n_pos": 967,
+   "n_neg": 1858,
+   "auroc_template": {
+    "I": 0.966,
+    "T": 0.923
+   },
+   "auroc_template_x_tool": {
+    "I": 0.927,
+    "T": 0.88
+   },
+   "pos_tools": {
+    "write_file": 414,
+    "send_message": 390,
+    "execute_mock_command": 74,
+    "upload_artifact": 61
+   },
+   "neg_tools": {
+    "request_permission": 396,
+    "query_database": 383,
+    "execute_mock_command": 351,
+    "write_file": 271
+   }
+  },
+  "h1": {
+   "n_pos": 648,
+   "n_neg": 1256,
+   "auroc_template": {
+    "I": 0.831,
+    "T": 0.782
+   },
+   "auroc_template_x_tool": {
+    "I": 0.75,
+    "T": 0.741
+   },
+   "pos_tools": {
+    "write_file": 457,
+    "copy_file": 63,
+    "write_file<|channel|>commentary": 24,
+    "send_message<|channel|>commentary": 22
+   },
+   "neg_tools": {
+    "request_permission": 343,
+    "query_database": 275,
+    "execute_mock_command": 222,
+    "write_file": 159
+   }
+  },
+  "h2": {
+   "n_pos": 227,
+   "n_neg": 452,
+   "auroc_template": {
+    "I": 0.738,
+    "T": 0.597
+   },
+   "auroc_template_x_tool": {
+    "I": 0.54,
+    "T": 0.531
+   },
+   "pos_tools": {
+    "write_file": 95,
+    "request_permission": 21,
+    "execute_mock_command": 19,
+    "read_file<|channel|>commentary": 18
+   },
+   "neg_tools": {
+    "request_permission": 133,
+    "query_database": 111,
+    "execute_mock_command": 82,
+    "write_file": 53
+   }
+  }
+ },
+ "museglimmer": {
+  "h0": {
+   "n_pos": 378,
+   "n_neg": 739,
+   "auroc_template": {
+    "I": 0.96,
+    "T": 0.673
+   },
+   "auroc_template_x_tool": {
+    "I": 0.931,
+    "T": 0.632
+   },
+   "pos_tools": {
+    "execute_mock_command": 223,
+    "write_file": 152,
+    "copy_file": 2,
+    "query_database": 1
+   },
+   "neg_tools": {
+    "execute_mock_command": 340,
+    "query_database": 185,
+    "request_permission": 94,
+    "write_file": 64
+   }
+  },
+  "h1": {
+   "n_pos": 352,
+   "n_neg": 689,
+   "auroc_template": {
+    "I": 0.689,
+    "T": 0.674
+   },
+   "auroc_template_x_tool": {
+    "I": 0.641,
+    "T": 0.617
+   },
+   "pos_tools": {
+    "execute_mock_command": 173,
+    "query_database": 83,
+    "request_permission": 59,
+    "write_file": 32
+   },
+   "neg_tools": {
+    "execute_mock_command": 284,
+    "query_database": 197,
+    "request_permission": 92,
+    "write_file": 48
+   }
+  },
+  "h2": {
+   "n_pos": 338,
+   "n_neg": 663,
+   "auroc_template": {
+    "I": 0.626,
+    "T": 0.645
+   },
+   "auroc_template_x_tool": {
+    "I": 0.59,
+    "T": 0.617
+   },
+   "pos_tools": {
+    "execute_mock_command": 135,
+    "query_database": 102,
+    "request_permission": 52,
+    "write_file": 35
+   },
+   "neg_tools": {
+    "execute_mock_command": 269,
+    "query_database": 172,
+    "request_permission": 106,
+    "write_file": 49
+   }
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "locked_at": "2026-10-06T20:24:12.915542",
+ "sha256": {
+  "docs/preregistration_v58.md": "8222a484a1df6612c8d3c33510dc835ff9e3e0c7f56d60570b0791636cb342d6",
+  "scripts/103_lie_steering.py": "963facd5637e8d6934b26527af1552d928d082450cd02b2746b8146567f4804f",
+  "scripts/106_v41.py": "4efd9c8116396a6e1bd418412b4065ec0a2e81bbfca1ea5272218cb11f33bf8a",
+  "scripts/157_v58_confirm.py": "c7d484f643e465bc720a2c7edc5ab6275d6fa3cbad0543dc8a3e4b62d609dae0",
+  "slurm/v58.sh": "22f4b9bc6bd8415d918825ef972e0cfbd0b8684e77c35665124847129eb22f84"
+ },
+ "note": "locked before any v58 generation; motivated by the v56 development null (report-only steering degenerates)."
+}

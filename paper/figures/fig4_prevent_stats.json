@@ -1,0 +1,182 @@
+{
+ "decision": {
+  "gemma4": {
+   "none": {
+    "violate": 0.41,
+    "work": 0.89
+   },
+   "blanket": {
+    "violate": 0.04,
+    "work": 0.585
+   },
+   "gate": {
+    "violate": 0.055,
+    "work": 0.815
+   }
+  },
+  "gptoss20b": {
+   "none": {
+    "violate": 0.685,
+    "work": 0.805
+   },
+   "blanket": {
+    "violate": 0.46,
+    "work": 0.8
+   },
+   "gate": {
+    "violate": 0.51,
+    "work": 0.785
+   }
+  },
+  "museglimmer": {
+   "none": {
+    "violate": 0.175,
+    "work": 0.94
+   },
+   "blanket": {
+    "violate": 0.13,
+    "work": 0.89
+   },
+   "gate": {
+    "violate": 0.095,
+    "work": 0.95
+   }
+  },
+  "qwen38": {
+   "none": {
+    "violate": 0.266304347826087,
+    "work": 0.84
+   },
+   "blanket": {
+    "violate": 0.010869565217391304,
+    "work": 0.35
+   },
+   "gate": {
+    "violate": 0.043478260869565216,
+    "work": 0.8
+   }
+  }
+ },
+ "episode": {
+  "gemma4": {
+   "violation": {
+    "once": 0.575,
+    "always": 0.15,
+    "esc": 0.09
+   },
+   "completion": {
+    "once": 0.99,
+    "always": 0.94,
+    "esc": 1.0
+   },
+   "paired_none_violation": {
+    "once": 0.655,
+    "always": 0.68,
+    "esc": 0.7
+   }
+  },
+  "gptoss20b": {
+   "violation": {
+    "once": 0.64,
+    "always": 0.63,
+    "esc": 0.6
+   },
+   "completion": {
+    "once": 0.92,
+    "always": 0.925,
+    "esc": 0.935
+   },
+   "paired_none_violation": {
+    "once": 0.81,
+    "always": 0.77,
+    "esc": 0.78
+   }
+  },
+  "museglimmer": {
+   "violation": {
+    "once": 0.34,
+    "always": 0.1735,
+    "esc": 0.2
+   },
+   "completion": {
+    "once": 0.995,
+    "always": 1.0,
+    "esc": 0.995
+   },
+   "paired_none_violation": {
+    "once": 0.405,
+    "always": 0.3776,
+    "esc": 0.35
+   }
+  },
+  "qwen38": {
+   "violation": {
+    "once": 0.234,
+    "always": 0.05,
+    "esc": 0.07
+   },
+   "completion": {
+    "once": 0.94,
+    "always": 0.915,
+    "esc": 0.95
+   },
+   "paired_none_violation": {
+    "once": 0.402,
+    "always": 0.41,
+    "esc": 0.41
+   }
+  }
+ },
+ "end_to_end": [
+  [
+   "Muse",
+   0.1675,
+   0.0508
+  ],
+  [
+   "Gemma",
+   0.08,
+   0.01
+  ],
+  [
+   "gpt-oss",
+   0.0928,
+   0.0103
+  ],
+  [
+   "Qwen",
+   0.1216,
+   0.0135
+  ]
+ ],
+ "levers": [
+  [
+   "honesty steering,\nwhere it was built",
+   0.709,
+   0.443,
+   79,
+   true
+  ],
+  [
+   "honesty steering,\nafter a violation",
+   0.4791666666666667,
+   0.6,
+   45,
+   false
+  ],
+  [
+   "evidence contract,\nafter a violation",
+   0.3787878787878788,
+   0.3194444444444444,
+   66,
+   null
+  ],
+  [
+   "direction rebuilt on\nthose episodes (dev)",
+   0.5294117647058824,
+   0.5283018867924528,
+   102,
+   false
+  ]
+ ]
+}

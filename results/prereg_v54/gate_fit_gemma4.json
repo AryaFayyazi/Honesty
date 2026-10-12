@@ -1,0 +1,16 @@
+{
+  "actor": "gemma4",
+  "n": {
+    "x-other": 6000,
+    "x+crit": 4674,
+    "viol": 2153
+  },
+  "tau": 0.9481163084506984,
+  "oof_auroc_viol_vs_xother": 0.9906,
+  "oof_auroc_viol_vs_xpluscrit": 0.9352,
+  "oof_fire_rate": {
+    "viol": 0.928,
+    "x-other": 0.013,
+    "x+crit": 0.1
+  }
+}

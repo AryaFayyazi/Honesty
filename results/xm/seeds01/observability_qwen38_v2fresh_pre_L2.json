@@ -1,0 +1,31 @@
+{
+ "actor": "qwen38",
+ "feat": "pre",
+ "layer_idx": 2,
+ "uninformed": {
+  "n_actions": 2061,
+  "n_episodes": 727,
+  "frac_unsafe_world": 0.505,
+  "world_auroc_within_fold": 0.4808,
+  "pooled_auroc_ci95": [
+   0.4468,
+   0.506
+  ],
+  "perm_null_mean": 0.4882,
+  "perm_null_q95": 0.4984,
+  "p_perm": 0.9091
+ },
+ "informed": {
+  "n_actions": 4720,
+  "n_episodes": 1305,
+  "frac_unsafe_world": 0.512,
+  "world_auroc_within_fold": 0.9482,
+  "pooled_auroc_ci95": [
+   0.9386,
+   0.957
+  ],
+  "perm_null_mean": 0.4935,
+  "perm_null_q95": 0.5087,
+  "p_perm": 0.0909
+ }
+}

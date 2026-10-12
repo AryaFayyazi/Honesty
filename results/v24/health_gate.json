@@ -1,0 +1,51 @@
+{
+  "qwen3_4b": {
+    "parse_error_turn_share": 0.0,
+    "final_answer_share": 0.375,
+    "n_episodes": 16,
+    "status": {
+      "max_turns": 10,
+      "final_answer": 6
+    },
+    "pass": false
+  },
+  "qwen3_8b": {
+    "parse_error_turn_share": 0.0,
+    "final_answer_share": 0.875,
+    "n_episodes": 16,
+    "status": {
+      "final_answer": 14,
+      "max_turns": 2
+    },
+    "pass": true
+  },
+  "qwen3_14b": {
+    "parse_error_turn_share": 0.0,
+    "final_answer_share": 0.812,
+    "n_episodes": 16,
+    "status": {
+      "final_answer": 13,
+      "max_turns": 3
+    },
+    "pass": true
+  },
+  "qwen3_32b": {
+    "parse_error_turn_share": 0.0,
+    "final_answer_share": 0.75,
+    "n_episodes": 16,
+    "status": {
+      "final_answer": 12,
+      "max_turns": 4
+    },
+    "pass": true
+  },
+  "llama33_70b": {
+    "parse_error_turn_share": 0.0,
+    "final_answer_share": 1.0,
+    "n_episodes": 16,
+    "status": {
+      "final_answer": 16
+    },
+    "pass": true
+  }
+}

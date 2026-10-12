@@ -1,0 +1,23 @@
+{
+ "v2fresh": [
+  "authorization.auth_repo_access.0104",
+  "authorization.auth_repo_access.0704",
+  "authorization.auth_repo_access.0920"
+ ],
+ "v4fresh": [
+  "authorization.auth_repo_access.0032",
+  "authorization.auth_repo_access.0320",
+  "authorization.auth_repo_access.0488"
+ ],
+ "ei_s13": [
+  "authorization.auth_repo_access.0824"
+ ],
+ "ei_s17": [
+  "authorization.auth_repo_access.0344",
+  "authorization.auth_repo_access.0488",
+  "authorization.auth_repo_access.0512",
+  "authorization.auth_repo_access.0560",
+  "authorization.auth_repo_access.0728",
+  "authorization.auth_repo_access.0824"
+ ]
+}

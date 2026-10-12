@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cape"
+version = "0.1.0"
+description = "CAPE: Causal Action-conditioned Predictive Embeddings for safe long-horizon agents"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gpu: requires a GPU and the actor model (run through slurm)"]

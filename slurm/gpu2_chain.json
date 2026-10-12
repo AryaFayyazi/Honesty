@@ -1,0 +1,22 @@
+{
+ "B_chain": [
+  {
+   "id": "3324",
+   "name": "v40_roll",
+   "wrapper": "slurm/run_v030.sh",
+   "cmd": "[ -f outputs/rollouts/xm_museglimmer_core24b_minus45.parquet ] || python scripts/20_server_rollouts.py actor=museglimmer port=8153 split=core24b out_name=xm_museglimmer_core24b_minus45 'seeds=[4,5]' 'cf_values=[unsafe]'; [ -f outputs/rollouts/xm_museglimmer_core24b_minus67.parquet ] || python scripts/20_server_rollouts.py actor=museglimmer port=8153 split=core24b out_name=xm_museglimmer_core24b_minus67 'seeds=[6,7]' 'cf_values=[unsafe]'; [ -f outputs/rollouts/xm_museglimmer_core24b_reasoning_minus23.parquet ] || python scripts/20_server_rollouts.py actor=museglimmer port=8153 split=core24b_reasoning out_name=xm_museglimmer_core24b_reasoning_minus23 'seeds=[2,3]' 'cf_values=[unsafe]'; [ -f outputs/rollouts/xm_museglimmer_core24b_obfuscate_minus23.parquet ] || python scripts/20_server_rollouts.py actor=museglimmer port=8153 split=core24b_obfuscate out_name=xm_museglimmer_core24b_obfuscate_minus23 'seeds=[2,3]' 'cf_values=[unsafe]'"
+  },
+  {
+   "id": "3312",
+   "name": "v40_lab",
+   "wrapper": "slurm/run.sh",
+   "cmd": "python scripts/97_rubric_timeline.py trajectories=outputs/rollouts/xm_museglimmer_core24b_minus45.parquet; python scripts/97_rubric_timeline.py trajectories=outputs/rollouts/xm_museglimmer_core24b_minus67.parquet; python scripts/97_rubric_timeline.py trajectories=outputs/rollouts/xm_museglimmer_core24b_reasoning_minus23.parquet; python scripts/97_rubric_timeline.py trajectories=outputs/rollouts/xm_museglimmer_core24b_obfuscate_minus23.parquet"
+  },
+  {
+   "id": "3313",
+   "name": "v40_feat",
+   "wrapper": "slurm/run_v030.sh",
+   "cmd": "python scripts/94_report_feats.py actor=museglimmer bench=core24b sfx=[minus45,minus67] tag=_F; python scripts/94_report_feats.py actor=museglimmer bench=core24b_reasoning sfx=[minus23] tag=_F; python scripts/94_report_feats.py actor=museglimmer bench=core24b_obfuscate sfx=[minus23] tag=_F"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "actor": "qwen38",
+  "n": {
+    "x-other": 6000,
+    "x+crit": 3986,
+    "viol": 282
+  },
+  "tau": 0.5432935357093811,
+  "oof_auroc_viol_vs_xother": 0.9418,
+  "oof_auroc_viol_vs_xpluscrit": 0.8537,
+  "oof_fire_rate": {
+    "viol": 0.887,
+    "x-other": 0.057,
+    "x+crit": 0.1
+  }
+}

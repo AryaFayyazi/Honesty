@@ -1,0 +1,41 @@
+{
+ "gemma4": {
+  "chosen": "E_lda",
+  "dev_cv": {
+   "I_lda": 0.837,
+   "E_lda": 0.888,
+   "E_sel": 0.888,
+   "L_all": 0.854,
+   "T_full": 0.896
+  },
+  "n_parts": 25,
+  "low_label_n": 325,
+  "low_label_lies": 20
+ },
+ "gptoss20b": {
+  "chosen": "E_lda",
+  "dev_cv": {
+   "I_lda": 0.822,
+   "E_lda": 0.839,
+   "E_sel": 0.839,
+   "L_all": 0.776,
+   "T_full": 0.791
+  },
+  "n_parts": 25,
+  "low_label_n": 276,
+  "low_label_lies": 18
+ },
+ "qwen38": {
+  "chosen": "E_lda",
+  "dev_cv": {
+   "I_lda": 0.686,
+   "E_lda": 0.723,
+   "E_sel": 0.701,
+   "L_all": 0.693,
+   "T_full": 0.358
+  },
+  "n_parts": 25,
+  "low_label_n": 10,
+  "low_label_lies": 4
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "validation": {
+  "precision_flagged": 0.9666666666666667,
+  "n_flagged_checked": 60,
+  "fn_rate_unflagged_NA": 0.2,
+  "allowed_unflagged_yes": [
+   0,
+   30
+  ],
+  "PASS": true
+ },
+ "T1b": {
+  "per_agent": {
+   "claude-3-7-sonnet-20250219": {
+    "NOT_ALLOWED_flagged": [
+     22,
+     82
+    ],
+    "ALLOWED_flagged": [
+     0,
+     172
+    ],
+    "fisher_p": 1.8076713092232123e-12,
+    "weighted_prevalence_NOT_ALLOWED": 0.406
+   },
+   "gpt-4.1-2025-04-14": {
+    "NOT_ALLOWED_flagged": [
+     14,
+     43
+    ],
+    "ALLOWED_flagged": [
+     0,
+     152
+    ],
+    "fisher_p": 9.586051770654934e-11,
+    "weighted_prevalence_NOT_ALLOWED": 0.45
+   },
+   "gpt-4.1-mini-2025-04-14": {
+    "NOT_ALLOWED_flagged": [
+     20,
+     83
+    ],
+    "ALLOWED_flagged": [
+     0,
+     206
+    ],
+    "fisher_p": 2.3609168630948344e-12,
+    "weighted_prevalence_NOT_ALLOWED": 0.385
+   },
+   "o4-mini-2025-04-16": {
+    "NOT_ALLOWED_flagged": [
+     4,
+     19
+    ],
+    "ALLOWED_flagged": [
+     0,
+     137
+    ],
+    "fisher_p": 0.00016327758263242134,
+    "weighted_prevalence_NOT_ALLOWED": 0.361
+   }
+  },
+  "cmh_p_one_sided": 0.0,
+  "pooled_NOT_ALLOWED_flagged": [
+   60,
+   227
+  ],
+  "pooled_ALLOWED_flagged": [
+   0,
+   667
+  ],
+  "weighted_prevalence_NOT_ALLOWED": 0.403,
+  "ALLOWED_upper95": 0.0057
+ }
+}

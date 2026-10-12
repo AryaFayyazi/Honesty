@@ -1,0 +1,132 @@
+{
+ "locked_at": "2026-10-06T12:17:18.074151",
+ "sha256": {
+  "docs/preregistration_v54.md": "65820030b076534aab4f2e4fd2b6259f5c6e6f0c9939e120b05608bdbf46b846"
+ },
+ "note": "design and selection rule locked before any v54 code output; scripts hashed as addenda before their first run",
+ "addenda": [
+  {
+   "at": "2026-10-06T12:35:44.782681",
+   "what": "Clarifications 1 and 2 (set splits incl. Muse/Qwen, vLLM samples, PARSE handling, site numbers, forecaster depth rule) and all v54 scripts, before any generation/direction/forecaster output (only site tables exist)",
+   "sha256": {
+    "docs/preregistration_v54.md": "632bb68a8358df28bcd67b5c59d74b2e6dd07971717e3ab3b88033707c4470fe",
+    "scripts/143_v54_sites.py": "cd824e9bb6776e15f3f33004f67bf85dd5fe1e2c3a1e1e4a5026a4719f571888",
+    "scripts/144_v54_steer.py": "82f34e4f098f08305f2066bd8109fff673f8f67344628b3e26ca8d4dfb11bd33",
+    "scripts/145_v54_direction.py": "f351c653fa4a2dcc96aa06d36475ba7e297f009924f1cb451ef84eb4fbafbea9",
+    "scripts/146_v54_analysis.py": "96396ed6fec3376d7e911ad2687a9eae79e645009f4ef889651c58242425ad7d"
+   }
+  },
+  {
+   "at": "2026-10-06T12:38:14.511860",
+   "what": "PCA n_components = min(256, n-1, d) (robustness; caught by a synthetic dry run, no real v54/v55 output exists). Also slurm/v54.sh, slurm/v55_feat.sh job scripts.",
+   "sha256": {
+    "scripts/146_v54_analysis.py": "d66057197acdd46896bd3f630fff7529655a47e5c6c9ee096375fce9b29df05f",
+    "docs/preregistration_v54.md": "632bb68a8358df28bcd67b5c59d74b2e6dd07971717e3ab3b88033707c4470fe",
+    "slurm/v54.sh": "0fec43dd53e4fc8cd4ab2ad142682618f82d9c3980d580afd303419d29b8aa06",
+    "slurm/v55_feat.sh": "0cf86de5d61dcd35918386c263aaec480ac5228751fe2ad2c7b8e9e2a2707b64"
+   }
+  },
+  {
+   "at": "2026-10-06T12:44:11.966094",
+   "what": "HF generation batch 6 -> 12 for the dev sweep and confirmation (throughput only; prompts median ~2.5k tokens). Before any v54 job started.",
+   "sha256": {
+    "slurm/v54.sh": "5e14d4dfe95488593042a8adaefce8ecb9f8e39f26b38f32c430cb84a741efe1"
+   }
+  },
+  {
+   "at": "2026-10-06T15:49:13.176241",
+   "what": "Addendum 1 (forecast-gated steering): prereg text, scripts/154, frozen development gate models (outputs/v54/gate_*.npz) and fit reports, slurm/v54.sh; before any v54 generation",
+   "sha256": {
+    "docs/preregistration_v54.md": "e6a733660c554cc43eddc92b94cfe2e2d306438743f27c521032dd823870feab",
+    "scripts/154_v54_gate.py": "f5d00b8e514b673b8934d3166e42401cb394fd463041f879fe9d69cbe9ad8107",
+    "slurm/v54.sh": "89cab3a48bbfdb061ebbb8884a2da625daa3454acdb22240d7c4cef33abd5ecd",
+    "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24",
+    "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+    "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86",
+    "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f",
+    "results/prereg_v54/gate_fit_gemma4.json": "8ed831512e6c48f28d688098f1e94b90e3f63619efba963427cc22344fad6794",
+    "results/prereg_v54/gate_fit_gptoss20b.json": "b98b37aa32999e7d24796361920109645ae16cdf9d02dab96003df26061ed164",
+    "results/prereg_v54/gate_fit_museglimmer.json": "7a057e10851985b1442a6be7ed186b0b858372cd349fcc317f39d80243eb6dce",
+    "results/prereg_v54/gate_fit_qwen38.json": "e3d673f3f6b857729d67b4f1645aa2923d356e618bb0199c129f2faf7587845b"
+   }
+  },
+  {
+   "at": "2026-10-06T21:04:49.343397",
+   "what": "Addendum 2: dose recalibration after the Gemma smoke format failure (grid {1,2,4}, random at 2); scripts/146 random-arm generalisation; slurm/v54.sh",
+   "sha256": {
+    "docs/preregistration_v54.md": "e3e8632ceea30eee9b77531ffa50449498354cd8447441089c2d0a30326e73d8",
+    "scripts/146_v54_analysis.py": "dbd1cab81d68d319ec31b171edc41d502696f5646e5a7c2bc9e111d0631103ad",
+    "slurm/v54.sh": "9a777b5d7aec1097cd8487004ffa884c56e22a13eae5b069a19abadac5cbc4ff"
+   }
+  },
+  {
+   "at": "2026-10-06T21:08:48.382873",
+   "what": "Addendum 3: max_new 1536, batch 24, dev sweep 80+80 (throughput; before any sweep outcome)",
+   "sha256": {
+    "docs/preregistration_v54.md": "c835282911843c1c3ebc2c01da36b8b7e381eafbc12c3ddd75237192f0b85fc4",
+    "slurm/v54.sh": "23d8c3a93489b5636a2fca380bf419d693c4ac3e6d834fbaae9388401420aa0a"
+   }
+  },
+  {
+   "at": "2026-10-06T21:17:21.307451",
+   "what": "Addendum 4: token-budget batching after OOM (no outcome read)",
+   "sha256": {
+    "docs/preregistration_v54.md": "aca4320dbbd34535cd34cdbc137d27d1227d31adbfc654c80f56b7932a4e3f6c",
+    "scripts/144_v54_steer.py": "ad2aa27599a89d9efd7b0548de91ba84862901ce6c350b32db5d78aa4086f68f",
+    "slurm/v54.sh": "4a9cd733189098ecd260b4a66c6ca6e0a8853f0f55fc8154859f41c42fd307ce"
+   }
+  },
+  {
+   "at": "2026-10-06T23:46:28.702708",
+   "what": "Addendum 5 (before any confirmation generation): unsafe-or-broken specificity vs random; development gate-alpha rule; confirmation arms incl. caa:gate_alpha; slurm/v54_conf.sh; Gemma development selection (caa:1) and gate alpha (2) files",
+   "sha256": {
+    "docs/preregistration_v54.md": "95393111b30d62e8cb03780c43104284e531b6925c56f12631a52883011f78d9",
+    "scripts/146_v54_analysis.py": "8a9af65ba89970dfab2731a0349d587e07f8bb8ce2560f0b36f254a2d4b5619b",
+    "scripts/154_v54_gate.py": "8447e5168a8cac9e92479c7427f6f89335db6ad2b9398e7951fd1424d191c7f8",
+    "slurm/v54.sh": "e97f6238e55fd8ddbb3399f36daad71ddd29f0ebd51df1fcfd7c60709a33063f",
+    "slurm/v54_conf.sh": "ab254dee0eb08e8d91cba91d97948bbeda09539f7f1b3618a3aeaff32a42af30",
+    "results/prereg_v54/select_gemma4.json": "ae5637da88c67abb36d2648d3a92b07456f18ae5cc3043bbb30b6f0c74607003",
+    "results/prereg_v54/gate_alpha_gemma4.json": "ce90052621b7efc00c1280c4a17b16cf02b106331138cfc0909f7edc344b103d"
+   }
+  },
+  {
+   "at": "2026-10-07T10:38:09.205829",
+   "what": "Addendum 6: downward dose extension when the whole grid fails the parse guard; matched-dose random comparator; before any gpt-oss confirmation",
+   "sha256": {
+    "docs/preregistration_v54.md": "199e12066370d3f4298bd3f8cc834047a52f55671d0d5efb7fcb0c6456c9237b",
+    "scripts/146_v54_analysis.py": "7314d04f958cf3a3d13641b634e83ef9620af824ee97456100e7e7115e15b135",
+    "slurm/v54.sh": "fc16f9e17fc2f7f329687ee4d169eb69dae82b5c2a923ae134357ad8f099d840",
+    "slurm/v54_ext.sh": "250934ebb1fbe0b6af1f20b8513987ca01f01c2055733fe335608c484138663d",
+    "results/prereg_v54/select_gptoss20b.json": "76dc20e38da7bb52bf469349f9f5da09607c345e3f6baede0079c519dd65463e"
+   }
+  },
+  {
+   "at": "2026-10-08T00:39:53.804167",
+   "what": "Clarification 3: Muse tool-call parser + gate marker fixed before any Muse v54 data; smoke guard FINAL+PARSE<0.8",
+   "sha256": {
+    "docs/preregistration_v54.md": "00b364397a72aab622afa2471f2975748f8baf1a53823ee0a051b17ede9c0bab",
+    "scripts/144_v54_steer.py": "546cf2c9d28e25df640fabb8e9ad50fdd79a13797d4161fcf92b0081a7976d8e",
+    "scripts/154_v54_gate.py": "0c1313d564be16c87da4002c7609cf68206a46a046b55e5f069cb0c8edd84b40",
+    "slurm/v54.sh": "b7e51aebc595f15090248f02cac96eadba421f1d782cae9ab4f8f0c3d2560aa7"
+   }
+  },
+  {
+   "at": "2026-10-08T03:23:54.483478",
+   "what": "Clarification 4: forecaster passed as .npz (Muse env lacks sklearn/joblib); before any Muse confirmation data",
+   "sha256": {
+    "docs/preregistration_v54.md": "eba8e9feef37c5d235d4c112e0b4db25a1c12e3eb9a4c46456b5eaad4f2ed00c",
+    "scripts/144_v54_steer.py": "b0ba3f3cf91298e887474035b39f5649f6845747181a3c6a33c7e6329e8fc675",
+    "slurm/v54_conf.sh": "ec9df71cefb4188e02dcebc18605c3ffc189c06796af5cc5055f27419d2dbeeb"
+   }
+  },
+  {
+   "at": "2026-10-09T00:50:10.036409",
+   "what": "Addendum 7: relative parse guard in gate-dose rule (development only; unchanged doses for Gemma/gpt-oss/Muse; Qwen gate alpha 2); before any Qwen confirmation data",
+   "sha256": {
+    "docs/preregistration_v54.md": "4d046ee69378ce306b0edf2ca01434278ae98b8e72493740cd0ae1f10ce48bf4",
+    "scripts/154_v54_gate.py": "4364cc46d2b01914e408708ea37614016a2155623956b0a156a526b193ceba0e",
+    "results/prereg_v54/gate_alpha_qwen38.json": "85225280a0063bdf9cd26d10962f884aa85bf480e29d901972e39078d958e184"
+   }
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "_note": "Declare every evaluated arm here BEFORE its rollout (prereg v18, section 6): name -> {role, training_data, train_file_for_contam_check, declared_at}.",
+ "base": {
+  "role": "reference",
+  "training_data": "none (Qwen3.8-27B rev 1d4bf0f2)",
+  "declared_at": "2026-09-30 23:30 PDT"
+ },
+ "m1pref": {
+  "role": "proposed fix (mechanism 1, prereg v21)",
+  "training_data": "on-policy DPO pairs from base-model rollouts (v2fresh/v10enf/v3aware/gated_B), held-out templates and suite worlds excluded; scripts/36_m1_pref_data.py",
+  "train_file_for_contam_check": "outputs/m1pref/pairs.parquet",
+  "checkpoint": "/data/models/cape_ws/ckpt/m1pref (merged; scripts/37_m1_dpo.py)",
+  "declared_at": "2026-10-01 00:45 PDT"
+ },
+ "m1pref_noinv": {
+  "role": "baseline/ablation for m1pref: plain-context pairs only (prereg v21 s.2); trained only if m1pref is evaluated",
+  "training_data": "outputs/m1pref/pairs_noinv.parquet (subset of m1pref data, variant none|noorc)",
+  "train_file_for_contam_check": "outputs/m1pref/pairs_noinv.parquet",
+  "declared_at": "2026-10-01 00:45 PDT"
+ }
+}

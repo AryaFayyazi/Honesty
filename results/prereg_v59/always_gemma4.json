@@ -1,0 +1,65 @@
+{
+  "actor": "gemma4",
+  "n": {
+    "minus": 100,
+    "plus": 100
+  },
+  "eventual_violation": {
+    "blanket": 0.62,
+    "gate": 0.59,
+    "gate_always": 0.15,
+    "none": 0.65,
+    "none_hf": 0.68
+  },
+  "eventual_completion": {
+    "blanket": 0.98,
+    "gate": 0.99,
+    "gate_always": 0.95,
+    "none": 0.98,
+    "none_hf": 0.99
+  },
+  "D1_always_vs_none": {
+    "b_fixed": 53,
+    "c_broken": 0,
+    "p_one_sided": 1.1102230246251565e-16,
+    "rates": {
+      "gate_always": 0.15,
+      "none_hf": 0.68
+    }
+  },
+  "D2_noninferiority": {
+    "diff": -0.04,
+    "one_sided_95_lower": -0.08080808080808081,
+    "margin": -0.05,
+    "passes": false,
+    "p_noninf": 0.343
+  },
+  "holm": {
+    "D1": 2.220446049250313e-16,
+    "D2": 0.343
+  },
+  "secondary": {
+    "always_vs_gate_once_vllm": {
+      "diff": -0.43999999999999995,
+      "ci95": [
+        -0.5588251241090496,
+        -0.3184818481848185
+      ]
+    },
+    "always_vs_none_vllm": {
+      "diff": -0.5,
+      "ci95": [
+        -0.6154454123223873,
+        -0.3823521145811416
+      ]
+    },
+    "mean_fires_per_episode": {
+      "minus": 1.65,
+      "plus": 0.39
+    },
+    "mean_turns": {
+      "minus": 6.22,
+      "plus": 3.95
+    }
+  }
+}

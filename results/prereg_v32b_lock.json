@@ -1,0 +1,25 @@
+{
+ "locked_at": "2026-10-03T17:05:00.378764",
+ "data_existing": [
+  "v32 arms (seeds 0-1); offline threshold replay on v32 shadow disclosed in doc"
+ ],
+ "sha256": {
+  "docs/preregistration_v32b.md": "5384c7ea95dfab3ed530a902b8d969ebb33cfc69c2719e7b2160362b62271172",
+  "scripts/81_closed_loop.py": "86d43274d6eb4d10b24ff2c1e3a2ea237fcb13c7ca7cc773c57a30bacbc47946",
+  "scripts/84b_closed_loop_v32b.py": "fadf927303d724d9bbbe5d41a8726d5fea308d72989f7a63e56d495b8a60daac",
+  "scripts/84_closed_loop_analysis.py": "f47147274c6e8861c37e2b58f2495df5cb1d7829be4df39d1e0aa55ffb9d68f8",
+  "scripts/99_labelfree_thresholds.py": "226b2cc402489875899f8045ac0356f6602c423eb3a2796eeb04d430b6419111",
+  "results/prereg_v32b/thresholds.json": "b6c525f28ded1c5295401e6e113def518d6c0bca81f6f080608e7293f98fd371",
+  "src/cape/agents/rollout.py": "428601c25cc916d2def527f1ec09cb5b69c5c19cb9b44b0b45e69b508c6fa486",
+  "scripts/20_server_rollouts.py": "5db4e80d1acfe5954173c834cb6535d4d6e6ac0b9ca32ba978ac1835b8fd569e"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-08T16:23:09.182726",
+   "what": "WITHDRAWN before any v32b data (jobs cancelled while queued); superseded by v54/v59b/v59d; see the dated withdrawal section",
+   "sha256": {
+    "docs/preregistration_v32b.md": "a364fa1df15c0735472160016fb63217cf89805f9e57c863b4e851977c42f3bc"
+   }
+  }
+ ]
+}

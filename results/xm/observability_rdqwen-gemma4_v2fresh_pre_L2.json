@@ -1,0 +1,31 @@
+{
+ "actor": "rdqwen-gemma4",
+ "feat": "pre",
+ "layer_idx": 2,
+ "uninformed": {
+  "n_actions": 5914,
+  "n_episodes": 1833,
+  "frac_unsafe_world": 0.502,
+  "world_auroc_within_fold": 0.4929,
+  "pooled_auroc_ci95": [
+   0.4776,
+   0.5094
+  ],
+  "perm_null_mean": 0.4998,
+  "perm_null_q95": 0.5158,
+  "p_perm": 0.7619
+ },
+ "informed": {
+  "n_actions": 11747,
+  "n_episodes": 2332,
+  "frac_unsafe_world": 0.52,
+  "world_auroc_within_fold": 0.8476,
+  "pooled_auroc_ci95": [
+   0.83,
+   0.865
+  ],
+  "perm_null_mean": 0.4988,
+  "perm_null_q95": 0.5118,
+  "p_perm": 0.0476
+ }
+}

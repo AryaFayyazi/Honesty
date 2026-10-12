@@ -1,0 +1,149 @@
+{
+ "locked_at": "2026-10-10T02:36:02.946521",
+ "sha256": {
+  "docs/preregistration_v65.md": "acf9c262eefafdb4d99a2b6d0d0e4c1ee2a405a4bc41b628169f8b8420f3fd8f",
+  "scripts/171_tau2_steer_server.py": "c731fb0a286a15c97bf517aec80bc5db59d9da63dcf7cff12b9ce13814f5e8ee",
+  "scripts/172_v65_tau2_run.py": "451b56540b412cc408428c913757d0d9529d021b0854bb77b7924ebc94f90259",
+  "scripts/173_v65_analysis.py": "d23c795871fb4662e78ecb14d67b4a1b6c55c503a0a051d8738e00aa84e9513d",
+  "src/cape/tau2port/__init__.py": "11c9120c631bd35bd1d992d238b7e6873e0fc3ddc5293b5bbdad817f5f8706bd",
+  "slurm/v65a.sh": "96eb8de7ee8f2ab4ad2685079e75cafd0725949fc0c3d331db1a34aa45782a76",
+  "slurm/v65b.sh": "dc60cffb329c7043ee04f8eea7a40abde7b6eeb6e53d3d430313ac97b63b5e72",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f",
+  "outputs/v54/dir_qwen38.npz": "89e9ad558565df1b2d43f61a286ba71b5ad9697d85416253c6dfdab68b2999c1",
+  "results/prereg_v54/gate_alpha_qwen38.json": "85225280a0063bdf9cd26d10962f884aa85bf480e29d901972e39078d958e184"
+ },
+ "note": "locked before any open-agent tau2 simulation exists; frozen CAPE gate, direction and dose hashed.",
+ "addenda": [
+  {
+   "at": "2026-10-10T04:06:12.637444",
+   "what": "Addendum 1: agent max_tokens 1536 (CAPE max_new), user 512; before any development data",
+   "sha256": {
+    "docs/preregistration_v65.md": "89c61f26211505eed1b44751a90b27c88c0f4078ec1be9c3aef5c47288891bb0",
+    "scripts/172_v65_tau2_run.py": "33022db48208aa280f3d05827a09fbb17dc85dcbcb9afbd5252622735d893ccc"
+   }
+  },
+  {
+   "at": "2026-10-10T05:34:19.163575",
+   "what": "Addendum 2: server batching, 32 concurrent, dev 3 trials (v65_dev2_none); first dev attempt cancelled with 0 completed sims",
+   "sha256": {
+    "docs/preregistration_v65.md": "5a49cfa15205aba8c4e19d0254d54c29fe5b58d15151d57ddb264da3b8b8ac4b",
+    "scripts/171_tau2_steer_server.py": "1ed524553978ecbb4c83e4d1d1530b1f36bd2daaf11acac2c31e7558caf7a982",
+    "scripts/172_v65_tau2_run.py": "3ea288c653946062bfec960c755b99dc6b030fbe67c1ccee5a251d8d434c0ab2",
+    "scripts/173_v65_analysis.py": "45c3061d012cfeff7bbf243bd13201b22c3a6f041d92df9a1be88b1f40ee730f",
+    "slurm/v65a2.sh": "b0c17e02c052da98b86a3f3232eeb3f7f4bd41d3615a67b6870eff56b433f7b7",
+    "slurm/v65b.sh": "fd66c62cff0ec205633ba5516a0d932a2d286adcacc9e5c2f09f3913a1a9d20c"
+   }
+  },
+  {
+   "at": "2026-10-10T06:04:23.351078",
+   "what": "Addendum 3: no shadow scores in the confirmation none arm",
+   "sha256": {
+    "docs/preregistration_v65.md": "a3955ba9b396194e7d37829059913dfb23f802baa47d15bba3bd7b2d3873346b",
+    "scripts/171_tau2_steer_server.py": "4ea7c1478ef421dd825037254cf211020d3f06a185e4056b8c6a9459a15cdee7",
+    "slurm/v65b.sh": "da336e927d18827dfd3fd6049538b2a0b0ef2e702903fb11bbe3b180f6c4f25b"
+   }
+  },
+  {
+   "at": "2026-10-10T06:04:40.755006",
+   "what": "Addendum 4: one arm per confirmation job",
+   "sha256": {
+    "docs/preregistration_v65.md": "79bd3b7ffa1720dfad1a121cfa5d520b24ef721fd9785ccf1a6aee63be3451a1",
+    "slurm/v65b.sh": "b3045b1a3716e83857cfbd0f2d43b672256548a4eec018bccb9b9362d687b0fb"
+   }
+  },
+  {
+   "at": "2026-10-10T07:06:21.541538",
+   "what": "Addendum 5: development top-up rule (<15 NOT_ALLOWED writes), union calibration; before any development label examined",
+   "sha256": {
+    "docs/preregistration_v65.md": "2a8d09d9a9bbe107872a7d8867a79d8cb4862beac0b320dbdce961f95861c819",
+    "scripts/172_v65_tau2_run.py": "e2718dda7d832bc705ceb5763f6896e44beeb9e80880fc360eec39cd944d70df",
+    "scripts/173_v65_analysis.py": "3b57d346078f6192b0ae2b58b6a0257fb673195afd0e426543b4e06175286c96",
+    "slurm/v65a3.sh": "9fac76987acaa555027ac306016ebe117dd4fdb958cb1eed082afafb7221743d"
+   }
+  },
+  {
+   "at": "2026-10-10T08:21:56.307219",
+   "what": "Addendum 6: vLLM steering server (validated r=0.99999, steering 0.33->0.03); development rerun to completion v65_dev4_none; attempt-2 data discarded (no gate statistic examined)",
+   "sha256": {
+    "docs/preregistration_v65.md": "917a6902b35a214e3a67df2ad2e5a49306400bf40a750cb94e3ad34e5d872700",
+    "scripts/174_vllm_steer.py": "a3fdd9d7130ce918c671d42b057934d4649ecc47938e80d886869c9b1923a83b",
+    "scripts/173_v65_analysis.py": "ca1662855b4cc0ee7b8f605f222bf50766f26cdfdc1149c04ea023b1ee131b2d",
+    "slurm/v65a3.sh": "798fe5a4b0020c4b825ceebea7c606b164708bbfb95d9e23524f6051ebdd507a",
+    "slurm/v65b.sh": "ddba43093409ff4255e1fc51cd3bac12a7ec387a2b3b90684c06d1fcf41d451f",
+    "results/prereg_v65/vllm_validation.json": "e703e5019d143e4f3d2bbca5f8cf3999688c9d048ae9d1cac56abbcd15258611"
+   }
+  },
+  {
+   "at": "2026-10-10T12:52:54.966609",
+   "what": "Addendum 7 (operational): v65a3 restart safety (a partial earlier attempt is moved aside, never resumed) for the second-GPU yield guard; no design change",
+   "sha256": {
+    "slurm/v65a3.sh": "f788c6f21d5c1717bb05a63d104575d4ae24bdfc764f6bd84432067c761aaf41",
+    "slurm/yield_guard.sh": "ae8ad760f95739ddc14b129b2bea38b8ef7a9c9725d12ce087cacd362f31cc07"
+   }
+  },
+  {
+   "at": "2026-10-10T16:18:06.918042",
+   "what": "Addendum 8: typed tool arguments; dev4 void; within-tool transfer AUROC; refit negatives include reads; tau from OOF scores; dev5 rerun",
+   "sha256": {
+    "docs/preregistration_v65.md": "7a596e634ddd730eec03ab7390468223acf93f4cea8991d63cce7631a6914ec9",
+    "scripts/171_tau2_steer_server.py": "97875b51bc120d28bb1624b3ea9f65680fba8bda823d2bc8fdc7347dd3c03bd3",
+    "scripts/174_vllm_steer.py": "09528e4c436a212cd8f9ff47731f5166f120194a22f6da1ba6be4682feff7a5b",
+    "scripts/173_v65_analysis.py": "68535a5b7c1f560ce1b5b5b3354180f20b86ab3d2695e9b5f96eff4bd2b09e8a",
+    "slurm/v65a5.sh": "cd89c1562a116dec7c956fc97f940eb315f0fad38d78c0d96e05329c251a6772"
+   }
+  },
+  {
+   "at": "2026-10-10T19:42:32.434033",
+   "what": "dev5 result (Qwen 0/60 NOT_ALLOWED; go rule fails) + Addendum 9: screen gpt-oss and Gemma on tau2 dev (1 trial) with per-model vLLM validation",
+   "sha256": {
+    "docs/preregistration_v65.md": "98051b6397faf91bb7376603814aa6b38863a854ebabeb4594b9c92d88b6491b",
+    "scripts/174_vllm_steer.py": "acff39c1c82937e7cd135c1e3bc5711b5e048ccf6e9ae1126bf4c3d151782b5c",
+    "scripts/172_v65_tau2_run.py": "7c24a4c79ef96d3322951a9ed86269560f3d25755bf2362853ed813283267eb2",
+    "slurm/v65s.sh": "cac5fb27af50c5f4abeff60542bb6bf983cebdba89414a4214fcb3fd15786d91"
+   }
+  },
+  {
+   "at": "2026-10-10T19:47:14.998014",
+   "what": "Addendum 10: Muse + P0_enf pressure condition; 7 screen cells; selection rule fixed before data",
+   "sha256": {
+    "docs/preregistration_v65.md": "a237fba222afb15785a3554b968862aeb12bfb7135505208fea0f4a9c4225c8e",
+    "scripts/172_v65_tau2_run.py": "7fc576b35ad3da253fbf9530f2580325209d3e8e350aeb52d1c4928e12e4e63e",
+    "scripts/174_vllm_steer.py": "206ee543fed0899341e3d07833cf0a81913fbda2b31080b9cafd58a2bdf4a975",
+    "slurm/v65s.sh": "613bb37e05397d2e828a761b0be4424e392328bba82bf2ff965036f7ace8a033",
+    "src/cape/tau2port/__init__.py": "11c9120c631bd35bd1d992d238b7e6873e0fc3ddc5293b5bbdad817f5f8706bd"
+   }
+  },
+  {
+   "at": "2026-10-10T22:34:48.877620",
+   "what": "Addendum 11: adjudicated violation endpoint (NOT_ALLOWED or CONDITIONAL with tool not in gold); selection = highest adjudicated rate >=10% among validated models; after 4/7 screen cells, before any confirmation data",
+   "sha256": {
+    "docs/preregistration_v65.md": "ec745457a4061e6ff64a87ecae1937535ca3122c72488d2545c7dad4ee45752b",
+    "scripts/172_v65_tau2_run.py": "7eeac1920b1ff811210c985d73770a437b47271b31b818c918dce1569d2edb47",
+    "scripts/173_v65_analysis.py": "e3201c1a40b6b062414a9cc0d87dade9d898ec73c5377f5c0d21ff86b141fb76"
+   }
+  },
+  {
+   "at": "2026-10-10T22:35:10.797418",
+   "what": "generic selected-cell job scripts (dev + confirmation per arm); design unchanged",
+   "sha256": {
+    "slurm/v65cell_dev.sh": "df933bc659a1e5464595b55671d36ea1c985f9afcdfebb13d82527c049f27ce1",
+    "slurm/v65cell_conf.sh": "072e2fd38e1e79e971aa79e273f978fd514e11c244baa32c824a67cdee4a12da"
+   }
+  },
+  {
+   "at": "2026-10-10T23:33:58.657566",
+   "what": "operational: confirmation arms on separate ports (8124 none, 8125 gate) so they can run in parallel; gate job analyses once the none arm's labels exist (max 6 h wait). Design unchanged.",
+   "sha256": {
+    "scripts/172_v65_tau2_run.py": "9407e9aff9b29b28bb183779759529913493661b26b8f7b0c781f6af9cf817ce",
+    "slurm/v65cell_conf.sh": "32ee8231abe3d306cc4f0e6270a5a3c160b25b3ee0a39507983c441af94dc294"
+   }
+  },
+  {
+   "at": "2026-10-10T23:34:07.183391",
+   "what": "fix: inline comment had broken slurm/v65cell_conf.sh syntax in the previous addendum's hash; corrected (no design change)",
+   "sha256": {
+    "slurm/v65cell_conf.sh": "bde9d8d6d6dbd2e91c3372386dc3afd5fe3b644890b21b84fb97a72c7514693d"
+   }
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "locked_at": "2026-10-03T13:20:03.615178",
+ "data_existing": [
+  "dev rubric v2 labels (exploratory, results/v37_explore/forecast.json)"
+ ],
+ "note": "re-locked before any v37 data existed: label_dir (95); C adds gpt-oss core24b_reasoning seeds 2-5; tag option (94); revised-report mode (97) so P endpoints use rubric v3",
+ "sha256": {
+  "docs/preregistration_v37.md": "be3943acc5567b190414b9c834b4ef3dbfe4719076fe6f35b2b294ab00eef04a",
+  "scripts/94_report_feats.py": "0a096611cc44c6fcc2e3e4d5bbd31ad232bd301a28219f4f823047994b1d4744",
+  "scripts/95_lie_forecast.py": "70ee2153e371da6dd6f71dc70ef39a95d536d2ae95f0ecdf1f8fb64fe88250a2",
+  "scripts/96_prereport_intervene.py": "9b78ba1f7613893e62bb653b8e49ffadb4ba5452b1097c483c333ba50f0dec85",
+  "scripts/97_rubric_timeline.py": "960ee64a01c11a77cc89cdbc6d35650b852466c4043f81492f348c02aa5e161b"
+ },
+ "amendment1": {
+  "locked_at": "2026-10-03T15:10:15.747795",
+  "note": "F3 (internal forecast of laundering at the violation); no C rollout exists (fresh_c pending)",
+  "sha256": {
+   "docs/preregistration_v37.md": "6de903d5937f4de357f2de750d89f16ee1a5a3f457d7574392387a9bdf3c50dc",
+   "scripts/94_report_feats.py": "0a096611cc44c6fcc2e3e4d5bbd31ad232bd301a28219f4f823047994b1d4744",
+   "scripts/95_lie_forecast.py": "70ee2153e371da6dd6f71dc70ef39a95d536d2ae95f0ecdf1f8fb64fe88250a2",
+   "scripts/96_prereport_intervene.py": "9b78ba1f7613893e62bb653b8e49ffadb4ba5452b1097c483c333ba50f0dec85",
+   "scripts/97_rubric_timeline.py": "960ee64a01c11a77cc89cdbc6d35650b852466c4043f81492f348c02aa5e161b",
+   "scripts/98_v37_analysis.py": "b0dbcdc1f1e50c36b7cc73fffd76ca82f5c09ed853b052cbabc2a38895d764c6"
+  }
+ },
+ "amendment2": {
+  "locked_at": "2026-10-03T17:05:29.263868",
+  "note": "gpt-oss harness tool-name fix before C rollouts",
+  "sha256": {
+   "docs/preregistration_v37.md": "eae62f1df87ca49112051bb35a856d76023517f311b1367bf8835850c0b71098",
+   "scripts/94_report_feats.py": "0a096611cc44c6fcc2e3e4d5bbd31ad232bd301a28219f4f823047994b1d4744",
+   "scripts/95_lie_forecast.py": "70ee2153e371da6dd6f71dc70ef39a95d536d2ae95f0ecdf1f8fb64fe88250a2",
+   "scripts/96_prereport_intervene.py": "9b78ba1f7613893e62bb653b8e49ffadb4ba5452b1097c483c333ba50f0dec85",
+   "scripts/97_rubric_timeline.py": "960ee64a01c11a77cc89cdbc6d35650b852466c4043f81492f348c02aa5e161b",
+   "scripts/98_v37_analysis.py": "b0dbcdc1f1e50c36b7cc73fffd76ca82f5c09ed853b052cbabc2a38895d764c6",
+   "scripts/20_server_rollouts.py": "5db4e80d1acfe5954173c834cb6535d4d6e6ac0b9ca32ba978ac1835b8fd569e",
+   "src/cape/agents/rollout.py": "428601c25cc916d2def527f1ec09cb5b69c5c19cb9b44b0b45e69b508c6fa486"
+  }
+ },
+ "amendment4": {
+  "locked_at": "2026-10-03T19:12:39.287534",
+  "note": "rubric v4 + validation thresholds, before any v4/C label",
+  "sha256": {
+   "docs/preregistration_v37.md": "83b6c3fbf960d6ebe5f35feeea8e901ed6cfee3bfb39fbbc3703728bfaeb7543",
+   "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41",
+   "scripts/100_validate_rubric_v4.py": "352ebb6cd42ce1342ff4fe22746bc14a7f4557bb259cc0232df9db1187f15a10",
+   "results/prereg_v37/laundering_gold_sheet.csv": "6a6a0dde91af36b205583910bc4df2020d6e24bd1a28c63b214ec092cfe4df26"
+  },
+  "deviation_1": {
+   "at": "2026-10-03T19:16:59.994088",
+   "note": "scripts/100 bug fix before any v4 label: held-out gold is core24 (not core24b); row-wise label lookup",
+   "sha256": "288e39b75e1a5fe8de1935b855b07b64a8f32210cc4e377affdd2064b9431a99"
+  },
+  "outcome": "v4 PASS -> v4 is the v37 labeler"
+ },
+ "amendment5": {
+  "locked_at": "2026-10-03T19:21:12.230091",
+  "note": "F3c, P5, extra C sets; C rollouts (2 gpt-oss sets) exist but unopened, no labels",
+  "sha256": {
+   "docs/preregistration_v37.md": "ffab9c09b9c309b58e0de98500afafb097012a3e147ae908e81241738aa09bcb",
+   "scripts/98_v37_analysis.py": "efbaf0f674a2c1205cf2f62b81895120f4dbb33d5a40c34314201c9c2443099b"
+  },
+  "impl_sha256_98": "b061d4f2e0a488cf494372f0576184ad72bc385bac61b736e0a5ce649be9beba",
+  "impl_at": "2026-10-03T19:21:45.533862"
+ },
+ "f2_selection_lock": {
+  "locked_at": "2026-10-03T22:02:35.059081",
+  "labels": "rubric v4 (passed Amendment-4 validation: heldout 0.909/0.870, laundering 0.894/0.857)",
+  "note": "selection on dev features only (core24/core24b; Muse core24); no C label exists; F2d sign = -1 for all models on dev",
+  "sha256": {
+   "results/v37_explore/f2_selection.json": "d913e2f3c2af90c9daa5cf16847acc1f9995a24a3bfd9e6fdeece34fa5fcc0ca",
+   "scripts/98_v37_analysis.py": "b061d4f2e0a488cf494372f0576184ad72bc385bac61b736e0a5ce649be9beba",
+   "outputs/disclosure_v37/xm_gemma4_core24b_minus_rubric.parquet": "5f603eed8cee03b429e905396d9eae073020d9ca58e5832d286886fbb0cdd616"
+  }
+ },
+ "amendment6": {
+  "locked_at": "2026-10-03T22:18:46.705832",
+  "note": "P complete-case primary + NO_REPORT sensitivity; before any P output",
+  "sha256": {
+   "docs/preregistration_v37.md": "f2c36c43be4db9fb8c2cb18502cf6121a708a307c1e9d1bea5089c31e3c48c14",
+   "scripts/98_v37_analysis.py": "f77e305cb0db3f0fe926c44f9f6f90164ec60db7285fe28dd9c48d3e758aec57"
+  }
+ },
+ "amendment7": {
+  "locked_at": "2026-10-03T22:35:58.235539",
+  "note": "per-fold z in crossfit; dev robustness disclosed; no C label exists",
+  "sha256": {
+   "docs/preregistration_v37.md": "cacba8d606cd71ee10a8e95385241a00f4865a5b106696bfa37c8652badbd8c2",
+   "scripts/98_v37_analysis.py": "acdb2f7e240e2406ccdb39ded26d3be7d76b966c3d34796fd43b19d2cbcbdfd4"
+  }
+ },
+ "deviations": [
+  {
+   "at": "2026-10-04T04:16:44.763475",
+   "note": "98 JSON serialization bug (tuple keys in P.by_model_retro) crashed the results dump after all statistics were computed; output-format fix only, rerun deterministic",
+   "sha256_98": "a8159405f5f671a409bf89fc54dce6ac08829e6e26a8c40cce4ebed887c41d5f"
+  }
+ ],
+ "amendment8": {
+  "locked_at": "2026-10-04T04:40:04.859823",
+  "note": "P6 gate prevention; Muse C v4 labels do not exist; Gemma/gpt-oss exploratory",
+  "sha256": {
+   "docs/preregistration_v37.md": "77ae12d3fac42ed8b7d1faeef18b4eb16fb2f836e002b2cb0c0a248e3deeab6e",
+   "scripts/102_gate_prevention.py": "a8ea4744dec1f56d4abed8ab0eda41a44585dbca4419e7f46b8109abc4385859"
+  }
+ }
+}

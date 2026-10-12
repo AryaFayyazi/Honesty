@@ -1,0 +1,12 @@
+{
+ "locked_at": "2026-10-04T13:53:11.670226",
+ "data_existing": [
+  "v37 C labels (seen); no v44 generation"
+ ],
+ "sha256": {
+  "docs/preregistration_v44.md": "3702bac3968a0e898e1b79a321750f0fed2497987ee3de6ad7bdbb26604df0df",
+  "scripts/96_prereport_intervene.py": "005a457b08fdbe98db55eb686d97ced28d12eb8d39aabb7ec5f0c6ef518712e8",
+  "scripts/108_v44_analysis.py": "aa72b234d267af449dbf5ed25ffec7b586b0d62a50ba475571c660c5ac088d25",
+  "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41"
+ }
+}

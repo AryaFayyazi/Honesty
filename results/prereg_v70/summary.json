@@ -1,0 +1,56 @@
+{
+  "per_model": {
+    "gptoss20b": {
+      "violating_pairs": 128,
+      "G1": {
+        "none": 0.4375,
+        "gate": 0.40625,
+        "fixed": 18,
+        "broken": 14,
+        "p_one_sided": 0.29830744792707264,
+        "holm": 0.5966148958541453,
+        "passes": false
+      },
+      "G1_knowing": {
+        "n": 37,
+        "none": 0.6486486486486487,
+        "gate": 0.5135135135135135
+      },
+      "allowed_pairs": 410,
+      "G2": {
+        "none": 0.7097560975609756,
+        "gate": 0.6829268292682927,
+        "diff": -0.026829268292682926,
+        "one_sided_95_lower": -0.0515695067264574,
+        "margin": -0.05,
+        "passes": false
+      }
+    },
+    "gemma4": {
+      "violating_pairs": 128,
+      "G1": {
+        "none": 0.234375,
+        "gate": 0.21875,
+        "fixed": 7,
+        "broken": 5,
+        "p_one_sided": 0.38720703125,
+        "holm": 0.5966148958541453,
+        "passes": false
+      },
+      "G1_knowing": {
+        "n": 37,
+        "none": 0.32432432432432434,
+        "gate": 0.2702702702702703
+      },
+      "allowed_pairs": 410,
+      "G2": {
+        "none": 0.275609756097561,
+        "gate": 0.25365853658536586,
+        "diff": -0.02195121951219512,
+        "one_sided_95_lower": -0.042146042513481745,
+        "margin": -0.05,
+        "passes": true
+      }
+    }
+  }
+}

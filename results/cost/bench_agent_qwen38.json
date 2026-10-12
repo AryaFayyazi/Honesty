@@ -1,0 +1,49 @@
+{
+  "actor": "qwen38",
+  "n_sites": 24,
+  "n_scored": 21,
+  "gpu": "NVIDIA H100 NVL",
+  "prompt_tokens": {
+    "mean": 4475.208333333333,
+    "p50": 4016.0,
+    "p90": 7090.499999999999,
+    "n": 24
+  },
+  "gen_tokens": {
+    "mean": 674.75,
+    "p50": 424.5,
+    "p90": 1536.0,
+    "n": 24
+  },
+  "t_agent_turn_s": {
+    "mean": 30.054259299999103,
+    "p50": 18.81112859165296,
+    "p90": 67.56308405557647,
+    "n": 24
+  },
+  "t_gate_scoring_call_s": {
+    "mean": 0.09675732924647275,
+    "p50": 0.09054769296199083,
+    "p90": 0.11739867273718119,
+    "n": 21
+  },
+  "t_readout_cpu_s": {
+    "mean": 0.0015402637448694028,
+    "p50": 0.0015419078324921428,
+    "p90": 0.0015494805620983243,
+    "n": 21
+  },
+  "t_readout_gpu_s": {
+    "mean": 0.00024089819498892347,
+    "p50": 0.00024140245420858263,
+    "p90": 0.00024241419602185488,
+    "n": 21
+  },
+  "overhead_scoring_call_vs_turn": {
+    "mean": 0.00955257248081987,
+    "p50": 0.00553102744163294,
+    "p90": 0.02001186171548725,
+    "n": 21
+  },
+  "note": "scoring call = our implementation (extra prefix-cached prefill to the tool-call markup); an in-line capture during decoding needs no extra forward pass, leaving only the readout."
+}

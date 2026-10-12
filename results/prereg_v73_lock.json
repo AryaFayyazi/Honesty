@@ -1,0 +1,33 @@
+{
+ "locked_at": "2026-10-11T23:49:15.742862",
+ "sha256": {
+  "docs/preregistration_v73.md": "f29ddbf3d5bc91eb80531ab8a59aea676841ce7064888360a233d1d1de71132a",
+  "scripts/187_v70_real_context.py": "c2afc4d8ec3523b3cab601fa823cf12955ffc7a156d14210e7b0f0bbb6eae02d",
+  "scripts/188_v70_analysis.py": "ea0f81f9252d1dc05c752bd3fff419702d11a1ae31164f56b44f4cec750037a0",
+  "scripts/174_vllm_steer.py": "773ae415dac136ff0b89a969318bf1a4aaaee4211281affc36161013d3ab8233",
+  "slurm/v73dev.sh": "f25afa0d4e710140cbb0fbc43146aae72ee1c2e9848640f89c055f9288a24bdb",
+  "slurm/v73conf.sh": "ce97b3648bdbe14c01e3e02d711167c9f065ea841ad9f15f079c486201f89d3b",
+  "outputs/v69/prefixes.jsonl": "480dd50d4d1f9f0e5b0b08ebe08661aabddcd736722f48d178818d528c2f9e53",
+  "src/cape/tau2port/__init__.py": "da699b0dc87d5beed582b058eafeb4d952f1f775cef61bfccf96c8928189474c"
+ },
+ "note": "locked before any v73 generation; oracle answers verified (227 NOT ALLOWED / 667 ALLOWED)",
+ "addenda": [
+  {
+   "at": "2026-10-12T00:08:01.090124",
+   "file": "scripts/187_v70_real_context.py",
+   "sha256": "2f4f9a504b9fc0e475416bee849fd5b6c1f221aebd76ba4aa90bc15277b26869",
+   "note": "bug fix before any v73 confirmation data: the v72 edit had moved body['metadata']={'rid':...} into a comment, so pair-mode requests would not carry the request id and exact pairs could not be joined. Restored (v70b ran before that edit and is unaffected). No v72/v73 pair-mode data existed."
+  },
+  {
+   "at": "2026-10-12T00:21:39.518477",
+   "name": "Addendum 1 (Muse)",
+   "sha256": {
+    "docs/preregistration_v73.md": "d57583b94347d645846f3a31f348a41c3704c32e12ed4b3c40de76c2c3db4857",
+    "scripts/187_v70_real_context.py": "f42a91d7ae442fda5cfe4578de86733b110bc4b68d41785e5bb0bdbec9b7e773",
+    "slurm/v73dev_muse.sh": "f3e9ac2c236f575de5fb5ca510b7240fdbdd972a46340d8c15c31cd7016e45ed",
+    "slurm/v73conf_muse.sh": "0427fa4bac4fd0abae7cf763a7b75ed48f5fff9914183b3376f4bd55c7d94346"
+   },
+   "note": "additive SAMP entry; no Muse v73 data existed"
+  }
+ ]
+}

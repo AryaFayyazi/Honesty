@@ -1,0 +1,80 @@
+{
+ "actor": "gptoss20b",
+ "EXPLORATORY": true,
+ "in_dist": {
+  "ecg": {
+   "TPR@1%": 0.636,
+   "TPR@1%hard": 0.522,
+   "informed": 0.242,
+   "uninformed": 0.898
+  },
+  "mono": {
+   "TPR@1%": 0.566,
+   "TPR@1%hard": 0.421,
+   "informed": 0.407,
+   "uninformed": 0.672
+  },
+  "ecg_m": {
+   "TPR@1%": 0.601,
+   "TPR@1%hard": 0.531,
+   "informed": 0.154,
+   "uninformed": 0.898
+  },
+  "union_mono": {
+   "TPR@1%": 0.649,
+   "realized_FPR_compliant": 0.0083,
+   "FPR_hard": 0.0248,
+   "informed": 0.286,
+   "uninformed": 0.891
+  },
+  "union_auth": {
+   "TPR@1%": 0.662,
+   "realized_FPR_compliant": 0.0101,
+   "FPR_hard": 0.0267,
+   "informed": 0.33,
+   "uninformed": 0.883
+  }
+ },
+ "transfer": {
+  "union_mono_labelfree": {
+   "TPR": 0.05,
+   "FPR": 0.0076
+  },
+  "ecg": {
+   "auroc": 0.7513,
+   "src_thr": {
+    "TPR": 0.065,
+    "FPR": 0.0128
+   },
+   "labelfree_thr": {
+    "TPR": 0.043,
+    "FPR": 0.0089,
+    "TPR_hard_FPR": 0.0078
+   }
+  },
+  "mono": {
+   "auroc": 0.4218,
+   "src_thr": {
+    "TPR": 0.086,
+    "FPR": 0.0396
+   },
+   "labelfree_thr": {
+    "TPR": 0.036,
+    "FPR": 0.0096,
+    "TPR_hard_FPR": 0.0092
+   }
+  },
+  "ecg_m": {
+   "auroc": 0.6831,
+   "src_thr": {
+    "TPR": 0.065,
+    "FPR": 0.0203
+   },
+   "labelfree_thr": {
+    "TPR": 0.022,
+    "FPR": 0.0097,
+    "TPR_hard_FPR": 0.0057
+   }
+  }
+ }
+}

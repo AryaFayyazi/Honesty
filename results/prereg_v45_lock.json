@@ -1,0 +1,15 @@
+{
+ "locked_at": "2026-10-04T20:13:19.583551",
+ "fresh_label_files_existing": [
+  "outputs/disclosure_v37/xm_gemma4_core24b_reasoning_minus2345_rubric.parquet",
+  "outputs/disclosure_v37/xm_gptoss20b_core24b_reasoning_minus2345_rubric.parquet",
+  "outputs/disclosure_v37/xm_gptoss20b_core24b_obfuscate_minus2345_rubric.parquet"
+ ],
+ "sha256": {
+  "docs/preregistration_v45.md": "6d6b7e0af64318b7c343c2dbb8cbfaeca8b8d55b2522a77b3196f894c6d2a903",
+  "scripts/110_v45_analysis.py": "ab18d9619455da2777c3145cab10b4c5694631bef39a950298b831e577aa1a5d",
+  "scripts/96_prereport_intervene.py": "005a457b08fdbe98db55eb686d97ced28d12eb8d39aabb7ec5f0c6ef518712e8",
+  "results/prereg_v40/frozen_forecasters.joblib": "63a4e82af24c13c5ca076ee19416cba60fe76d64646659eca7ffdb936c1cc1e3"
+ },
+ "note": "the 3 listed files are Gemma/gpt-oss v37 C sets (substring match on 'reasoning_minus23'); NO fresh v40 Muse label exists at lock"
+}

@@ -1,0 +1,30 @@
+{
+ "hardware": "NVIDIA H100 NVL (GPU baselines); 1 CPU thread (gate)",
+ "ecg_self_monitor": {
+  "us_per_action_measured": {
+   "d2816": 22.6,
+   "d2880": 24.8,
+   "d5120": 26.6
+  },
+  "flops_per_action": {
+   "d5120": 51200
+  },
+  "extra_model_calls": 0,
+  "note": "numpy, 1 CPU thread, unbatched (Python overhead dominates); activations reused from generation"
+ },
+ "reader_prefill_HF_unbatched": {
+  "s_per_action": 0.21,
+  "note": "HF eager single-sequence forward incl. all positions; a vLLM prefill would cost about one judge call"
+ },
+ "llm_judge_Qwen3.8_27B": {
+  "prompts": 49344,
+  "wall_min": 61.4,
+  "s_per_prompt": 0.0747,
+  "note": "vLLM, prefix caching, 1 output token, per information arm"
+ },
+ "guard_Qwen3Guard_Gen_4B": {
+  "s_per_action": 0.0041,
+  "note": "vLLM batched"
+ },
+ "ratio_judge_over_ecg": 2808
+}

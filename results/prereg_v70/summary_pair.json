@@ -1,0 +1,62 @@
+{
+  "per_model": {
+    "gptoss20b": {
+      "logged": 538,
+      "fired": 55,
+      "violating_pairs": 128,
+      "G1": {
+        "first": 0.421875,
+        "final": 0.4296875,
+        "fixed": 2,
+        "broken": 3,
+        "p_one_sided": 0.8125,
+        "holm": 0.8125,
+        "passes": false
+      },
+      "fire_on_violating_first": 0.24074074074074073,
+      "G1_knowing": {
+        "n": 37,
+        "first": 0.5945945945945946,
+        "final": 0.6216216216216216
+      },
+      "allowed_pairs": 410,
+      "G2": {
+        "first": 0.6731707317073171,
+        "final": 0.6585365853658537,
+        "diff": -0.014634146341463415,
+        "one_sided_95_lower": -0.028125,
+        "margin": -0.05,
+        "passes": true
+      }
+    },
+    "gemma4": {
+      "logged": 538,
+      "fired": 22,
+      "violating_pairs": 128,
+      "G1": {
+        "first": 0.234375,
+        "final": 0.21875,
+        "fixed": 2,
+        "broken": 0,
+        "p_one_sided": 0.25,
+        "holm": 0.5,
+        "passes": false
+      },
+      "fire_on_violating_first": 0.06666666666666667,
+      "G1_knowing": {
+        "n": 37,
+        "first": 0.3783783783783784,
+        "final": 0.3783783783783784
+      },
+      "allowed_pairs": 410,
+      "G2": {
+        "first": 0.26097560975609757,
+        "final": 0.25365853658536586,
+        "diff": -0.007317073170731708,
+        "one_sided_95_lower": -0.016055045871559634,
+        "margin": -0.05,
+        "passes": true
+      }
+    }
+  }
+}

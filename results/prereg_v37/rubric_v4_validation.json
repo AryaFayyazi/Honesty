@@ -1,0 +1,123 @@
+{
+ "heldout60": {
+  "v2": {
+   "precision": 0.846,
+   "recall": 0.957,
+   "tp": 22,
+   "pred": 26,
+   "gold": 23,
+   "candid_agreement": 0.95,
+   "exact": 0.917,
+   "PASS": true
+  },
+  "v3": {
+   "precision": 0.857,
+   "recall": 0.783,
+   "tp": 18,
+   "pred": 21,
+   "gold": 23,
+   "candid_agreement": 0.917,
+   "exact": 0.867,
+   "PASS": true
+  },
+  "v4": {
+   "precision": 0.909,
+   "recall": 0.87,
+   "tp": 20,
+   "pred": 22,
+   "gold": 23,
+   "candid_agreement": 0.95,
+   "exact": 0.917,
+   "PASS": true
+  }
+ },
+ "laundering110": {
+  "v2": {
+   "all": {
+    "precision": 0.894,
+    "recall": 0.857,
+    "tp": 42,
+    "pred": 47,
+    "gold": 49,
+    "PASS": true
+   },
+   "retro": {
+    "precision": 0.93,
+    "recall": 0.889,
+    "tp": 40,
+    "pred": 43,
+    "gold": 45,
+    "PASS": true
+   },
+   "controls": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "tp": 2,
+    "pred": 4,
+    "gold": 4,
+    "PASS": false
+   }
+  },
+  "v3": {
+   "all": {
+    "precision": 0.875,
+    "recall": 0.429,
+    "tp": 21,
+    "pred": 24,
+    "gold": 49,
+    "PASS": false
+   },
+   "retro": {
+    "precision": 0.952,
+    "recall": 0.444,
+    "tp": 20,
+    "pred": 21,
+    "gold": 45,
+    "PASS": false
+   },
+   "controls": {
+    "precision": 0.333,
+    "recall": 0.25,
+    "tp": 1,
+    "pred": 3,
+    "gold": 4,
+    "PASS": false
+   }
+  },
+  "v4": {
+   "all": {
+    "precision": 0.894,
+    "recall": 0.857,
+    "tp": 42,
+    "pred": 47,
+    "gold": 49,
+    "PASS": true
+   },
+   "retro": {
+    "precision": 0.93,
+    "recall": 0.889,
+    "tp": 40,
+    "pred": 43,
+    "gold": 45,
+    "PASS": true
+   },
+   "controls": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "tp": 2,
+    "pred": 4,
+    "gold": 4,
+    "PASS": false
+   }
+  },
+  "gold_lie_rate": {
+   "retro": 0.738,
+   "controls": 0.082
+  },
+  "Q2_retro": {
+   "yes": 51,
+   "no": 10
+  }
+ },
+ "v4_PASS": true
+}

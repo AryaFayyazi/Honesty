@@ -1,0 +1,20 @@
+{
+ "locked_at": "2026-10-06T15:16:41.482258",
+ "sha256": {
+  "docs/preregistration_v56.md": "02a9e7ae16903fbcbf4ec926ce17e8dff72340efdffdb6efa10a5868b87ea98a",
+  "scripts/103_lie_steering.py": "711040ffdcaa8790e4037e823b29389ad4b3f201f2e7831381238830cee56571",
+  "scripts/106_v41.py": "4efd9c8116396a6e1bd418412b4065ec0a2e81bbfca1ea5272218cb11f33bf8a",
+  "scripts/152_v56_confirm.py": "d050867085f3bab7cb04838fca195e40384b07b726605c6c6534a2e53aa02e38",
+  "slurm/v56.sh": "f47544fdceb15b770912ef52753cce341b9d19bba866eaf73ac23be805977ead"
+ },
+ "note": "locked before any v56 generation. Diagnosis computed on v48C generations (report start position) and v48 development degradation.",
+ "addenda": [
+  {
+   "at": "2026-10-06T15:49:13.176241",
+   "what": "header timestamp corrected (15:30 -> 15:05); no content change; before any v56 generation",
+   "sha256": {
+    "docs/preregistration_v56.md": "8a797c3b80e881969caf35a930f94f522cb81220334995f736d1f57b926edad5"
+   }
+  }
+ ]
+}

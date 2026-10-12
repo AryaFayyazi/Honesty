@@ -1,0 +1,46 @@
+{
+ "locked_at": "2026-10-07T23:18:49.382226",
+ "sha256": {
+  "docs/preregistration_v61.md": "478ad2b4eabf79629464e70f7d3284144f472973d1e74d88d45bfb4bca314709",
+  "scripts/165_v61_e2e.py": "fdc8f45ace1da4268184a00caeb2dc8a0d20466f8c0f1724a2595c470bf7a57e",
+  "slurm/v61.sh": "083fc194eac65c55eecb27baffe6161a1db45c9ca423dec036a7b783e879c38c",
+  "slurm/v59b_all.sh": "820e64fa76ac9dcb3671c110d043e923623054528cb0a3666233df21cd5d943d"
+ },
+ "note": "locked before any v61 generation and before the v54 Muse confirmation; analysis code tested on synthetic data only (files deleted). The Muse job 3485 (v59b_all.sh museglimmer) now runs v61, which contains the v59b Muse design.",
+ "addenda": [
+  {
+   "at": "2026-10-08T00:39:53.804740",
+   "what": "Muse parser fix (v54 Clarification 3) used by v61; v61 smoke requires parsed tool steps; before any v61 data",
+   "sha256": {
+    "scripts/144_v54_steer.py": "546cf2c9d28e25df640fabb8e9ad50fdd79a13797d4161fcf92b0081a7976d8e",
+    "scripts/154_v54_gate.py": "0c1313d564be16c87da4002c7609cf68206a46a046b55e5f069cb0c8edd84b40",
+    "slurm/v61.sh": "59608b4aab021a44bb51734f794efd7a2d2cb8ef29757497b65b90c3f412b920"
+   }
+  },
+  {
+   "at": "2026-10-08T22:31:01.362974",
+   "what": "v61b section (powered honesty lever on all violations, no gate) before any v61b data; scripts/165 gains mode=v61b and stage analyze_b (v61 default behaviour unchanged)",
+   "sha256": {
+    "docs/preregistration_v61.md": "50046314a9e4c4787f45059704fb82afac7877e41ad72e12837ad0ebb4a13a6b",
+    "scripts/165_v61_e2e.py": "e798d1874256e8fc0482a2b0a08c78e69b369f394e204a6d8d6acbb392f6394e",
+    "slurm/v61b.sh": "94d9f003b66f8b6a1b904fdb1a8c853d1c8f9f0d955e7d32987ba53f281f51cf"
+   }
+  },
+  {
+   "at": "2026-10-09T06:41:17.830342",
+   "what": "v61c section (evidence contract as the lie stage end to end; UNPARSED re-judge rule) before any v61c data; scripts/165 gains mode v61c, msgs_json, retry merge (v61 and v61b behaviour unchanged)",
+   "sha256": {
+    "docs/preregistration_v61.md": "21c9de835075442459db0be5bdce890fad84cc9a34885729072e2a4be8455c34",
+    "scripts/165_v61_e2e.py": "16bdcd32b64f20987da0a0e1714f782a091ed062b172efc1add7413b0a0e3048",
+    "slurm/v61c.sh": "d227de0f652599ec680e97cef049d66bba7c4e97c1735c018c97041acd30bedb"
+   }
+  },
+  {
+   "at": "2026-10-09T15:17:57.315896",
+   "what": "scripts/165 gains split and gen_turn0 options for v63 (defaults keep v61/v61b/v61c behaviour)",
+   "sha256": {
+    "scripts/165_v61_e2e.py": "935b58ede5ca49bd6c1dbf2a70f7a141d6d57a879a410e7ac149d9f38962ecd5"
+   }
+  }
+ ]
+}

@@ -1,0 +1,225 @@
+{
+  "files": {
+    "outputs/capebench/authority_eval/main_base/scenarios.jsonl": "7f7833d7d79d692a455ccec91b9702025ee658a720a64f9bc0c4c209314d734b",
+    "outputs/capebench/authority_eval/main_enforced/scenarios.jsonl": "7b49ce14e18df245febbc4a8061fab33e0bb3f64a69ef69bff482a6ffad01444",
+    "outputs/capebench/authority_eval/main_responsibility/scenarios.jsonl": "dc6ebc5aa068c6246010f88ec332a5b5d2295017cb0bdd75a91a57f1153f8489",
+    "outputs/capebench/authority_eval/main_assert/scenarios.jsonl": "204c205d3cb6a1f1845b8ba8dfa571317942a2578ed093d1fbd14651dc4e94ee",
+    "outputs/capebench/authority_eval/main_conditional/scenarios.jsonl": "fb70ca19aa9804b09fe5c98170e9b91a6f0b84a3dd099e81c1e86812763cb003",
+    "outputs/capebench/authority_eval/ho_base/scenarios.jsonl": "a7427ca9b11c2d4de240e65cc799758a245fd6836a60e61676667ab6aa5a2268",
+    "outputs/capebench/authority_eval/ho_enforced/scenarios.jsonl": "32ef6627f668e8b612441ec3ec4beb49757f15c4fb2077ac5f4f7d4552805326",
+    "outputs/capebench/authority_eval/ho_responsibility/scenarios.jsonl": "5858d97c37717d06d6c1744688b34fe23b4d05d2fc7d8a1418faee2f22a1dbbf",
+    "outputs/capebench/authority_eval/ho_assert/scenarios.jsonl": "8d57285f14fd5470ebf19e4fa3903c435d2970bed96dab39da379ee801286883",
+    "outputs/capebench/authority_eval/ho_conditional/scenarios.jsonl": "9e4d11ccc93c6d91528bb5c388d8ca4a2994f69775a175695b294e9cb4cd9da9"
+  },
+  "blocks": {
+    "main": {
+      "seed": 2027,
+      "num_base": 1000,
+      "templates": [
+        "con_ci_green",
+        "tp_billing_correction",
+        "auth_repo_access",
+        "own_dataset_upload",
+        "con_cloud_cost",
+        "rev_config_overwrite",
+        "cons_service_restart",
+        "prov_meeting_notes"
+      ],
+      "variant": ""
+    },
+    "ho": {
+      "seed": 2029,
+      "num_base": 3000,
+      "templates": [
+        "auth_repo_access",
+        "con_cloud_cost"
+      ],
+      "variant": "ho"
+    }
+  },
+  "seeds": {
+    "unsafe": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "safe": [
+      0,
+      1
+    ]
+  },
+  "tiers": {
+    "smoke": [
+      [
+        "main",
+        "base",
+        "unsafe"
+      ],
+      [
+        "main",
+        "base",
+        "safe"
+      ]
+    ],
+    "core": [
+      [
+        "main",
+        "base",
+        "unsafe"
+      ],
+      [
+        "main",
+        "base",
+        "safe"
+      ],
+      [
+        "main",
+        "enforced",
+        "unsafe"
+      ],
+      [
+        "main",
+        "enforced",
+        "safe"
+      ],
+      [
+        "main",
+        "assert",
+        "unsafe"
+      ],
+      [
+        "main",
+        "assert",
+        "safe"
+      ],
+      [
+        "ho",
+        "base",
+        "unsafe"
+      ],
+      [
+        "ho",
+        "base",
+        "safe"
+      ],
+      [
+        "ho",
+        "enforced",
+        "unsafe"
+      ],
+      [
+        "ho",
+        "assert",
+        "unsafe"
+      ]
+    ],
+    "full": [
+      [
+        "main",
+        "base",
+        "unsafe"
+      ],
+      [
+        "main",
+        "base",
+        "safe"
+      ],
+      [
+        "main",
+        "enforced",
+        "unsafe"
+      ],
+      [
+        "main",
+        "enforced",
+        "safe"
+      ],
+      [
+        "main",
+        "assert",
+        "unsafe"
+      ],
+      [
+        "main",
+        "assert",
+        "safe"
+      ],
+      [
+        "ho",
+        "base",
+        "unsafe"
+      ],
+      [
+        "ho",
+        "base",
+        "safe"
+      ],
+      [
+        "ho",
+        "enforced",
+        "unsafe"
+      ],
+      [
+        "ho",
+        "assert",
+        "unsafe"
+      ],
+      [
+        "main",
+        "responsibility",
+        "unsafe"
+      ],
+      [
+        "main",
+        "conditional",
+        "unsafe"
+      ]
+    ]
+  },
+  "counts": {
+    "main": {
+      "pairs_by_template": {
+        "con_ci_green": 42,
+        "auth_repo_access": 42,
+        "own_dataset_upload": 42,
+        "tp_billing_correction": 42,
+        "con_cloud_cost": 42,
+        "prov_meeting_notes": 41,
+        "cons_service_restart": 41,
+        "rev_config_overwrite": 41
+      },
+      "excluded": {
+        "world_seen_before": 6,
+        "identity_collision": 4,
+        "world_duplicate": 1
+      }
+    },
+    "ho": {
+      "pairs_by_template": {
+        "auth_repo_access": 125,
+        "con_cloud_cost": 125
+      },
+      "excluded": {
+        "world_seen_before": 15,
+        "identity_collision": 14,
+        "world_duplicate": 7
+      }
+    }
+  },
+  "generator_sha256": "6f21ebd72687bad8ef98dff1fff46ac668c625f0b9b2254c549b61f84c2c9ce0",
+  "env_code_hash": "969b1207fd0280739fde4249bff746bccfaeeef17198ae06de7c83dab64e526d",
+  "created": "2026-09-30 23:15 PDT",
+  "relocks": [
+    {
+      "at": "2026-09-30 23:55 PDT",
+      "old_env_code_hash": "119539ed25b8e89f5de36c974c96bf2e1ea358411fe5443a094024aa88dd98ff",
+      "reason": "check_authorization oracle added behind spec flag (prereg v19); replay of all 22,023 v2fresh_minus steps: 0 label changes"
+    },
+    {
+      "at": "2026-10-01 03:30 PDT",
+      "old_env_code_hash": "9c5ca776ca38d4e282d392bf890646cf49effd7ca1828387f3ad426e2d6467ce",
+      "reason": "oracle 'dryrun' mode added behind spec flag (prereg v19b); default and non-oracle behavior unchanged (tests/test_oracle.py)"
+    }
+  ]
+}

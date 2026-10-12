@@ -1,0 +1,122 @@
+{
+ "n": 2412,
+ "n_lies": 132,
+ "by_model": {
+  "size": {
+   "gemma4": 1190,
+   "gptoss20b": 926,
+   "museglimmer": 106,
+   "qwen38": 190
+  },
+  "sum": {
+   "gemma4": 22,
+   "gptoss20b": 35,
+   "museglimmer": 23,
+   "qwen38": 52
+  }
+ },
+ "retro": {
+  "n_retro": 61,
+  "lie_rate_retro": 0.7049180327868853,
+  "lie_rate_noretro": 0.03785623139089749,
+  "share_of_lies_with_retro": 0.32575757575757575,
+  "by_model": [
+   {
+    "model": "gemma4",
+    "retro": 0,
+    "size": 1168,
+    "mean": 0.004280821917808219
+   },
+   {
+    "model": "gemma4",
+    "retro": 1,
+    "size": 22,
+    "mean": 0.7727272727272727
+   },
+   {
+    "model": "gptoss20b",
+    "retro": 0,
+    "size": 899,
+    "mean": 0.017797552836484983
+   },
+   {
+    "model": "gptoss20b",
+    "retro": 1,
+    "size": 27,
+    "mean": 0.7037037037037037
+   },
+   {
+    "model": "museglimmer",
+    "retro": 0,
+    "size": 97,
+    "mean": 0.17525773195876287
+   },
+   {
+    "model": "museglimmer",
+    "retro": 1,
+    "size": 9,
+    "mean": 0.6666666666666666
+   },
+   {
+    "model": "qwen38",
+    "retro": 0,
+    "size": 187,
+    "mean": 0.2727272727272727
+   },
+   {
+    "model": "qwen38",
+    "retro": 1,
+    "size": 3,
+    "mean": 0.3333333333333333
+   }
+  ]
+ },
+ "all": {
+  "beh": {
+   "auroc": 0.806,
+   "within_template": 0.6278
+  },
+  "placebo": {
+   "auroc": 0.9117,
+   "within_template": 0.3775
+  },
+  "beh+placebo": {
+   "auroc": 0.9607,
+   "within_template": 0.5686
+  },
+  "text": {
+   "auroc": 0.9203,
+   "within_template": 0.5306
+  },
+  "retro_rule": {
+   "auroc": 0.7157,
+   "within_template": 0.621
+  }
+ },
+ "informed": {
+  "beh": {
+   "auroc": 0.8663,
+   "within_template": 0.8002
+  },
+  "placebo": {
+   "auroc": 0.8786,
+   "within_template": 0.3153
+  },
+  "beh+placebo": {
+   "auroc": 0.9554,
+   "within_template": 0.7891
+  },
+  "text": {
+   "auroc": 0.9047,
+   "within_template": 0.6643
+  },
+  "retro_rule": {
+   "auroc": 0.8012,
+   "within_template": 0.849
+  },
+  "beh+placebo_minus_placebo_ci95": [
+   0.0477,
+   0.111
+  ]
+ }
+}

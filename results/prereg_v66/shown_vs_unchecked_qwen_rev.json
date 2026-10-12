@@ -1,0 +1,22 @@
+{
+  "per_run": {
+    "v66_screen_qwen38_P0_rev": {
+      "shown_na": 19,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 0,
+      "viol_cancels_unread": 0
+    }
+  },
+  "pooled": {
+    "shown_na": 19,
+    "shown_na_cancelled": 0,
+    "viol_cancels": 0,
+    "viol_cancels_unread": 0,
+    "p_cancel_given_shown_not_allowed": 0.0,
+    "wilson95": [
+      0.0,
+      0.16818436536845052
+    ],
+    "share_violating_cancels_on_unread": null
+  }
+}

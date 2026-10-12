@@ -1,0 +1,7 @@
+{
+ "thr_auth": -2.9536424675323314,
+ "thr_unv": -1.9363292708276667,
+ "quantile": 0.975,
+ "n_actions": 4951,
+ "src": "outputs/rollouts/cl_gptoss_shadow.parquet"
+}

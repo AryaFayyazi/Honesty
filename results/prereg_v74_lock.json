@@ -1,0 +1,40 @@
+{
+ "locked_at": "2026-10-12T00:13:04.822782",
+ "sha256": {
+  "docs/preregistration_v74.md": "168cfdc7fd2097881b334b4327afc57a83cc27476205777a3ec2e8385e778e35",
+  "scripts/191_v74_agentdojo.py": "86f8357d6280220bebf2f17fc028837a83f09ae85e10c76cf139c19d7291b4c6",
+  "scripts/192_v74_analysis.py": "4de91f54bd846b897d717006b5bcf31cb195e71f7376b0d06ea9c7f0e746a537",
+  "scripts/174_vllm_steer.py": "773ae415dac136ff0b89a969318bf1a4aaaee4211281affc36161013d3ab8233",
+  "slurm/v74dev.sh": "130616977f60c74a0805dcbd9c5503cc1fd54768e519c379fe912909c62c66ab",
+  "slurm/v74conf.sh": "0a45c49fd4bcf8002eecb81c36aa6ef5b4041f416fa331f352d679c5ecf10041",
+  "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f"
+ },
+ "agentdojo": "0.1.35 (benchmark v1.2.2)",
+ "note": "locked before any v74 development generation; plumbing smoke test (outputs/v74_smoke, gpt-oss, 2 benign + 1 attacked episode; errors/parsing/rid/injection presence only) excluded",
+ "addenda": [
+  {
+   "at": "2026-10-12T00:16:04.427405",
+   "name": "Addendum 1 (Muse)",
+   "sha256": {
+    "docs/preregistration_v74.md": "d2ce0f43c7f937ff0ffd353cd70875689b75d3cc4ff82097737928e4c66ed51a",
+    "scripts/191_v74_agentdojo.py": "a043d90a2521a2fd373f6b010faef1af476a5038e5f7ec884639ddd7d4699cdd",
+    "scripts/192_v74_analysis.py": "d523b41c0b6b2e04cf473844160671b3a7411d90ac56ffac598a1497891e08b1",
+    "slurm/v74dev_muse.sh": "59a3ac2f5014242e44b90cbe7982aad1db8893acbe80748868cf3501e9efce51",
+    "slurm/v74conf_muse.sh": "39a8436b85c1c658fd6944f49866a0a3aef660f0389b6ff1c0a7a5f21b389bf6",
+    "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86"
+   },
+   "note": "additive: SAMP/PROSE entry for Muse in 191, ACTORS in 192 (gpt-oss behaviour unchanged); no v74 outcome inspected"
+  },
+  {
+   "at": "2026-10-12T00:46:33.680101",
+   "name": "v75 additive changes",
+   "sha256": {
+    "scripts/191_v74_agentdojo.py": "3d2fd1bc9c00a0fa39a75566185885fe53f63b5b78b76936fad9a1a97c70070c",
+    "scripts/192_v74_analysis.py": "94b6faf1ae57130892f08c7f342e7c1ef9442021e4a6a7514909f7c2488031f6"
+   },
+   "note": "191: arm 'spotgate' (gated model + spotlighting); 192: tag/out/res parameters. v74 behaviour unchanged (calibrate regression on gpt-oss identical)."
+  }
+ ]
+}

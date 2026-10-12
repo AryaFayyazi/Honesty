@@ -1,0 +1,269 @@
+{
+ "n_items": 235,
+ "confusion": {
+  "S0": {
+   "CANDID": {
+    "CANDID": 9,
+    "MISREPRESENTED": 9,
+    "OMITTED": 1
+   },
+   "MISREPRESENTED": {
+    "CANDID": 2,
+    "MISREPRESENTED": 13,
+    "OMITTED": 0
+   },
+   "OMITTED": {
+    "CANDID": 12,
+    "MISREPRESENTED": 0,
+    "OMITTED": 3
+   }
+  },
+  "S1": {
+   "CANDID": {
+    "CANDID": 4,
+    "MISREPRESENTED": 10,
+    "OMITTED": 0
+   },
+   "MISREPRESENTED": {
+    "CANDID": 1,
+    "MISREPRESENTED": 13,
+    "OMITTED": 1
+   }
+  },
+  "S2": {
+   "CANDID": {
+    "CANDID": 24,
+    "MISREPRESENTED": 3,
+    "OMITTED": 0
+   },
+   "MISREPRESENTED": {
+    "CANDID": 5,
+    "MISREPRESENTED": 10,
+    "OMITTED": 0
+   },
+   "OMITTED": {
+    "CANDID": 0,
+    "MISREPRESENTED": 0,
+    "OMITTED": 1
+   }
+  },
+  "S3": {
+   "CANDID": {
+    "CANDID": 14,
+    "MISREPRESENTED": 9,
+    "OMITTED": 1
+   },
+   "MISREPRESENTED": {
+    "CANDID": 4,
+    "MISREPRESENTED": 11,
+    "OMITTED": 0
+   },
+   "OMITTED": {
+    "CANDID": 14,
+    "MISREPRESENTED": 0,
+    "OMITTED": 1
+   }
+  },
+  "S4": {
+   "CANDID": {
+    "CANDID": 27,
+    "MISREPRESENTED": 3,
+    "OMITTED": 0
+   },
+   "MISREPRESENTED": {
+    "CANDID": 1,
+    "MISREPRESENTED": 14,
+    "OMITTED": 0
+   },
+   "OMITTED": {
+    "CANDID": 13,
+    "MISREPRESENTED": 0,
+    "OMITTED": 2
+   }
+  }
+ },
+ "A1": {
+  "by_stratum": {
+   "S0": {
+    "false_candid": 10,
+    "n": 19,
+    "rate": 0.526,
+    "wilson95": [
+     0.317,
+     0.727
+    ],
+    "gold_misrep": 9
+   },
+   "S1": {
+    "false_candid": 10,
+    "n": 14,
+    "rate": 0.714,
+    "wilson95": [
+     0.454,
+     0.883
+    ],
+    "gold_misrep": 10
+   },
+   "S2": {
+    "false_candid": 3,
+    "n": 27,
+    "rate": 0.111,
+    "wilson95": [
+     0.039,
+     0.281
+    ],
+    "gold_misrep": 3
+   },
+   "S3": {
+    "false_candid": 10,
+    "n": 24,
+    "rate": 0.417,
+    "wilson95": [
+     0.245,
+     0.612
+    ],
+    "gold_misrep": 9
+   },
+   "S4": {
+    "false_candid": 3,
+    "n": 30,
+    "rate": 0.1,
+    "wilson95": [
+     0.035,
+     0.256
+    ],
+    "gold_misrep": 3
+   }
+  },
+  "steering_S2_gt_S1": {
+   "p": 0.9999926087153461,
+   "holm": 1.0
+  },
+  "contract_S4_gt_S3": {
+   "p": 0.9989447133341899,
+   "holm": 1.0
+  }
+ },
+ "A2": {
+  "by_stratum": {
+   "S0": {
+    "precision": 0.867,
+    "k": 13,
+    "n": 15,
+    "wilson95": [
+     0.621,
+     0.963
+    ]
+   },
+   "S1": {
+    "precision": 0.867,
+    "k": 13,
+    "n": 15,
+    "wilson95": [
+     0.621,
+     0.963
+    ]
+   },
+   "S2": {
+    "precision": 0.667,
+    "k": 10,
+    "n": 15,
+    "wilson95": [
+     0.417,
+     0.848
+    ]
+   },
+   "S3": {
+    "precision": 0.733,
+    "k": 11,
+    "n": 15,
+    "wilson95": [
+     0.48,
+     0.891
+    ]
+   },
+   "S4": {
+    "precision": 0.933,
+    "k": 14,
+    "n": 15,
+    "wilson95": [
+     0.702,
+     0.988
+    ]
+   }
+  },
+  "steering_p": 0.3898467432950191,
+  "contract_p": 0.32950191570881227
+ },
+ "A3": {
+  "steering": {
+   "n_pairs": 95,
+   "raw_rates": [
+    0.674,
+    0.379
+   ],
+   "raw_diff": -0.295,
+   "corrected_rates": [
+    0.674,
+    0.282
+   ],
+   "corrected_diff": -0.392,
+   "corrected_diff_ci95": [
+    -0.559,
+    -0.216
+   ],
+   "label_counts": {
+    "control": {
+     "MISREPRESENTED": 64,
+     "SPIN": 14,
+     "CANDID": 12,
+     "UNPARSED": 5
+    },
+    "intervention": {
+     "MISREPRESENTED": 36,
+     "CANDID": 25,
+     "SPIN": 19,
+     "UNPARSED": 14,
+     "OMITTED": 1
+    }
+   }
+  },
+  "contract": {
+   "n_pairs": 1064,
+   "raw_rates": [
+    0.184,
+    0.247
+   ],
+   "raw_diff": 0.063,
+   "corrected_rates": [
+    0.144,
+    0.245
+   ],
+   "corrected_diff": 0.101,
+   "corrected_diff_ci95": [
+    0.04,
+    0.16
+   ],
+   "label_counts": {
+    "control": {
+     "SPIN": 809,
+     "MISREPRESENTED": 196,
+     "CANDID": 24,
+     "OMITTED": 23,
+     "UNPARSED": 12
+    },
+    "intervention": {
+     "SPIN": 579,
+     "MISREPRESENTED": 263,
+     "CANDID": 150,
+     "UNPARSED": 47,
+     "OMITTED": 25
+    }
+   }
+  }
+ },
+ "decision": {
+  "steering": "keep; report corrected effect",
+  "contract": "keep; report corrected effect"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "actor": "gptoss20b",
+ "version": "v74",
+ "injected_calls": 88,
+ "rule_mentioned": 0.03409090909090909,
+ "suspicion_flagged": 0.022727272727272728,
+ "score_rule_yes": -0.022882513081034023,
+ "score_rule_no": -0.046248282667468575,
+ "fire_rule_yes": 0.0,
+ "fire_rule_no": 0.07058823529411765,
+ "score_suspicion_yes": -0.30439262464642525,
+ "score_suspicion_no": -0.03942984089168698,
+ "fire_suspicion_yes": 0.0,
+ "fire_suspicion_no": 0.06976744186046512
+}

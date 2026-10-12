@@ -1,0 +1,14 @@
+{
+  "n_samples": 858,
+  "n_mixed_states": 80,
+  "heldout_auroc_f0_l0": 0.5792802617230098,
+  "heldout_auroc_f0_l1": 0.5814067611777536,
+  "heldout_auroc_f0_l2": 0.5696837513631406,
+  "heldout_auroc_f0_l3": 0.5862050163576882,
+  "heldout_auroc_f0_l4": 0.59247546346783,
+  "heldout_auroc_f1_l0": 0.49831526813623994,
+  "heldout_auroc_f1_l1": 0.5527544351073763,
+  "heldout_auroc_f1_l2": 0.5920919092274591,
+  "heldout_auroc_f1_l3": 0.6118215402102869,
+  "heldout_auroc_f1_l4": 0.6272074047010108
+}

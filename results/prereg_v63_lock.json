@@ -1,0 +1,11 @@
+{
+ "locked_at": "2026-10-09T15:17:57.315409",
+ "sha256": {
+  "docs/preregistration_v63.md": "d40b5585446e28e11c98e79789750a2c3a8d5591baa4977a5cacd3123f97fc31",
+  "scripts/169_v63_honesty_dir.py": "9b1a445d34ac15cc870545add035d85311241e564410310fa6a12478d68aada1",
+  "scripts/165_v61_e2e.py": "935b58ede5ca49bd6c1dbf2a70f7a141d6d57a879a410e7ac149d9f38962ecd5",
+  "slurm/v63.sh": "60b45fe8cc865764d6f62d6035c1a4fe8e3f630a6adc9967bc725447f6079900"
+ },
+ "note": "locked before any v63 data; CPU stages synthetic-tested (deleted); conditional on v61c not passing",
+ "addenda": []
+}

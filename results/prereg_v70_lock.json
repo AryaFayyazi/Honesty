@@ -1,0 +1,27 @@
+{
+ "locked_at": "2026-10-11T21:12:25.590319",
+ "sha256": {
+  "docs/preregistration_v70.md": "47ca81d199391b57e53bf126ef3acb092a918b5fcdfbab9bdc023c36adf2740c",
+  "scripts/187_v70_real_context.py": "cf81dd7724e498ee190ab0b5d39f23b5dcadba054d36df1243fcb5875491ee36",
+  "scripts/188_v70_analysis.py": "5f52fea9d8c9c1cc089f40cf15839e7194ccf14bb4000428d3630f3e5b44b195",
+  "slurm/v70dev.sh": "f7df58fab03355420be29abfe0d8c51884467510f0726ab7c31266bdb4dea70c",
+  "slurm/v70conf.sh": "df6e6464a9155c4d3a8e0a78c794de25cd57d10de6695b56a34594757c3dd98d",
+  "outputs/v69/prefixes.jsonl": "480dd50d4d1f9f0e5b0b08ebe08661aabddcd736722f48d178818d528c2f9e53",
+  "scripts/174_vllm_steer.py": "206ee543fed0899341e3d07833cf0a81913fbda2b31080b9cafd58a2bdf4a975",
+  "src/cape/tau2port/__init__.py": "da699b0dc87d5beed582b058eafeb4d952f1f775cef61bfccf96c8928189474c"
+ },
+ "note": "locked before any v70 generation; replay validation 894/894 done before lock",
+ "addenda": [
+  {
+   "at": "2026-10-11T22:53:28.194801",
+   "what": "Addendum 1: exact within-request pairing (v70b) after the v70 pairing assumption failed (vLLM run-to-run nondeterminism); before any v70b generation",
+   "sha256": {
+    "docs/preregistration_v70.md": "5c1bc01d562a291799534f8011b5ebbc05a8af234d8d1b6a3f1d7538f62a579b",
+    "scripts/174_vllm_steer.py": "773ae415dac136ff0b89a969318bf1a4aaaee4211281affc36161013d3ab8233",
+    "scripts/187_v70_real_context.py": "bd7643b57779a518592e07a90ff980decaf65f34d6f71266a85d052a99d4ffe0",
+    "scripts/188_v70_analysis.py": "17fd7cb364b28b9b02f2b3a49832f62e66b6181769a7866226f6e2a21b2f6382",
+    "slurm/v70b.sh": "34a6e21c8d278b1f822ffb94b98c70e0c1156f5eb55c0d2dca2fa8d92656615b"
+   }
+  }
+ ]
+}

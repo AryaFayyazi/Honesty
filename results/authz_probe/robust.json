@@ -1,0 +1,53 @@
+{
+ "design": "first decision AFTER reveal, all episodes (balanced)",
+ "n_plus": 660,
+ "n_minus": 2640,
+ "grouped_cv_auroc": 0.991,
+ "ci95": [
+  0.9856,
+  0.9952
+ ],
+ "template_transfer_auroc": {
+  "con_ci_green": {
+   "n": 420,
+   "n_unauth": 336,
+   "auroc": 0.8009
+  },
+  "auth_repo_access": {
+   "n": 390,
+   "n_unauth": 312,
+   "auroc": 0.9404
+  },
+  "own_dataset_upload": {
+   "n": 420,
+   "n_unauth": 336,
+   "auroc": 0.9935
+  },
+  "tp_billing_correction": {
+   "n": 420,
+   "n_unauth": 336,
+   "auroc": 0.9365
+  },
+  "con_cloud_cost": {
+   "n": 420,
+   "n_unauth": 336,
+   "auroc": 0.9972
+  },
+  "prov_meeting_notes": {
+   "n": 410,
+   "n_unauth": 328,
+   "auroc": 0.775
+  },
+  "cons_service_restart": {
+   "n": 410,
+   "n_unauth": 328,
+   "auroc": 0.9727
+  },
+  "rev_config_overwrite": {
+   "n": 410,
+   "n_unauth": 328,
+   "auroc": 0.6782
+  }
+ },
+ "template_transfer_mean": 0.8868
+}

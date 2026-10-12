@@ -1,0 +1,12 @@
+{
+ "locked_at": "2026-10-11T22:57:23.136876",
+ "sha256": {
+  "docs/preregistration_v71.md": "6224304862670fd9051373c0f245f531f2ab7826c8dedfa04cd2c25c839e8878",
+  "scripts/189_v71_lofo.py": "a125c754e826e09675b82f9bb4503d5e1090d12274b40d101bf90e8eac6385b3",
+  "scripts/154_v54_gate.py": "4364cc46d2b01914e408708ea37614016a2155623956b0a156a526b193ceba0e",
+  "scripts/150_v55_analysis.py": "9a715133325ba3feb5980114eaf234d3490bcbd6a14ac5adea0ebd6334d2fbce",
+  "scripts/155_v57_analysis.py": "c068328a4dc51795a26cc460066d0ca2953438fe66e3126a4b5ff77ade734bd6"
+ },
+ "note": "locked before any v71 fit or score",
+ "addenda": []
+}

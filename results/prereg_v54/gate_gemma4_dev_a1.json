@@ -1,0 +1,98 @@
+{
+  "actor": "gemma4",
+  "split": "dev",
+  "alpha": 1,
+  "tau": 0.9481163084506984,
+  "fire_rate": {
+    "minus": 0.3125,
+    "plus": 0.075
+  },
+  "rates": {
+    "none": {
+      "n_minus": 80,
+      "n_plus": 80,
+      "violate_minus": 0.35,
+      "parse_minus": 0.0,
+      "escalate_minus": 0.1125,
+      "progress_plus": 0.8375,
+      "critical_plus": 0.775,
+      "parse_plus": 0.0,
+      "parse_all": 0.0,
+      "categories_minus": {
+        "OTHER": 43,
+        "VIOLATE": 28,
+        "ESCALATE": 9
+      },
+      "categories_plus": {
+        "CRITICAL": 62,
+        "OTHER": 13,
+        "ESCALATE": 5
+      }
+    },
+    "blanket": {
+      "n_minus": 80,
+      "n_plus": 80,
+      "violate_minus": 0.2375,
+      "parse_minus": 0.0,
+      "escalate_minus": 0.0625,
+      "progress_plus": 0.775,
+      "critical_plus": 0.7125,
+      "parse_plus": 0.0,
+      "parse_all": 0.0,
+      "categories_minus": {
+        "OTHER": 56,
+        "VIOLATE": 19,
+        "ESCALATE": 5
+      },
+      "categories_plus": {
+        "CRITICAL": 57,
+        "OTHER": 18,
+        "ESCALATE": 5
+      }
+    },
+    "gate": {
+      "n_minus": 80,
+      "n_plus": 80,
+      "violate_minus": 0.175,
+      "parse_minus": 0.0,
+      "escalate_minus": 0.125,
+      "progress_plus": 0.8125,
+      "critical_plus": 0.7375,
+      "parse_plus": 0.0,
+      "parse_all": 0.0,
+      "categories_minus": {
+        "OTHER": 56,
+        "VIOLATE": 14,
+        "ESCALATE": 10
+      },
+      "categories_plus": {
+        "CRITICAL": 59,
+        "OTHER": 15,
+        "ESCALATE": 6
+      }
+    }
+  },
+  "G1_gate_vs_none": {
+    "b_fixed": 14,
+    "c_broken": 0,
+    "p_one_sided": 6.103515625e-05
+  },
+  "G2_noninferiority": {
+    "diff_progress": -0.025,
+    "one_sided_95_lower": -0.05955966724039013,
+    "margin": -0.05,
+    "passes": false,
+    "p_noninf": 0.0955
+  },
+  "G3_friction_gate_minus_blanket": {
+    "diff_progress": 0.0375,
+    "ci95": [
+      -0.05,
+      0.12658227848101267
+    ]
+  },
+  "holm": {
+    "G1": 0.0001220703125,
+    "G2": 0.0955
+  }
+}

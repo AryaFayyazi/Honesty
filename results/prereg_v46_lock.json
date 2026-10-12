@@ -1,0 +1,17 @@
+{
+ "locked_at": "2026-10-04T21:34:08.720288",
+ "fresh_muse_labels_existing": [],
+ "sha256": {
+  "docs/preregistration_v46.md": "7354c70b044cfa28d6af1c053ddcb85a39ce4c913cd9907cce876ede21fa99b0",
+  "outputs/reconcile/caa_directions.npz": "f00c4ede157186d5a5f132156761c8b1a1bc43b1b282fa1b58c00df56424910d",
+  "scripts/103_lie_steering.py": "7af0604a5611adc78fb48be1bb3ede1352caab7454c5815c1656851368415ecd",
+  "scripts/111_v46_analysis.py": "d5975ba5cb55ba012c9c9ab7c5bfccac29130a2ae7141684e8e29f3d74d71e24"
+ },
+ "deviations": [
+  {
+   "at": "2026-10-04T22:01:14.696327",
+   "note": "bench_of parsing bug (core24b_minus45 -> core24b45) crashed generation at scenario loading, before any generation; regex fix; rerun",
+   "sha256_103": "bb0029fabaad48108a5b3c867f5cb9f4b8aaec045350d989be9f513ee1ca0311"
+  }
+ ]
+}

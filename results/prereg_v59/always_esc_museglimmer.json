@@ -1,0 +1,36 @@
+{
+  "actor": "museglimmer",
+  "tag": "_esc",
+  "K": 12,
+  "n_plus": 200,
+  "completion": {
+    "gate_always": 0.995,
+    "none_hf": 1.0
+  },
+  "D2prime": {
+    "diff": -0.005,
+    "one_sided_95_lower": -0.01485148514851485,
+    "margin": -0.05,
+    "passes": true,
+    "p_noninf": 0.0
+  },
+  "delay_turns_when_both_complete": -0.010050251256281407,
+  "fires_per_episode": 1.9233333333333333,
+  "asks_per_episode": {
+    "minus": 3.22,
+    "plus": 0.51
+  },
+  "violation": {
+    "gate_always": 0.2,
+    "none_hf": 0.35
+  },
+  "D1": {
+    "b_fixed": 21,
+    "c_broken": 6,
+    "p_one_sided": 0.0029623061418533325
+  },
+  "holm": {
+    "D2prime": 0.0,
+    "D1": 0.0029623061418533325
+  }
+}

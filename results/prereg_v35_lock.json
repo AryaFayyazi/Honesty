@@ -1,0 +1,69 @@
+{
+ "locked_at": "2026-10-02T16:17:43.754003",
+ "core24b_data_existing": [],
+ "sha256": {
+  "docs/preregistration_v35.md": "7c53d6da171d0766b7addd57aec81de28b49a8e09063831825ee83c11464a764",
+  "scripts/87_disclosure_rubric.py": "6be56fe3c8c661fa70829149f9c428e4d668258b5e0a0e4a982ccbbda4d48c9b",
+  "scripts/83_confirm_v31.py": "da275016ea99509030c8992dcca7f6f8db4a03b83ab7b4d8640488e55117d065"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-02T16:18:27.258395",
+   "note": "analysis script 88 written before data",
+   "core24b_data_existing": [],
+   "sha256": {
+    "scripts/88_v35_honesty.py": "5fbd9cc7814de81308ef417781c4cf97a4e847bcf579a23e342d6f07ad6b82e1"
+   }
+  },
+  {
+   "at": "2026-10-02T16:20:23.110525",
+   "note": "Amendment 1: pooled analysis incl. aware variants; non-candid secondary; labeler validation vs gold",
+   "core24b_data_existing": [],
+   "sha256": {
+    "docs/preregistration_v35.md": "d0a8808579fad092fc77c99806f5d874e94762f91e44aad5fcd0149e926b06a3",
+    "results/prereg_v33/gold_provisional_ai.csv": "efb5dfbe6efcf625a76c6b50246e270bfc4830de35f4121ab50333801be3fcd2"
+   }
+  },
+  {
+   "at": "2026-10-02T18:03:21.421787",
+   "note": "88 rewritten to implement Amendment 1 (pooled, noncandid) before data",
+   "core24b_data_existing": [],
+   "sha256": {
+    "scripts/88_v35_honesty.py": "9570a61e0ee15c4887572f1db7978ebec828f8962290220d3b945bfcc88ae841"
+   }
+  },
+  {
+   "at": "2026-10-03T00:28:16.247933",
+   "note": "deviation: rubric v2 (second-pass verifier); 60 gold become dev set; held-out gold to be labeled; CORRECTION: core24b Gemma-4 rollouts existed but were unlabeled/unanalyzed/uninspected; change based only on core24 dev data",
+   "core24b_data_existing": [
+    "outputs/rollouts/xm_gemma4_core24b_minus.parquet",
+    "outputs/rollouts/xm_gemma4_core24b_plus.parquet"
+   ],
+   "sha256": {
+    "docs/preregistration_v35.md": "468b250ae19e8d2bdeffaec4fd2d86c10540e660d008e5cdf1975647cf8ed18e",
+    "scripts/87_disclosure_rubric.py": "6c3e391a5bf53ae8b9c37971029d989285a759d08c23262405b52891ca97b18b",
+    "scripts/89_validate_rubric.py": "bdbd8ad2a78eb6557f0fa01bd0b80b2bf55283ab81910d888fe3b0deb85d61fb"
+   }
+  },
+  {
+   "at": "2026-10-03T01:01:31.416313",
+   "note": "rubric parse fix + max_think 6000; dev gold item 58 re-adjudicated (documented)",
+   "core24b_labels_existing": [],
+   "sha256": {
+    "docs/preregistration_v35.md": "e20ec50f1e3dcdf26827c1b5764d54962269918feabfab0f667b12fcd49797ae",
+    "scripts/87_disclosure_rubric.py": "954d8c47beb442e5c219604d67d753571fb82140735a3071cf028b814a8458a8",
+    "results/prereg_v33/gold_provisional_ai.csv": "2d8c3db02d7990cdcc4d9f3f80681973f4872bd4d24fab85fd411cfa9bd2e8b4"
+   }
+  },
+  {
+   "at": "2026-10-03T09:06:22.831283",
+   "note": "Amendment 2: extra Muse seeds 2-3 on core24b; loaders support minus23",
+   "data_existing": [],
+   "sha256": {
+    "docs/preregistration_v35.md": "6c6bbdfaebf7cd6ddb3f2d281ed425c09e5512ec89d0adcfb0bffee7235f91dd",
+    "scripts/88_v35_honesty.py": "9cd6b5e610592629f2d7d24cab2680cdfbea430ccdd0d96af21ef63cf6025480",
+    "scripts/65_epistemic_gate.py": "02c7cd1b5b29c63425ff8d9ac48c7c6f8b2df079c788f9d353685cd101da8736"
+   }
+  }
+ ]
+}

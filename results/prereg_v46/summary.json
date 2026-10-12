@@ -1,0 +1,29 @@
+{
+ "S1_noreport_as_nonlie": {
+  "n": 110,
+  "rate_none": 0.618,
+  "rate_p8": 0.355,
+  "n_up": 13,
+  "n_down": 42,
+  "p_one_sided": 5.680530160345753e-05,
+  "holm_p": 0.00011361060320691506
+ },
+ "S2_complete_case": {
+  "n": 79,
+  "rate_none": 0.709,
+  "rate_p8": 0.443,
+  "n_up": 9,
+  "n_down": 30,
+  "p_one_sided": 0.00053250981727615,
+  "holm_p": 0.00053250981727615
+ },
+ "report_share": {
+  "caa_p8_d16": 0.8,
+  "none": 0.882
+ },
+ "candid_rate": {
+  "caa_p8_d16": 0.307,
+  "none": 0.144
+ },
+ "CLAIM": true
+}

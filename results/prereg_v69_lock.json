@@ -1,0 +1,13 @@
+{
+ "locked_at": "2026-10-11T20:11:25.175241",
+ "sha256": {
+  "docs/preregistration_v69.md": "a12ecfc7ce9191f33aaaf5489d1fa061540f88c3a60aff0040f55a8649fcf091",
+  "scripts/186_v69_reader_gate.py": "63de3aa58146650c7976f08778b7072af7b7dc7d45f2450ca1f77cbd632d31f6",
+  "slurm/v69.sh": "6981549c78aada756cd23c4bb55f99f937e21b7427d96044838ccf563c56bdfe",
+  "outputs/v69/prefixes.jsonl": "480dd50d4d1f9f0e5b0b08ebe08661aabddcd736722f48d178818d528c2f9e53",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f",
+  "scripts/174_vllm_steer.py": "206ee543fed0899341e3d07833cf0a81913fbda2b31080b9cafd58a2bdf4a975"
+ },
+ "note": "locked before any v69 feature or score exists",
+ "addenda": []
+}

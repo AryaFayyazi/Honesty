@@ -1,0 +1,50 @@
+{
+  "mode": "confirm",
+  "sets": [
+    "v3aware_internal_minus",
+    "v4fresh_minus"
+  ],
+  "H4": {
+    "actor": 0.6870527000650618,
+    "observer": 0.6324007807417046,
+    "combined": 0.6961613532856213,
+    "gain": 0.06376057254391676,
+    "p": 9.999000099990002e-05,
+    "null_q95": 0.021795705920624575,
+    "n_mixed": 122,
+    "n_unsafe": 367,
+    "n_safe": 1129,
+    "per_set": {
+      "v3aware_internal_minus": {
+        "n_mixed": 48
+      },
+      "v4fresh_minus": {
+        "n_mixed": 74
+      }
+    },
+    "observer_model": "qwen",
+    "reject": true
+  },
+  "H5_secondary": {
+    "actor": 0.6870527000650618,
+    "observer": 0.6372804163955758,
+    "combined": 0.6932335718932986,
+    "gain": 0.05595315549772284,
+    "p": 9.999000099990002e-05,
+    "null_q95": 0.021145087833441767,
+    "n_mixed": 122,
+    "n_unsafe": 367,
+    "n_safe": 1129,
+    "per_set": {
+      "v3aware_internal_minus": {
+        "n_mixed": 48
+      },
+      "v4fresh_minus": {
+        "n_mixed": 74
+      }
+    },
+    "observer_model": "llama",
+    "reject": null
+  },
+  "decision": "SUPPORTED"
+}

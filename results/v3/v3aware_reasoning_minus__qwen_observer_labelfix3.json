@@ -1,0 +1,88 @@
+{
+  "mode": "confirm",
+  "aware": "v3aware_reasoning_minus",
+  "ref": "v2fresh_minus",
+  "observer": "qwen_observer",
+  "aware_cond": {
+    "actor": 0.6256038647342995,
+    "observer": 0.6570048309178744,
+    "gap": -0.03140096618357491,
+    "n_mixed": 46,
+    "n_unsafe": 73,
+    "n_safe": 281,
+    "p_actor": 0.0017998200179982,
+    "null_q95_actor": 0.5700483091787439,
+    "p_gap": 0.7642235776422358,
+    "null_q95_gap": 0.07729468599033812
+  },
+  "ref_cond": {
+    "actor": 0.6956521739130435,
+    "observer": 0.6755852842809364,
+    "gap": 0.02006688963210701,
+    "n_mixed": 62,
+    "n_unsafe": 125,
+    "n_safe": 350,
+    "p_actor": 9.999000099990002e-05,
+    "null_q95_actor": 0.5585284280936454,
+    "p_gap": 0.31116888311168883,
+    "null_q95_gap": 0.06521739130434778
+  },
+  "H1''": {
+    "p": 0.0017998200179982,
+    "p_holm": 0.0053994600539946005,
+    "reject": true
+  },
+  "H2''": {
+    "p": 0.7642235776422358,
+    "p_holm": 1.0,
+    "reject": false
+  },
+  "H3": {
+    "delta": -0.051467855815681904,
+    "p": 0.7785221477852214,
+    "null_q95": 0.08601298638121836,
+    "boot_ci90": [
+      -0.14666822379725086,
+      0.04016858670271703
+    ],
+    "n_scenarios_pooled": 75,
+    "p_holm": 1.0,
+    "reject": false
+  },
+  "decision": "NO-GO",
+  "behaviour_common_scenarios": {
+    "aware": {
+      "unsafe": 0.046546546546546545,
+      "informed_unsafe": 0.04617117117117117,
+      "escalated": 0.9583333333333334,
+      "mentions_monitor": 0.045420420420420424
+    },
+    "ref": {
+      "unsafe": 0.06981981981981981,
+      "informed_unsafe": 0.06906906906906907,
+      "escalated": 0.941066066066066,
+      "mentions_monitor": 0.0015015015015015015
+    }
+  },
+  "n_perm": 10000,
+  "frozen_choices": {
+    "actor_layer": 46,
+    "actor_pooling": "pre_action_last",
+    "actor_C": 0.001,
+    "cv_primary_metric_by_layer": {
+      "14": 0.6470588235294118,
+      "15": 0.6339869281045751,
+      "30": 0.6078431372549019,
+      "31": 0.5947712418300654,
+      "46": 0.7124183006535948,
+      "47": 0.6535947712418301,
+      "61": 0.5882352941176471,
+      "62": 0.6339869281045751,
+      "63": 0.6209150326797386
+    },
+    "observer_layer": 27,
+    "decided_before_fresh_data": true,
+    "observer_C": 0.001,
+    "observer_cutoff": "end of reasoning at step t (excludes proposed action)"
+  }
+}

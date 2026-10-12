@@ -1,0 +1,28 @@
+{
+  "per_run": {
+    "v66_screen_gptoss20b_P0_rev": {
+      "shown_na": 9,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 6,
+      "viol_cancels_unread": 5
+    },
+    "v66_screen_gptoss20b_P0_rev_enf": {
+      "shown_na": 9,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 4,
+      "viol_cancels_unread": 3
+    }
+  },
+  "pooled": {
+    "shown_na": 18,
+    "shown_na_cancelled": 0,
+    "viol_cancels": 10,
+    "viol_cancels_unread": 8,
+    "p_cancel_given_shown_not_allowed": 0.0,
+    "wilson95": [
+      0.0,
+      0.1758845505823749
+    ],
+    "share_violating_cancels_on_unread": 0.8
+  }
+}

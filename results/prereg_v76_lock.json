@@ -1,0 +1,43 @@
+{
+ "locked_at": "2026-10-12T01:38:13.518150",
+ "sha256": {
+  "docs/preregistration_v76.md": "b1866f17c5ce1dc0d212c5accb8f8a9a76d7357063fb888569097da013563cf5",
+  "scripts/196_v76_refit.py": "feb8f07897b3def4425fb17f0deba558812d15ed6375a8155586807bcced91f3",
+  "scripts/191_v74_agentdojo.py": "fa1050db22783776b1c546f2e44b2dd7e22a1e8cc6cc77d534c05d867b1c5bbe",
+  "scripts/192_v74_analysis.py": "7750ae3823e6e2ee4ac3f05b2bd2dfd9ac80a6f5f7ac8b561de7b44776ca083a",
+  "scripts/174_vllm_steer.py": "773ae415dac136ff0b89a969318bf1a4aaaee4211281affc36161013d3ab8233",
+  "slurm/v76dev_part.sh": "b94d49e8e0729b6c902945ae1ea0340fae9b447e73e6158c147b478acfde7846",
+  "slurm/v76conf_arm.sh": "229461fc47da8f9c5c82cef2f226a478fca9d6d13825cb87fd7c0422afb47dde",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24"
+ },
+ "note": "locked before any v76 generation/feature/fit; refit script tested end to end on synthetic data (scratchpad). 191 change: optional V74_SHARD (unsharded behaviour unchanged).",
+ "addenda": [
+  {
+   "at": "2026-10-12T03:02:55.090975",
+   "name": "Addendum 1 (gpt-oss, Muse)",
+   "sha256": {
+    "docs/preregistration_v76.md": "2f03ffadfd1d139ece2f85ea08f029c152eb66605bcf86dba1a22c385a499f64",
+    "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+    "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86"
+   }
+  },
+  {
+   "at": "2026-10-12T04:53:54.053421",
+   "name": "Addendum 2 (shard gate arm across GPUs)",
+   "sha256": {
+    "docs/preregistration_v76.md": "48cd7b5539d2670b43c382a6bed36fd5513569aa82426462ec7c28e323f9f102",
+    "slurm/v76conf_shard.sh": "bcfc2806194f8ac2e851c8d41aac64c113b0126bae05b0eb69c62814eb03a8a4",
+    "scripts/198_merge_shards.py": "561f2af0ac424162f52d705146b6fddc2b37e2eddca38e09692ab3395eea79fc",
+    "scripts/191_v74_agentdojo.py": "fa1050db22783776b1c546f2e44b2dd7e22a1e8cc6cc77d534c05d867b1c5bbe"
+   }
+  },
+  {
+   "at": "2026-10-12T07:32:25.661865",
+   "name": "Addendum 3 (server-error episodes excluded with pair)",
+   "sha256": {
+    "docs/preregistration_v76.md": "ebfbd7f951bb4b55d469a388dc499f28701d447d26c46a0d119b2563364dc75a",
+    "scripts/192_v74_analysis.py": "cfac9f6c033cf91d24a4313e4a20d6bffd515ce6e9d951752eee2f46bb335d55"
+   }
+  }
+ ]
+}

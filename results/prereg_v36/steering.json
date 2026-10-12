@@ -1,0 +1,60 @@
+{
+ "S1_plus_decreases_misrep": {
+  "n": 106,
+  "rate_none": 0.217,
+  "rate_plus": 0.226,
+  "discordant_up": 6,
+  "discordant_down": 5,
+  "p_one_sided": 0.7255859375,
+  "holm_p": 0.9108581542968748
+ },
+ "S1_minus_increases_misrep": {
+  "n": 106,
+  "rate_none": 0.217,
+  "rate_minus": 0.245,
+  "discordant_up": 9,
+  "discordant_down": 6,
+  "p_one_sided": 0.30361938476562494,
+  "holm_p": 0.9108581542968748
+ },
+ "S2_plus_increases_candid": {
+  "n": 106,
+  "rate_none": 0.104,
+  "rate_plus": 0.123,
+  "discordant_up": 7,
+  "discordant_down": 5,
+  "p_one_sided": 0.38720703125,
+  "holm_p": 0.9108581542968748
+ },
+ "S3_mention_rate": {
+  "none": 0.962,
+  "plus": 0.962,
+  "minus": 0.962
+ },
+ "S3_gen_tokens": {
+  "minus": 364.1,
+  "none": 346.0,
+  "plus": 359.6
+ },
+ "causal_involvement": false,
+ "by_orig_label_misrep_rate": {
+  "minus": {
+   "CANDID": 0.5,
+   "MISREPRESENTED": 0.476,
+   "OMITTED": 0.0,
+   "SPIN": 0.158
+  },
+  "none": {
+   "CANDID": 0.5,
+   "MISREPRESENTED": 0.429,
+   "OMITTED": 0.0,
+   "SPIN": 0.132
+  },
+  "plus": {
+   "CANDID": 0.375,
+   "MISREPRESENTED": 0.429,
+   "OMITTED": 0.0,
+   "SPIN": 0.158
+  }
+ }
+}

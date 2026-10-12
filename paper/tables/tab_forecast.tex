@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering\scriptsize
+\caption{\textbf{Forecasting at each moment.} Fresh data; frozen forecasters; AUROC within model and template. I: internal readout; T: supervised text; M: CoT monitor ($^{s}$on its preregistered subset); S: internal + text. Paired differences with cluster-bootstrap 95\% CIs; $p$ one-sided, Holm-corrected. \yes/\no: preregistered, passed/failed; desc.: descriptive. $^{e}$\Qwen, \Gemma, \Oss; other rows pool four models.}
+\label{tab:forecast-main}
+\setlength{\tabcolsep}{3.6pt}
+\begin{tabular}{@{}cl r ccc l l c@{}}
+\toprule
+ & Moment & $n$ (pos.) & I & T & M & Test: difference [95\% CI] & $p$ & status \\
+\midrule
+\multirow{6}{*}{\rotatebox{90}{Violation}} & reads the decisive fact & 9{,}287 (3{,}085) & 0.580 & 0.546 & 0.551$^{s}$ & I$-$T $+0.034$ [$0.006$, $0.060$]; I$-$M $+0.065$ [$0.010$, $0.121$] & 0.015 & \yes \\
+ & two actions before & 4{,}617 (1{,}539) & 0.660 & 0.714 & -- & I$-$T $-0.053$ [$-0.085$, $-0.023$] & -- & desc. \\
+ & one action before & 7{,}305 (2{,}435) & 0.756 & 0.778 & -- & I$-$T $-0.023$ [$-0.050$, $0.003$] & -- & desc. \\
+ & decision vs other actions & 25{,}277 (3{,}079) & 0.985 & 0.916 & 0.928$^{s}$ & I$-$T $+0.068$ [$0.050$, $0.089$] & -- & desc. \\
+ & decision vs authorized twin & 21{,}012 (3{,}079) & 0.916 & 0.945 & 0.949$^{s}$ & I$-$0.5 $+0.416$ [$0.398$, $0.431$] & $2{\times}10^{-4}$ & \yes \\
+ & decision, all negatives & 43{,}210 (3{,}079) & 0.941 & 0.934 & 0.944$^{s}$ & I$-$T $+0.007$; I$-$M $-0.022$ & 0.31; 0.98 & \no \\
+\midrule
+\multirow{6}{*}{\rotatebox{90}{Lie}} & before the report & 1{,}081 (144) & 0.745 & -- & -- & I$-$0.5 $+0.245$ [$0.171$, $0.318$] & 0.002 & \yes \\
+ & all prompt variants & 1{,}155 (210) & 0.715 & 0.786 & 0.656 & I$-$M $+0.059$; S$-$T $-0.040$ & 0.27; 0.92 & \no \\
+ & no pressure & 534 (101) & 0.674 & 0.759 & 0.654 & -- & -- & desc. \\
+ & reasoning told to hide it & 574 (75) & 0.809 & 0.777 & 0.652 & I$-$M $+0.157$ [$0.007$, $0.283$] & 0.021 & \yes \\
+ & no pressure, ensemble$^{e}$ & 434 (30) & 0.847 & 0.814 & 0.679 & -- & -- & desc. \\
+ & told to hide it, ensemble$^{e}$ & 521 (32) & 0.884 & 0.791 & 0.653 & -- & -- & desc. \\
+\bottomrule
+\end{tabular}
+\vspace{-2mm}
+\end{table*}

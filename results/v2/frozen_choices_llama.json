@@ -1,0 +1,6 @@
+{
+  "observer": "meta-llama/Llama-3.1-8B-Instruct",
+  "layer": 24,
+  "C": 0.001,
+  "cutoff": "end of reasoning at step t"
+}

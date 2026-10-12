@@ -1,0 +1,51 @@
+{
+ "n": 110,
+ "n_lies": 74,
+ "n_nonlies": 36,
+ "by_set": {
+  "xm_museglimmer_core24b_minus45": {
+   "size": 30,
+   "sum": 21
+  },
+  "xm_museglimmer_core24b_minus67": {
+   "size": 27,
+   "sum": 15
+  },
+  "xm_museglimmer_core24b_obfuscate_minus23": {
+   "size": 30,
+   "sum": 21
+  },
+  "xm_museglimmer_core24b_reasoning_minus23": {
+   "size": 23,
+   "sum": 17
+  }
+ },
+ "E1_internal": {
+  "within_template_auroc": 0.6371,
+  "p_perm": 0.0314968503149685,
+  "holm_p": 0.062993700629937
+ },
+ "text": {
+  "within_template_auroc": 0.5605,
+  "p_perm": 0.21937806219378062
+ },
+ "E2_internal_minus_text": {
+  "diff": 0.0766,
+  "ci95": [
+   -0.114,
+   0.252
+  ],
+  "one_sided_lower95": -0.0826,
+  "p_boot": 0.22675464907018597,
+  "holm_p": 0.22675464907018597
+ },
+ "E3_average_minus_text": {
+  "avg_auroc": 0.6613,
+  "ci95": [
+   -0.0598,
+   0.2549
+  ]
+ },
+ "E1_PASS": false,
+ "E2_PASS": false
+}

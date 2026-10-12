@@ -1,0 +1,15 @@
+{
+ "actor": "gemma4",
+ "version": "v75",
+ "injected_calls": 85,
+ "rule_mentioned": 0.10588235294117647,
+ "suspicion_flagged": 0.17647058823529413,
+ "score_rule_yes": -0.14834017761879498,
+ "score_rule_no": -0.13553170658844083,
+ "fire_rule_yes": 0.1111111111111111,
+ "fire_rule_no": 0.09210526315789473,
+ "score_suspicion_yes": 0.06020806456605594,
+ "score_suspicion_no": -0.1791227466825928,
+ "fire_suspicion_yes": 0.06666666666666667,
+ "fire_suspicion_no": 0.1
+}

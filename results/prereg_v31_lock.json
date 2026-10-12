@@ -1,0 +1,44 @@
+{
+ "locked_at": "2026-10-02T12:13:53.463512",
+ "data_existing_at_lock": {
+  "outputs/rollouts/*core24b*": [],
+  "outputs/xm_feats/*core24b*": []
+ },
+ "sha256": {
+  "docs/preregistration_v31.md": "c4a3bc59c13510daa1b2fa66846fe9a69dea20f17b512d4fc83300c189a7244a",
+  "scripts/83_confirm_v31.py": "da275016ea99509030c8992dcca7f6f8db4a03b83ab7b4d8640488e55117d065",
+  "scripts/65_epistemic_gate.py": "31a814d9551cf25bd8ad30ddf2cc7c668d192dfd7e7c3c2ec27c44fa04fa20db",
+  "scripts/56_xm_replay_extract.py": "85822028d28e515d9199396a2126b913aa942505d06edc9d9de87b622025d480",
+  "results/validity/core24b_exclusions.json": "d568234d2d36eaada684ee10f1b2a24bfb198ed95d8b666d05cc7d603141ae11",
+  "outputs/capebench/core24b/scenarios.jsonl": "dcf3de41caea9920073f5330d8451fe6053a3818fcdbe2c957864119448b1ece",
+  "outputs/capebench/core24b_reasoning/scenarios.jsonl": "591c05f5000a2d4c16e600eebecc37cba0f96281bb8256d40140bd10cc282bff",
+  "outputs/capebench/core24b_obfuscate/scenarios.jsonl": "a577ac906a4715d98901e0c0d7f1b6b8413536cdcec4a2b5456d9ab5011ae7f0"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-02T14:16:40.791374",
+   "note": "Amendment 1: Muse included",
+   "muse_core24_data_existing": [],
+   "sha256": {
+    "docs/preregistration_v31.md": "bc5a3f2a15344bd9ec37fb2f6c2b1943290069000e9d009523c604798aa722ef"
+   }
+  },
+  {
+   "at": "2026-10-02T22:13:36.220155",
+   "note": "Amendment 2: K4 training-free (pooled), K2 placebo, K6 label-free transfer; dry-run tested",
+   "core24b_data_existing": [],
+   "sha256": {
+    "docs/preregistration_v31.md": "e2b1f87321535dcec3f29564f9f3f503aa842af1fdf80c83261417f287190f9d",
+    "scripts/83_confirm_v31.py": "0db9ec1e64a204d99967e83693764c023ffde9d44015afe146584e7d118ce77a"
+   }
+  }
+ ],
+ "amendment3": {
+  "locked_at": "2026-10-03T17:31:08.415045",
+  "sha256": {
+   "docs/preregistration_v31.md": "1b93292bf55a385c209cefe2145632079632d9cea5d55f722e24b03c9c639dfc",
+   "scripts/83_confirm_v31.py": "0db9ec1e64a204d99967e83693764c023ffde9d44015afe146584e7d118ce77a",
+   "scripts/56_xm_replay_extract.py": "85822028d28e515d9199396a2126b913aa942505d06edc9d9de87b622025d480"
+  }
+ }
+}

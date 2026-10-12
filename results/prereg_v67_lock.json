@@ -1,0 +1,12 @@
+{
+ "locked_at": "2026-10-11T13:12:38.250603",
+ "sha256": {
+  "docs/preregistration_v67.md": "488dca2f0a076b4dbbcf156451d90a7547ec68318302cabe3f3757b03792e716",
+  "scripts/184_v67_approver.py": "062777c80e82fd6fd8955d15b0865de9ea5186bfe7ea8d7d4eef2c3ac2f936ca",
+  "scripts/183_v64_approver_sensitivity.py": "b9aa3ebca40d87e5c5bd35d8e8413968462b55bcd75ab8d36496e196963efd27",
+  "scripts/170_v64_e2e_all.py": "439b22ad8e0f2d1060b55191d367a8c4908587f719bf6d294d0ef395680991fb",
+  "slurm/v67.sh": "eb88ef3e56d423826b1b5f2f25b8ee1e23e00c542c345a8f682c0bcb25924be7"
+ },
+ "note": "locked before the v67 approver scored any ask and before the Qwen _esc64 asks exist (job 3534 still at step 6).",
+ "addenda": []
+}

@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering\scriptsize
+\caption{\textbf{Cost per action}: FLOPs of the internal readout, the agent's own turn and the CoT monitor (best case: prefix-cached; thinking included when measured), and the tokens the monitor reads. All 3{,}424 decision units; details in \cref{app:cost}.}
+\label{tab:cost-main}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+ & \multicolumn{3}{c}{FLOPs per action} & \multicolumn{2}{c}{Monitor relative to} & Monitor \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-6}
+Agent & readout & agent turn & monitor & agent & readout & tokens \\
+\midrule
+\Gemma & $5.6{\times}10^{4}$ & $2.8{\times}10^{12}$ & $1.1{\times}10^{14}$ & 41.2$\times$ & $2.0{\times}10^{9}$ & 4{,}383 \\
+\Oss & $5.8{\times}10^{4}$ & $1.7{\times}10^{12}$ & $1.1{\times}10^{14}$ & 63.9$\times$ & $1.9{\times}10^{9}$ & 3{,}481 \\
+\Muse & $1.3{\times}10^{5}$ & $1.4{\times}10^{13}$ & $1.1{\times}10^{14}$ & 7.7$\times$ & $8.3{\times}10^{8}$ & 4{,}314 \\
+\Qwen & $1.0{\times}10^{5}$ & $3.2{\times}10^{13}$ & $1.3{\times}10^{14}$ & 4.0$\times$ & $1.2{\times}10^{9}$ & 4{,}350 \\
+\bottomrule
+\end{tabular}
+\vspace{-3mm}
+\end{table}

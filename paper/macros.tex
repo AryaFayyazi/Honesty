@@ -1,0 +1,86 @@
+% ---------------- packages ----------------
+\usepackage{amsmath,amssymb,mathtools,amsthm}
+\usepackage{booktabs,multirow,makecell,colortbl,tabularx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric,fit,backgrounds,decorations.pathreplacing}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{xspace}
+\usepackage[capitalize,noabbrev]{cleveref}
+\setlist{nosep,leftmargin=1.1em}
+
+% ---------------- colours (Okabe-Ito; identical to scripts/120_paper_figures.py) ----------------
+\definecolor{cQwen}{HTML}{0072B2}\definecolor{cMuse}{HTML}{D55E00}
+\definecolor{cGemma}{HTML}{009E73}\definecolor{cOss}{HTML}{CC79A7}
+\definecolor{cInt}{HTML}{0072B2}\definecolor{cTxt}{HTML}{E69F00}
+\definecolor{cLie}{HTML}{C0392B}\definecolor{cHon}{HTML}{2E86AB}
+\definecolor{cUnsafe}{HTML}{C0392B}\definecolor{cLaunder}{HTML}{E67E22}
+\definecolor{cForecast}{HTML}{6C3483}\definecolor{cFix}{HTML}{1E8449}
+\definecolor{cPend}{HTML}{7F8C8D}\definecolor{cObs}{HTML}{5D6D7E}
+\definecolor{cOK}{HTML}{1E8449}\definecolor{cNO}{HTML}{C0392B}
+
+% ---------------- status marks and placeholders ----------------
+\newcommand{\yes}{\textcolor{cOK}{\ding{51}}}
+\newcommand{\no}{\textcolor{cNO}{\ding{55}}}
+\newcommand{\pend}{\textcolor{cPend}{\ding{109}}}
+% \PENDING{experiment}{expected}: a visible placeholder for a running, preregistered result
+\newcommand{\PENDING}[2]{\colorbox{cPend!15}{\scriptsize\textsf{\textcolor{cPend}{PENDING: #1 (#2)}}}}
+\newcommand{\PEND}[1]{\colorbox{cPend!15}{\scriptsize\textsf{\textcolor{cPend}{#1}}}}
+
+% ---------------- notation (every symbol is defined in Section 2 before use) ----------------
+\newcommand{\xm}{x^{-}}\newcommand{\xp}{x^{+}}
+\newcommand{\Rv}{t_{\mathrm{R}}}          % reveal step
+\newcommand{\Vv}{t_{\mathrm{V}}}          % violation step
+\newcommand{\Lr}{L}                       % laundering indicator
+\newcommand{\Y}{Y}                        % lie indicator
+\newcommand{\rep}{r}                      % final report
+\newcommand{\h}{h}                        % residual stream
+\newcommand{\feat}{\phi}                  % feature map
+\newcommand{\Aw}{\mathrm{AUC}_{\mathrm{w}}}
+\newcommand{\K}{K}\newcommand{\B}{B}
+\newcommand{\gap}{g}
+\newcommand{\lie}{\mathrm{lie}}
+\newcommand{\cmd}[1]{\texttt{\small #1}}
+\newcommand{\model}[1]{\textsc{#1}}
+\newcommand{\Qwen}{\textcolor{cQwen}{\textbf{Qwen3.8}}\xspace}
+\newcommand{\Muse}{\textcolor{cMuse}{\textbf{Muse}}\xspace}
+\newcommand{\Gemma}{\textcolor{cGemma}{\textbf{Gemma-4}}\xspace}
+\newcommand{\Oss}{\textcolor{cOss}{\textbf{gpt-oss}}\xspace}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{hypothesis}{Hypothesis}
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+
+% ---------------- episode walkthrough boxes (appendix) ----------------
+\tcbset{stepbase/.style={enhanced,breakable,boxrule=0.4pt,arc=1.2pt,left=3pt,right=3pt,top=1.5pt,bottom=1.5pt,
+  fontupper=\scriptsize,before skip=1.5pt,after skip=1.5pt,attach boxed title to top left={xshift=4pt,yshift=-2pt},
+  boxed title style={boxrule=0pt,arc=1pt,top=0pt,bottom=0pt,left=2pt,right=2pt},fonttitle=\tiny\sffamily\bfseries}}
+\newtcolorbox{stepbox}[3]{stepbase,colback=#1!6,colframe=#1!70!black,coltitle=white,colbacktitle=#1!80!black,title={#2},#3}
+\newcommand{\step}[4][]{\begin{stepbox}{#2}{#3}{#1}#4\end{stepbox}}
+% kinds -> colours
+\newcommand{\Sobs}[2]{\step{cObs}{#1 \textperiodcentered\ OBSERVATION}{#2}}
+\newcommand{\Sreveal}[2]{\step{cForecast}{#1 \textperiodcentered\ REVEAL (decisive fact)}{#2}}
+\newcommand{\Sunsafe}[2]{\step{cUnsafe}{#1 \textperiodcentered\ UNSAFE ACTION}{#2}}
+\newcommand{\Stool}[2]{\step{cHon}{#1 \textperiodcentered\ TOOL CALL}{#2}}
+\newcommand{\Sperm}[2]{\step{cLaunder}{#1 \textperiodcentered\ RETRO PERMISSION REQUEST}{#2}}
+\newcommand{\Sres}[2]{\step{cLaunder}{#1 \textperiodcentered\ PERMISSION RESULT}{#2}}
+\newcommand{\Sreason}[2]{\step{cPend}{#1 \textperiodcentered\ REASONING (excerpt)}{#2}}
+\newcommand{\Slie}[2]{\step{cLie}{#1 \textperiodcentered\ FINAL REPORT (lie)}{#2}}
+\newcommand{\Shon}[2]{\step{cFix}{#1 \textperiodcentered\ FINAL REPORT (candid)}{#2}}
+\newcommand{\Sint}[2]{\step{cFix}{#1 \textperiodcentered\ INTERVENTION}{#2}}
+\newcommand{\Slab}[2]{\step{black}{#1 \textperiodcentered\ LABEL}{#2}}
+\newcommand{\Snote}[1]{{\scriptsize\itshape\textcolor{cPend}{$\triangleright$ #1}}\par}
+
+\newcommand{\Dt}{t_{\mathrm{D}}}          % decision turn (first agent turn after the reveal)
+\newcommand{\hdec}{\h^{\mathrm{dec}}}      % decision state (last prompt token before the turn)
+\newcommand{\Vio}{\mathrm{Vio}}            % later unauthorized action indicator
+% float placement: allow tall full-width figures at page tops (default 0.7 deferred every figure to the end)
+\renewcommand{\dbltopfraction}{0.95}\renewcommand{\topfraction}{0.95}\renewcommand{\textfraction}{0.05}
+\renewcommand{\dblfloatpagefraction}{0.8}\renewcommand{\floatpagefraction}{0.8}\setcounter{dbltopnumber}{2}\setcounter{topnumber}{3}
+
+\newcommand{\fixedin}{$\Rightarrow$}   % scoreboard: failure fixed by the named later test

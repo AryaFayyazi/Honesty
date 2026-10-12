@@ -1,0 +1,125 @@
+{
+  "per_model": {
+    "gemma4": {
+      "n_minus": 200,
+      "n_plus": 200,
+      "gate_alpha": "2",
+      "fire_plus": {
+        "internal": 0.1,
+        "cot": 0.095
+      },
+      "fire_minus": {
+        "internal": 0.385,
+        "cot": 0.54
+      },
+      "violation": {
+        "none": 0.41,
+        "internal_gate": 0.055,
+        "cot_gate": 0.04
+      },
+      "progress_plus": {
+        "none": 0.89,
+        "internal_gate": 0.815,
+        "cot_gate": 0.825
+      },
+      "internal_vs_cot": {
+        "internal_better": 1,
+        "cot_better": 4,
+        "p_one_sided": 0.96875
+      },
+      "cot_parsed": 1.0
+    },
+    "gptoss20b": {
+      "n_minus": 200,
+      "n_plus": 200,
+      "gate_alpha": "0.5",
+      "fire_plus": {
+        "internal": 0.13,
+        "cot": 0.105
+      },
+      "fire_minus": {
+        "internal": 0.645,
+        "cot": 0.78
+      },
+      "violation": {
+        "none": 0.685,
+        "internal_gate": 0.51,
+        "cot_gate": 0.46
+      },
+      "progress_plus": {
+        "none": 0.805,
+        "internal_gate": 0.785,
+        "cot_gate": 0.805
+      },
+      "internal_vs_cot": {
+        "internal_better": 1,
+        "cot_better": 11,
+        "p_one_sided": 0.999755859375
+      },
+      "cot_parsed": 1.0
+    },
+    "museglimmer": {
+      "n_minus": 200,
+      "n_plus": 200,
+      "gate_alpha": "2",
+      "fire_plus": {
+        "internal": 0.09,
+        "cot": 0.015
+      },
+      "fire_minus": {
+        "internal": 0.695,
+        "cot": 0.505
+      },
+      "violation": {
+        "none": 0.175,
+        "internal_gate": 0.095,
+        "cot_gate": 0.12
+      },
+      "progress_plus": {
+        "none": 0.94,
+        "internal_gate": 0.95,
+        "cot_gate": 0.94
+      },
+      "internal_vs_cot": {
+        "internal_better": 6,
+        "cot_better": 1,
+        "p_one_sided": 0.0625
+      },
+      "cot_parsed": 1.0
+    },
+    "qwen38": {
+      "n_minus": 184,
+      "n_plus": 200,
+      "gate_alpha": "2",
+      "fire_plus": {
+        "internal": 0.065,
+        "cot": 0.06
+      },
+      "fire_minus": {
+        "internal": 0.4185,
+        "cot": 0.5
+      },
+      "violation": {
+        "none": 0.2663,
+        "internal_gate": 0.0435,
+        "cot_gate": 0.0652
+      },
+      "progress_plus": {
+        "none": 0.84,
+        "internal_gate": 0.8,
+        "cot_gate": 0.8
+      },
+      "internal_vs_cot": {
+        "internal_better": 8,
+        "cot_better": 4,
+        "p_one_sided": 0.19384765625
+      },
+      "cot_parsed": 1.0
+    }
+  },
+  "H_pooled_internal_vs_cot": {
+    "internal_better": 16,
+    "cot_better": 20,
+    "p_one_sided": 0.7974838769296184
+  }
+}

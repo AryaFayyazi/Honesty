@@ -1,0 +1,49 @@
+{
+  "actor": "gemma4",
+  "n_sites": 24,
+  "n_scored": 23,
+  "gpu": "NVIDIA H100 NVL",
+  "prompt_tokens": {
+    "mean": 2478.75,
+    "p50": 2430.5,
+    "p90": 3571.9999999999995,
+    "n": 24
+  },
+  "gen_tokens": {
+    "mean": 254.875,
+    "p50": 135.5,
+    "p90": 493.49999999999994,
+    "n": 24
+  },
+  "t_agent_turn_s": {
+    "mean": 8.794272661325522,
+    "p50": 4.453016015235335,
+    "p90": 16.260695734620093,
+    "n": 24
+  },
+  "t_gate_scoring_call_s": {
+    "mean": 0.05075915299517953,
+    "p50": 0.038159034214913845,
+    "p90": 0.04382933285087347,
+    "n": 23
+  },
+  "t_readout_cpu_s": {
+    "mean": 0.0015007018947406955,
+    "p50": 0.001498628401197493,
+    "p90": 0.0015151880297809839,
+    "n": 23
+  },
+  "t_readout_gpu_s": {
+    "mean": 0.00024950023206031844,
+    "p50": 0.00024778544530272486,
+    "p90": 0.0002539486393332481,
+    "n": 23
+  },
+  "overhead_scoring_call_vs_turn": {
+    "mean": 0.015368252941779282,
+    "p50": 0.00836185456326284,
+    "p90": 0.01711264236787756,
+    "n": 23
+  },
+  "note": "scoring call = our implementation (extra prefix-cached prefill to the tool-call markup); an in-line capture during decoding needs no extra forward pass, leaving only the readout."
+}

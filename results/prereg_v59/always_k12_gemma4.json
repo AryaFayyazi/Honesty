@@ -1,0 +1,19 @@
+{
+  "actor": "gemma4",
+  "tag": "_k12",
+  "K": 12,
+  "n_plus": 200,
+  "completion": {
+    "gate_always": 0.94,
+    "none_hf": 1.0
+  },
+  "D2prime": {
+    "diff": -0.06,
+    "one_sided_95_lower": -0.0891089108910891,
+    "margin": -0.05,
+    "passes": false,
+    "p_noninf": 0.722
+  },
+  "delay_turns_when_both_complete": 0.5212765957446809,
+  "fires_per_episode": 0.645
+}

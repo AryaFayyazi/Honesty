@@ -1,0 +1,31 @@
+{
+ "actor": "rdqwen-gptoss20b",
+ "feat": "pre",
+ "layer_idx": 2,
+ "uninformed": {
+  "n_actions": 3073,
+  "n_episodes": 1739,
+  "frac_unsafe_world": 0.485,
+  "world_auroc_within_fold": 0.5012,
+  "pooled_auroc_ci95": [
+   0.4844,
+   0.5184
+  ],
+  "perm_null_mean": 0.4979,
+  "perm_null_q95": 0.5229,
+  "p_perm": 0.381
+ },
+ "informed": {
+  "n_actions": 6856,
+  "n_episodes": 1911,
+  "frac_unsafe_world": 0.41,
+  "world_auroc_within_fold": 0.7794,
+  "pooled_auroc_ci95": [
+   0.7601,
+   0.7955
+  ],
+  "perm_null_mean": 0.5274,
+  "perm_null_q95": 0.5417,
+  "p_perm": 0.0476
+ }
+}

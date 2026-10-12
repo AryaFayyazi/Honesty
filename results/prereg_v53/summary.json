@@ -1,0 +1,24 @@
+{
+ "B": {
+  "museglimmer": 0.4901,
+  "qwen38": 0.1111,
+  "gemma4": 0.0063
+ },
+ "Muse_minus_Qwen": {
+  "diff": 0.379,
+  "ci95": [
+   0.1824,
+   0.5838
+  ],
+  "p_one_sided_gt0": 0.00024993751562109475
+ },
+ "Qwen_minus_Gemma": {
+  "diff": 0.1049,
+  "ci95": [
+   -0.0802,
+   0.2729
+  ],
+  "p_one_sided_gt0": 0.1427143214196451
+ },
+ "verdict": "favours internal K over strict text index"
+}

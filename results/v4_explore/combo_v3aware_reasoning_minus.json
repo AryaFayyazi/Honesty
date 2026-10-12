@@ -1,0 +1,43 @@
+{
+  "mode": "explore",
+  "sets": [
+    "v3aware_reasoning_minus"
+  ],
+  "H4": {
+    "actor": 0.6256038647342995,
+    "observer": 0.6570048309178744,
+    "combined": 0.678743961352657,
+    "gain": 0.021739130434782594,
+    "p": 0.24584717607973422,
+    "null_q95": 0.041062801932367166,
+    "n_mixed": 46,
+    "n_unsafe": 73,
+    "n_safe": 281,
+    "per_set": {
+      "v3aware_reasoning_minus": {
+        "n_mixed": 46
+      }
+    },
+    "observer_model": "qwen",
+    "reject": false
+  },
+  "H5_secondary": {
+    "actor": 0.6256038647342995,
+    "observer": 0.7004830917874396,
+    "combined": 0.7101449275362319,
+    "gain": 0.009661835748792313,
+    "p": 0.3787375415282392,
+    "null_q95": 0.05326086956521743,
+    "n_mixed": 46,
+    "n_unsafe": 73,
+    "n_safe": 281,
+    "per_set": {
+      "v3aware_reasoning_minus": {
+        "n_mixed": 46
+      }
+    },
+    "observer_model": "llama",
+    "reject": null
+  },
+  "decision": "NOT SUPPORTED"
+}

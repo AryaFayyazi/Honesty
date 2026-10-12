@@ -1,0 +1,31 @@
+{
+ "actor": "gptoss20b",
+ "feat": "pre",
+ "layer_idx": 2,
+ "uninformed": {
+  "n_actions": 2211,
+  "n_episodes": 1296,
+  "frac_unsafe_world": 0.674,
+  "world_auroc_within_fold": 0.5489,
+  "pooled_auroc_ci95": [
+   0.5228,
+   0.5782
+  ],
+  "perm_null_mean": 0.5037,
+  "perm_null_q95": 0.5343,
+  "p_perm": 0.0476
+ },
+ "informed": {
+  "n_actions": 4840,
+  "n_episodes": 1339,
+  "frac_unsafe_world": 0.581,
+  "world_auroc_within_fold": 0.7691,
+  "pooled_auroc_ci95": [
+   0.7471,
+   0.7896
+  ],
+  "perm_null_mean": 0.5399,
+  "perm_null_q95": 0.5627,
+  "p_perm": 0.0476
+ }
+}

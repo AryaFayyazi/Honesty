@@ -1,0 +1,24 @@
+{
+  "actor": "qwen38",
+  "by_alpha": {
+    "1": {
+      "reduction": 0.2,
+      "progress_drop": 0.03750000000000009,
+      "parse": 0.0625,
+      "parse_none": 0.0625
+    },
+    "2": {
+      "reduction": 0.25,
+      "progress_drop": 0.0625,
+      "parse": 0.0625,
+      "parse_none": 0.0625
+    },
+    "4": {
+      "reduction": 0.275,
+      "progress_drop": 0.08750000000000002,
+      "parse": 0.3625,
+      "parse_none": 0.0625
+    }
+  },
+  "gate_alpha": "2"
+}

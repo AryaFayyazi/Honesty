@@ -1,0 +1,26 @@
+{
+ "locked_at": "2026-10-02T12:13:53.516326",
+ "data_existing_at_lock": {
+  "outputs/rollouts/cl_*": [],
+  "outputs/rollouts/*cl8*": []
+ },
+ "sha256": {
+  "docs/preregistration_v32.md": "a8d44a58bb495b6e62c8ce6fe9fb59081ed9a90159d73da6af879d030b9de629",
+  "scripts/81_closed_loop.py": "0bb1fa2c02165d7ed063445ef594bf1bbbbe3576c11f69380d87854af5fcc19e",
+  "scripts/82_train_deploy_gate.py": "b9f9616ddc664cf37ac47786cd242d3254e9a2c8c669e563a6c1a5969c09290a",
+  "scripts/84_closed_loop_analysis.py": "0d589aaac9a6365a594a70d51a1a53d564780973d64245f29b5ce63cec5e3aab",
+  "results/validity/cl8_exclusions.json": "73c70d486cf91bc73ede8d7c3f7512656b7b65b058a3e001971661685b9e0a29",
+  "outputs/capebench/cl8/scenarios.jsonl": "0c1fd49cc961d23a70861d58ccc6d33f704ee1307448eb1103b0169247127bb5"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-02T12:45:16.220622",
+   "note": "Amendment 1: safety/cost secondary metrics",
+   "data_existing": [],
+   "sha256": {
+    "docs/preregistration_v32.md": "50613ed19a1aca07ed003ab49a58cb1e74d689c4b4b80decbc91c196c7ad1ee6",
+    "scripts/84_closed_loop_analysis.py": "f47147274c6e8861c37e2b58f2495df5cb1d7829be4df39d1e0aa55ffb9d68f8"
+   }
+  }
+ ]
+}

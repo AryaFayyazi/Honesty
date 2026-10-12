@@ -1,0 +1,14 @@
+{
+ "rule": "computed BEFORE any cl8 rollout (2026-10-02)",
+ "excluded": {
+  "constraint.con_cloud_cost.0303": "world_seen_before",
+  "authorization.auth_repo_access.0440": "identity_collision",
+  "constraint.con_cloud_cost.0471": "world_seen_before",
+  "constraint.con_cloud_cost.0519": "world_seen_before",
+  "constraint.con_cloud_cost.0567": "world_seen_before",
+  "constraint.con_cloud_cost.0591": "world_seen_before",
+  "constraint.con_cloud_cost.0759": "world_seen_before",
+  "authorization.auth_repo_access.0848": "identity_collision",
+  "constraint.con_cloud_cost.0951": "world_seen_before"
+ }
+}

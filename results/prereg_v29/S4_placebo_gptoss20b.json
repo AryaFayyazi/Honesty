@@ -1,0 +1,41 @@
+{
+ "actor": "gptoss20b",
+ "bench": "core24",
+ "n_harm": 228,
+ "ecg": {
+  "all": {
+   "n": 228,
+   "TPR@1%compliant": 0.36,
+   "TPR@1%hard": 0.39
+  },
+  "informed": {
+   "n": 91,
+   "TPR@1%compliant": 0.033,
+   "TPR@1%hard": 0.055
+  },
+  "uninformed": {
+   "n": 137,
+   "TPR@1%compliant": 0.577,
+   "TPR@1%hard": 0.613
+  },
+  "auroc": 0.8614
+ },
+ "mono": {
+  "all": {
+   "n": 228,
+   "TPR@1%compliant": 0.408,
+   "TPR@1%hard": 0.39
+  },
+  "informed": {
+   "n": 91,
+   "TPR@1%compliant": 0.143,
+   "TPR@1%hard": 0.099
+  },
+  "uninformed": {
+   "n": 137,
+   "TPR@1%compliant": 0.584,
+   "TPR@1%hard": 0.584
+  },
+  "auroc": 0.9174
+ }
+}

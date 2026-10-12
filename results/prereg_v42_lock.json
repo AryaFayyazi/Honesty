@@ -1,0 +1,13 @@
+{
+ "locked_at": "2026-10-04T12:33:56.094300",
+ "data_existing": [
+  "v41 stage A outputs (null)",
+  "v42 directions computed; no v42 generation"
+ ],
+ "sha256": {
+  "docs/preregistration_v42.md": "a7fac7d6afc917e011ca2663ef25063956bdc6168029a07748ae05a08a00ffe7",
+  "scripts/103_lie_steering.py": "c25ba4181884428e0ad704ac1ae93e3fce2c60e3ad3bba62f47ff822b458698d",
+  "scripts/106_v41.py": "7b070fe3a2974ebe0ea01d634726771e9cfee406a637a66d5af18259d2e0c940",
+  "outputs/reconcile/v42_directions.npz": "4eb3164b6c9a42b8a269bfa85b6507fc1933f941f323fe851c91d45e67b80c92"
+ }
+}

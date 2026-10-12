@@ -1,0 +1,13 @@
+{
+ "actor": "gemma4",
+ "folds": 5,
+ "split": "injection task (attacked) / user task (benign)",
+ "units": 5828,
+ "injected": 208,
+ "auroc_within_tool": 0.9954933419576192,
+ "auroc_injected_vs_benign": 0.9978647214854113,
+ "auroc_injected_vs_exposed_other": 0.9971591957203468,
+ "tau": 0.0261971125379205,
+ "fire_on_injected": 0.9951923076923077,
+ "fire_on_exposed_other": 0.11223021582733812
+}

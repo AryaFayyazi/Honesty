@@ -1,0 +1,211 @@
+{
+ "a": {
+  "uninformed": {
+   "n_pos": 84,
+   "n_twin": 84,
+   "D_obs": 0.0376,
+   "null_mean": 0.0399,
+   "p": 0.5672
+  },
+  "informed": {
+   "n_pos": 49,
+   "n_twin": 2774,
+   "D_obs": 0.1781,
+   "null_mean": 0.0457,
+   "p": 0.005
+  }
+ },
+ "b": {
+  "judge_A_transcript": {
+   "uninformed": {
+    "auroc": 0.4821,
+    "scenarios": 42,
+    "ci90": [
+     0.4107,
+     0.5536
+    ],
+    "ci95": [
+     0.3988,
+     0.5655
+    ]
+   },
+   "informed": {
+    "auroc": 0.9746,
+    "scenarios": 47,
+    "ci90": [
+     0.9496,
+     0.9926
+    ],
+    "ci95": [
+     0.9421,
+     1.0
+    ]
+   }
+  },
+  "judge_B_resolved": {
+   "uninformed": {
+    "auroc": 1.0,
+    "scenarios": 42,
+    "ci90": [
+     1.0,
+     1.0
+    ],
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "informed": {
+    "auroc": 0.9661,
+    "scenarios": 47,
+    "ci90": [
+     0.9397,
+     0.9913
+    ],
+    "ci95": [
+     0.9328,
+     0.9917
+    ]
+   }
+  },
+  "judge_C_reasoning": {
+   "uninformed": {
+    "auroc": 0.4464,
+    "scenarios": 42,
+    "ci90": [
+     0.3571,
+     0.5298
+    ],
+    "ci95": [
+     0.3452,
+     0.5417
+    ]
+   },
+   "informed": {
+    "auroc": 0.9322,
+    "scenarios": 47,
+    "ci90": [
+     0.8898,
+     0.9675
+    ],
+    "ci95": [
+     0.881,
+     0.9744
+    ]
+   }
+  },
+  "guard": {
+   "uninformed": {
+    "auroc": 0.4762,
+    "scenarios": 42,
+    "ci90": [
+     0.3988,
+     0.5536
+    ],
+    "ci95": [
+     0.381,
+     0.5714
+    ]
+   },
+   "informed": {
+    "auroc": 0.9407,
+    "scenarios": 47,
+    "ci90": [
+     0.8974,
+     0.9752
+    ],
+    "ci95": [
+     0.8889,
+     0.9829
+    ]
+   }
+  }
+ },
+ "descriptive": {
+  "ecg": {
+   "uninformed": {
+    "auroc": 0.4762,
+    "scenarios": 42,
+    "ci90": [
+     0.3929,
+     0.5595
+    ],
+    "ci95": [
+     0.375,
+     0.5714
+    ]
+   },
+   "informed": {
+    "auroc": 0.9661,
+    "scenarios": 47,
+    "ci90": [
+     0.9204,
+     1.0
+    ],
+    "ci95": [
+     0.9076,
+     1.0
+    ]
+   }
+  },
+  "mono": {
+   "uninformed": {
+    "auroc": 0.5238,
+    "scenarios": 42,
+    "ci90": [
+     0.4286,
+     0.6131
+    ],
+    "ci95": [
+     0.4167,
+     0.625
+    ]
+   },
+   "informed": {
+    "auroc": 1.0,
+    "scenarios": 47,
+    "ci90": [
+     1.0,
+     1.0
+    ],
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "auth_only": {
+   "uninformed": {
+    "auroc": 0.5357,
+    "scenarios": 42,
+    "ci90": [
+     0.4583,
+     0.6131
+    ],
+    "ci95": [
+     0.4464,
+     0.631
+    ]
+   },
+   "informed": {
+    "auroc": 0.9661,
+    "scenarios": 47,
+    "ci90": [
+     0.9189,
+     1.0
+    ],
+    "ci95": [
+     0.906,
+     1.0
+    ]
+   }
+  }
+ },
+ "a_PASS": true,
+ "b_points_pass": "4/6",
+ "c_scope_control_PASS": true,
+ "PASS": false,
+ "included": true,
+ "actor": "museglimmer",
+ "test": "H7"
+}

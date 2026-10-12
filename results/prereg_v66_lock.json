@@ -1,0 +1,40 @@
+{
+ "locked_at": "2026-10-11T11:12:26.774508",
+ "sha256": {
+  "docs/preregistration_v66.md": "6eb7aa68f062293d334944766e290f3d466a2bcf56283836ed1b7d4be39f0981",
+  "scripts/172_v65_tau2_run.py": "a06860c7813a0f67a7bffafd7da5753806e124d2373ad96cd510dd1f9bb029b3",
+  "scripts/173_v65_analysis.py": "2533c5ea2650a66d2efd49bda099910307508031bc58506ba8e915eb3148e188",
+  "scripts/174_vllm_steer.py": "206ee543fed0899341e3d07833cf0a81913fbda2b31080b9cafd58a2bdf4a975",
+  "scripts/180_v66_dissociation.py": "4df59df38492eb9adc297192e3ad52eaa7b487d118f299fab7711db555a33cb8",
+  "slurm/v66s.sh": "90250524aaee72d7071adb0d12d38c5a149ae632c720cc9d508b50b36e5a504c",
+  "slurm/v66cell_dev.sh": "52b122ca7c44e09b805faca12382b453f57ef8cccd9e8fd2c830aad8e834ceb6",
+  "slurm/v66cell_conf.sh": "cf1ef96827bd4028409b95dacb154befabdc79edd4fd37d1c4d1fa72d3428230",
+  "src/cape/tau2port/__init__.py": "11c9120c631bd35bd1d992d238b7e6873e0fc3ddc5293b5bbdad817f5f8706bd",
+  "results/v27/oracle_validation.json": "ab1f7a8edaadf778024b0fd284a71e4728a44f1eb939f8afc2e856e66369b1ad"
+ },
+ "note": "locked before any v66 data (no oracle-condition simulation has ever run). 172 change verified additive on v65 conf none arm (identical old columns). 173 regression vs the v65 calibration running; must pass before any v66 development calibration.",
+ "addenda": [
+  {
+   "at": "2026-10-11T11:13:10.436762",
+   "what": "173 regression PASSED (no file changed): recalibrating v65_dev_gptoss20b_P0_enf with the patched 173 (tag=_regtest, positive=adj) reproduces results/prereg_v65/calibration.json exactly (only the new keys tag/positive added; tau 2.019286870956421 refit identical). Test outputs deleted."
+  },
+  {
+   "at": "2026-10-11T13:23:57.628185",
+   "what": "Addendum 1: reveal condition (P0_rev, P0_rev_enf), informed label extended to shown notices, selection over 12 cells; before 5 of 6 oracle screens and before any development data",
+   "sha256": {
+    "docs/preregistration_v66.md": "ec11db33bb0d6a25ddfa734df744db12d23cb3154e6784b9131066113f5a6c7e",
+    "src/cape/tau2port/__init__.py": "18ef993e5ff4b39921252793f7ef39b43474e773b88715e6f56d633c9ade4c95",
+    "scripts/172_v65_tau2_run.py": "03fd076380adbd6d7e9fab678a57dfee992692b4d96370290f37adb9ae6d2243"
+   }
+  },
+  {
+   "at": "2026-10-11T14:15:31.193794",
+   "what": "Addendum 2: contingency persistent-customer conditions (P0_rev_pu, P0_rev_enf_pu) if no cell reaches 10% informed; 172 passes --user explicitly (default unchanged); before Qwen/Gemma reveal screens report",
+   "sha256": {
+    "docs/preregistration_v66.md": "40cb15a0da9e5f153e0e569b7207652d43e58713c1913ab9276c5242bb67749a",
+    "src/cape/tau2port/__init__.py": "da699b0dc87d5beed582b058eafeb4d952f1f775cef61bfccf96c8928189474c",
+    "scripts/172_v65_tau2_run.py": "b8edc2995dafaf37fec5ea97b138423a134c229e63f0e8af71a507932f5d7ed2"
+   }
+  }
+ ]
+}

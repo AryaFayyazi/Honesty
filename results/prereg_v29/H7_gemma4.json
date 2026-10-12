@@ -1,0 +1,211 @@
+{
+ "a": {
+  "uninformed": {
+   "n_pos": 165,
+   "n_twin": 156,
+   "D_obs": 0.0303,
+   "null_mean": 0.0313,
+   "p": 0.5622
+  },
+  "informed": {
+   "n_pos": 234,
+   "n_twin": 2320,
+   "D_obs": 0.0826,
+   "null_mean": 0.0222,
+   "p": 0.005
+  }
+ },
+ "b": {
+  "judge_A_transcript": {
+   "uninformed": {
+    "auroc": 0.5799,
+    "scenarios": 80,
+    "ci90": [
+     0.5261,
+     0.6333
+    ],
+    "ci95": [
+     0.5166,
+     0.6452
+    ]
+   },
+   "informed": {
+    "auroc": 0.9401,
+    "scenarios": 184,
+    "ci90": [
+     0.9143,
+     0.9611
+    ],
+    "ci95": [
+     0.9093,
+     0.9647
+    ]
+   }
+  },
+  "judge_B_resolved": {
+   "uninformed": {
+    "auroc": 1.0,
+    "scenarios": 80,
+    "ci90": [
+     1.0,
+     1.0
+    ],
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "informed": {
+    "auroc": 0.9481,
+    "scenarios": 184,
+    "ci90": [
+     0.9281,
+     0.9674
+    ],
+    "ci95": [
+     0.9244,
+     0.9705
+    ]
+   }
+  },
+  "judge_C_reasoning": {
+   "uninformed": {
+    "auroc": 0.5167,
+    "scenarios": 80,
+    "ci90": [
+     0.4529,
+     0.5814
+    ],
+    "ci95": [
+     0.4425,
+     0.5914
+    ]
+   },
+   "informed": {
+    "auroc": 0.9102,
+    "scenarios": 184,
+    "ci90": [
+     0.8796,
+     0.9387
+    ],
+    "ci95": [
+     0.872,
+     0.944
+    ]
+   }
+  },
+  "guard": {
+   "uninformed": {
+    "auroc": 0.5446,
+    "scenarios": 80,
+    "ci90": [
+     0.4919,
+     0.5939
+    ],
+    "ci95": [
+     0.4846,
+     0.6042
+    ]
+   },
+   "informed": {
+    "auroc": 0.6567,
+    "scenarios": 184,
+    "ci90": [
+     0.6061,
+     0.7073
+    ],
+    "ci95": [
+     0.5945,
+     0.7157
+    ]
+   }
+  }
+ },
+ "descriptive": {
+  "ecg": {
+   "uninformed": {
+    "auroc": 0.5242,
+    "scenarios": 80,
+    "ci90": [
+     0.461,
+     0.5824
+    ],
+    "ci95": [
+     0.4516,
+     0.5947
+    ]
+   },
+   "informed": {
+    "auroc": 0.7725,
+    "scenarios": 184,
+    "ci90": [
+     0.7292,
+     0.813
+    ],
+    "ci95": [
+     0.7189,
+     0.8205
+    ]
+   }
+  },
+  "mono": {
+   "uninformed": {
+    "auroc": 0.5539,
+    "scenarios": 80,
+    "ci90": [
+     0.4889,
+     0.6231
+    ],
+    "ci95": [
+     0.4752,
+     0.6353
+    ]
+   },
+   "informed": {
+    "auroc": 0.8064,
+    "scenarios": 184,
+    "ci90": [
+     0.7631,
+     0.8468
+    ],
+    "ci95": [
+     0.7543,
+     0.8547
+    ]
+   }
+  },
+  "auth_only": {
+   "uninformed": {
+    "auroc": 0.5204,
+    "scenarios": 80,
+    "ci90": [
+     0.4599,
+     0.5807
+    ],
+    "ci95": [
+     0.448,
+     0.5914
+    ]
+   },
+   "informed": {
+    "auroc": 0.7764,
+    "scenarios": 184,
+    "ci90": [
+     0.737,
+     0.8191
+    ],
+    "ci95": [
+     0.7285,
+     0.8257
+    ]
+   }
+  }
+ },
+ "a_PASS": true,
+ "b_points_pass": "5/6",
+ "c_scope_control_PASS": true,
+ "PASS": true,
+ "included": true,
+ "actor": "gemma4",
+ "test": "H7"
+}

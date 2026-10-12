@@ -1,0 +1,22 @@
+{
+  "caa_p12_r0": {
+    "n_with_marker": 104,
+    "identical_prefix_share": 1.0,
+    "valid": true
+  },
+  "caa_p16_r0": {
+    "n_with_marker": 104,
+    "identical_prefix_share": 1.0,
+    "valid": true
+  },
+  "caa_p4_r0": {
+    "n_with_marker": 104,
+    "identical_prefix_share": 1.0,
+    "valid": true
+  },
+  "caa_p8_r0": {
+    "n_with_marker": 104,
+    "identical_prefix_share": 1.0,
+    "valid": true
+  }
+}

@@ -1,0 +1,50 @@
+{
+ "locked_at": "2026-10-12T00:46:33.678907",
+ "sha256": {
+  "docs/preregistration_v75.md": "2c7df4b3698d123baa6f8d245e8f67f4b102956a636cb9b0b8be2f89b98f4bc8",
+  "scripts/191_v74_agentdojo.py": "3d2fd1bc9c00a0fa39a75566185885fe53f63b5b78b76936fad9a1a97c70070c",
+  "scripts/192_v74_analysis.py": "94b6faf1ae57130892f08c7f342e7c1ef9442021e4a6a7514909f7c2488031f6",
+  "scripts/174_vllm_steer.py": "773ae415dac136ff0b89a969318bf1a4aaaee4211281affc36161013d3ab8233",
+  "slurm/v75dev.sh": "addfc53b7e5c3d3f7e3125448c042b3689dbc038b0dbf52d15cb88f47387c353",
+  "slurm/v75conf.sh": "bf61dc874f50d54b55ca5402345d019847f41830dc3de31ab95a81b69d981026",
+  "slurm/v75dev_muse.sh": "851e2d12f94d9f9648d9a96801180f8695c7c31ff18b75d5f54f91eeb1f89b69",
+  "slurm/v75conf_muse.sh": "b9e9f08ab6bccb3cc93e2df10df1ea85c78db7e7ba55737757a3a410390f5ef8",
+  "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f",
+  "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86"
+ },
+ "agentdojo": "0.1.35 (v1.2.2)",
+ "note": "locked before any v75 generation; spotlighting path verified with a dummy LLM (no model calls): never-obey rule in system prompt, tool outputs wrapped in << >>, injection inside. Seen before: v74 gpt-oss development only.",
+ "addenda": [
+  {
+   "at": "2026-10-12T01:00:47.309413",
+   "name": "Addendum 1 (split dev on two GPUs)",
+   "sha256": {
+    "docs/preregistration_v75.md": "3a67f3e243c75b0a80dfe8b4d92231ec1cfcc1f4afce2db3cf3440bef655f865",
+    "scripts/192_v74_analysis.py": "7750ae3823e6e2ee4ac3f05b2bd2dfd9ac80a6f5f7ac8b561de7b44776ca083a",
+    "slurm/v75dev_benign.sh": "f890315ae65a350df9b4b06b4523ca9824aa3f6c78607cef335be28f2ad91456",
+    "slurm/v75dev_attack.sh": "b6d891e0412b8c04e3528d54a20bdb220914a5132633d2dfc7ed03d6659624c6"
+   },
+   "note": "operational; no v75 outcome inspected"
+  },
+  {
+   "at": "2026-10-12T01:32:59.094089",
+   "name": "Addendum 2 (S1 belief reversal, S2 knowing calls score higher)",
+   "sha256": {
+    "docs/preregistration_v75.md": "3b527e51f86f3e5e5da7b8ef332845f73ae5b121b34470a3b2c433675adcc1e9",
+    "scripts/195_v75_belief.py": "6c082470a50cf8fbed4be6a8ede77e28f25bce2e8149f8668eba0a2423b3493a",
+    "scripts/194_v75_knowing_check.py": "8c7ae06678225aca9c81ca27dffa2ca020226faf8ed7d1b16d6ebe18a207533c"
+   },
+   "note": "discovered on gpt-oss; to be tested on Gemma/Qwen/Muse whose attacked scores were not inspected"
+  },
+  {
+   "at": "2026-10-12T01:38:32.392581",
+   "name": "Addendum 3 (S1 undefended source)",
+   "sha256": {
+    "docs/preregistration_v75.md": "fd32a0c90c54d1daf9da1235670c41f486454bbf33a7818550bb89eb8961edf0",
+    "scripts/195_v75_belief.py": "41d4de8a9a4b8f185f1f4ed0e88f3f144f24a36d3a8051017335fb4988bc4c46"
+   }
+  }
+ ]
+}

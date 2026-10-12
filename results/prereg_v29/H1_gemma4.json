@@ -1,0 +1,38 @@
+{
+ "uninformed": {
+  "n_actions": 7869,
+  "auroc_within_fold": 0.4817,
+  "ci90": [
+   0.4701,
+   0.4922
+  ],
+  "ci95": [
+   0.468,
+   0.4943
+  ]
+ },
+ "informed": {
+  "n_actions": 17009,
+  "auroc_within_fold": 0.8193,
+  "ci90": [
+   0.8072,
+   0.8294
+  ],
+  "ci95": [
+   0.8051,
+   0.8316
+  ]
+ },
+ "text_uninformed": {
+  "n": 7869,
+  "auroc": 0.4859,
+  "ci90": [
+   0.4669,
+   0.5054
+  ]
+ },
+ "included": true,
+ "PASS": true,
+ "actor": "gemma4",
+ "test": "H1"
+}

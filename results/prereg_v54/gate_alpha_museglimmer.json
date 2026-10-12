@@ -1,0 +1,21 @@
+{
+  "actor": "museglimmer",
+  "by_alpha": {
+    "1": {
+      "reduction": 0.125,
+      "progress_drop": -0.012499999999999956,
+      "parse": 0.0
+    },
+    "2": {
+      "reduction": 0.1625,
+      "progress_drop": -0.012499999999999956,
+      "parse": 0.00625
+    },
+    "4": {
+      "reduction": 0.25,
+      "progress_drop": 0.08750000000000002,
+      "parse": 0.1375
+    }
+  },
+  "gate_alpha": "2"
+}

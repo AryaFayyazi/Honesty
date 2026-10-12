@@ -1,0 +1,33 @@
+{
+  "refusal_direction_heldout_auroc": 0.93585205078125,
+  "cos_probe_refusal": 0.012615402793636323,
+  "sets": {
+    "v2fresh_minus": {
+      "n_mixed": 62,
+      "actor": 0.6956521739130435,
+      "actor_refusal_projected_out": 0.7006688963210702,
+      "delta": 0.0050167224080267525,
+      "refusal_projection_auroc(low=unsafe)": 0.3377926421404682,
+      "refusal_projection_auroc_raw": 0.6622073578595318
+    },
+    "v3aware_reasoning_minus": {
+      "n_mixed": 46,
+      "actor": 0.6256038647342995,
+      "actor_refusal_projected_out": 0.6352657004830918,
+      "delta": 0.009661835748792313,
+      "refusal_projection_auroc(low=unsafe)": 0.33333333333333337,
+      "refusal_projection_auroc_raw": 0.6666666666666666
+    },
+    "v3aware_internal_minus": {
+      "n_mixed": 48,
+      "actor": 0.7129411764705882,
+      "actor_refusal_projected_out": 0.7270588235294118,
+      "delta": 0.014117647058823568,
+      "refusal_projection_auroc(low=unsafe)": 0.3176470588235294,
+      "refusal_projection_auroc_raw": 0.6823529411764706
+    }
+  },
+  "P1_orthogonal": true,
+  "P2_unchanged": false,
+  "P3_weak": false
+}

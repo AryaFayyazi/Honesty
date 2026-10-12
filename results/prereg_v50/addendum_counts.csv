@@ -1,0 +1,5 @@
+label,retro,quota,pool,excluded_in_v50,sampled
+SPIN,1,all,14,0,14
+SPIN,0,40,873,0,40
+CANDID,any,10,19,19,0
+MISREPRESENTED,any,10,144,15,10

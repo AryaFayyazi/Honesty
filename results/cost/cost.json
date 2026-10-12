@@ -1,0 +1,344 @@
+{
+  "architecture": {
+    "qwen38": {
+      "total_params_text": 26895998464,
+      "embedding": 1271398400,
+      "output_head": 1271398400,
+      "dense_nonembedding": 24353201664,
+      "routed_expert": 0,
+      "experts": 0,
+      "experts_per_token": 0,
+      "active_matmul_params": 25624600064,
+      "n_full": 16,
+      "n_sliding": 0,
+      "n_linear": 48,
+      "heads": 24,
+      "head_dim": 256,
+      "window": 0,
+      "lin_v_heads": 48,
+      "lin_k_dim": 128,
+      "lin_v_dim": 128,
+      "hidden": 5120
+    },
+    "gptoss20b": {
+      "total_params_text": 20914757184,
+      "embedding": 579133440,
+      "output_head": 579133440,
+      "dense_nonembedding": 639557184,
+      "routed_expert": 19116933120,
+      "experts": 32,
+      "experts_per_token": 4,
+      "active_matmul_params": 3608307264.0,
+      "n_full": 12,
+      "n_sliding": 12,
+      "n_linear": 0,
+      "heads": 64,
+      "head_dim": 64,
+      "window": 128,
+      "lin_v_heads": 0,
+      "lin_k_dim": 0,
+      "lin_v_dim": 0,
+      "hidden": 2880
+    },
+    "museglimmer": {
+      "total_params_text": 27854780928,
+      "embedding": 1344831488,
+      "output_head": 1344831488,
+      "dense_nonembedding": 25165117952,
+      "routed_expert": 0,
+      "experts": 0,
+      "experts_per_token": 0,
+      "active_matmul_params": 26509949440,
+      "n_full": 13,
+      "n_sliding": 39,
+      "n_linear": 0,
+      "heads": 32,
+      "head_dim": 128,
+      "window": 2048,
+      "lin_v_heads": 0,
+      "lin_k_dim": 0,
+      "lin_v_dim": 0,
+      "hidden": 6656
+    },
+    "gemma4": {
+      "total_params_text": 25233141790,
+      "embedding": 738197504,
+      "output_head": 738197504,
+      "dense_nonembedding": 1656959006,
+      "routed_expert": 22837985280,
+      "experts": 128,
+      "experts_per_token": 8,
+      "active_matmul_params": 3822530590.0,
+      "n_full": 5,
+      "n_sliding": 25,
+      "n_linear": 0,
+      "heads": 16,
+      "head_dim": 256,
+      "window": 1024,
+      "lin_v_heads": 0,
+      "lin_k_dim": 0,
+      "lin_v_dim": 0,
+      "hidden": 2816
+    }
+  },
+  "readout": {
+    "gemma4": {
+      "t_cpu_numpy_fused_s": 8.696556929498912e-06,
+      "d": 2816,
+      "depths": 5,
+      "folds": 2,
+      "flops": 56362,
+      "params": 28191,
+      "bytes_fp32": 112764,
+      "captured_floats": 14080,
+      "t_cpu_numpy_s": 5.47887226101011e-05
+    },
+    "gptoss20b": {
+      "t_cpu_numpy_fused_s": 9.165876777842642e-06,
+      "d": 2880,
+      "depths": 5,
+      "folds": 2,
+      "flops": 57642,
+      "params": 28831,
+      "bytes_fp32": 115324,
+      "captured_floats": 14400,
+      "t_cpu_numpy_s": 5.485759386792779e-05
+    },
+    "museglimmer": {
+      "t_cpu_numpy_fused_s": 1.9169440120458604e-05,
+      "d": 6656,
+      "depths": 5,
+      "folds": 2,
+      "flops": 133162,
+      "params": 66591,
+      "bytes_fp32": 266364,
+      "captured_floats": 33280,
+      "t_cpu_numpy_s": 5.829982189461589e-05
+    },
+    "qwen38": {
+      "t_cpu_numpy_fused_s": 1.4703886862844228e-05,
+      "d": 5120,
+      "depths": 5,
+      "folds": 2,
+      "flops": 102442,
+      "params": 51231,
+      "bytes_fp32": 204924,
+      "captured_floats": 25600,
+      "t_cpu_numpy_s": 5.6987191177904604e-05
+    }
+  },
+  "monitor_thinking_tokens_measured": 1823.3333333333333,
+  "per_model": {
+    "gemma4": {
+      "n_units": 900,
+      "tokens": {
+        "monitor_prompt": {
+          "mean": 2560.0377777777776,
+          "p50": 2321.0,
+          "p90": 4209.5
+        },
+        "agent_gen": {
+          "mean": 297.78,
+          "p50": 219.0,
+          "p90": 667.1
+        },
+        "agent_ctx": {
+          "mean": 2265.652222222222,
+          "p50": 2007.0,
+          "p90": 3947.8000000000006
+        },
+        "agent_new": {
+          "mean": 36.126666666666665,
+          "p50": 23.0,
+          "p90": 78.0
+        }
+      },
+      "flops_per_action": {
+        "readout": 56362,
+        "agent_turn_mean": 2757641564169.511,
+        "monitor_prefill_mean": 133134409412769.56,
+        "monitor_total_mean": 229342826495296.84,
+        "monitor_cached_prefill_mean": 17484092087514.453,
+        "monitor_cached_total_mean": 113692509170041.75
+      },
+      "tokens_per_action": {
+        "agent_processed_mean": 333.9066666666667,
+        "monitor_processed_mean": 4383.3711111111115,
+        "readout": 0
+      },
+      "ratios": {
+        "monitor_over_readout_flops": 4069103766.638814,
+        "readout_over_agent_flops": 2.043847929053605e-08,
+        "monitor_over_agent_flops": 83.16629306548964,
+        "monitor_over_agent_tokens": 13.127533974896512,
+        "cached_monitor_over_agent_flops": 41.228167810953806,
+        "cached_monitor_over_readout_flops": 2017183726.0927887
+      },
+      "latency_measured": {
+        "agent_turn_s": 8.794272661325522,
+        "gate_scoring_call_s": 0.05075915299517953,
+        "readout_cpu_s": 0.0015007018947406955,
+        "readout_gpu_s": 0.00024950023206031844
+      }
+    },
+    "gptoss20b": {
+      "n_units": 900,
+      "tokens": {
+        "monitor_prompt": {
+          "mean": 1657.7977777777778,
+          "p50": 1559.0,
+          "p90": 2414.9000000000005
+        },
+        "agent_gen": {
+          "mean": 187.17888888888888,
+          "p50": 94.0,
+          "p90": 370.4000000000001
+        },
+        "agent_ctx": {
+          "mean": 1261.66,
+          "p50": 1189.0,
+          "p90": 1982.4
+        },
+        "agent_new": {
+          "mean": 36.38666666666666,
+          "p50": 28.0,
+          "p90": 65.0
+        }
+      },
+      "flops_per_action": {
+        "readout": 57642,
+        "agent_turn_mean": 1677640011569.0667,
+        "monitor_prefill_mean": 85841631289068.66,
+        "monitor_total_mean": 181403174916594.34,
+        "monitor_cached_prefill_mean": 11629479927397.262,
+        "monitor_cached_total_mean": 107191023554922.95
+      },
+      "tokens_per_action": {
+        "agent_processed_mean": 223.56555555555556,
+        "monitor_processed_mean": 3481.1311111111113,
+        "readout": 0
+      },
+      "ratios": {
+        "monitor_over_readout_flops": 3147065940.054029,
+        "readout_over_agent_flops": 3.435898023562783e-08,
+        "monitor_over_agent_flops": 108.12997643453389,
+        "monitor_over_agent_tokens": 15.570963525488423,
+        "cached_monitor_over_agent_flops": 63.89393601471695,
+        "cached_monitor_over_readout_flops": 1859599312.2189195
+      },
+      "latency_measured": {
+        "agent_turn_s": 5.819574739279536,
+        "gate_scoring_call_s": 0.03178034602509191,
+        "readout_cpu_s": 0.0014935391319449993,
+        "readout_gpu_s": 0.000243950010141513
+      }
+    },
+    "museglimmer": {
+      "n_units": 840,
+      "tokens": {
+        "monitor_prompt": {
+          "mean": 2491.127380952381,
+          "p50": 2219.0,
+          "p90": 4039.3
+        },
+        "agent_gen": {
+          "mean": 234.74404761904762,
+          "p50": 146.0,
+          "p90": 567.1
+        },
+        "agent_ctx": {
+          "mean": 1974.547619047619,
+          "p50": 1709.0,
+          "p90": 3386.6000000000004
+        },
+        "agent_new": {
+          "mean": 28.15714285714286,
+          "p50": 23.0,
+          "p90": 47.0
+        }
+      },
+      "flops_per_action": {
+        "readout": 133162,
+        "agent_turn_mean": 14371122203268.877,
+        "monitor_prefill_mean": 129490365201823.69,
+        "monitor_total_mean": 225649376021627.1,
+        "monitor_cached_prefill_mean": 13787746577314.133,
+        "monitor_cached_total_mean": 109946757397117.56
+      },
+      "tokens_per_action": {
+        "agent_processed_mean": 262.9011904761905,
+        "monitor_processed_mean": 4314.460714285715,
+        "readout": 0
+      },
+      "ratios": {
+        "monitor_over_readout_flops": 1694547814.103326,
+        "readout_over_agent_flops": 9.265943056952836e-09,
+        "monitor_over_agent_flops": 15.70158355276532,
+        "monitor_over_agent_tokens": 16.410959214262103,
+        "cached_monitor_over_agent_flops": 7.65053388608086,
+        "cached_monitor_over_readout_flops": 825661655.7059639
+      }
+    },
+    "qwen38": {
+      "n_units": 784,
+      "tokens": {
+        "monitor_prompt": {
+          "mean": 2526.299744897959,
+          "p50": 1978.0,
+          "p90": 4875.7
+        },
+        "agent_gen": {
+          "mean": 569.9566326530612,
+          "p50": 202.5,
+          "p90": 1836.6000000000017
+        },
+        "agent_ctx": {
+          "mean": 1867.8660714285713,
+          "p50": 1511.5,
+          "p90": 3687.9000000000005
+        },
+        "agent_new": {
+          "mean": 34.44387755102041,
+          "p50": 24.0,
+          "p90": 73.0
+        }
+      },
+      "flops_per_action": {
+        "readout": 102442,
+        "agent_turn_mean": 31769946549151.348,
+        "monitor_prefill_mean": 131538488983140.58,
+        "monitor_total_mean": 227722717116060.25,
+        "monitor_cached_prefill_mean": 31768873934646.855,
+        "monitor_cached_total_mean": 127953102067566.58
+      },
+      "tokens_per_action": {
+        "agent_processed_mean": 604.4005102040817,
+        "monitor_processed_mean": 4349.6330782312925,
+        "readout": 0
+      },
+      "ratios": {
+        "monitor_over_readout_flops": 2222942905.4104786,
+        "readout_over_agent_flops": 3.224493936164223e-09,
+        "monitor_over_agent_flops": 7.167865918935368,
+        "monitor_over_agent_tokens": 7.196607224508458,
+        "cached_monitor_over_agent_flops": 4.027488742217746,
+        "cached_monitor_over_readout_flops": 1249029715.0345228
+      },
+      "latency_measured": {
+        "agent_turn_s": 30.054259299999103,
+        "gate_scoring_call_s": 0.09675732924647275,
+        "readout_cpu_s": 0.0015402637448694028,
+        "readout_gpu_s": 0.00024089819498892347
+      }
+    }
+  },
+  "monitor_latency_measured": {
+    "batch1_s": {
+      "mean": 33.14490154210944,
+      "p50": 36.08687417302281,
+      "p90": 55.29158201627433,
+      "n": 24
+    },
+    "batched_gpu_s_per_call": 3.1733524569232636
+  }
+}

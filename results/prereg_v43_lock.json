@@ -1,0 +1,48 @@
+{
+ "locked_at": "2026-10-04T13:39:43.971230",
+ "data_existing": [
+  "v40 fresh rollouts in progress; no v40 label exists"
+ ],
+ "sha256": {
+  "docs/preregistration_v43.md": "e26a0cc16b55cf29080e6fab6908f5688d61689a92473ae6bca9fb6594c9ed75",
+  "scripts/103_lie_steering.py": "9164830170070ab0ecba3001f9059bca43112cb722ecbbcd87973e6c21f74e52",
+  "scripts/107_caa_honesty.py": "9303caaefe1dfd9648e5bb09d78e4485818e0ff6e32e3bfa38fbe0a4ff9ea367"
+ },
+ "dev_log": [
+  {
+   "at": "2026-10-04T15:07:54.411305",
+   "note": "delayed steering candidates added (dev phase; confirmation untouched)",
+   "sha256": {
+    "docs/preregistration_v43.md": "41075843223ca255433f222045f2a5a00fd2b79e0e5de841187c23c77b79083e",
+    "scripts/103_lie_steering.py": "9d33b43201485dceba0e21702a00e06b0949d55a39c149147d8c81ada9f3cd41"
+   }
+  },
+  {
+   "at": "2026-10-04T16:21:18.668116",
+   "note": "dev sweep crashed on clamp dtype bug (float32 vector into bf16 residual); fixed + per-condition checkpointing; rerun",
+   "sha256_103": "7af0604a5611adc78fb48be1bb3ede1352caab7454c5815c1656851368415ecd"
+  },
+  {
+   "at": "2026-10-04T18:26:36.031777",
+   "note": "dev result 1 (best +4xgap d16, -0.088); extension with +6/+8 xgap d16 before lock"
+  }
+ ],
+ "locked_intervention": {
+  "at": "2026-10-04T21:32:27.589011",
+  "chosen": {
+   "name": "caa_p4_d16",
+   "mult": 4.0,
+   "mode": "d16"
+  },
+  "fresh_labels_existing_at_lock": [],
+  "sha256_selection": "784189ac439202bf953a03e3fd358da4b4fd441d56ed5e31e262bd943326a808",
+  "sha256_directions": "f00c4ede157186d5a5f132156761c8b1a1bc43b1b282fa1b58c00df56424910d"
+ },
+ "deviations": [
+  {
+   "at": "2026-10-04T22:01:14.696062",
+   "note": "bench_of parsing bug (core24b_minus45 -> core24b45) crashed generation at scenario loading, before any generation; regex fix; rerun",
+   "sha256_103": "bb0029fabaad48108a5b3c867f5cb9f4b8aaec045350d989be9f513ee1ca0311"
+  }
+ ]
+}

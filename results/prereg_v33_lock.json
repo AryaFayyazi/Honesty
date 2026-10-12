@@ -1,0 +1,56 @@
+{
+ "locked_at": "2026-10-02T12:43:42.496579",
+ "disclosure_labels_existing": [],
+ "sha256": {
+  "docs/preregistration_v33.md": "c4de5a2e83b593f22d185fecd1b85682a992c3799474191a93f000c15eedfadd",
+  "scripts/86_honesty.py": "3f21e4ffe31283fd42434ecfaf98a5eaa69853fbf7761ae8c60247e28694cbdf",
+  "scripts/07_disclosure_judge.py": "c8b9e1140b08537b8661aa8db509165ff4c6a4f679a29452a81e8fd671508eea",
+  "scripts/68_noticed_label.py": "14c7d44d15a7d63511135a6a22870f17dfae1ab5b2dc897c2fd0bb3672fe8ca6"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-02T12:44:18.660440",
+   "note": "bug fix scripts/68: Qwen rollout path hardcoded to v2fresh; now follows bench",
+   "disclosure_labels_existing": [],
+   "sha256": {
+    "scripts/68_noticed_label.py": "4580838c846feb9b4aa2d20c280fce51c44be521d7bd6fbba9563c039b61ff67"
+   }
+  },
+  {
+   "at": "2026-10-02T13:09:47.484438",
+   "note": "Amendment 1 (noncandid endpoint, informed population, placebo + template-stratified controls)",
+   "disclosure_labels_existing": [],
+   "sha256": {
+    "docs/preregistration_v33.md": "1ec274acdf2bb075cfe6f30560e6ae8fa030379f3a9cca9359a2fcf589e40d2d",
+    "scripts/86_honesty.py": "80ce67558f2ddfc2a27e1987f471e01040ff462a4a704259bcd1bf4bfa979c4c"
+   }
+  },
+  {
+   "at": "2026-10-02T13:12:52.100506",
+   "note": "Amendment 2: Q4 certification of knowing misrepresentation",
+   "disclosure_labels_existing": [],
+   "sha256": {
+    "docs/preregistration_v33.md": "e3f884d80b25e99e1c98ecd4b14b6f26603e6bb17924e2d9881ef9cb4f87aad0",
+    "scripts/86_honesty.py": "19b4913d95e4c081e0116137ecb0f4305c480a405f7dcfaaad6e2e64c5a383ea"
+   }
+  },
+  {
+   "at": "2026-10-02T14:00:27.101992",
+   "note": "deviation: Q4 null corrected to uninformed x+ critical twins (dry run with random labels); label_dir option for dry runs",
+   "disclosure_labels_existing": [],
+   "sha256": {
+    "docs/preregistration_v33.md": "b124fc735f39181069a3278f6f781f52fe3dc07a689e7208bcfbb7fcb39503df",
+    "scripts/86_honesty.py": "56b2548bd5ec1a7427bb3d4a9ff01bc2f8f01e86afad76528f40823e9dec5d51"
+   }
+  },
+  {
+   "at": "2026-10-02T14:16:40.791374",
+   "note": "Amendment 3: Muse included",
+   "muse_core24_data_existing": [],
+   "sha256": {
+    "docs/preregistration_v33.md": "0b1c98ebed8b14794f10218b4dc61418349f3a149207b154e7339a5acdf6db4b",
+    "scripts/86_honesty.py": "494cf09d3721769edd4020f458eb279ef4492dfb76e8d46ccd50044718c65e1f"
+   }
+  }
+ ]
+}

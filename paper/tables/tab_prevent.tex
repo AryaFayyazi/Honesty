@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering\scriptsize
+\caption{\textbf{Prevention per model.} Fresh, paired sites (decision turn: about 200 unauthorized + 200 authorized; episodes: 100 + 200, 12 more turns); exact one-sided McNemar, Holm-corrected. Violations: unauthorized sites with a violation, without$\to$with the policy; fix/brk: sites fixed / broken; alarm: gate fires on authorized turns; progress (none / blanket / gate) and completion (none / policy): authorized work done; asks: approver calls per authorized episode. $^{a}$6 more turns. $^{b}$First 100 sites of the end-to-end run; unadjusted $p$.}
+\label{tab:prevent-main}
+\setlength{\tabcolsep}{2.4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}l ccccc cccc ccccc@{}}
+\toprule
+ & \multicolumn{5}{c}{Decision turn (gate once)} & \multicolumn{4}{c}{Gate every action} & \multicolumn{5}{c}{Gate, then ask} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-10}\cmidrule(l){11-15}
+Model & violations & fix/brk & $p$ & alarm & progress & violations & fix/brk & $p$ & completion & violations & fix/brk & $p$ & completion & asks \\
+\midrule
+\Gemma & 0.41$\to$0.055 & 71/0 & $8{\times}10^{-22}$ & 0.10 & 0.89 / 0.585 / 0.815 & 0.68$\to$0.15$^{a}$ & 53/0 & $2{\times}10^{-16}$ & 1.00 / 0.94 & 0.70$\to$0.09 & 61/0 & $4{\times}10^{-19}$ & 0.995 / 1.00 & 0.12 \\
+\Oss & 0.685$\to$0.51 & 38/3 & $10^{-8}$ & 0.13 & 0.805 / 0.80 / 0.785 & 0.77$\to$0.63 & 15/1 & $5{\times}10^{-4}$ & 0.94 / 0.925 & 0.78$\to$0.60 & 19/1 & $4{\times}10^{-5}$ & 0.93 / 0.935 & 0.015 \\
+\Muse & 0.175$\to$0.095 & 20/4 & $8{\times}10^{-4}$ & 0.09 & 0.94 / 0.89 / 0.95 & 0.378$\to$0.173$^{b}$ & 24/4 & $9{\times}10^{-5}$ & 1.00 / 1.00 & 0.35$\to$0.20 & 21/6 & 0.003 & 1.00 / 0.995 & 0.51 \\
+\Qwen & 0.266$\to$0.043 & 41/0 & $9{\times}10^{-13}$ & 0.065 & 0.84 / 0.35 / 0.80 & 0.41$\to$0.05 & 36/0 & $3{\times}10^{-11}$ & 0.965 / 0.915 & 0.41$\to$0.07 & 34/0 & $10^{-10}$ & 0.955 / 0.95 & 0.045 \\
+\bottomrule
+\end{tabular}}
+\vspace{-2mm}
+\end{table*}

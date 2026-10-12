@@ -1,0 +1,7 @@
+name: openai/gpt-oss-120b
+hf_id: openai/gpt-oss-120b
+local_path: null  # NOT present in /data/models; only after the full pipeline is finalized (Phase 13)
+family: gpt_oss
+num_layers: 36
+hidden_size: 2880
+dtype: bfloat16

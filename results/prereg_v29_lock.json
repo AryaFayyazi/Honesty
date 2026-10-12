@@ -1,0 +1,74 @@
+{
+ "locked_at": "2026-10-01T23:23:55.316622",
+ "core24_rollouts_existing_at_lock": [],
+ "core24_features_existing_at_lock": [],
+ "sha256": {
+  "docs/preregistration_v29.md": "a34f6aafd0c204d7daa3396847daf148eabb86eb874d66e7927ffcf963ded69f",
+  "scripts/56_xm_replay_extract.py": "85822028d28e515d9199396a2126b913aa942505d06edc9d9de87b622025d480",
+  "scripts/65_epistemic_gate.py": "31a814d9551cf25bd8ad30ddf2cc7c668d192dfd7e7c3c2ec27c44fa04fa20db",
+  "scripts/66_observability_test.py": "4d40ed6b7e53329a02757329b5997b8bd25cdf65888f051a01aa5cb70514c9c5",
+  "scripts/71_confirm_core24.py": "0fda5cce56c4f6c2c24a06d3f165e59ed718cc80db7c058a284eda285d893f65",
+  "scripts/11_gate_eval.py": "08b4d0d8c29e3d5e64e06d1de04d9be0108187690674654cb843d16e88247d4a",
+  "scripts/20_server_rollouts.py": "f885408371e956a2c3f9e2fb25bea5eb770952d0e516c37bcff969d21ce5b9d2",
+  "results/validity/core24_exclusions.json": "af6a136ae15df1461fc0c5a179578f2f9cd21c46a88596229030e80b7096fc17",
+  "src/cape/eval/authority.py": "3d6b3b9d49112eae9f36a9cf727031375c79f4b6f1b51f698e473004074aeddd",
+  "outputs/capebench/core24/scenarios.jsonl": "373c8f1f8bd803903ef77eeba4657ef86e4f857dbec0004f3c864d274982c838"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-01T23:37:09.708144",
+   "note": "S2 guard, S4 placebo implementations; Amendment 1 text",
+   "core24_rollouts_existing": [],
+   "sha256": {
+    "scripts/72_guard_baseline.py": "b095a157c1c3c38b4401d930d7bdb6f31a67f72ff0c1a7f29730ab44d7a8900c",
+    "scripts/73_partner_labels.py": "5543f53efc6a8152afb001572bb0f5b90c3b9daffeaac589a23672217c64bf35",
+    "scripts/74_placebo_gate.py": "ced847fe866a1cca2d5a8f7e04fee846554dc1515f8a4bad5a0d59949cc98a61",
+    "docs/preregistration_v29.md": "a34f6aafd0c204d7daa3396847daf148eabb86eb874d66e7927ffcf963ded69f"
+   }
+  },
+  {
+   "at": "2026-10-02T00:05:03.840073",
+   "note": "Amendments 2-3: H7 (catch-friction identity), revised statistic",
+   "core24_rollouts_existing": [],
+   "sha256": {
+    "scripts/71_confirm_core24.py": "04d939c9b06e161d8ff1552a938affd680a6be93032fa015ac0bc7b2ccf290d4",
+    "docs/preregistration_v29.md": "8d3272cc3f0a58c28e31a8fc650ed2e5e56bfadb9cbbb9a6aab221f9c7f95c18",
+    "scripts/75_catch_friction.py": "a7037097c42305c263a464662eb625ce9dc9dcd8525e94de5f3c9c3d1ba8a62b"
+   }
+  },
+  {
+   "at": "2026-10-02T00:31:05.089307",
+   "note": "bug fix scripts/72 tokenization (smoke test caught apply_chat_template returning dict); scoring rule unchanged",
+   "core24_rollouts_existing": [],
+   "sha256": {
+    "scripts/72_guard_baseline.py": "67967f4b3a01da3717f93c04be8a57f63f7760df0d1fd67b03d65adc6c8feea4"
+   }
+  },
+  {
+   "at": "2026-10-02T00:42:47.798023",
+   "note": "71: guard_tag option for dry runs; core24 default path unchanged",
+   "core24_rollouts_existing": [],
+   "sha256": {
+    "scripts/71_confirm_core24.py": "3eaca8ac0d60fc5c80d544013f6f0a47d2b2a08b77e0cede7aec99fe5c2f4e99"
+   }
+  },
+  {
+   "at": "2026-10-02T01:13:34.745110",
+   "note": "Amendment 4: H7 scope control (B_resolved)",
+   "core24_rollouts_existing": [],
+   "sha256": {
+    "scripts/71_confirm_core24.py": "956ae1ce436e38304878b230baaa2a0780dce0b08c4bf96f7cca9094c16aac25",
+    "docs/preregistration_v29.md": "d4f8aa4a57ab5dcf441115eb3f087781298020d29cbd2515adc85c7e17c22654"
+   }
+  },
+  {
+   "at": "2026-10-02T14:16:40.791374",
+   "note": "Amendment 5: Muse confirmatory",
+   "muse_core24_data_existing": [],
+   "sha256": {
+    "docs/preregistration_v29.md": "906f718d99f2f2149b0be325547a50f1cd05935668c08c10446204e482a213d7",
+    "scripts/85_unified_comparison.py": "28d0b82b34a85b0f44773864e3d8f9340e0ff51ca1fe317b3897e88841e5f667"
+   }
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+  "actor": "gptoss20b",
+  "n_minus": 200,
+  "n_plus": 200,
+  "eventual_violation": {
+    "blanket": 0.55,
+    "gate": 0.64,
+    "none": 0.81
+  },
+  "first_turn_violation": {
+    "blanket": 0.46,
+    "gate": 0.51,
+    "none": 0.685
+  },
+  "eventual_completion": {
+    "blanket": 0.93,
+    "gate": 0.92,
+    "none": 0.92
+  },
+  "C1_gate_vs_none": {
+    "b_fixed": 36,
+    "c_broken": 2,
+    "p_one_sided": 2.699380274862051e-09
+  },
+  "C2_noninferiority": {
+    "diff_completion": 0.0,
+    "one_sided_95_lower": -0.015306122448979591,
+    "margin": -0.05,
+    "passes": true,
+    "p_noninf": 0.0
+  },
+  "holm": {
+    "C2": 0.0,
+    "C1": 2.699380274862051e-09
+  },
+  "secondary": {
+    "blanket_C1": {
+      "b_fixed": 54,
+      "c_broken": 2,
+      "p_one_sided": 2.2162827129079687e-14
+    },
+    "blanket_completion_diff": {
+      "diff": 0.01,
+      "ci95": [
+        -0.03571428571428571,
+        0.05555555555555555
+      ]
+    },
+    "postponement_rate_gate": 0.15789473684210525,
+    "n_first_turn_fixed": 38,
+    "delay_turns_gate_minus_none": 0.03296703296703297,
+    "mean_turns": {
+      "minus|blanket": 2.8,
+      "minus|gate": 2.88,
+      "minus|none": 2.83,
+      "plus|blanket": 3.24,
+      "plus|gate": 3.14,
+      "plus|none": 3.02
+    }
+  }
+}

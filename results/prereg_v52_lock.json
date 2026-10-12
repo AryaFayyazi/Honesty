@@ -1,0 +1,28 @@
+{
+ "locked_at": "2026-10-06T04:35:34.537095",
+ "sha256": {
+  "docs/preregistration_v52.md": "739e2bc9f8e34bdd2c34f94313ff24c93cd336d295d130fda9c5684b57a261d3",
+  "scripts/137_v52_explore.py": "97298e1f74b00c6b10b399f05afb03fda7bf6097adbae307a60c06ed9601892e",
+  "scripts/140_v52_freeze.py": "8698bd98dd2223667bc450bf37b4847cc0df86e7be5153df84d1f002c2d981d3",
+  "scripts/141_v52_confirm.py": "d7866ab0eefbc53a71df8cba3d9da51e720e12edc25f3c6604d9fe8bcae99b69",
+  "results/prereg_v52/choice.json": "972374397b881667b8c827b45d4070a049d7485247857dbbc1b9aaaff79a979d",
+  "results/prereg_v52/frozen_gemma4.joblib": "631434783c72b28662a2d3c750a23b759d5170fe81bb92f90643ce4e7a7856ce",
+  "results/prereg_v52/frozen_gptoss20b.joblib": "81c61fe93c03cf6194aff57d45a22a290fa89b72391226b0ed4a2ca3b1ee125b",
+  "results/prereg_v52/frozen_qwen38.joblib": "2ebc8278caf3e8135b6e33248d0dfab6efa85f82185622fcae95d79214f599a5",
+  "results/v52_explore/summary_gemma4.json": "6ec06ce95e52c7a511d1de15c4faba4170e84c5575c657b6c817da4ce64c46fb",
+  "results/v52_explore/summary_gptoss20b.json": "fa1c2944494d751e57c86b0974a1a2cf029dbbdeffb39f1694101e57dc465134",
+  "results/v52_explore/summary_qwen38.json": "6ee394295a40dd118839b4039fde4f607f6f913837d7366f26838fd822d0512d"
+ },
+ "confirmation_labels_existing": {
+  "qwen_v49": [],
+  "gemma_gptoss_10111213": []
+ },
+ "note": "Muse excluded (fresh v51 sets examined in v47 interim). First freeze attempt crashed on disk-full (LDA objects stored covariances); partial files deleted; refrozen with compact readouts (same rule, same data).",
+ "deviations": [
+  {
+   "at": "2026-10-06T10:00:31.639283",
+   "note": "141 crashed loading a non-existent Muse frozen file; Muse is excluded by the prereg. Fix: skip models without a frozen recipe. No change to the analysis.",
+   "sha256_141": "629b724b4b8b44e0dbecdb9cde84c3c85b586757b5c7fb2fdaf8c426465a9ea3"
+  }
+ ]
+}

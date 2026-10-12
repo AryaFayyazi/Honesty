@@ -1,0 +1,45 @@
+{
+ "locked_at": "2026-10-05T01:09:35.359208",
+ "sha256": {
+  "docs/preregistration_v49_h4.md": "fc131727d512bc1e9a0ece4c2309929be11b5ca0cabc943610fd5e99c9c0ff0c",
+  "scripts/126_caa_multi.py": "f667771558faeafdbca4608be2a3e5a4c1ca07ca0048c98fd5eb9566f216a671",
+  "scripts/127_steer_multi.py": "b906965ce3ade4d5de14cd5cc58ad61e1fc90f7a27f5137b0853c8a97c4b185c",
+  "scripts/128_h4_episodes.py": "fe08bfcfe677597db6fc9d58febf848126d515dd49d148391c0a77292439bcb1"
+ },
+ "note": "H4 development protocol; no H4 data exists",
+ "addenda": [
+  {
+   "at": "2026-10-05T11:12:05.897253",
+   "sha256": {
+    "scripts/135_h4_select.py": "3e10ffaa1345978f8933ec312d75d6db207242f9095e4b7ed3c9d5f35e06c4ac"
+   },
+   "note": "selection script implementing the locked rule; written before any H4 development output exists",
+   "h4_outputs_existing": []
+  },
+  {
+   "at": "2026-10-06T09:09:31.787418",
+   "sha256": {
+    "docs/preregistration_v49_h4.md": "92ae3d0c4da6986c88157f5214a42c9ab24cce36974302093c0635162ca6baa9"
+   },
+   "note": "Addendum 1: Qwen added",
+   "qwen_h4_outputs_existing": [
+    "h4_qwen38_dev_episodes.parquet"
+   ]
+  }
+ ],
+ "deviations": [
+  {
+   "date": "2026-10-06",
+   "what": "scripts/127 cross-fit fold key fixed: fk = 1 - fold used the direction fit on the episode's OWN fold (scripts/126 direction k is fit on folds != k), i.e. in-sample. Changed to fk = fold. Found while writing v54, before any H4 development generation ran (no outputs/reconcile/h4dev_* existed). Confirmation runs use fold_key=a and are unaffected.",
+   "scripts/127_steer_multi.py": "102c010d2288653bb15c594905a6d19def1fc6fdcc82177520912ead4a01b4bf"
+  },
+  {
+   "date": "2026-10-06 ~23:58",
+   "what": "Before any H4 development generation: alpha = 2 added to the H4 development grid and used in the smoke test (was 8). Reason: on Gemma, whole-turn steering at alpha >= 4 degenerated in v54 and report-only steering at alpha >= 8 degenerated on Muse (v56); a smoke abort at alpha 8 would end H4 for a model for reasons unrelated to report extraction. Selection rule unchanged (guards; most negative change; ties to the smaller dose).",
+   "sha256": {
+    "slurm/h4_dev.sh": "fabb7d1e8b682a2f61c2b39cc59fefa6622ee67aee5f76445ee113b1d103d2e6",
+    "scripts/135_h4_select.py": "b5310208fc1fa4e5b4fe01c47210ceea4a6e44f5d83cd41ea19228f0447a8aa9"
+   }
+  }
+ ]
+}

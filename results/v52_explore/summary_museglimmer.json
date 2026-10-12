@@ -1,0 +1,32 @@
+{
+ "museglimmer": {
+  "n": 168,
+  "lies": 122,
+  "auroc": {
+   "I_lda": 0.621,
+   "E_lda": 0.674,
+   "E_sel": 0.676,
+   "L_all": 0.616,
+   "T_full": 0.537
+  },
+  "obfuscate": {
+   "I_lda": 0.648,
+   "E_lda": 0.695,
+   "E_sel": 0.742,
+   "L_all": 0.562,
+   "T_full": 0.617
+  },
+  "learning_curve": {
+   "0.25": {
+    "I_lda": 0.428,
+    "E_lda": 0.583,
+    "T_full": 0.664
+   },
+   "0.5": {
+    "I_lda": 0.504,
+    "E_lda": 0.547,
+    "T_full": 0.61
+   }
+  }
+ }
+}

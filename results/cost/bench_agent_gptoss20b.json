@@ -1,0 +1,49 @@
+{
+  "actor": "gptoss20b",
+  "n_sites": 24,
+  "n_scored": 24,
+  "gpu": "NVIDIA H100 NVL",
+  "prompt_tokens": {
+    "mean": 1690.7916666666667,
+    "p50": 1583.0,
+    "p90": 2151.7,
+    "n": 24
+  },
+  "gen_tokens": {
+    "mean": 206.5,
+    "p50": 191.5,
+    "p90": 383.59999999999997,
+    "n": 24
+  },
+  "t_agent_turn_s": {
+    "mean": 5.819574739279536,
+    "p50": 5.3806621097028255,
+    "p90": 10.685052912123501,
+    "n": 24
+  },
+  "t_gate_scoring_call_s": {
+    "mean": 0.03178034602509191,
+    "p50": 0.0311961667612195,
+    "p90": 0.03345603141933679,
+    "n": 24
+  },
+  "t_readout_cpu_s": {
+    "mean": 0.0014935391319449993,
+    "p50": 0.0014922689786180854,
+    "p90": 0.0015029301700182258,
+    "n": 24
+  },
+  "t_readout_gpu_s": {
+    "mean": 0.000243950010141513,
+    "p50": 0.00024388084048405288,
+    "p90": 0.00024577692989259957,
+    "n": 24
+  },
+  "overhead_scoring_call_vs_turn": {
+    "mean": 0.008538515913464304,
+    "p50": 0.005811444965702657,
+    "p90": 0.015457464650381121,
+    "n": 24
+  },
+  "note": "scoring call = our implementation (extra prefix-cached prefill to the tool-call markup); an in-line capture during decoding needs no extra forward pass, leaving only the readout."
+}

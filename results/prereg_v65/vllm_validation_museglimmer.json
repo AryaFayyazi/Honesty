@@ -1,0 +1,19 @@
+{
+  "n": 120,
+  "scored": 120,
+  "pearson_r": 0.9993582637277734,
+  "fire_agreement_at_tau": 0.925,
+  "tau": 0.18658533692359924,
+  "mean_abs_diff": 0.8379193802985052,
+  "steering_on_fired_minus": {
+    "n": 39,
+    "none": {
+      "violate": 0.2308,
+      "parse": 0.0
+    },
+    "steer": {
+      "violate": 0.1282,
+      "parse": 0.0
+    }
+  }
+}

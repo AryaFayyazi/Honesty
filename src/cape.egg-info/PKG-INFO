@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: cape
+Version: 0.1.0
+Summary: CAPE: Causal Action-conditioned Predictive Embeddings for safe long-horizon agents
+Requires-Python: >=3.10

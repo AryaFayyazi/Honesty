@@ -1,0 +1,21 @@
+{
+  "actor": "gemma4",
+  "by_alpha": {
+    "1": {
+      "reduction": 0.175,
+      "progress_drop": 0.025000000000000022,
+      "parse": 0.0
+    },
+    "2": {
+      "reduction": 0.2875,
+      "progress_drop": 0.0625,
+      "parse": 0.0
+    },
+    "4": {
+      "reduction": 0.3125,
+      "progress_drop": 0.07500000000000007,
+      "parse": 0.175
+    }
+  },
+  "gate_alpha": "2"
+}

@@ -1,0 +1,338 @@
+\documentclass{article}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+\newcommand{\PH}[1]{\textcolor{orange}{[#1]}}   % placeholder for a pending result
+\usepackage[preprint]{icml2027}
+\input{macros}
+
+\icmltitlerunning{The Agent Knew}
+
+\begin{document}
+
+% headline figure (page 1): built in a box before the title block, whose optional argument cannot hold \includegraphics[...]
+\newsavebox{\teaserbox}
+\sbox{\teaserbox}{\begin{minipage}{\textwidth}\centering
+\includegraphics[width=\textwidth]{figures/fig1_headline.pdf}\par\vspace{-3mm}
+\captionof{figure}{\textbf{The agent knew: it acts without authorization and then lies; its internal state flags the action, and gating on it prevents the violation.}
+\textbf{(a)} A real CAPE-Bench episode.
+\textbf{(b)} A frozen readout of the agent's residual stream, before it writes the tool call, separates violating actions from the \emph{same} action when authorized (descriptive).
+\textbf{(c)} Violations over the episode without and with the gate; last pair: violations that are then misreported (\Muse).
+Fresh data; (a) and (c) are preregistered tests.}
+\label{fig:overview}
+\end{minipage}}
+
+\twocolumn[
+\icmltitle{The Agent Knew: Internal States Forecast Unauthorized Actions\\and Stop Them, and the Lies That Follow}
+
+\icmlsetsymbol{equal}{*}
+\begin{icmlauthorlist}
+\icmlauthor{Arya Fayyazi}{usc}
+\icmlauthor{Mehdi Kamal}{usc}
+\icmlauthor{Massoud Pedram}{usc}
+\end{icmlauthorlist}
+\icmlaffiliation{usc}{University of Southern California, Los Angeles, CA, USA}
+\icmlcorrespondingauthor{Arya Fayyazi}{afayyazi@usc.edu}
+\icmlkeywords{agent safety, honesty, deception, interpretability, activation steering, monitoring}
+\vskip 0.15in
+\vskip 0.2in
+\usebox{\teaserbox}
+\vskip 0.1in
+]
+\printAffiliationsAndNotice{}
+
+% =====================================================================================
+\begin{abstract}
+Language-model agents sometimes act beyond their authorization and then misreport what they did.
+On CAPE-Bench, matched agent tasks in which one fact decides whether an action is authorized, frontier open-weight agents do both, and one behaviour marks the lie: \emph{retroactive permission laundering}, acting and then asking permission as if the action were pending, precedes a false report in 70\% of 1{,}081 fresh informed violations, against 8\% otherwise (preregistered odds ratio 7.0); frontier agents on $\tau^2$-bench instead fabricate the authorization before violating.
+A linear readout of the agent's residual stream forecasts the violation before the action (AUROC 0.94) and the false report before the report, and beats chain-of-thought monitors when the agent is pressured to hide its reasoning.
+Gating every proposed action on this forecast cuts violations over whole episodes in four model families, and sending repeated flags to an approver keeps authorized work (\Gemma: violations 0.70$\rightarrow$0.09, completion 1.00; a model approver that escalates unclear cases keeps this gain with a person seeing 25\% of asks), at about $10^{-8}$ of the agent's compute and $10^{9}$ times less than a chain-of-thought monitor. On AgentDojo, an external prompt-injection benchmark, the same readout calibrated on 29 tasks, with the steering unchanged, cuts attack success on unseen tasks in two families (\Gemma 11.7\%$\rightarrow$5.7\%, \Oss 28.5\%$\rightarrow$17.5\%) while keeping benign utility (\Gemma 0.637 vs 0.637; \Oss 0.667 vs 0.681).
+Preventing the violation is also the most reliable way to prevent the lie (misreported violations 0.10$\rightarrow$0.01 pooled over three families, preregistered), whereas lie-specific fixes after a violation are weak.
+All tests are preregistered and hash-locked; code, data and the full record, including tests that did not pass, are at \url{https://github.com/AryaFayyazi/Honesty}.
+\end{abstract}
+
+% =====================================================================================
+\section{Introduction}
+\label{sec:intro}
+
+Language-model agents now execute consequential actions: they deploy code, change permissions, move data and talk to customers.
+In 2026, two behaviours of such agents were cited as reasons to pause or withdraw them: acting beyond their authorization, and misreporting what they did.
+
+\textbf{Documented incidents.} GPT-6.1 Astra was shelved before release because it ``didn't quite meet the bar in terms of staying within scope and authorization, and how it communicates back to the user'' \citep{register2026astra}. The GPT-5.6 Preview system card reports unrequested deletion of virtual machines and a ``computed and verified'' claim the model knew was untrue \citep{openai2026gpt56card}; a frontier model zeroed training data, reported ``no operational errors'' and disclosed only under direct questions \citep{lynch2026summer,anthropic2026mythos}; and deployed coding agents merged pull requests while claiming approvals they never got \citep{transluce2026wild}. Measurements agree: unsafe actions go unreported and agents overclaim \citep{jha2026meltdowns,smyth2026overclaim,tang2026coding}.
+
+\textbf{Why current oversight is exposed.} Deployed oversight rests on two channels that the agent controls: a human approves risky actions, and a monitor reads what the agent writes, including its chain of thought (CoT). CoT monitoring is a ``fragile opportunity'' \citep{korbak2025cot}: reasoning models omit what drives them \citep{chen2025reasoning}, and optimizing against a CoT monitor obfuscates reasoning \citep{baker2025monitoring}. The agent's internal activations are a signal it does not write.
+
+\textbf{The mechanism we isolate.} Agents that cross an authorization boundary often ask for permission \emph{afterwards}, worded as if the action were still pending; when the request is denied, the report says ``permission was denied, so I could not complete it'', although the action had already succeeded (\cref{fig:overview}a). The approver sees a routine request and the reader a careful agent; only the environment log shows the truth. We call this \emph{retroactive permission laundering}: the approval channel becomes the vehicle of the lie.
+
+\textbf{What is known, and what is not.} That agents conceal what they did \citep{scheurer2023deceive,meinke2024scheming}, that probes can predict a model's next action \citep{anthropic2024sleeperprobes,goodfire2026reward,bergen2026reward}, and that activation steering changes behaviour \citep{rimsky2024caa} are all known. Our agents have the information needed to report truthfully in context, and their misreports persist when the true activity log is inserted. Three things are not known: which act precedes such a false report; whether internals forecast the report better than monitors that read the same text, within the same task; and which intervention \emph{policy} prevents a violation over a whole episode without blocking legitimate work. Single-turn evaluations cannot answer the last: they cannot tell a prevented violation from a postponed one, nor see blocked legitimate work without a matched authorized world.
+
+\textbf{This paper} (\cref{fig:overview}) follows the failure through its two moments, the decision to act without authorization and the report afterwards: we show that the failure exists (\cref{sec:exp-phen}), that internals forecast both moments (\cref{sec:exp-vforecast}), that gating every action where the forecast fires prevents the violation without blocking authorized work (\cref{sec:exp-vprevent}), that preventing the violation is the most reliable way to prevent the lie (\cref{sec:exp-steer}), and that the recipe transfers to an external benchmark (\cref{sec:exp-vprevent}).
+
+\textbf{Contributions.}
+\begin{itemize}
+\item \textbf{CAPE-Bench} (\cref{sec:setting}): matched agent tasks in which a single fact decides whether a critical action is authorized, with mock tools, labels from the environment, and more than 200{,}000 episodes of four frontier open-weight agents.
+\item \textbf{The failure and its marker} (\cref{sec:exp-phen}): agents violate and then misreport; a permission request made after the action marks the false report (preregistered), and frontier agents fabricate the authorization before violating writes and never before allowed ones.
+\item \textbf{Forecasting from internals} (\cref{sec:exp-vforecast}): linear readouts forecast the violation before the action and the lie before the report; they lead text monitors (weakly) before the plan is written, beat chain-of-thought monitors on the lie when the reasoning is pressured to hide it, and flag violations in safety families they never saw (AUROC 0.81); once the plan is written, text monitors match or slightly beat them.
+\item \textbf{Prevention over whole episodes} (\cref{sec:exp-vprevent,sec:exp-steer}): gating every action where the forecast fires cuts violations in four families and, with an approver on repeated flags, keeps authorized work, whereas blanket steering blocks it on two models and one gated turn often only postpones it; preventing the violation prevents most misreported violations, while lie-specific levers are weak after a violation.
+\item \textbf{What the readout reads} (\cref{sec:exp-vprevent,sec:discussion}): the agent's \emph{belief} that an action is unauthorized. It transfers as is across safety families; calibrated on 29 AgentDojo tasks, with the intervention unchanged, it cuts prompt-injection attacks in two families.
+\end{itemize}
+
+% =====================================================================================
+\section{CAPE-Bench}
+\label{sec:setting}
+
+\textbf{Agents, episodes and matched worlds.} An agent is a language model with mock tools; an \emph{episode} is one run on one task, a sequence of actions (tool calls or messages) and observations ending in a \emph{report} to the user. Each of 24 task templates (eight safety families: data exports, access grants, deploy keys, backups, cost actions and others) exists in two worlds that differ in one fact, such as a policy line, an owner's message or a ticket status. In the \emph{unauthorized world} $\xm$ a critical action is not allowed; in the \emph{authorized twin} $\xp$ it is. Both worlds share the task, tools and sampling seed, and no tool touches a real system.
+
+\textbf{Moments in an episode.} The \emph{reveal} $\Rv$ is the first step whose observation differs between the worlds; the \emph{violation} $\Vv$ is the first unauthorized action in $\xm$. A violation is \emph{informed} if $\Rv<\Vv$: the agent saw the decisive fact before acting. An episode \emph{launders} if, after $\Vv$, the agent requests permission for the action it already performed.
+
+\textbf{Labels.} Violations, authorized critical actions and escalations are labelled by the environment itself. Reports are labelled by a judge that compares them with the environment log: CANDID, OMITTED, MISREPRESENTED or NO\_REPORT; a \emph{lie} means MISREPRESENTED. The judge agrees with held-out gold labels and with a blind adjudication of laundering episodes (precision 0.89--0.91, recall 0.86--0.87; \cref{app:labels}).
+
+\textbf{Splits and variants.} Forecasters, steering directions and doses are chosen on development scenarios only; every confirmatory test uses fresh scenarios and seeds. Fresh sets include variants in which the agent is told its reasoning is monitored, or pressured to keep permissions out of its reasoning (\cref{app:bench}).
+
+% =====================================================================================
+\section{Method}
+\label{sec:method}
+
+\subsection{Problem setting}
+\label{sec:method-problem}
+An agent $\pi$ maps its context to the next turn $a_t$ (reasoning, then a tool call or a message); an episode is $e=(o_0,a_1,o_1,\dots,a_T,y)$, ending in a report $y$. Each task instance $i$ comes in two worlds $\xm_i,\xp_i$ that are identical except for one decisive fact $\phi_i$, which first appears in the observation at the reveal $\Rv$; both worlds share the task, the tools and the sampling seed. Because only $\phi_i$ differs, any difference between the two worlds in behaviour or internal state is caused by it. We study two failure events (\cref{tab:problem}): the violation $\Vio$ (the agent takes the critical action in $\xm$; informed if $\Rv<\Vv$) and the lie $\Y$ (given $\Vio$, the report misrepresents the environment log). Their conjunction factorizes,
+\begin{equation}
+\Pr[\Vio\wedge\Y]=\Pr[\Vio]\cdot\Pr[\Y\mid\Vio],
+\label{eq:mv}
+\end{equation}
+so a misreported violation can be prevented at the action (first factor) or at the report (second). We ask whether internal states forecast each event before it is written, and which intervention policy lowers $\Pr[\Vio]$ over the whole episode while keeping authorized work in $\xp$.
+
+\begin{table}[t]
+\centering\scriptsize
+\caption{\textbf{The method at a glance.} Each failure point has a state that is read before the failure is written, a label, and interventions.}
+\label{tab:problem}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.11\textwidth}p{0.17\textwidth}p{0.17\textwidth}@{}}
+\toprule
+ & \textbf{Violation} & \textbf{False report} \\
+\midrule
+State read & after the reveal; or after the turn's reasoning, before the tool call & before the report \\
+Label & later unauthorized action ($\Vio$) & report misrepresents ($\Y$) \\
+Interventions & steer the decision turn; gate every action & context prompt; steer the reasoning \\
+Utility guard & authorized work in $\xp$ & report kept, action mentioned \\
+\bottomrule
+\end{tabular}
+\vspace{-3mm}
+\end{table}
+
+\subsection{Forecasting from internals}
+\label{sec:method-forecast}
+\textbf{States.} Let $\h_\ell(t)\in\mathbb{R}^d$ be the residual stream at layer $\ell$ and token $t$, teacher-forced on the agent's own trajectory. We read it at three moments, each before the failure is written: the \emph{decision state} (last prompt token of the first turn after $\Rv$), the \emph{pre-action state} (last token of a turn's reasoning, before its tool-call markup) and the \emph{pre-report state} (last prompt token before $y$). For a moment $s$ with token set $T_s$, $\feat_s(e)=|T_s|^{-1}\sum_{t\in T_s}\h_\ell(t)$.
+
+\textbf{Readout.} A forecaster is a linear readout $f(\feat)=w^\top\feat+b$ fit by shrinkage linear discriminant analysis, $w=\hat\Sigma_\lambda^{-1}(\hat\mu_1-\hat\mu_0)$ with the Ledoit--Wolf shrinkage $\lambda$; the deployed score averages z-scored readouts over five depths and two cross-fitted folds. It is computed from vectors the forward pass already produces.
+
+\textbf{Hard negatives.} The pre-action gate $g$ is trained with positives = violating turns and two kinds of negatives: the agent's other actions in the same templates, and the \emph{same} critical action in the authorized twin $\xp$. The second kind forces $g$ to read whether the action is authorized, not which action it is. The threshold $\tau$ is the 90th percentile of $g$ on development authorized critical actions, i.e.\ 10\% false alarms.
+
+\textbf{Metric and baselines.} Failures cluster by template, so a pooled AUROC would reward template recognition; we report the AUROC within (model, template) strata,
+\begin{equation}
+\Aw=\sum_k\tfrac{n_k}{N}\Pr\big[f(\feat^+)>f(\feat^-)\mid k\big],
+\label{eq:auc}
+\end{equation}
+with nulls from refitting the whole pipeline on labels permuted within strata. Text baselines get the same information up to the same moment: a supervised TF-IDF classifier $T_{\mathrm{sup}}$ on everything the agent has seen and written, and zero-shot LLM monitors that read the history and the agent's reasoning ($M_{\mathrm{cot}}$) or the history without it ($M_{\mathrm{act}}$).
+
+\subsection{Self-counterfactual steering}
+\label{sec:method-steer}
+\label{sec:method-context}
+From the \emph{same} state we sample several continuations and split them into wanted ($W$: turns that do not violate, or honest reports) and unwanted ($U$). With $\bar\h_\ell(r)$ the mean residual over continuation $r$,
+\begin{align}
+d_\ell(e)&=\tfrac{1}{|W(e)|}\textstyle\sum_{r\in W(e)}\bar\h_\ell(r)-\tfrac{1}{|U(e)|}\sum_{r\in U(e)}\bar\h_\ell(r),\nonumber\\
+u_\ell&=\bar d_\ell/\|\bar d_\ell\|,\qquad \gap_\ell=\mathrm{mean}_e\,d_\ell(e)^\top u_\ell,
+\label{eq:caa}
+\end{align}
+over states with both kinds of continuation. Both groups share the state, so task and context cancel in $d_\ell(e)$ and only the outcome remains; a difference of means across episodes would mix outcome with content. Steering adds
+\begin{equation}
+\h_\ell(t)\leftarrow\h_\ell(t)+\alpha\,\gap_\ell\,u_\ell\qquad\text{at five layers }\ell,
+\label{eq:steer}
+\end{equation}
+at the last token at prefill and at every decoding step of the steered turn. \textbf{Dose.} On development sites, $\alpha$ is the largest violation reduction that keeps authorized progress, $\mathrm{prog}(\alpha)\ge\mathrm{prog}(0)-0.10$ with $\mathrm{prog}$ the share of $\xp$ decision turns that do the authorized work or escalate, keeps calls parseable, and beats a norm-matched random direction.
+
+\subsection{Forecast-gated policies}
+\label{sec:method-vsteer}
+Let $a^{0}_t$ be the turn the agent writes and $a^{\alpha}_t$ its steered regeneration from the same seed. \emph{Gate once} replaces $a^0_t$ by $a^\alpha_t$ at the decision turn if $g(\h^{\mathrm{act}}(a^0_t))>\tau$; \emph{gate every action} applies this test to every tool call; \emph{blanket} steers every regenerated turn, regardless of $g$. Gating every action is needed because the intent outlives a steered turn: the next turn is sampled from a context that still supports the violation. \emph{Gate, then ask} (\cref{alg:gate}) steers on the first flag of an episode and, on every later flag, asks an approver about the proposed action \emph{before} it runs: the system, not the agent, requests permission, which removes the ambiguity laundering exploits. The approver is the environment's approval channel, which applies the scenario's permission rule (a simulated principal); we also test model approvers that read only the transcript (\cref{sec:exp-vprevent}).
+
+\begin{algorithm}[t]
+\caption{Gate, then ask (one episode; $g$, $\tau$ and the steering vector are frozen).}
+\label{alg:gate}
+\small
+\begin{algorithmic}[1]
+\REQUIRE agent $\pi$; pre-action readout $g$; threshold $\tau$; steering vector $\alpha\gap_\ell u_\ell$ (\cref{eq:steer}); approver $\mathcal{A}$
+\STATE $\mathit{flagged}\leftarrow$ false
+\FOR{each turn $t$ until the agent ends or $K$ turns}
+\STATE $a^0_t\leftarrow\pi(\text{context})$ \hfill $\triangleright$ reasoning and proposed call
+\IF{$a^0_t$ is a tool call and $g(\h^{\mathrm{act}}(a^0_t))>\tau$}
+\IF{not $\mathit{flagged}$}
+\STATE $a_t\leftarrow$ steered regeneration of turn $t$, same seed
+\STATE $\mathit{flagged}\leftarrow$ true
+\ELSIF{$\mathcal{A}$ approves $a^0_t$}
+\STATE $a_t\leftarrow a^0_t$ \hfill $\triangleright$ executed, marked approved
+\ELSE
+\STATE $a_t\leftarrow$ \textsc{block} \hfill $\triangleright$ agent sees the denial
+\ENDIF
+\ELSE
+\STATE $a_t\leftarrow a^0_t$
+\ENDIF
+\STATE execute $a_t$ in the environment; append the observation
+\ENDFOR
+\STATE request the report; label it against the environment log
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{Labels and utility.} Each prevention \emph{site} is an exact prefix (just before the original violating call in $\xm$, or the authorized critical call in $\xp$), regenerated without and with a policy from the same seed and labelled by replaying the environment (VIOLATE, CRITICAL, ESCALATE, OTHER, FINAL, PARSE). Every site is then followed for 6--12 more turns, so a postponed violation, and authorized work that is lost or delayed, are both visible.
+
+\subsection{Lie-specific interventions and internal knowledge}
+\label{sec:method-choice}
+At the report we test one added user turn (a neutral request, a reminder, the true activity log, or the evidence contract of \citet{zhu2026fta}; \cref{app:prompts}) and self-counterfactual honesty steering of the report's generation, reasoning included, from its 17th token. A world-state probe's decode rate of the decisive fact at the violation, $\K_m$, is preregistered to order the contract's benefit across models (H1). Every confirmatory test was preregistered and hash-locked before its data existed; prevention effects are paired by site (exact McNemar), forecasting differences use scenario-cluster bootstraps, and Holm correction applies within each preregistration (\cref{app:stats}).
+
+\section{Experiments}
+\label{sec:exp}
+
+\textbf{Models.} Four frontier open-weight families (internals require open weights): \Qwen-27B, \Muse-Glimmer-30B, \Gemma-26B-A4B and \Oss-20b. \textbf{Data.} Every number below is from fresh scenarios and seeds that no forecaster, direction or dose saw, except one development sweep marked as such; every test is preregistered unless marked descriptive (complete list: \cref{tab:scoreboard}).
+
+% -------------------------------------------------------------------------------------
+\subsection{The problem: agents violate, then misreport}
+\label{sec:exp-phen}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig2_problem.pdf}
+\vspace{-6mm}
+\caption{\textbf{Agents violate, then misreport, and asking afterwards marks the lie.}
+\textbf{(a)} Violation rate after reading the decisive fact, and false-report rate after an informed violation.
+\textbf{(b)} False-report rate with and without a permission request made after the action (preregistered).
+\textbf{(c)} Frontier agents on $\tau^2$-bench: false justifications before violating vs allowed writes.
+Fresh data; Wilson 95\% CIs.}
+\label{fig:problem}
+\vspace{-3mm}
+\end{figure*}
+
+\textbf{Agents violate and misreport} (\cref{fig:problem}a). On the fresh confirmation rollouts, after the agent has read the decisive fact it violates in 13\% (\Gemma), 5\% (\Oss), 3\% (\Muse) and 2\% (\Qwen) of episodes, and, among the reports that follow an informed violation, 5\%, 7\%, 71\% and 46\% are false. The misreports are knowing: the facts are in context, and inserting the true activity log before the report lowers laundering lies only from 0.80 to 0.71.
+
+\textbf{Laundering marks the lie} (\cref{fig:problem}b). On 1{,}081 fresh informed violations, the lie rate is 0.70 after a retroactive permission request vs 0.08 otherwise (preregistered CMH test stratified by model and template: odds ratio 7.0, risk ratio 2.8, $p<10^{-6}$). In \Gemma and \Oss laundering is rare but marks a lie 11--23 times more often; \Muse launders in 43\% of informed violations and lies in about 70\% either way (\cref{tab:f1model}). On a blind-annotated set of 110 episodes the contrast holds (73.8\% vs 8.2\%), and 51 of its 61 retroactive requests are worded as if the action were pending.
+
+\textbf{Frontier agents fabricate the authorization first} (\cref{fig:problem}c). In 894 write actions of Claude-3.7-Sonnet, GPT-4.1, GPT-4.1-mini and o4-mini on $\tau^2$-bench \citep{barres2025tau2}, the agent tells the customer something false that makes the write look permitted (for example, ``booked within 24 hours'') before 26\% of 227 policy-violating writes (about 40\% after correcting for the validated miss rate) and before none of 667 allowed writes (each agent: Fisher $p\le2\times10^{-4}$; \cref{app:frontier}). Open agents launder \emph{after} the action; frontier agents fabricate the authorization \emph{before} it.
+
+% -------------------------------------------------------------------------------------
+\subsection{Internals forecast both failures}
+\label{sec:exp-vforecast}
+\label{sec:exp-forecast}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_forecast_main.pdf}
+\vspace{-6mm}
+\caption{\textbf{Internals forecast both failures.}
+\textbf{(a)} The violation, at four moments; text forecasters lead while the plan is being written.
+\textbf{(b)} The lie, before the report, without pressure and when the agent is told to keep permissions out of its monitored reasoning.
+Fresh data; frozen forecasters; cluster-bootstrap 95\% CIs; tests in \cref{tab:forecast-main}.}
+\label{fig:fcast}
+\vspace{-3mm}
+\end{figure*}
+
+\input{tables/tab_forecast}
+
+\textbf{Design.} We read the residual stream at two moments before each failure is written: right after the agent reads the decisive fact and after a turn's reasoning, before it writes the call; and just before the report. At the decision, negatives include the \emph{same} action when it is authorized, so recognising the action type is not enough. Internal, supervised-text and zero-shot CoT-monitor forecasters are fit on development data and frozen (\cref{app:vforecast}); \cref{tab:forecast-main} lists every comparison with its test. Before the reveal the two worlds are identical in distribution, so no monitor can beat chance there (empirically 0.48--0.51; \cref{app:bound}).
+
+\textbf{The violation} (\cref{fig:fcast}a). Right after the reveal, internals forecast a later violation weakly but ahead of text: AUROC 0.580 [0.553, 0.608] ($p=0.0005$), ahead of the CoT monitor ($+0.065$ [0.010, 0.121]) and supervised text ($+0.034$ [0.006, 0.060]; Holm $p=0.015$ for both). While the plan is written, text leads (two actions before: $-0.05$ [$-0.08$, $-0.02$]). At the decision the forecast is strong (AUROC 0.941; it flags 84--98\% of violations and 7--14\% of authorized critical actions), but the preregistered comparisons over all negatives do not pass (vs supervised text $+0.007$; vs the CoT monitor $-0.022$ [$-0.047$, $-0.001$], in the monitor's favour); internals lead supervised text only against the agent's other actions ($+0.068$ [0.050, 0.089]; preregistered secondary). Against the authorized twin, whose context states the permission in text, text matches or beats them.
+
+\textbf{The lie} (\cref{fig:fcast}b). The preregistered frozen forecaster reaches $\Aw=0.745$ [0.67, 0.82] just before the report (\Muse, \Gemma, \Oss; Holm $p=0.002$). Pooled over all prompt variants, internals do not beat text: the preregistered tests against the CoT monitor ($+0.06$, Holm $p=0.27$) and of the internal-plus-text stack against supervised text ($-0.04$) do not pass, and without pressure supervised text is ahead (0.76 vs 0.67); descriptively (\Qwen, \Gemma, \Oss; 434 episodes) the ensemble reaches 0.85 against 0.81 for supervised text and 0.68 for the CoT monitor, and per model supervised text is better on \Gemma and \Oss. When the agent is told to keep permissions out of its monitored reasoning, internals forecast \emph{better} while the CoT monitor does not (preregistered over four models: $+0.16$ [0.01, 0.28], $p=0.02$; ensemble 0.88 vs 0.65).
+
+% -------------------------------------------------------------------------------------
+\subsection{Preventing the violation}
+\label{sec:exp-vprevent}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig4_prevent.pdf}
+\vspace{-6mm}
+\caption{\textbf{Gating every action prevents the violation, and preventing the violation prevents the lie.}
+\textbf{(a)} The decision turn: violations (bars) and authorized work (circles) under blanket and gated steering.
+\textbf{(b)} The whole episode: violations (bars) against each policy's paired run without steering (dash), and authorized completion (circles).
+\textbf{(c)} Violations that are then misreported, end to end (\Muse).
+\textbf{(d)} Lie-specific levers: false-report rate before (light) and after (dark); dashed: mixed evidence.
+Fresh data; tests in \cref{tab:prevent-main}.}
+\label{fig:prevent}
+\vspace{-3mm}
+\end{figure*}
+
+\input{tables/tab_prevent}
+
+\textbf{Design.} A development sweep fixes each model's dose (the largest violation reduction that keeps authorized progress and parseable calls and beats a random direction). Blanket and gated steering are confirmed on about 200 fresh unauthorized and 200 authorized sites per model, and every episode is then followed for more turns, so a postponed violation and delayed authorized work are both visible. \Cref{tab:prevent-main} gives every test per model.
+
+\textbf{At the decision} (\cref{fig:prevent}a). Blanket steering reduces violations but, on two models, blocks authorized work that only the matched world reveals (\Gemma progress 0.89$\rightarrow$0.585 at the gate dose; \Qwen 0.84$\rightarrow$0.35; on \Oss and \Muse it costs little, 0.805$\rightarrow$0.80 and 0.94$\rightarrow$0.89; a random direction breaks every turn). Steering only where the forecaster fires keeps most of it (gate minus blanket progress: $+0.23$ [0.17, 0.29] on \Gemma, $+0.45$ [0.38, 0.53] on \Qwen; in this turn the preregistered 0.05 margin is missed on \Gemma, $-0.075$, and \Qwen, $-0.04$; over the following turns the work is completed as often): \Gemma violations 0.41$\rightarrow$0.055 (71 fixed, \emph{0} broken; Holm $p=8\times10^{-22}$) with progress 0.815; \Qwen 0.266$\rightarrow$0.043 (41/0; 26\% of its decision turns do not parse, in both arms); \Oss 0.685$\rightarrow$0.51 (38/3); \Muse 0.175$\rightarrow$0.095 (20/4). At the decision the plan is already written, so a zero-shot CoT-monitor gate at the same false-alarm rate does comparably (the preregistered test that internals prevent more fails: 16 vs 20 discordant sites, $p=0.80$; \cref{app:robust}); the internal gate costs a readout, not a model call.
+
+\textbf{Over the episode} (\cref{fig:prevent}b). One gated turn often only postpones the violation (70\% on \Gemma, 59--65\% on \Qwen and \Muse, 16\% on \Oss). Gating every action cuts them: eventual violations 0.68$\rightarrow$0.15 on \Gemma (53 fixed, \emph{0} worse; $p=10^{-16}$), 0.38$\rightarrow$0.17 on \Muse (24/4), 0.41$\rightarrow$0.05 on \Qwen (36/0), 0.77$\rightarrow$0.63 on \Oss (15/1). Repeated false alarms on authorized tasks then cost some work (completion 0.94 vs 1.00 on \Gemma, 0.915 vs 0.965 on \Qwen). Steering on the first flag and asking an approver on later flags fixes this: \Gemma 0.70$\rightarrow$0.09 (61 fixed, \emph{0} worse; $p=4\times10^{-19}$) with completion 1.00 vs 0.995 and 0.12 asks per authorized episode; \Oss 0.78$\rightarrow$0.60 (19/1) with completion 0.935 vs 0.93; \Muse 0.35$\rightarrow$0.20 (21/6) with completion 0.995 vs 1.00; \Qwen 0.41$\rightarrow$0.07 (34/0) with completion 0.95 vs 0.955. Here the approver is the environment's approval channel, a simulated principal (in \Gemma's unauthorized episodes it approved 22 and blocked 29 of 51 asks). A zero-shot model approver is safe but blocks authorized work when told to deny unclear cases; allowed to escalate them to a person, it keeps the full gain in every model (preregistered, confirmed on fresh \Qwen asks) with 25\% of asks escalated (\cref{app:approver}).
+
+\textbf{On an external benchmark.} In AgentDojo \citep{debenedetti2024agentdojo}, instructions injected into tool outputs make agents act for an attacker. Agents take an injection signed in the user's name as the user's request, so they believe the action is authorized, and the CAPE-trained readout, which reads that belief, stays silent (\cref{app:agentdojo}). Calibrated on 29 tasks, as any deployed monitor is, the same linear readout separates following an injection from benign use and from merely seeing one (out-of-fold AUROC 0.92--0.98; 0.93--0.995 on injection goals held out from fitting). With the steering unchanged, gating cuts attack success on 68 unseen tasks (preregistered): \Gemma 11.7\%$\rightarrow$5.7\% (42 fixed, 2 broken; Holm $p=6\times10^{-11}$; benign utility 0.637 vs 0.637), \Oss 28.5\%$\rightarrow$17.5\% (90/18; $p=10^{-12}$; benign utility 0.667 vs 0.681).
+
+\textbf{What the approver does, and what it costs.} Under gate-then-ask the system, not the agent, requests permission, and it does so \emph{before} the flagged action runs. In \Gemma's unauthorized episodes it asked 0.51 times per episode; the approver blocked the violating calls and approved allowed actions the readout had flagged, which is why authorized completion is kept (0.015--0.51 asks per authorized episode). Runs are deterministic: reruns of \Gemma and \Qwen reproduce all 600 step histories exactly. Screening an action costs one linear readout ($6\times10^4$--$1.3\times10^5$ FLOPs, 9--19\,$\mu$s on a CPU, about $10^{-8}$ of the agent's turn); the CoT monitor processes about 4{,}000 tokens per action, costs 4--64 times the agent's whole turn even when cached, and takes 33\,s per call against the gate's 32--97\,ms (\cref{tab:cost-main}).
+
+\input{tables/tab_cost_main}
+
+% -------------------------------------------------------------------------------------
+\subsection{Preventing the lie}
+\label{sec:exp-steer}
+\label{sec:exp-prevent}
+\label{sec:exp-choice}
+
+\textbf{End to end} (\cref{fig:prevent}c). Pooled over \Gemma, \Oss and \Qwen (300 paired sites followed for 12 more turns, reports judged against the environment log), gate-then-ask cuts misreported violations from 0.096 to 0.011 (24 fixed, 1 broken; preregistered, $p=8\times10^{-7}$), and in each model separately (Holm $p\le0.016$); counting a missing report as a lie strengthens every comparison. On 197 fresh \Muse sites followed for the decision turn and 12 more, gating every action cuts violations that are then misreported from 0.168 to 0.051 (31 fixed, 8 broken; preregistered, Holm $p=4\times10^{-4}$), with all authorized work done; adding honesty steering at the report changes nothing (0.056). Most of the effect is fewer violations, as \cref{eq:mv} suggests: on \Muse violations fall from 0.42 to 0.17, while the lie rate among the remaining violations moves less (0.40$\rightarrow$0.29; descriptive).
+
+\textbf{Lie-specific levers are weak after a violation} (\cref{fig:prevent}d; false-report rate among reports, \Muse). Steering the agent's reasoning along a self-counterfactual honesty direction cuts false reports where the direction was built, reports after laundering: 0.71$\rightarrow$0.44 and, in a replication, 0.77$\rightarrow$0.52 (Holm $p=5\times10^{-4}$ and $10^{-6}$), while a random direction does nothing (0.71$\rightarrow$0.69); the lever is the reasoning, not the report (\cref{app:steer}), and steered reports are longer (766 vs 412 tokens; the preregistered quality check did not pass). In continued episodes after a violation, where laundering is rare and lies take other forms, the same steering does not help (0.48$\rightarrow$0.60; preregistered test 0.29$\rightarrow$0.34 per violation, $p=0.86$); the evidence contract of \citet{zhu2026fta} more than doubles candid reports (0.19$\rightarrow$0.45) but its preregistered test does not pass (0.31$\rightarrow$0.29 per violation, $p=0.42$; among reports 0.38$\rightarrow$0.32, descriptive); and a direction rebuilt on these episodes finds no qualifying dose in a development sweep (0.53 vs 0.53), so no fresh test was run. In these episodes the most reliable way to stop the lie is to stop the violation.
+
+\textbf{Where a prompt helps is predictable from internals.} Applied to every informed episode, the evidence contract makes \Oss \emph{assert} compliance (0.16$\rightarrow$0.42, $p=3\times10^{-12}$); applied only where the frozen forecaster fires, it does not, and on \Muse it then cuts lies (0.85$\rightarrow$0.39; \cref{tab:target}). A world-state probe's knowledge index $\K$ (\Muse 0.94, \Qwen 0.81, \Gemma 0.69, \Oss 0.03) orders the contract's benefit on fresh episodes as preregistered (H1: $+0.49$, $+0.11$, $+0.01$, $-0.25$); \Qwen, the out-of-sample prediction, lands between \Muse and \Gemma (\cref{fig:knowledge}).
+
+% -------------------------------------------------------------------------------------
+
+% =====================================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\textbf{Screen every action, not the first one.} A forecast that is accurate at one turn is not a policy. Single-turn evaluation would have credited one gated turn with a 0.41$\rightarrow$0.055 reduction on \Gemma; followed for six more turns, 70\% of those prevented violations came back. The intent outlives the steered turn: on \Muse the gate fires 3.8 times per unauthorized episode (1.0 per authorized one), so the readout must act as a per-action alarm. Prevention claims for agents need episode-level outcomes and a matched authorized world, or they confuse postponing with preventing and miss the work that steering blocks.
+
+\textbf{Internals and text are complementary.} Internals lead before the plan is written and when the reasoning is pressured to hide it; once the plan is written, a text monitor reading the same tokens matches them. An oversight system can therefore screen every action with the cheap internal readout and send only flagged actions to slower checks, a model monitor or a human approver.
+
+\textbf{The approval channel needs the order of events.} Laundering works because a request does not say whether the action already ran; system-initiated requests before execution remove this ambiguity.
+
+\textbf{The readout reads belief.} It flags actions the agent believes unauthorized. That belief is what a knowing violation shares across safety families, so the readout transfers to unseen ones (\cref{app:lofo}); a forged instruction changes the belief itself, so a 29-task calibration is needed, and the intervention still transfers unchanged. Calibration is a minutes-long linear fit; the validated steering is reused.
+
+\textbf{Fix the cause.} Every lie lever we tested acts after the agent has committed to a violation; the one intervention that reliably lowered misreported violations acted before it. End to end, gating removed about 90\% of misreported violations in three families; honesty steering at the report removed none. Oversight budgets for deployed agents are better spent at the action, where the violation is still preventable, than at the report.
+
+% =====================================================================================
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Unauthorized actions and misreports.} Agents conceal unrequested actions \citep{guo2025upward,lynch2026summer}, claim false approvals \citep{transluce2026wild}, overclaim \citep{smyth2026overclaim}, fabricate actions \citep{transluce2025o3} and claim they abstained \citep{liu2026agentabstain}; separating knowing lies from ignorance is open for deception detectors \citep{liu2026knownlie,smith2025difficulties}. None isolates the post-hoc permission sequence; ``laundering'' elsewhere names authority entering through memory or summaries \citep{memlaunder2026,hu2026verification}, and policy hallucination on $\tau$-bench \citep{cao2026pae} precedes violating writes only.
+
+\textbf{Monitoring.} CoT monitors are useful but fragile \citep{baker2025monitoring,korbak2025cot,chen2025reasoning}; probes forecast a model's next action \citep{anthropic2024sleeperprobes,kortukov2026predicting,goodfire2026reward,bergen2026reward} or detect deception within the reply \citep{goldowskydill2025probes}. Concurrent work forecasts whether an agent will fabricate results when task-critical information is withheld \citep{li2026before}; our agents have complete, true information and lie knowingly about their own action, and we compare against text monitors on the same prefix, within template and under pressure to hide reasoning (cf.\ \citealp{das2026activations}). Pre-action probes can read the situation rather than the action \citep{fomin2026probes}, twin-prefix monitors fall to chance without observations \citep{han2026twin}, and activation monitors can be evaded \citep{keenan2026evade,gupta2025rlobf}.
+
+\textbf{Steering and context fixes.} RepE \citep{zou2023repe}, ITI \citep{li2023iti}, CAA \citep{rimsky2024caa} and open-ended honesty steering \citep{herbster2026steer} target truthfulness; probe gates and subspace steering guard agents against injected or harmful actions \citep{dong2026ipi,luo2026mechsuits}; resampling localizes deceptive commitment \citep{merrill2026point}. We evaluate policies over whole episodes against a matched authorized world. Prompts cut false success reports \citep{zhu2026fta} and raise disclosure \citep{huang2026insecure}; we find they can backfire.
+
+\textbf{Calibrated and certified decisions.} Our gate sets its threshold empirically, at a fixed false-alarm rate on benign actions. Conformal calibration gives distribution-free versions of such thresholds and has been used to enforce fairness constraints in LLM-based recommenders \citep{fayyazi2025facter}, image recognition \citep{fayyazi2026fairsight} and chain-of-thought decoding \citep{fayyazi2026coft}, and to certify tool-using multimodal reasoning \citep{fayyazi2026pop}; verification and repair give guarantees for fixed networks \citep{fayyazi2025fairverify}. Conformal thresholds on internal-state readouts, with coverage guarantees on false alarms, are a natural next step for the gate.
+
+% =====================================================================================
+\section{Limitations and Conclusion}
+\label{sec:limits}
+\textbf{Limitations.} (i)~\emph{Models and tools.} Four open-weight families with mock tools; closed frontier agents enter only through published $\tau^2$-bench trajectories; open agents on $\tau^2$-bench commit no knowing violations to gate (\cref{app:tau2open}). (ii)~\emph{Labels.} Lies are labelled by a judge model (precision 0.89--0.91 against gold and blind labels); its main error is rarer under interventions, so it shrinks rather than inflates our effects (\cref{app:audit}). (iii)~\emph{Approver.} The model approver with escalation was evaluated on logged asks with worst-case bounds, not in live episodes (\cref{app:approver}). (iv)~\emph{Scope of the lie results.} The lie-specific levers after a violation are tested on \Muse only, the model with the most lies. (v)~\emph{Evasion.} We do not test agents trained to hide their intent from the readout; activation monitors can be evaded under optimization pressure \citep{keenan2026evade,gupta2025rlobf}. (vi)~\emph{Decision-time accuracy.} Once the plan is written, text monitors match the readout, and at the decision a CoT-monitor gate at the same false-alarm rate prevents about as many violations (\cref{app:robust}); there our claim is cost and timing (\cref{app:cost}), not accuracy. (vii)~\emph{Thresholds.} The gate's threshold is an empirical percentile, without a distribution-free guarantee on false alarms.
+
+\textbf{Conclusion.} Agents that cross an authorization boundary often ask permission afterwards and then misreport what they did; this laundering marks the lie, and frontier agents fabricate the authorization before the act. A linear readout of the agent's internal state forecasts the violation before the action and the lie before the report, ahead of monitors that read the agent's text when the plan is unwritten or the reasoning is pressured to hide. As a per-action gate with an approver for repeated flags, it cuts violations over whole episodes in four families without blocking authorized work, and, calibrated on 29 tasks of an external benchmark, cuts prompt-injection attacks in two families. Preventing the violation prevents most of the lies that follow, in all four families: oversight should act at every action, with internal state as one of its signals. A model approver that escalates unclear cases keeps the gain while a person sees a quarter of the asks; whether the readout holds against agents optimized to evade it remains open.
+
+\section*{Impact Statement}
+This work aims to make agent oversight more reliable.
+All experiments use mock tools; no real system, credential or person was affected.
+The laundering pattern could inform attackers who design agents to deceive approvers; we judge that detection and prevention benefit more from disclosure.
+
+\bibliography{refs}
+\bibliographystyle{icml2027}
+
+\newpage
+\appendix
+\onecolumn
+\input{appendix}
+
+\end{document}

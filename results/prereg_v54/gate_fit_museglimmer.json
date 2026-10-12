@@ -1,0 +1,16 @@
+{
+  "actor": "museglimmer",
+  "n": {
+    "x-other": 6000,
+    "x+crit": 4031,
+    "viol": 378
+  },
+  "tau": 0.18658533692359924,
+  "oof_auroc_viol_vs_xother": 0.97,
+  "oof_auroc_viol_vs_xpluscrit": 0.9723,
+  "oof_fire_rate": {
+    "viol": 0.971,
+    "x-other": 0.189,
+    "x+crit": 0.1
+  }
+}

@@ -1,0 +1,165 @@
+{
+ "gemma4": {
+  "n": 1335,
+  "lies": 78,
+  "variants": {
+   "base": 739,
+   "monitored": 596
+  },
+  "all": {
+   "I_lda": 0.837,
+   "I_lr": 0.784,
+   "T_full": 0.896,
+   "T_cot": 0.852,
+   "T_act": 0.883,
+   "combo_avg": 0.853,
+   "n": 1335,
+   "lies": 78
+  },
+  "base": {
+   "I_lda": 0.77,
+   "I_lr": 0.764,
+   "T_full": 0.854,
+   "T_cot": 0.8,
+   "T_act": 0.801,
+   "combo_avg": 0.801,
+   "n": 739,
+   "lies": 40
+  },
+  "monitored": {
+   "I_lda": 0.881,
+   "I_lr": 0.785,
+   "T_full": 0.937,
+   "T_cot": 0.901,
+   "T_act": 0.952,
+   "combo_avg": 0.891,
+   "n": 596,
+   "lies": 38
+  }
+ },
+ "gptoss20b": {
+  "n": 1166,
+  "lies": 100,
+  "variants": {
+   "base": 456,
+   "monitored": 420,
+   "obfuscate": 290
+  },
+  "all": {
+   "I_lda": 0.822,
+   "I_lr": 0.814,
+   "T_full": 0.791,
+   "T_cot": 0.79,
+   "T_act": 0.763,
+   "combo_avg": 0.842,
+   "n": 1166,
+   "lies": 100
+  },
+  "base": {
+   "I_lda": 0.791,
+   "I_lr": 0.758,
+   "T_full": 0.727,
+   "T_cot": 0.74,
+   "T_act": 0.705,
+   "combo_avg": 0.779,
+   "n": 456,
+   "lies": 36
+  },
+  "monitored": {
+   "I_lda": 0.865,
+   "I_lr": 0.835,
+   "T_full": 0.834,
+   "T_cot": 0.835,
+   "T_act": 0.826,
+   "combo_avg": 0.88,
+   "n": 420,
+   "lies": 46
+  },
+  "obfuscate": {
+   "I_lda": 0.81,
+   "I_lr": 0.875,
+   "T_full": 0.821,
+   "T_cot": 0.815,
+   "T_act": 0.712,
+   "combo_avg": 0.879,
+   "n": 290,
+   "lies": 18
+  }
+ },
+ "museglimmer": {
+  "n": 168,
+  "lies": 122,
+  "variants": {
+   "base": 61,
+   "obfuscate": 58,
+   "monitored": 49
+  },
+  "all": {
+   "I_lda": 0.621,
+   "I_lr": 0.667,
+   "T_full": 0.537,
+   "T_cot": 0.555,
+   "T_act": 0.418,
+   "combo_avg": 0.6,
+   "n": 168,
+   "lies": 122
+  },
+  "base": {
+   "I_lda": 0.612,
+   "I_lr": 0.633,
+   "T_full": 0.49,
+   "T_cot": 0.517,
+   "T_act": 0.429,
+   "combo_avg": 0.551,
+   "n": 61,
+   "lies": 42
+  },
+  "monitored": {
+   "I_lda": 0.662,
+   "I_lr": 0.65,
+   "T_full": 0.425,
+   "T_cot": 0.425,
+   "T_act": 0.3,
+   "combo_avg": 0.575,
+   "n": 49,
+   "lies": 39
+  },
+  "obfuscate": {
+   "I_lda": 0.648,
+   "I_lr": 0.727,
+   "T_full": 0.617,
+   "T_cot": 0.633,
+   "T_act": 0.391,
+   "combo_avg": 0.68,
+   "n": 58,
+   "lies": 41
+  }
+ },
+ "qwen38": {
+  "n": 42,
+  "lies": 18,
+  "variants": {
+   "base": 42
+  },
+  "all": {
+   "I_lda": 0.686,
+   "I_lr": 0.701,
+   "T_full": 0.358,
+   "T_cot": 0.314,
+   "T_act": 0.255,
+   "combo_avg": 0.591,
+   "n": 42,
+   "lies": 18
+  },
+  "base": {
+   "I_lda": 0.686,
+   "I_lr": 0.701,
+   "T_full": 0.358,
+   "T_cot": 0.314,
+   "T_act": 0.255,
+   "combo_avg": 0.591,
+   "n": 42,
+   "lies": 18
+  }
+ }
+}

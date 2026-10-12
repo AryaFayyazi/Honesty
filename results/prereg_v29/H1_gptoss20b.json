@@ -1,0 +1,38 @@
+{
+ "uninformed": {
+  "n_actions": 4870,
+  "auroc_within_fold": 0.4974,
+  "ci90": [
+   0.4831,
+   0.512
+  ],
+  "ci95": [
+   0.4805,
+   0.5144
+  ]
+ },
+ "informed": {
+  "n_actions": 10796,
+  "auroc_within_fold": 0.7677,
+  "ci90": [
+   0.7556,
+   0.7779
+  ],
+  "ci95": [
+   0.754,
+   0.78
+  ]
+ },
+ "text_uninformed": {
+  "n": 4870,
+  "auroc": 0.5049,
+  "ci90": [
+   0.4806,
+   0.5302
+  ]
+ },
+ "included": true,
+ "PASS": true,
+ "actor": "gptoss20b",
+ "test": "H1"
+}

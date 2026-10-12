@@ -1,0 +1,7 @@
+name: openai/gpt-oss-20b
+hf_id: openai/gpt-oss-20b
+local_path: null  # resolved from /data/models hub cache at runtime; lock revision before replication runs
+family: gpt_oss
+num_layers: 24
+hidden_size: 2880
+dtype: bfloat16

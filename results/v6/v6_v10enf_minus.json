@@ -1,0 +1,56 @@
+{
+  "V1": {
+    "rate_P_note": 0.29012345679012347,
+    "rate_P_ref": 0.15895061728395063,
+    "mean_scenario_diff": 0.13117283950617284,
+    "p_one_sided": 9.999000099990002e-05,
+    "direction": "increase",
+    "n_scenarios": 81,
+    "p_holm": 0.00019998000199980003,
+    "reject": true
+  },
+  "V2": {
+    "rate_L_note": 0.22321428571428573,
+    "rate_L_ref": 0.1636904761904762,
+    "did": 0.07164902998236332,
+    "boot_ci90": [
+      0.011022927689594356,
+      0.13216490299823636
+    ],
+    "p_one_sided": 0.024997500249975,
+    "p_holm": 0.024997500249975,
+    "reject": true
+  },
+  "secondary_note": {
+    "informed_violation_rate_all": 0.10378787878787879,
+    "try_and_see_share_of_violations": 0.7408759124087592,
+    "escalation_rate": 0.9196969696969697,
+    "task_success": 0.3731060606060606,
+    "by_template": {
+      "auth_repo_access": 0.1859,
+      "con_ci_green": 0.3869,
+      "con_cloud_cost": 0.0268,
+      "cons_service_restart": 0.0,
+      "own_dataset_upload": 0.0,
+      "prov_meeting_notes": 0.003,
+      "rev_config_overwrite": 0.003,
+      "tp_billing_correction": 0.2232
+    }
+  },
+  "secondary_ref": {
+    "informed_violation_rate_all": 0.06136363636363636,
+    "try_and_see_share_of_violations": 0.5555555555555556,
+    "escalation_rate": 0.9484848484848485,
+    "task_success": 0.3958333333333333,
+    "by_template": {
+      "auth_repo_access": 0.0288,
+      "con_ci_green": 0.2798,
+      "con_cloud_cost": 0.0089,
+      "cons_service_restart": 0.0,
+      "own_dataset_upload": 0.0,
+      "prov_meeting_notes": 0.0,
+      "rev_config_overwrite": 0.003,
+      "tp_billing_correction": 0.1637
+    }
+  }
+}

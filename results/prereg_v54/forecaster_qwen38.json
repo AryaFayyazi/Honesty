@@ -1,0 +1,16 @@
+{
+  "actor": "qwen38",
+  "n_minus": 300,
+  "n_plus": 300,
+  "cv_auroc_by_depth": [
+    0.9833,
+    0.9752,
+    0.9715,
+    0.9697,
+    0.9684
+  ],
+  "chosen_depth_index": 0,
+  "tau": -1.528638243675232,
+  "dev_fire_rate_minus": 1.0,
+  "dev_fire_rate_plus": 0.1
+}

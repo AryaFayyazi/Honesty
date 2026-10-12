@@ -1,0 +1,12 @@
+{
+ "locked_at": "2026-10-09T14:08:38.052437",
+ "sha256": {
+  "docs/preregistration_v62.md": "b3337e083a87250ab32019afded3b0849ed6c0c159db609520386b9020d2869a",
+  "scripts/168_v62_cot_gate.py": "022a21c06264b46b5150d8ed1593614ef30a52b69cbe931063c315e9f6051090",
+  "slurm/v62.sh": "fc0c7391a3928eeb92cbaa594421b3489e89cefcd21a0c34bff92e0d146a8d1e",
+  "scripts/156_v57_monitor.py": "df9c034af56a3e44a77acd451083b04ae1a5cf14946408ed0d4fd5d7ffbdc6bb",
+  "scripts/154_v54_gate.py": "4364cc46d2b01914e408708ea37614016a2155623956b0a156a526b193ceba0e"
+ },
+ "note": "locked before any v62 monitor scores; text assembly tested on CPU only (no scores)",
+ "addenda": []
+}

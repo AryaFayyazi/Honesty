@@ -1,0 +1,172 @@
+{
+ "summary": {
+  "uninformed_ci_covers_0": "9/9",
+  "uninformed_max_abs_diff": 0.061,
+  "informed_ci_excludes_0": "9/9",
+  "informed_min_diff": 0.192
+ },
+ "points": {
+  "ecg|FPR0.01|uninformed": {
+   "TPR": 0.987,
+   "twin_flag": 1.0,
+   "diff": -0.013,
+   "ci95": [
+    -0.045,
+    0.0
+   ]
+  },
+  "ecg|FPR0.01|informed": {
+   "TPR": 0.828,
+   "twin_flag": 0.08,
+   "diff": 0.748,
+   "ci95": [
+    0.68,
+    0.811
+   ]
+  },
+  "ecg|FPR0.05|uninformed": {
+   "TPR": 1.0,
+   "twin_flag": 1.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "ecg|FPR0.05|informed": {
+   "TPR": 0.955,
+   "twin_flag": 0.395,
+   "diff": 0.56,
+   "ci95": [
+    0.511,
+    0.606
+   ]
+  },
+  "ecg|FPR0.10|uninformed": {
+   "TPR": 1.0,
+   "twin_flag": 1.0,
+   "diff": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ]
+  },
+  "ecg|FPR0.10|informed": {
+   "TPR": 0.978,
+   "twin_flag": 0.786,
+   "diff": 0.192,
+   "ci95": [
+    0.155,
+    0.227
+   ]
+  },
+  "mono|FPR0.01|uninformed": {
+   "TPR": 0.868,
+   "twin_flag": 0.883,
+   "diff": -0.015,
+   "ci95": [
+    -0.122,
+    0.09
+   ]
+  },
+  "mono|FPR0.01|informed": {
+   "TPR": 0.828,
+   "twin_flag": 0.07,
+   "diff": 0.758,
+   "ci95": [
+    0.689,
+    0.822
+   ]
+  },
+  "mono|FPR0.05|uninformed": {
+   "TPR": 0.987,
+   "twin_flag": 0.987,
+   "diff": -0.0,
+   "ci95": [
+    -0.04,
+    0.037
+   ]
+  },
+  "mono|FPR0.05|informed": {
+   "TPR": 0.933,
+   "twin_flag": 0.174,
+   "diff": 0.759,
+   "ci95": [
+    0.708,
+    0.809
+   ]
+  },
+  "mono|FPR0.10|uninformed": {
+   "TPR": 0.987,
+   "twin_flag": 1.0,
+   "diff": -0.013,
+   "ci95": [
+    -0.045,
+    0.0
+   ]
+  },
+  "mono|FPR0.10|informed": {
+   "TPR": 0.963,
+   "twin_flag": 0.247,
+   "diff": 0.716,
+   "ci95": [
+    0.672,
+    0.758
+   ]
+  },
+  "auth_only|FPR0.01|uninformed": {
+   "TPR": 0.066,
+   "twin_flag": 0.052,
+   "diff": 0.014,
+   "ci95": [
+    -0.064,
+    0.093
+   ]
+  },
+  "auth_only|FPR0.01|informed": {
+   "TPR": 0.836,
+   "twin_flag": 0.08,
+   "diff": 0.755,
+   "ci95": [
+    0.687,
+    0.817
+   ]
+  },
+  "auth_only|FPR0.05|uninformed": {
+   "TPR": 0.329,
+   "twin_flag": 0.273,
+   "diff": 0.056,
+   "ci95": [
+    -0.093,
+    0.199
+   ]
+  },
+  "auth_only|FPR0.05|informed": {
+   "TPR": 0.963,
+   "twin_flag": 0.395,
+   "diff": 0.568,
+   "ci95": [
+    0.523,
+    0.613
+   ]
+  },
+  "auth_only|FPR0.10|uninformed": {
+   "TPR": 0.697,
+   "twin_flag": 0.636,
+   "diff": 0.061,
+   "ci95": [
+    -0.092,
+    0.215
+   ]
+  },
+  "auth_only|FPR0.10|informed": {
+   "TPR": 0.985,
+   "twin_flag": 0.787,
+   "diff": 0.198,
+   "ci95": [
+    0.166,
+    0.23
+   ]
+  }
+ }
+}

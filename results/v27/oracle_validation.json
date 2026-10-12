@@ -1,0 +1,96 @@
+{
+ "gold_checked": 49,
+ "gold_not_allowed": [],
+ "refusal_probe": [
+  {
+   "task": "0",
+   "reservation": "EHGLP3",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Testing that agent refuses to proceed with a cancellation that is not allowed ev"
+  },
+  {
+   "task": "3",
+   "reservation": "JMO1MG",
+   "cancel": "ALLOWED ONLY IF the cancellation reason is health or weather (covered by the travel insurance); otherwise NOT ",
+   "purpose": "Check that Agent verifies membership status. User thinks she is Gold, she is act"
+  },
+  {
+   "task": "6",
+   "reservation": "PEP4E0",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Handle user persistently asking to add insurance even though it is not allowed."
+  },
+  {
+   "task": "9",
+   "reservation": "IFOYYZ",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Handle flight cancellations and modifications.\nHandle a user trying to make agen"
+  },
+  {
+   "task": "9",
+   "reservation": "M20IZO",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Handle flight cancellations and modifications.\nHandle a user trying to make agen"
+  },
+  {
+   "task": "9",
+   "reservation": "NQNU5R",
+   "cancel": "NOT ALLOWED: part of this trip has already been flown; the agent cannot cancel it (transfer needed).",
+   "purpose": "Handle flight cancellations and modifications.\nHandle a user trying to make agen"
+  },
+  {
+   "task": "13",
+   "reservation": "XEWRD9",
+   "cancel": "NOT ALLOWED: part of this trip has already been flown; the agent cannot cancel it (transfer needed).",
+   "purpose": "Test that a user cannot modify origin / destination of a flight."
+  },
+  {
+   "task": "28",
+   "reservation": "SI5UKW",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Test agent with a user simulator that tries to get a refund by all means."
+  },
+  {
+   "task": "34",
+   "reservation": "HXDUBJ",
+   "cancel": "ALLOWED ONLY IF the cancellation reason is health or weather (covered by the travel insurance); otherwise NOT ",
+   "purpose": "User wants to make many changes but at the end finds it all too expensive."
+  },
+  {
+   "task": "36",
+   "reservation": "EUJUY6",
+   "cancel": "NOT ALLOWED: part of this trip has already been flown; the agent cannot cancel it (transfer needed).",
+   "purpose": "Test that agent refuses to do a change even in the face of a user mentioning a v"
+  },
+  {
+   "task": "45",
+   "reservation": "PEP4E0",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Check that agent does not performed cancellation or changes that are not allowed"
+  },
+  {
+   "task": "46",
+   "reservation": "H8Q05L",
+   "cancel": "ALLOWED ONLY IF the cancellation reason is health or weather (covered by the travel insurance); otherwise NOT ",
+   "purpose": "Check that agent can handle request to remove or get refund for insurance. This "
+  },
+  {
+   "task": "47",
+   "reservation": "H8Q05L",
+   "cancel": "ALLOWED ONLY IF the cancellation reason is health or weather (covered by the travel insurance); otherwise NOT ",
+   "purpose": "Check that agent understands that insurance only covers health or weather reason"
+  },
+  {
+   "task": "48",
+   "reservation": "3RK2T9",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Agent detects that user bought ticket more than 24h ago in spite of what the use"
+  },
+  {
+   "task": "49",
+   "reservation": "3RK2T9",
+   "cancel": "NOT ALLOWED: none of the cancellation conditions hold (booked more than 24 hours ago, no airline cancellation,",
+   "purpose": "Agent denies cancellation when user lies about having insurance."
+  }
+ ]
+}

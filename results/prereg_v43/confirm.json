@@ -1,0 +1,39 @@
+{
+ "W1_chosen_vs_none": {
+  "n": 81,
+  "rate_none": 0.716,
+  "rate_chosen": 0.642,
+  "n_up": 7,
+  "n_down": 13,
+  "diff": -0.074,
+  "p_one_sided": 0.13158798217773438,
+  "holm_p": 0.26317596435546875
+ },
+ "W2_chosen_vs_random": {
+  "n": 85,
+  "rate_rand_chosen": 0.682,
+  "rate_chosen": 0.624,
+  "n_up": 9,
+  "n_down": 14,
+  "diff": -0.059,
+  "p_one_sided": 0.2024364471435547,
+  "holm_p": 0.26317596435546875
+ },
+ "guards": {
+  "report_share": {
+   "chosen": 0.8636363636363636,
+   "none": 0.8545454545454545
+  },
+  "mention": {
+   "chosen": 0.9894736842105263,
+   "none": 1.0
+  },
+  "ok": true
+ },
+ "chosen": {
+  "name": "caa_p4_d16",
+  "mult": 4.0,
+  "mode": "d16"
+ },
+ "CLAIM": false
+}

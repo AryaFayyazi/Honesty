@@ -1,0 +1,140 @@
+{
+ "n_episodes": {
+  "shadow": 1296,
+  "gate": 1296,
+  "verifyall": 1296
+ },
+ "O1_violation_minus": {
+  "gate_vs_shadow": {
+   "a": 0.0417,
+   "b": 0.1373,
+   "diff": -0.0957,
+   "ci95": [
+    -0.1281,
+    -0.0648
+   ],
+   "p_less": 0.0,
+   "n_units": 648
+  },
+  "verifyall_vs_shadow": {
+   "a": 0.0278,
+   "b": 0.1373,
+   "diff": -0.1096,
+   "ci95": [
+    -0.1404,
+    -0.0787
+   ],
+   "p_less": 0.0,
+   "n_units": 648
+  }
+ },
+ "O2_success_plus": {
+  "gate_vs_shadow": {
+   "a": 0.5664,
+   "b": 0.6127,
+   "diff": -0.0463,
+   "ci95": [
+    -0.0833,
+    -0.0093
+   ],
+   "p_less": 0.008,
+   "n_units": 648
+  },
+  "verifyall_vs_shadow": {
+   "a": 0.3997,
+   "b": 0.6127,
+   "diff": -0.213,
+   "ci95": [
+    -0.2577,
+    -0.1698
+   ],
+   "p_less": 0.0,
+   "n_units": 648
+  }
+ },
+ "O3_friction_plus": {
+  "interventions_per_ep": {
+   "a": 0.2284,
+   "b": 1.5617,
+   "diff": -1.3333,
+   "ci95": [
+    -1.4552,
+    -1.2099
+   ],
+   "p_less": 0.0,
+   "n_units": 648
+  },
+  "share_eps_with_intervention": {
+   "a": 0.1821,
+   "b": 0.6744,
+   "diff": -0.4923,
+   "ci95": [
+    -0.5386,
+    -0.4475
+   ],
+   "p_less": 0.0,
+   "n_units": 648
+  }
+ },
+ "O4_safety_gate_vs_verifyall": {
+  "a": 0.0417,
+  "b": 0.0278,
+  "diff": 0.0139,
+  "ci95": [
+   -0.0062,
+   0.0324
+  ],
+  "p_less": 0.9339,
+  "n_units": 648
+ },
+ "O5_after_verify": {
+  "gate": {
+   "checked_before_next_critical": {
+    "safe": 0.716,
+    "unsafe": 0.811
+   },
+   "violated_after": {
+    "safe": 0.011,
+    "unsafe": 0.0
+   }
+  },
+  "verifyall": {
+   "checked_before_next_critical": {
+    "safe": 0.801,
+    "unsafe": 0.738
+   },
+   "violated_after": {
+    "safe": 0.007,
+    "unsafe": 0.017
+   }
+  }
+ },
+ "prevented_counts": {
+  "gate": 59,
+  "verifyall": 68
+ },
+ "safety_cost": {
+  "gate": {
+   "ARR": 0.0957,
+   "RRR": 0.6966,
+   "interventions_total": 249,
+   "violations_prevented_eps": 62.0,
+   "interventions_per_prevented_violation": 4.02,
+   "utility_cost": 0.0463
+  },
+  "verifyall": {
+   "ARR": 0.1096,
+   "RRR": 0.7978,
+   "interventions_total": 1475,
+   "violations_prevented_eps": 71.0,
+   "interventions_per_prevented_violation": 20.77,
+   "utility_cost": 0.213
+  }
+ },
+ "decisions": {
+  "C1": true,
+  "C2_noninferior": false,
+  "C3": true,
+  "headline_C1_and_C2": false
+ }
+}

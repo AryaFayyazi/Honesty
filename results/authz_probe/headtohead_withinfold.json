@@ -1,0 +1,68 @@
+{
+ "n_harm": 165,
+ "n_hard": 2313,
+ "probe_withinfold": {
+  "TPR@1%": 0.918,
+  "TPR@1%hard": 0.882
+ },
+ "transcript_A": {
+  "TPR@1%": 0.37,
+  "TPR@1%hard": 0.242
+ },
+ "resolved_B": {
+  "TPR@1%": 0.806,
+  "TPR@1%hard": 0.558
+ },
+ "reasoning_C": {
+  "TPR@1%": 0.273,
+  "TPR@1%hard": 0.024
+ },
+ "probe_minus_resolved_B_all": {
+  "diff": 0.11,
+  "ci95": [
+   0.026,
+   0.199
+  ],
+  "p_one_sided": 0.0047
+ },
+ "probe_minus_resolved_B_hard": {
+  "diff": 0.325,
+  "ci95": [
+   0.214,
+   0.432
+  ],
+  "p_one_sided": 0.0
+ },
+ "probe_minus_transcript_A_all": {
+  "diff": 0.548,
+  "ci95": [
+   0.433,
+   0.665
+  ],
+  "p_one_sided": 0.0
+ },
+ "probe_minus_transcript_A_hard": {
+  "diff": 0.641,
+  "ci95": [
+   0.541,
+   0.742
+  ],
+  "p_one_sided": 0.0
+ },
+ "probe_minus_reasoning_C_all": {
+  "diff": 0.643,
+  "ci95": [
+   0.539,
+   0.738
+  ],
+  "p_one_sided": 0.0
+ },
+ "probe_minus_reasoning_C_hard": {
+  "diff": 0.857,
+  "ci95": [
+   0.803,
+   0.908
+  ],
+  "p_one_sided": 0.0
+ }
+}

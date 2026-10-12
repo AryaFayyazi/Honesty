@@ -1,0 +1,17 @@
+{
+ "locked_at": "2026-10-04T11:15:43.145683",
+ "data_existing": [
+  "v39 outputs (null)"
+ ],
+ "sha256": {
+  "docs/preregistration_v41.md": "a8f634797fe1055ce63be5fe4007ebc3a0c06df09a8ca8ea6fdda6e22a318fef",
+  "scripts/103_lie_steering.py": "dbdc2dbb0af3e864a06eaa7f568557e517a7fc147475bc95674e1dbd80c44eba",
+  "scripts/106_v41.py": "2f8a283e739b930d44fe230cfa1398548e68ba842f9ea812c5fa8e235b01fb4b",
+  "outputs/reconcile/v39_directions.npz": "cda983cc17a70a0421cc75fb709f0548d77832cedd5e412f61b22cce4f08f15b",
+  "outputs/reconcile/v39_episodes.parquet": "abb8c9159b01c936ad3d1ff9587fea3d7df35ab5f894e87af52d8c9f678db53a"
+ },
+ "tooling_update": {
+  "at": "2026-10-04T12:33:56.095510",
+  "note": "103/106 extended for v42 (tag option, dim mode); v41 behavior unchanged; v41B job had loaded the prior 103"
+ }
+}

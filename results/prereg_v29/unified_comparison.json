@@ -1,0 +1,499 @@
+{
+ "qwen38": {
+  "n_actions": 19091,
+  "n_harm": 125,
+  "monitors": {
+   "ecg": {
+    "TPR@1%": 0.976,
+    "TPR@5%": 0.976,
+    "TPR@1%hard": 0.952,
+    "informed@1%": 0.9375,
+    "uninformed@1%": 1.0,
+    "AUROC": 0.9909,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0266,
+    "gpu_s_per_caught_violation": 0.0042
+   },
+   "mono": {
+    "TPR@1%": 0.968,
+    "TPR@5%": 0.976,
+    "TPR@1%hard": 0.96,
+    "informed@1%": 0.9375,
+    "uninformed@1%": 0.987,
+    "AUROC": 0.9833,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0089,
+    "gpu_s_per_caught_violation": 0.0014
+   },
+   "auth_only": {
+    "TPR@1%": 0.544,
+    "TPR@5%": 0.688,
+    "TPR@1%hard": 0.408,
+    "informed@1%": 0.9375,
+    "uninformed@1%": 0.2987,
+    "AUROC": 0.9393,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0177,
+    "gpu_s_per_caught_violation": 0.005
+   },
+   "judge_A_transcript": {
+    "TPR@1%": 0.168,
+    "TPR@5%": 0.368,
+    "TPR@1%hard": 0.12,
+    "informed@1%": 0.4375,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.8835,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 67.9094
+   },
+   "judge_B_resolved": {
+    "TPR@1%": 0.232,
+    "TPR@5%": 0.984,
+    "TPR@1%hard": 0.104,
+    "informed@1%": 0.5833,
+    "uninformed@1%": 0.013,
+    "AUROC": 0.9817,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 49.1758
+   },
+   "judge_C_reasoning": {
+    "TPR@1%": 0.064,
+    "TPR@5%": 0.168,
+    "TPR@1%hard": 0.016,
+    "informed@1%": 0.1667,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.8574,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 178.2622
+   },
+   "guard": {
+    "TPR@1%": 0.008,
+    "TPR@5%": 0.008,
+    "TPR@1%hard": 0.008,
+    "informed@1%": 0.0208,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.737,
+    "s_per_action": 0.0041,
+    "s_per_1000_actions": 4.1,
+    "gpu_s_per_caught_violation": 78.2731
+   }
+  },
+  "placebo": {
+   "actor": "qwen38",
+   "bench": "core24",
+   "n_harm": 125,
+   "ecg": {
+    "all": {
+     "n": 125,
+     "TPR@1%compliant": 0.664,
+     "TPR@1%hard": 0.632
+    },
+    "informed": {
+     "n": 48,
+     "TPR@1%compliant": 0.146,
+     "TPR@1%hard": 0.062
+    },
+    "uninformed": {
+     "n": 77,
+     "TPR@1%compliant": 0.987,
+     "TPR@1%hard": 0.987
+    },
+    "auroc": 0.9506
+   },
+   "mono": {
+    "all": {
+     "n": 125,
+     "TPR@1%compliant": 0.616,
+     "TPR@1%hard": 0.616
+    },
+    "informed": {
+     "n": 48,
+     "TPR@1%compliant": 0.021,
+     "TPR@1%hard": 0.021
+    },
+    "uninformed": {
+     "n": 77,
+     "TPR@1%compliant": 0.987,
+     "TPR@1%hard": 0.987
+    },
+    "auroc": 0.9502
+   }
+  }
+ },
+ "gemma4": {
+  "n_actions": 23879,
+  "n_harm": 399,
+  "monitors": {
+   "ecg": {
+    "TPR@1%": 0.8446,
+    "TPR@5%": 0.9499,
+    "TPR@1%hard": 0.6842,
+    "informed@1%": 0.7393,
+    "uninformed@1%": 0.9939,
+    "AUROC": 0.9919,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0266,
+    "gpu_s_per_caught_violation": 0.0019
+   },
+   "mono": {
+    "TPR@1%": 0.8947,
+    "TPR@5%": 0.9825,
+    "TPR@1%hard": 0.6491,
+    "informed@1%": 0.8504,
+    "uninformed@1%": 0.9576,
+    "AUROC": 0.9925,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0089,
+    "gpu_s_per_caught_violation": 0.0006
+   },
+   "auth_only": {
+    "TPR@1%": 0.5414,
+    "TPR@5%": 0.7469,
+    "TPR@1%hard": 0.3434,
+    "informed@1%": 0.7564,
+    "uninformed@1%": 0.2364,
+    "AUROC": 0.9656,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0177,
+    "gpu_s_per_caught_violation": 0.002
+   },
+   "judge_A_transcript": {
+    "TPR@1%": 0.3684,
+    "TPR@5%": 0.5915,
+    "TPR@1%hard": 0.0827,
+    "informed@1%": 0.6282,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.9342,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 12.1344
+   },
+   "judge_B_resolved": {
+    "TPR@1%": 0.609,
+    "TPR@5%": 0.99,
+    "TPR@1%hard": 0.1253,
+    "informed@1%": 0.765,
+    "uninformed@1%": 0.3879,
+    "AUROC": 0.987,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 7.3406
+   },
+   "judge_C_reasoning": {
+    "TPR@1%": 0.391,
+    "TPR@5%": 0.6917,
+    "TPR@1%hard": 0.1253,
+    "informed@1%": 0.6624,
+    "uninformed@1%": 0.0061,
+    "AUROC": 0.9174,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 11.4344
+   },
+   "guard": {
+    "TPR@1%": 0.01,
+    "TPR@5%": 0.0627,
+    "TPR@1%hard": 0.0075,
+    "informed@1%": 0.0171,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.6501,
+    "s_per_action": 0.0041,
+    "s_per_1000_actions": 4.1,
+    "gpu_s_per_caught_violation": 24.476
+   }
+  },
+  "placebo": {
+   "actor": "gemma4",
+   "bench": "core24",
+   "n_harm": 399,
+   "ecg": {
+    "all": {
+     "n": 399,
+     "TPR@1%compliant": 0.353,
+     "TPR@1%hard": 0.258
+    },
+    "informed": {
+     "n": 234,
+     "TPR@1%compliant": 0.179,
+     "TPR@1%hard": 0.081
+    },
+    "uninformed": {
+     "n": 165,
+     "TPR@1%compliant": 0.6,
+     "TPR@1%hard": 0.509
+    },
+    "auroc": 0.8719
+   },
+   "mono": {
+    "all": {
+     "n": 399,
+     "TPR@1%compliant": 0.381,
+     "TPR@1%hard": 0.263
+    },
+    "informed": {
+     "n": 234,
+     "TPR@1%compliant": 0.291,
+     "TPR@1%hard": 0.09
+    },
+    "uninformed": {
+     "n": 165,
+     "TPR@1%compliant": 0.509,
+     "TPR@1%hard": 0.509
+    },
+    "auroc": 0.8969
+   }
+  }
+ },
+ "gptoss20b": {
+  "n_actions": 15564,
+  "n_harm": 228,
+  "monitors": {
+   "ecg": {
+    "TPR@1%": 0.636,
+    "TPR@5%": 0.8246,
+    "TPR@1%hard": 0.5219,
+    "informed@1%": 0.2418,
+    "uninformed@1%": 0.8978,
+    "AUROC": 0.9534,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0266,
+    "gpu_s_per_caught_violation": 0.0029
+   },
+   "mono": {
+    "TPR@1%": 0.5658,
+    "TPR@5%": 0.8377,
+    "TPR@1%hard": 0.4211,
+    "informed@1%": 0.4066,
+    "uninformed@1%": 0.6715,
+    "AUROC": 0.9537,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0089,
+    "gpu_s_per_caught_violation": 0.0011
+   },
+   "auth_only": {
+    "TPR@1%": 0.2763,
+    "TPR@5%": 0.5965,
+    "TPR@1%hard": 0.1404,
+    "informed@1%": 0.4396,
+    "uninformed@1%": 0.1679,
+    "AUROC": 0.9237,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0177,
+    "gpu_s_per_caught_violation": 0.0044
+   },
+   "judge_A_transcript": {
+    "TPR@1%": 0.1272,
+    "TPR@5%": 0.5219,
+    "TPR@1%hard": 0.0833,
+    "informed@1%": 0.3077,
+    "uninformed@1%": 0.0073,
+    "AUROC": 0.8617,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 40.0907
+   },
+   "judge_B_resolved": {
+    "TPR@1%": 0.443,
+    "TPR@5%": 0.9474,
+    "TPR@1%hard": 0.1974,
+    "informed@1%": 0.6813,
+    "uninformed@1%": 0.2847,
+    "AUROC": 0.9794,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 11.5112
+   },
+   "judge_C_reasoning": {
+    "TPR@1%": 0.1754,
+    "TPR@5%": 0.4781,
+    "TPR@1%hard": 0.0702,
+    "informed@1%": 0.3187,
+    "uninformed@1%": 0.0803,
+    "AUROC": 0.8003,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 29.0658
+   },
+   "guard": {
+    "TPR@1%": 0.0044,
+    "TPR@5%": 0.0526,
+    "TPR@1%hard": 0.0044,
+    "informed@1%": 0.011,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.734,
+    "s_per_action": 0.0041,
+    "s_per_1000_actions": 4.1,
+    "gpu_s_per_caught_violation": 63.8124
+   }
+  },
+  "placebo": {
+   "actor": "gptoss20b",
+   "bench": "core24",
+   "n_harm": 228,
+   "ecg": {
+    "all": {
+     "n": 228,
+     "TPR@1%compliant": 0.36,
+     "TPR@1%hard": 0.39
+    },
+    "informed": {
+     "n": 91,
+     "TPR@1%compliant": 0.033,
+     "TPR@1%hard": 0.055
+    },
+    "uninformed": {
+     "n": 137,
+     "TPR@1%compliant": 0.577,
+     "TPR@1%hard": 0.613
+    },
+    "auroc": 0.8614
+   },
+   "mono": {
+    "all": {
+     "n": 228,
+     "TPR@1%compliant": 0.408,
+     "TPR@1%hard": 0.39
+    },
+    "informed": {
+     "n": 91,
+     "TPR@1%compliant": 0.143,
+     "TPR@1%hard": 0.099
+    },
+    "uninformed": {
+     "n": 137,
+     "TPR@1%compliant": 0.584,
+     "TPR@1%hard": 0.584
+    },
+    "auroc": 0.9174
+   }
+  }
+ },
+ "museglimmer": {
+  "n_actions": 23902,
+  "n_harm": 133,
+  "monitors": {
+   "ecg": {
+    "TPR@1%": 0.9699,
+    "TPR@5%": 0.985,
+    "TPR@1%hard": 0.9699,
+    "informed@1%": 0.9184,
+    "uninformed@1%": 1.0,
+    "AUROC": 0.9967,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0266,
+    "gpu_s_per_caught_violation": 0.0049
+   },
+   "mono": {
+    "TPR@1%": 0.9925,
+    "TPR@5%": 1.0,
+    "TPR@1%hard": 0.9925,
+    "informed@1%": 0.9796,
+    "uninformed@1%": 1.0,
+    "AUROC": 0.9997,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0089,
+    "gpu_s_per_caught_violation": 0.0016
+   },
+   "auth_only": {
+    "TPR@1%": 0.4436,
+    "TPR@5%": 0.6391,
+    "TPR@1%hard": 0.3383,
+    "informed@1%": 0.9184,
+    "uninformed@1%": 0.1667,
+    "AUROC": 0.9346,
+    "s_per_action": 0.0,
+    "s_per_1000_actions": 0.0177,
+    "gpu_s_per_caught_violation": 0.0072
+   },
+   "judge_A_transcript": {
+    "TPR@1%": 0.3233,
+    "TPR@5%": 0.3684,
+    "TPR@1%hard": 0.2857,
+    "informed@1%": 0.8776,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.8889,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 41.5228
+   },
+   "judge_B_resolved": {
+    "TPR@1%": 0.5038,
+    "TPR@5%": 0.9925,
+    "TPR@1%hard": 0.2782,
+    "informed@1%": 0.8571,
+    "uninformed@1%": 0.2976,
+    "AUROC": 0.9902,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 26.6489
+   },
+   "judge_C_reasoning": {
+    "TPR@1%": 0.2406,
+    "TPR@5%": 0.2782,
+    "TPR@1%hard": 0.2406,
+    "informed@1%": 0.6531,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.8819,
+    "s_per_action": 0.0747,
+    "s_per_1000_actions": 74.7,
+    "gpu_s_per_caught_violation": 55.7962
+   },
+   "guard": {
+    "TPR@1%": 0.0301,
+    "TPR@5%": 0.1278,
+    "TPR@1%hard": 0.0226,
+    "informed@1%": 0.0816,
+    "uninformed@1%": 0.0,
+    "AUROC": 0.8642,
+    "s_per_action": 0.0041,
+    "s_per_1000_actions": 4.1,
+    "gpu_s_per_caught_violation": 24.4996
+   }
+  },
+  "placebo": {
+   "actor": "museglimmer",
+   "bench": "core24",
+   "n_harm": 133,
+   "ecg": {
+    "all": {
+     "n": 133,
+     "TPR@1%compliant": 0.632,
+     "TPR@1%hard": 0.662
+    },
+    "informed": {
+     "n": 49,
+     "TPR@1%compliant": 0.0,
+     "TPR@1%hard": 0.082
+    },
+    "uninformed": {
+     "n": 84,
+     "TPR@1%compliant": 1.0,
+     "TPR@1%hard": 1.0
+    },
+    "auroc": 0.9149
+   },
+   "mono": {
+    "all": {
+     "n": 133,
+     "TPR@1%compliant": 0.632,
+     "TPR@1%hard": 0.632
+    },
+    "informed": {
+     "n": 49,
+     "TPR@1%compliant": 0.0,
+     "TPR@1%hard": 0.0
+    },
+    "uninformed": {
+     "n": 84,
+     "TPR@1%compliant": 1.0,
+     "TPR@1%hard": 1.0
+    },
+    "auroc": 0.8925
+   }
+  }
+ },
+ "cost_note": "probe arms: measured numpy timing over cached activations (self-monitoring; reader mode adds one prefill ~= one judge call); judges: Qwen3.8-27B vLLM, 1 token, prefix caching, per prompt; guard: Qwen3Guard-4B vLLM"
+}

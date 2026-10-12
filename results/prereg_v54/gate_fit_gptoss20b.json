@@ -1,0 +1,16 @@
+{
+  "actor": "gptoss20b",
+  "n": {
+    "x-other": 6000,
+    "x+crit": 2748,
+    "viol": 967
+  },
+  "tau": 1.0984158754348756,
+  "oof_auroc_viol_vs_xother": 0.9431,
+  "oof_auroc_viol_vs_xpluscrit": 0.8631,
+  "oof_fire_rate": {
+    "viol": 0.785,
+    "x-other": 0.035,
+    "x+crit": 0.1
+  }
+}

@@ -1,0 +1,84 @@
+{
+ "locked_at": "2026-10-07T03:14:36.650224",
+ "sha256": {
+  "docs/preregistration_v59.md": "10df2adb465b131432e6bd7db2c1e0ee7dd85d26b35d68ce82c547d541eb425a",
+  "scripts/159_v59_continue.py": "0d6cd4dce3ef9006e349d8804c96b49baf1c900ce66256d923eb5633c2a32338",
+  "slurm/v59.sh": "6e64911b2e9f2c51a043985bdff68e0f9a9771fdd5df70e2a53cab0e8533fc37"
+ },
+ "note": "locked before any v59 continuation; first-turn data = v54 confirmation (already analysed).",
+ "addenda": [
+  {
+   "at": "2026-10-07T03:14:58.952700",
+   "what": "v59 runs automatically after each remaining v54 confirmation (gpt-oss, Muse, Qwen) via slurm/v54_conf.sh",
+   "sha256": {
+    "slurm/v54_conf.sh": "fd9652f4a55dee8f25120962ae11698f08abadbf56bd255782fe98a028c46963",
+    "scripts/159_v59_continue.py": "0d6cd4dce3ef9006e349d8804c96b49baf1c900ce66256d923eb5633c2a32338"
+   }
+  },
+  {
+   "at": "2026-10-07T08:43:05.106965",
+   "what": "v59 analysis bugs fixed (column 'hist' vs DataFrame.hist; tuple JSON keys) before reading results; v59b gate-always section with a paired HF none arm; scripts/160. Note: both v59b arms use identical per-site/turn seed values, but batches mix arms, so common random numbers are approximate.",
+   "sha256": {
+    "docs/preregistration_v59.md": "70b4189e12ecfa854f4b365cbc808f338c6ea76b3d6ab12af008130e6bb6f95b",
+    "scripts/159_v59_continue.py": "c54c6e99aa16ced7364c3933450eeb089995b13c8a3e1f8a1af6dfceed968be6",
+    "scripts/160_v59b_gate_always.py": "c8e1f2ec4f1ca0bd3628e13ef6b5dd5e6584afeb3f75bb26032da6401846e30e"
+   }
+  },
+  {
+   "at": "2026-10-07T08:43:49.331135",
+   "what": "slurm/v59.sh: run and analysis in separate processes (+4h timeout) so a crash cannot hang a vLLM engine",
+   "sha256": {
+    "slurm/v59.sh": "fc41875cf1cefe92e65e6528cb290a20707a3d4df312d657de6d4bd32d1ec484"
+   }
+  },
+  {
+   "at": "2026-10-07T13:01:02.104925",
+   "what": "v59b D2' addendum (K=12, all 200 x+ sites) after diagnosing D2 as horizon-truncated delay; before any D2' data",
+   "sha256": {
+    "docs/preregistration_v59.md": "c398e3452e6b16c9cdb790ff572043192aacaefa1a5071557a876b9fb8a488f4",
+    "scripts/160_v59b_gate_always.py": "8aeb858ccfb6ed76a6e18282057cb55c8ece7321e645e645b56b7987cfcd5bc2",
+    "slurm/v59c.sh": "126c7e8ae9bace353e4a37886d1a0baef21ee409cbcd75ffa1bc895546ee1b9b"
+   }
+  },
+  {
+   "at": "2026-10-07T13:34:01.489058",
+   "what": "v59b all-model replication (gpt-oss, Muse, Qwen; 100 x- + 200 x+, K=12; D1 + D2'); before any non-Gemma v59b data",
+   "sha256": {
+    "docs/preregistration_v59.md": "b8ccdc02f098197d86c75128003d1cc4176486ab035f1cd7940d09941893abc8",
+    "scripts/160_v59b_gate_always.py": "7dfabcc532e64aeae2b39e4695ff0362c6612b01fccd0de43e607b23afaddcda",
+    "slurm/v59b_all.sh": "b661c6b64f0fa554b808370b13e3a874272b2cc46b885c6920f38c1f9ef0a19e"
+   }
+  },
+  {
+   "at": "2026-10-07T16:03:38.277171",
+   "what": "scripts/159: os._exit(0) after saving (vLLM engine shutdown hang on gpt-oss run held the GPU 30 min; process killed by exact PID; data were already saved)",
+   "sha256": {
+    "scripts/159_v59_continue.py": "d00e84ceed2ce75195c49572b0a1039e38ca2c39537943e2e24329104403d84d"
+   }
+  },
+  {
+   "at": "2026-10-07T18:44:42.061489",
+   "what": "v59d gate-escalate (steer on first fire, ask the principal on later fires) after D2' diagnosis (repeated false alarms); before any v59d data",
+   "sha256": {
+    "docs/preregistration_v59.md": "06fdecab6ffc937e7961c655185dc5e3117781bdafd891e1df47307fa09c0d55",
+    "scripts/160_v59b_gate_always.py": "6285a7791fdd33e6c52fc44bf0ac121eec679168fe877b81afe2b5d41e14a26e",
+    "slurm/v59d.sh": "a8ca06ee02be22d938c343ee618019232b5b5d8a60d650f0cf936c2950c67a84"
+   }
+  },
+  {
+   "at": "2026-10-10T02:08:23.827624",
+   "what": "v64 logging addendum: scripts/160 records events, asks (with context) and, with report=true, a neutral x- report after the episode; slurm/v59d.sh passes report=true. Trajectories, labels, sites, seeds and endpoints unchanged (no RNG call added before or during the continuation). Before any v59d gpt-oss/Qwen/Muse data.",
+   "sha256": {
+    "scripts/160_v59b_gate_always.py": "63c814a24d6ce3fe9276f49b729c52f723be711499d80ee405f2088e028b9343",
+    "slurm/v59d.sh": "a8987e745b758541df9ac8df64a5ab38a5f36830cc767db882a93ef27bd460a9"
+   }
+  },
+  {
+   "at": "2026-10-10T03:35:00.242443",
+   "what": "scripts/160 report-stage robustness (trajectories saved first; OOM halving; report_only). Trajectory generation unchanged.",
+   "sha256": {
+    "scripts/160_v59b_gate_always.py": "4d78ac0a6f96211b6d25baa02d90caf4bd4bfe4185d6bd90195d1ccff2b59012"
+   }
+  }
+ ]
+}

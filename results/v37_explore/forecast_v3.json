@@ -1,0 +1,122 @@
+{
+ "n": 2430,
+ "n_lies": 116,
+ "by_model": {
+  "size": {
+   "gemma4": 1190,
+   "gptoss20b": 932,
+   "museglimmer": 105,
+   "qwen38": 203
+  },
+  "sum": {
+   "gemma4": 13,
+   "gptoss20b": 33,
+   "museglimmer": 14,
+   "qwen38": 56
+  }
+ },
+ "retro": {
+  "n_retro": 62,
+  "lie_rate_retro": 0.3387096774193548,
+  "lie_rate_noretro": 0.04011824324324324,
+  "share_of_lies_with_retro": 0.1810344827586207,
+  "by_model": [
+   {
+    "model": "gemma4",
+    "retro": 0,
+    "size": 1168,
+    "mean": 0.0059931506849315065
+   },
+   {
+    "model": "gemma4",
+    "retro": 1,
+    "size": 22,
+    "mean": 0.2727272727272727
+   },
+   {
+    "model": "gptoss20b",
+    "retro": 0,
+    "size": 906,
+    "mean": 0.02207505518763797
+   },
+   {
+    "model": "gptoss20b",
+    "retro": 1,
+    "size": 26,
+    "mean": 0.5
+   },
+   {
+    "model": "museglimmer",
+    "retro": 0,
+    "size": 96,
+    "mean": 0.13541666666666666
+   },
+   {
+    "model": "museglimmer",
+    "retro": 1,
+    "size": 9,
+    "mean": 0.1111111111111111
+   },
+   {
+    "model": "qwen38",
+    "retro": 0,
+    "size": 198,
+    "mean": 0.2777777777777778
+   },
+   {
+    "model": "qwen38",
+    "retro": 1,
+    "size": 5,
+    "mean": 0.2
+   }
+  ]
+ },
+ "all": {
+  "beh": {
+   "auroc": 0.7701,
+   "within_template": 0.5638
+  },
+  "placebo": {
+   "auroc": 0.9149,
+   "within_template": 0.395
+  },
+  "beh+placebo": {
+   "auroc": 0.9389,
+   "within_template": 0.4679
+  },
+  "text": {
+   "auroc": 0.9208,
+   "within_template": 0.4712
+  },
+  "retro_rule": {
+   "auroc": 0.6723,
+   "within_template": 0.5627
+  }
+ },
+ "informed": {
+  "beh": {
+   "auroc": 0.8274,
+   "within_template": 0.7125
+  },
+  "placebo": {
+   "auroc": 0.886,
+   "within_template": 0.2987
+  },
+  "beh+placebo": {
+   "auroc": 0.9186,
+   "within_template": 0.6787
+  },
+  "text": {
+   "auroc": 0.8996,
+   "within_template": 0.5154
+  },
+  "retro_rule": {
+   "auroc": 0.7341,
+   "within_template": 0.7806
+  },
+  "beh+placebo_minus_placebo_ci95": [
+   0.0036,
+   0.0651
+  ]
+ }
+}

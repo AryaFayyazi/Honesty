@@ -1,0 +1,130 @@
+{
+ "stageA": {
+  "lie_m16_all": {
+   "n": 51,
+   "rate_none": 0.745,
+   "rate_lie_m16_all": 0.765,
+   "n_up": 4,
+   "n_down": 3,
+   "diff": 0.02,
+   "p_one_sided": 0.7734375,
+   "guards": {
+    "report_share": {
+     "lie_m16_all": 0.9833333333333333,
+     "none": 0.8666666666666667
+    },
+    "mention": {
+     "lie_m16_all": 1.0,
+     "none": 1.0
+    },
+    "ok": true
+   }
+  },
+  "lie_m16_decode": {
+   "n": 49,
+   "rate_none": 0.735,
+   "rate_lie_m16_decode": 0.735,
+   "n_up": 5,
+   "n_down": 5,
+   "diff": 0.0,
+   "p_one_sided": 0.623046875,
+   "guards": {
+    "report_share": {
+     "lie_m16_decode": 0.9,
+     "none": 0.8666666666666667
+    },
+    "mention": {
+     "lie_m16_decode": 1.0,
+     "none": 1.0
+    },
+    "ok": true
+   }
+  },
+  "lie_m32_all": {
+   "n": 52,
+   "rate_none": 0.731,
+   "rate_lie_m32_all": 0.712,
+   "n_up": 4,
+   "n_down": 5,
+   "diff": -0.019,
+   "p_one_sided": 0.5,
+   "guards": {
+    "report_share": {
+     "lie_m32_all": 0.9666666666666667,
+     "none": 0.8666666666666667
+    },
+    "mention": {
+     "lie_m32_all": 1.0,
+     "none": 1.0
+    },
+    "ok": true
+   }
+  },
+  "lie_m32_decode": {
+   "n": 49,
+   "rate_none": 0.776,
+   "rate_lie_m32_decode": 0.755,
+   "n_up": 4,
+   "n_down": 5,
+   "diff": -0.02,
+   "p_one_sided": 0.5,
+   "guards": {
+    "report_share": {
+     "lie_m32_decode": 0.9166666666666666,
+     "none": 0.8666666666666667
+    },
+    "mention": {
+     "lie_m32_decode": 1.0,
+     "none": 1.0
+    },
+    "ok": true
+   }
+  },
+  "lie_m64_all": {
+   "n": 49,
+   "rate_none": 0.735,
+   "rate_lie_m64_all": 0.857,
+   "n_up": 11,
+   "n_down": 5,
+   "diff": 0.122,
+   "p_one_sided": 0.9615936279296875,
+   "guards": {
+    "report_share": {
+     "lie_m64_all": 0.95,
+     "none": 0.8666666666666667
+    },
+    "mention": {
+     "lie_m64_all": 1.0,
+     "none": 1.0
+    },
+    "ok": true
+   }
+  },
+  "lie_m64_decode": {
+   "n": 47,
+   "rate_none": 0.745,
+   "rate_lie_m64_decode": 0.766,
+   "n_up": 4,
+   "n_down": 3,
+   "diff": 0.021,
+   "p_one_sided": 0.7734375,
+   "guards": {
+    "report_share": {
+     "lie_m64_decode": 0.9,
+     "none": 0.8666666666666667
+    },
+    "mention": {
+     "lie_m64_decode": 1.0,
+     "none": 1.0
+    },
+    "ok": true
+   }
+  }
+ },
+ "chosen_name": "lie_m32_decode",
+ "chosen": {
+  "name": "lie_m32_decode",
+  "mult": -32.0,
+  "mode": "decode"
+ }
+}

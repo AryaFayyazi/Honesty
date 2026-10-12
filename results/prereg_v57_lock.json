@@ -1,0 +1,49 @@
+{
+ "locked_at": "2026-10-06T15:49:13.176241",
+ "sha256": {
+  "docs/preregistration_v57.md": "a7f83469658aa66b167db91285988ccdf0aa5606a2028864f3e985085b8e3936",
+  "scripts/153_vhorizon_explore.py": "6fd0e820dc10d8587c89a363deb3b6a40ff62a597737e6bd379e8a6cfee1ddcf",
+  "scripts/155_v57_analysis.py": "7f37c62919fe0227f7775d4570af2ba657ba4ec30d94cbb8ebf4c9d8282d9c4a",
+  "scripts/156_v57_monitor.py": "df9c034af56a3e44a77acd451083b04ae1a5cf14946408ed0d4fd5d7ffbdc6bb",
+  "scripts/56_xm_replay_extract.py": "7cfaded0a7622fd5bbf038659d8dd1737813f7f67b38b6b8739400b58e55e543",
+  "slurm/v57.sh": "2a9f3adb51ff334ff922ea1e208a9a7819ba40f2d63a395a0a574ea9d957c64b",
+  "outputs/v57/conf_episodes.parquet": "238119c20a765a2a293940e13b353f965c691be7719cc85e95d9662a9b614365",
+  "results/v57_explore/horizon.json": "3245830075c29c915e0a86c02e78227234754aab18f396a5bc6d948a2b33426b",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24",
+  "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+  "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f"
+ },
+ "note": "locked before any v57 confirmation feature/text/monitor score. Development exploration (153) and gate fits (154 stage=fit) used development sets only.",
+ "addenda": [
+  {
+   "at": "2026-10-06T19:11:27.221916",
+   "what": "scripts/155 implements the preregistered descriptive secondary 'lead-time horizons h = 1, 2' (horizon-specific internal + text forecasters fit on development, applied to fresh units, within template x tool) and excludes H units from the text training set; before any v57 confirmation feature exists",
+   "sha256": {
+    "scripts/155_v57_analysis.py": "c068328a4dc51795a26cc460066d0ca2953438fe66e3126a4b5ff77ade734bd6"
+   }
+  },
+  {
+   "at": "2026-10-06T21:57:58.939810",
+   "what": "Extraction OOM on a long gpt-oss episode (full-vocab logits over ~30k tokens). scripts/56 forward now uses logits_to_keep=1, use_cache=False (hidden states unchanged). The automatic analysis watcher fired on the failed job and started scripts/155 on PARTIAL features; it was killed (PIDs 913548, 1022601) before writing any output (results/prereg_v57 contained only an empty analysis.log; no scores file). No v57 result has been seen. Remaining sets re-extracted; completed sets kept.",
+   "sha256": {
+    "scripts/56_xm_replay_extract.py": "e079333f1fda1523ab82e9afaa64c1044d4556cbe83733c6cb41d6f95ae481c8",
+    "slurm/v57.sh": "90762d8072eed377287f1d78a01157ace36001c0b8e8f6bf6f2db57daa7c938f"
+   }
+  },
+  {
+   "at": "2026-10-06T23:48:18.251748",
+   "what": "Second extraction OOM on a long gpt-oss episode (HF attention). gpt-oss extraction capped at 16k tokens (dev p99 ~5-6k, max 9k; only runaway outliers skipped, counted in the report). Per-set existence checks fixed (minus10111213 would otherwise have been skipped). No v57 result seen; the guarded watcher refused the incomplete inputs.",
+   "sha256": {
+    "slurm/v57.sh": "177003063138b58b40b72837c20760249777d28b926e3df7ffbbac617437a3cb"
+   }
+  },
+  {
+   "at": "2026-10-07T03:14:36.650224",
+   "what": "Third OOM (same gpt-oss episode, 27 GB): HF gpt-oss attention memory is quadratic (64 heads x n^2 x 2 bytes), so a 16k cap was insufficient; cap 10k (dev max 9k). Skipped episodes counted. No v57 result seen (watcher refused incomplete inputs).",
+   "sha256": {
+    "slurm/v57.sh": "2df4404166d81965c6d8bb91ad8953eb378758fc30d5d98039852951ed422973"
+   }
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+  "actor": "gptoss20b",
+  "tag": "_esc",
+  "K": 12,
+  "n_plus": 200,
+  "completion": {
+    "gate_always": 0.935,
+    "none_hf": 0.93
+  },
+  "D2prime": {
+    "diff": 0.005,
+    "one_sided_95_lower": -0.015384615384615385,
+    "margin": -0.05,
+    "passes": true,
+    "p_noninf": 0.0001
+  },
+  "delay_turns_when_both_complete": 0.03278688524590164,
+  "fires_per_episode": 0.38333333333333336,
+  "asks_per_episode": {
+    "minus": 0.08,
+    "plus": 0.015
+  },
+  "violation": {
+    "gate_always": 0.6,
+    "none_hf": 0.78
+  },
+  "D1": {
+    "b_fixed": 19,
+    "c_broken": 1,
+    "p_one_sided": 2.002716064453125e-05
+  },
+  "holm": {
+    "D1": 4.00543212890625e-05,
+    "D2prime": 0.0001
+  }
+}

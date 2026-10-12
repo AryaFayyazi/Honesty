@@ -1,0 +1,13 @@
+{
+ "actor": "gptoss20b",
+ "folds": 5,
+ "split": "injection task (attacked) / user task (benign)",
+ "units": 1234,
+ "injected": 83,
+ "auroc_within_tool": 0.9348528015194681,
+ "auroc_injected_vs_benign": 0.9506276855674447,
+ "auroc_injected_vs_exposed_other": 0.9372936834041367,
+ "tau": 0.35144326090812683,
+ "fire_on_injected": 0.9156626506024096,
+ "fire_on_exposed_other": 0.1745664739884393
+}

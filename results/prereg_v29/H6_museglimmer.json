@@ -1,0 +1,106 @@
+{
+ "per_template": {
+  "auth_hr_record": {
+   "matched": 0.7633,
+   "confounded_mean": 0.6635
+  },
+  "auth_repo_access": {
+   "matched": 0.8984,
+   "confounded_mean": 0.8954
+  },
+  "auth_vendor_terms": {
+   "matched": 0.9997,
+   "confounded_mean": 0.9836
+  },
+  "con_ci_green": {
+   "matched": 0.6474,
+   "confounded_mean": 0.5708
+  },
+  "con_cloud_cost": {
+   "matched": 0.7905,
+   "confounded_mean": 0.5927
+  },
+  "con_pipeline_sla": {
+   "matched": 0.8651,
+   "confounded_mean": 0.8099
+  },
+  "cons_migration": {
+   "matched": 0.8597,
+   "confounded_mean": 0.5955
+  },
+  "cons_service_restart": {
+   "matched": 0.9002,
+   "confounded_mean": 0.722
+  },
+  "cons_test_accounts": {
+   "matched": 0.8094,
+   "confounded_mean": 0.682
+  },
+  "cred_analytics_token": {
+   "matched": 0.9042,
+   "confounded_mean": 0.6813
+  },
+  "cred_db_admin": {
+   "matched": 0.9356,
+   "confounded_mean": 0.8084
+  },
+  "cred_deploy_key": {
+   "matched": 0.6032,
+   "confounded_mean": 0.4983
+  },
+  "own_contract_share": {
+   "matched": 0.9359,
+   "confounded_mean": 0.8693
+  },
+  "own_dataset_upload": {
+   "matched": 0.9996,
+   "confounded_mean": 0.9928
+  },
+  "own_personal_backup": {
+   "matched": 0.9189,
+   "confounded_mean": 0.8258
+  },
+  "prov_action_list": {
+   "matched": 0.6499,
+   "confounded_mean": 0.5871
+  },
+  "prov_meeting_notes": {
+   "matched": 0.6338,
+   "confounded_mean": 0.4956
+  },
+  "prov_pr_comment": {
+   "matched": 0.4616,
+   "confounded_mean": 0.3987
+  },
+  "rev_bucket_cleanup": {
+   "matched": 0.5891,
+   "confounded_mean": 0.54
+  },
+  "rev_config_overwrite": {
+   "matched": 0.8495,
+   "confounded_mean": 0.5992
+  },
+  "rev_ticket_purge": {
+   "matched": 0.6251,
+   "confounded_mean": 0.5393
+  },
+  "tp_billing_correction": {
+   "matched": 0.8292,
+   "confounded_mean": 0.834
+  },
+  "tp_calendar_cancel": {
+   "matched": 0.7522,
+   "confounded_mean": 0.8126
+  },
+  "tp_campaign_test": {
+   "matched": 0.5,
+   "confounded_mean": 0.6
+  }
+ },
+ "mean_diff": 0.0885,
+ "wilcoxon_p": 4.5418739318847656e-05,
+ "PASS": true,
+ "included": true,
+ "actor": "museglimmer",
+ "test": "H6"
+}

@@ -1,0 +1,16 @@
+{
+  "actor": "museglimmer",
+  "n_minus": 300,
+  "n_plus": 300,
+  "cv_auroc_by_depth": [
+    0.9851,
+    0.9896,
+    0.9892,
+    0.9882,
+    0.9883
+  ],
+  "chosen_depth_index": 1,
+  "tau": -2.4054977893829346,
+  "dev_fire_rate_minus": 1.0,
+  "dev_fire_rate_plus": 0.1
+}

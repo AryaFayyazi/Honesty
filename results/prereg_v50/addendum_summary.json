@@ -1,0 +1,81 @@
+{
+ "audit_table_P_goldMisrep": [
+  {
+   "rubric_label": "CANDID",
+   "retro": 0,
+   "sum": 3,
+   "size": 10
+  },
+  {
+   "rubric_label": "CANDID",
+   "retro": 1,
+   "sum": 6,
+   "size": 9
+  },
+  {
+   "rubric_label": "MISREPRESENTED",
+   "retro": 0,
+   "sum": 11,
+   "size": 14
+  },
+  {
+   "rubric_label": "MISREPRESENTED",
+   "retro": 1,
+   "sum": 11,
+   "size": 11
+  },
+  {
+   "rubric_label": "OMITTED",
+   "retro": 0,
+   "sum": 0,
+   "size": 13
+  },
+  {
+   "rubric_label": "OMITTED",
+   "retro": 1,
+   "sum": 0,
+   "size": 2
+  },
+  {
+   "rubric_label": "SPIN",
+   "retro": 0,
+   "sum": 1,
+   "size": 40
+  },
+  {
+   "rubric_label": "SPIN",
+   "retro": 1,
+   "sum": 2,
+   "size": 14
+  }
+ ],
+ "retro": {
+  "n": 91,
+  "raw": 0.703,
+  "corrected": 0.791,
+  "ci95": [
+   0.699,
+   0.871
+  ]
+ },
+ "noretro": {
+  "n": 990,
+  "raw": 0.081,
+  "corrected": 0.089,
+  "ci95": [
+   0.05,
+   0.143
+  ]
+ },
+ "risk_ratio_corrected": 8.93,
+ "risk_ratio_ci95": [
+  5.46,
+  16.06
+ ],
+ "diff_corrected_ci95": [
+  0.603,
+  0.794
+ ],
+ "raw_risk_ratio": 8.7,
+ "note": "exploratory (Addendum 1, designed after v50)"
+}

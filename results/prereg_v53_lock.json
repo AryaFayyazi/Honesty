@@ -1,0 +1,10 @@
+{
+ "locked_at": "2026-10-05T22:56:26.447969",
+ "sha256": {
+  "docs/preregistration_v53.md": "fb348443fc12399b230b47d3ce6b09afacdda5cd5fb53476b79303158b673d12",
+  "scripts/138_ktext.py": "ca146db4cd74d063e69b1e3a2e0eb19e02d107ac5a49a067f5b40940d7683dff",
+  "results/prereg_v53/ktext.json": "de396206cc861b6d85f88159cfdbca217da81f43cd9a3123279bed7e333f9cd4",
+  "scripts/139_v53_test.py": "e40ac649579cdeafaa2d705f131cf329b904881ca2285389c256ae6126f0defb"
+ },
+ "qwen_v49_label_files_existing": []
+}

@@ -1,0 +1,38 @@
+{
+ "uninformed": {
+  "n_actions": 6795,
+  "auroc_within_fold": 0.4773,
+  "ci90": [
+   0.4626,
+   0.4894
+  ],
+  "ci95": [
+   0.4603,
+   0.4922
+  ]
+ },
+ "informed": {
+  "n_actions": 17298,
+  "auroc_within_fold": 0.8951,
+  "ci90": [
+   0.8861,
+   0.9027
+  ],
+  "ci95": [
+   0.8843,
+   0.9042
+  ]
+ },
+ "text_uninformed": {
+  "n": 6795,
+  "auroc": 0.4815,
+  "ci90": [
+   0.46,
+   0.5015
+  ]
+ },
+ "included": true,
+ "PASS": true,
+ "actor": "museglimmer",
+ "test": "H1"
+}

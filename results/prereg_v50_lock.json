@@ -1,0 +1,14 @@
+{
+ "locked_at": "2026-10-05T00:46:18.055374",
+ "sha256": {
+  "docs/preregistration_v50.md": "e5d49863caaa35c9ed7b8b25318a9d37ecd7b2fa5388eb8b7ccfa2131f969f39"
+ },
+ "note": "audit sheet does not exist at lock time",
+ "addenda": [
+  {
+   "at": "2026-10-05T00:59:19.446255",
+   "sha256": "a40719d1108915554110a4e6f738973ee7321864dccf73ba4ded596efd26b8b8",
+   "note": "Addendum 1: SPIN audit, written after v50 results (exploratory)"
+  }
+ ]
+}

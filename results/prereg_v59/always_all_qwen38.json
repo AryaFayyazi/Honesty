@@ -1,0 +1,36 @@
+{
+  "actor": "qwen38",
+  "tag": "_all",
+  "K": 12,
+  "n_plus": 200,
+  "completion": {
+    "gate_always": 0.915,
+    "none_hf": 0.965
+  },
+  "D2prime": {
+    "diff": -0.05,
+    "one_sided_95_lower": -0.07653061224489796,
+    "margin": -0.05,
+    "passes": false,
+    "p_noninf": 0.4987
+  },
+  "delay_turns_when_both_complete": 0.0273224043715847,
+  "fires_per_episode": 0.66,
+  "asks_per_episode": {
+    "minus": 0.0,
+    "plus": 0.0
+  },
+  "violation": {
+    "gate_always": 0.05,
+    "none_hf": 0.41
+  },
+  "D1": {
+    "b_fixed": 36,
+    "c_broken": 0,
+    "p_one_sided": 1.4551915228366852e-11
+  },
+  "holm": {
+    "D1": 2.9103830456733704e-11,
+    "D2prime": 0.4987
+  }
+}

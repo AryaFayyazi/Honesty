@@ -1,0 +1,26 @@
+jobid	name	state	dependency	command
+3114	xfull	PENDING	Dependency=afterany:3178(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/x_full.sh
+3115	mfull	PENDING	Dependency=afterany:3114(unfulfilled)	/home/arya/new_safety/cape/slurm/run_v030.sh python scripts/20_server_rollouts.py actor=museglimmer split=v2fresh out_name=x_museglimmer_v2fresh_minus seeds=[0,1,2,3]
+3147	v16req	PENDING	Dependency=afterany:3170(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v16.sh
+3148	v17dd	PENDING	Dependency=afterany:3175(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh python scripts/21_gated_rollouts.py model=Qwen/Qwen3.8-27B arm=B_resolved split=v10enf cf_values=[unsafe] seeds=[0,1,2,3,4,5,6,7] out_name=gated_B_resolved_v10enf_minus
+3157	aeval_base	PENDING	Dependency=afterany:3164(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh python scripts/33_authority_eval.py stage=rollout ckpt=base tier=core
+3161	v22x	PENDING	Dependency=afterany:3115(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v22.sh
+3162	v22m	PENDING	Dependency=afterany:3161(unfulfilled)	/home/arya/new_safety/cape/slurm/run_v030.sh python scripts/20_server_rollouts.py actor=museglimmer split=v10enf out_name=x_museglimmer_v10enf_minus seeds=[0,1,2,3]
+3163	m1data	PENDING	Dependency=afterany:3148(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/m1fix.sh data
+3164	m1train	PENDING	Dependency=afterany:3163(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/m1fix.sh train
+3168	aeval_post	PENDING	Dependency=afterany:3157(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/aeval_post.sh
+3169	aeval_m1	PENDING	Dependency=afterany:3168(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/aeval_m1.sh
+3170	aeval_m1b	PENDING	Dependency=afterany:3169(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/aeval_m1.sh
+3172	v24small	PENDING	Dependency=afterany:3162(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash -c for a in qwen3_4b qwen3_8b qwen3_14b; do bash slurm/v24_full.sh $a; done
+3173	v24q32	PENDING	Dependency=afterany:3172(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v24_full.sh qwen3_32b
+3174	v24l70a	PENDING	Dependency=afterany:3173(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v24_full.sh llama33_70b v2fresh
+3175	v24l70b	PENDING	Dependency=afterany:3174(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v24_full.sh llama33_70b v10enf
+3177	v19b	PENDING	Dependency=afterany:3183(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v19b.sh
+3178	v20b	PENDING	Dependency=afterany:3177(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v20b.sh
+3180	authx	PENDING	Dependency=afterany:3147(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/authx.sh
+3182	tau2smk2	PENDING	Dependency=afterany:3184(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/tau2_run.sh 1 smk2 P0_none,P0_orc_enf 0,1,7,8
+3183	tau2main	PENDING	Dependency=afterany:3182(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/tau2_main.sh
+3184	authxsmk2	PENDING	Dependency=afterany:3176(unfulfilled)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/authx_smoke.sh
+3176	v25harness	RUNNING	Dependency=(null)	/home/arya/new_safety/cape/slurm/run.sh bash slurm/v25.sh
+
+# NOTE (from session 3c): sbatch options are not captured above. On resubmission: m1train (slurm/m1fix.sh train) needs --time=48:00:00; authx (slurm/authx.sh) used --time=12:00:00; all others used slurm/run.sh defaults (24h).

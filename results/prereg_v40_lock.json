@@ -1,0 +1,16 @@
+{
+ "locked_at": "2026-10-04T09:26:56.958630",
+ "data_existing": [
+  "no v40 rollout exists"
+ ],
+ "sha256": {
+  "docs/preregistration_v40.md": "9af4e16184bcd345ea4fe399746a88c1f5f50ea538f512a1847c28559ea45532",
+  "results/prereg_v40/frozen_forecasters.joblib": "63a4e82af24c13c5ca076ee19416cba60fe76d64646659eca7ffdb936c1cc1e3",
+  "scripts/94_report_feats.py": "0a096611cc44c6fcc2e3e4d5bbd31ad232bd301a28219f4f823047994b1d4744",
+  "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41"
+ },
+ "analysis_script": {
+  "at": "2026-10-04T09:38:49.119888",
+  "sha256": "058abf127ed1e53fe7edc25465738211ddef83ed85496e85c30b197e9681e11d"
+ }
+}

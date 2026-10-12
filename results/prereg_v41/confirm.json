@@ -1,0 +1,39 @@
+{
+ "W1_chosen_vs_none": {
+  "n": 45,
+  "rate_none": 0.733,
+  "rate_chosen": 0.844,
+  "n_up": 6,
+  "n_down": 1,
+  "diff": 0.111,
+  "p_one_sided": 0.9921875,
+  "holm_p": 1.0
+ },
+ "W2_chosen_vs_random": {
+  "n": 48,
+  "rate_rand_chosen": 0.729,
+  "rate_chosen": 0.833,
+  "n_up": 8,
+  "n_down": 3,
+  "diff": 0.104,
+  "p_one_sided": 0.96728515625,
+  "holm_p": 1.0
+ },
+ "guards": {
+  "report_share": {
+   "chosen": 0.9090909090909091,
+   "none": 0.8909090909090909
+  },
+  "mention": {
+   "chosen": 0.98,
+   "none": 1.0
+  },
+  "ok": true
+ },
+ "chosen": {
+  "name": "lie_m32_decode",
+  "mult": -32.0,
+  "mode": "decode"
+ },
+ "CLAIM": false
+}

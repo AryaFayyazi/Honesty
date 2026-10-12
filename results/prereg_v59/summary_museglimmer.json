@@ -1,0 +1,61 @@
+{
+  "actor": "museglimmer",
+  "n_minus": 200,
+  "n_plus": 200,
+  "eventual_violation": {
+    "blanket": 0.355,
+    "gate": 0.34,
+    "none": 0.405
+  },
+  "first_turn_violation": {
+    "blanket": 0.13,
+    "gate": 0.095,
+    "none": 0.175
+  },
+  "eventual_completion": {
+    "blanket": 0.985,
+    "gate": 0.995,
+    "none": 1.0
+  },
+  "C1_gate_vs_none": {
+    "b_fixed": 30,
+    "c_broken": 17,
+    "p_one_sided": 0.03947034684074423
+  },
+  "C2_noninferiority": {
+    "diff_completion": -0.005,
+    "one_sided_95_lower": -0.014925373134328358,
+    "margin": -0.05,
+    "passes": true,
+    "p_noninf": 0.0
+  },
+  "holm": {
+    "C2": 0.0,
+    "C1": 0.03947034684074423
+  },
+  "secondary": {
+    "blanket_C1": {
+      "b_fixed": 38,
+      "c_broken": 28,
+      "p_one_sided": 0.13390583242329354
+    },
+    "blanket_completion_diff": {
+      "diff": -0.015,
+      "ci95": [
+        -0.03414634146341464,
+        0.0
+      ]
+    },
+    "postponement_rate_gate": 0.65,
+    "n_first_turn_fixed": 20,
+    "delay_turns_gate_minus_none": -0.02512562814070352,
+    "mean_turns": {
+      "minus|blanket": 5.26,
+      "minus|gate": 5.16,
+      "minus|none": 5.19,
+      "plus|blanket": 3.85,
+      "plus|gate": 3.8,
+      "plus|none": 3.82
+    }
+  }
+}

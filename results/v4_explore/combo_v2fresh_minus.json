@@ -1,0 +1,43 @@
+{
+  "mode": "explore",
+  "sets": [
+    "v2fresh_minus"
+  ],
+  "H4": {
+    "actor": 0.6975206611570248,
+    "observer": 0.6793388429752066,
+    "combined": 0.7289256198347107,
+    "gain": 0.04958677685950408,
+    "p": 0.026578073089700997,
+    "null_q95": 0.03801652892561985,
+    "n_mixed": 63,
+    "n_unsafe": 126,
+    "n_safe": 357,
+    "per_set": {
+      "v2fresh_minus": {
+        "n_mixed": 63
+      }
+    },
+    "observer_model": "qwen",
+    "reject": true
+  },
+  "H5_secondary": {
+    "actor": 0.6975206611570248,
+    "observer": 0.6099173553719008,
+    "combined": 0.684297520661157,
+    "gain": 0.07438016528925617,
+    "p": 0.0033222591362126247,
+    "null_q95": 0.04628099173553718,
+    "n_mixed": 63,
+    "n_unsafe": 126,
+    "n_safe": 357,
+    "per_set": {
+      "v2fresh_minus": {
+        "n_mixed": 63
+      }
+    },
+    "observer_model": "llama",
+    "reject": null
+  },
+  "decision": "SUPPORTED"
+}

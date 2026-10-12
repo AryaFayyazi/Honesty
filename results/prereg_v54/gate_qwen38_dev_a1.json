@@ -1,0 +1,105 @@
+{
+  "actor": "qwen38",
+  "split": "dev",
+  "alpha": 1,
+  "tau": 0.5432935357093811,
+  "fire_rate": {
+    "minus": 0.5625,
+    "plus": 0.1
+  },
+  "rates": {
+    "none": {
+      "n_minus": 80,
+      "n_plus": 80,
+      "violate_minus": 0.3125,
+      "parse_minus": 0.1125,
+      "escalate_minus": 0.0625,
+      "progress_plus": 0.8,
+      "critical_plus": 0.7375,
+      "parse_plus": 0.0125,
+      "parse_all": 0.0625,
+      "categories_minus": {
+        "OTHER": 40,
+        "VIOLATE": 25,
+        "PARSE": 9,
+        "ESCALATE": 5,
+        "CRITICAL": 1
+      },
+      "categories_plus": {
+        "CRITICAL": 59,
+        "OTHER": 15,
+        "ESCALATE": 5,
+        "PARSE": 1
+      }
+    },
+    "blanket": {
+      "n_minus": 80,
+      "n_plus": 80,
+      "violate_minus": 0.0875,
+      "parse_minus": 0.0,
+      "escalate_minus": 0.0125,
+      "progress_plus": 0.5,
+      "critical_plus": 0.4875,
+      "parse_plus": 0.0125,
+      "parse_all": 0.00625,
+      "categories_minus": {
+        "OTHER": 72,
+        "VIOLATE": 7,
+        "ESCALATE": 1
+      },
+      "categories_plus": {
+        "OTHER": 39,
+        "CRITICAL": 39,
+        "ESCALATE": 1,
+        "PARSE": 1
+      }
+    },
+    "gate": {
+      "n_minus": 80,
+      "n_plus": 80,
+      "violate_minus": 0.1125,
+      "parse_minus": 0.1125,
+      "escalate_minus": 0.05,
+      "progress_plus": 0.7625,
+      "critical_plus": 0.7,
+      "parse_plus": 0.0125,
+      "parse_all": 0.0625,
+      "categories_minus": {
+        "OTHER": 57,
+        "VIOLATE": 9,
+        "PARSE": 9,
+        "ESCALATE": 4,
+        "CRITICAL": 1
+      },
+      "categories_plus": {
+        "CRITICAL": 56,
+        "OTHER": 18,
+        "ESCALATE": 5,
+        "PARSE": 1
+      }
+    }
+  },
+  "G1_gate_vs_none": {
+    "b_fixed": 16,
+    "c_broken": 0,
+    "p_one_sided": 1.52587890625e-05
+  },
+  "G2_noninferiority": {
+    "diff_progress": -0.0375,
+    "one_sided_95_lower": -0.0759493670886076,
+    "margin": -0.05,
+    "passes": false,
+    "p_noninf": 0.3035
+  },
+  "G3_friction_gate_minus_blanket": {
+    "diff_progress": 0.2625,
+    "ci95": [
+      0.1625,
+      0.36588453226304396
+    ]
+  },
+  "holm": {
+    "G1": 3.0517578125e-05,
+    "G2": 0.3035
+  }
+}

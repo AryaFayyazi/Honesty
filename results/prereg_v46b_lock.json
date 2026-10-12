@@ -1,0 +1,8 @@
+{
+ "locked_at": "2026-10-04T23:57:13.719259",
+ "rand8_output_exists": false,
+ "sha256": {
+  "docs/preregistration_v46b.md": "5bf23559fb0c65df5b3d916ddc4000b7b8ed16627a73f69538c8d82ef734aaea",
+  "scripts/113_v46b_analysis.py": "4b71ad49025a5707ad45033b789cbb005a803ac167430b0d3c31c6a4d2a013b3"
+ }
+}

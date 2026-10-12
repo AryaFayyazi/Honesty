@@ -1,0 +1,5 @@
+pyproject.toml
+src/cape.egg-info/PKG-INFO
+src/cape.egg-info/SOURCES.txt
+src/cape.egg-info/dependency_links.txt
+src/cape.egg-info/top_level.txt

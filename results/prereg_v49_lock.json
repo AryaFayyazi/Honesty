@@ -1,0 +1,26 @@
+{
+ "locked_at": "2026-10-04T22:47:56.775913",
+ "data_existing": [
+  "no v49 rollout; K index from earlier decode results"
+ ],
+ "sha256": {
+  "docs/preregistration_v49.md": "128b7ad9eb5f19627ea347abb7666ac8b74de7422c2eb2e24a393b3d9119a950"
+ },
+ "K_index_source": "docs/xm_findings.md line ~335 (recorded 2026-10-02/03, before v49): 'Muse 0.94 > Qwen 0.81 > Gemma 0.69 >> gpt-oss 0.03'",
+ "findings_sha256_at_lock": "a80e3f8875b10b22e59dce7dc4d38cac7c19ddc615c24d3982ef2fc57be4e556",
+ "frozen_forecasters": {
+  "at": "2026-10-04T23:00:47.719957",
+  "sha256": {
+   "results/prereg_v49/frozen_gemma4.joblib": "469123148f24d2c6b85b82899309dedd4ac59f19d534ed9b247ddfe188019e21",
+   "results/prereg_v49/frozen_gptoss20b.joblib": "d9bbc0cf87ec7987a97d3b38893838f13baabd8b7390e1a0b1833fbc54ad6f84",
+   "results/prereg_v49/frozen_qwen38.joblib": "37b1c7aa99f8e2bb3289e2a61d27d6e54c66963583215f040ec1128c35fd8404"
+  }
+ },
+ "deviations": [
+  {
+   "at": "2026-10-05T06:59:19.527846",
+   "note": "Qwen smoke 2 failed: hermes parser parsed no XML tool calls; switched to qwen3_coder; smoke rerun",
+   "sha256_20": "e4241ed63d31cb68f4fa448158806067987aa4c81a35e5a9158267896388194a"
+  }
+ ]
+}

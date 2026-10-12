@@ -1,0 +1,52 @@
+{
+  "per_run": {
+    "v66_screen_gptoss20b_P0_rev": {
+      "shown_na": 9,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 6,
+      "viol_cancels_unread": 5
+    },
+    "v66_screen_gptoss20b_P0_rev_enf": {
+      "shown_na": 9,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 4,
+      "viol_cancels_unread": 3
+    },
+    "v66_screen_qwen38_P0_rev": {
+      "shown_na": 19,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 0,
+      "viol_cancels_unread": 0
+    },
+    "v66_screen_qwen38_P0_rev_enf": {
+      "shown_na": 23,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 0,
+      "viol_cancels_unread": 0
+    },
+    "v66_screen_gemma4_P0_rev": {
+      "shown_na": 18,
+      "shown_na_cancelled": 0,
+      "viol_cancels": 0,
+      "viol_cancels_unread": 0
+    },
+    "v66_screen_gemma4_P0_rev_enf": {
+      "shown_na": 17,
+      "shown_na_cancelled": 1,
+      "viol_cancels": 2,
+      "viol_cancels_unread": 0
+    }
+  },
+  "pooled": {
+    "shown_na": 95,
+    "shown_na_cancelled": 1,
+    "viol_cancels": 12,
+    "viol_cancels_unread": 8,
+    "p_cancel_given_shown_not_allowed": 0.010526315789473684,
+    "wilson95": [
+      0.0018605283639709959,
+      0.05724009323665061
+    ],
+    "share_violating_cancels_on_unread": 0.6666666666666666
+  }
+}

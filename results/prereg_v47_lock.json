@@ -1,0 +1,19 @@
+{
+ "locked_at": "2026-10-04T22:32:51.860564",
+ "v47_rollouts_existing": [],
+ "sha256": {
+  "docs/preregistration_v47.md": "5bfdcaf5ec4939f9a09995b3f0ea0f1f898ea0c72a70d240564df657e1c668e0",
+  "results/prereg_v47/frozen_forecasters.joblib": "f41d4ef94ced4272f9b3f241d1bd427401da3eb3a89c7253198376888b64b18d",
+  "scripts/105_v40_analysis.py": "058abf127ed1e53fe7edc25465738211ddef83ed85496e85c30b197e9681e11d",
+  "scripts/112_v47_analysis.py": "390de9de506ab8abc95a8fbaec7f443888022f0dc6a324222a774be0ca95e281"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-08T22:32:47.477882",
+   "what": "stopped at interim; stage 2 not run (jobs cancelled while queued); interim = final (E1, E2 not passed)",
+   "sha256": {
+    "docs/preregistration_v47.md": "dee49ca567cab3c6e85da7c6ac7dfded411a7aca093a2ef8a29690db4be5f3ac"
+   }
+  }
+ ]
+}

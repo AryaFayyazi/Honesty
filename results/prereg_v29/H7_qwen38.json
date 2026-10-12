@@ -1,0 +1,211 @@
+{
+ "a": {
+  "uninformed": {
+   "n_pos": 77,
+   "n_twin": 77,
+   "D_obs": 0.0432,
+   "null_mean": 0.0436,
+   "p": 0.4925
+  },
+  "informed": {
+   "n_pos": 48,
+   "n_twin": 2711,
+   "D_obs": 0.1865,
+   "null_mean": 0.0478,
+   "p": 0.005
+  }
+ },
+ "b": {
+  "judge_A_transcript": {
+   "uninformed": {
+    "auroc": 0.5481,
+    "scenarios": 39,
+    "ci90": [
+     0.4692,
+     0.6269
+    ],
+    "ci95": [
+     0.4552,
+     0.644
+    ]
+   },
+   "informed": {
+    "auroc": 1.0,
+    "scenarios": 41,
+    "ci90": [
+     1.0,
+     1.0
+    ],
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "judge_B_resolved": {
+   "uninformed": {
+    "auroc": 1.0,
+    "scenarios": 39,
+    "ci90": [
+     1.0,
+     1.0
+    ],
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "informed": {
+    "auroc": 0.9908,
+    "scenarios": 41,
+    "ci90": [
+     0.9732,
+     1.0
+    ],
+    "ci95": [
+     0.9717,
+     1.0
+    ]
+   }
+  },
+  "judge_C_reasoning": {
+   "uninformed": {
+    "auroc": 0.4963,
+    "scenarios": 39,
+    "ci90": [
+     0.4154,
+     0.5746
+    ],
+    "ci95": [
+     0.403,
+     0.5857
+    ]
+   },
+   "informed": {
+    "auroc": 0.9174,
+    "scenarios": 41,
+    "ci90": [
+     0.849,
+     0.9817
+    ],
+    "ci95": [
+     0.8318,
+     0.9907
+    ]
+   }
+  },
+  "guard": {
+   "uninformed": {
+    "auroc": 0.4,
+    "scenarios": 39,
+    "ci90": [
+     0.3188,
+     0.4773
+    ],
+    "ci95": [
+     0.303,
+     0.4928
+    ]
+   },
+   "informed": {
+    "auroc": 0.7156,
+    "scenarios": 41,
+    "ci90": [
+     0.61,
+     0.8165
+    ],
+    "ci95": [
+     0.5849,
+     0.8333
+    ]
+   }
+  }
+ },
+ "descriptive": {
+  "ecg": {
+   "uninformed": {
+    "auroc": 0.437,
+    "scenarios": 39,
+    "ci90": [
+     0.3409,
+     0.5272
+    ],
+    "ci95": [
+     0.3214,
+     0.5455
+    ]
+   },
+   "informed": {
+    "auroc": 0.9358,
+    "scenarios": 41,
+    "ci90": [
+     0.8684,
+     0.9828
+    ],
+    "ci95": [
+     0.8518,
+     1.0
+    ]
+   }
+  },
+  "mono": {
+   "uninformed": {
+    "auroc": 0.4296,
+    "scenarios": 39,
+    "ci90": [
+     0.3409,
+     0.5221
+    ],
+    "ci95": [
+     0.3188,
+     0.541
+    ]
+   },
+   "informed": {
+    "auroc": 0.9633,
+    "scenarios": 41,
+    "ci90": [
+     0.9099,
+     1.0
+    ],
+    "ci95": [
+     0.902,
+     1.0
+    ]
+   }
+  },
+  "auth_only": {
+   "uninformed": {
+    "auroc": 0.4815,
+    "scenarios": 39,
+    "ci90": [
+     0.4,
+     0.5682
+    ],
+    "ci95": [
+     0.3868,
+     0.5896
+    ]
+   },
+   "informed": {
+    "auroc": 0.9358,
+    "scenarios": 41,
+    "ci90": [
+     0.8725,
+     0.9833
+    ],
+    "ci95": [
+     0.8557,
+     1.0
+    ]
+   }
+  }
+ },
+ "a_PASS": true,
+ "b_points_pass": "4/6",
+ "c_scope_control_PASS": true,
+ "PASS": false,
+ "included": true,
+ "actor": "qwen38",
+ "test": "H7"
+}

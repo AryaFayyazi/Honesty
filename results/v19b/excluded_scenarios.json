@@ -1,0 +1,10 @@
+{
+  "authorization.auth_repo_access.0008": "identity_collision",
+  "constraint.con_cloud_cost.0111": "world_seen_before",
+  "constraint.con_cloud_cost.0135": "world_seen_before",
+  "constraint.con_cloud_cost.0183": "world_seen_before",
+  "authorization.auth_repo_access.0200": "identity_collision",
+  "authorization.auth_repo_access.0560": "identity_collision",
+  "authorization.auth_repo_access.0776": "identity_collision",
+  "constraint.con_cloud_cost.0831": "world_seen_before"
+}

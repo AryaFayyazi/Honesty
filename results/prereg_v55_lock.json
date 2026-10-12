@@ -1,0 +1,22 @@
+{
+ "locked_at": "2026-10-06T12:35:44.782681",
+ "sha256": {
+  "docs/preregistration_v55.md": "88d8937ece7c36fc645149f8691b744c479eefe4aa9c6c4f64d3ffe185862583",
+  "scripts/147_v55_sites.py": "086c012a00cfd658195f28a0407005f46be580d2f6ba23f2236367254cecd80c",
+  "scripts/148_v55_extract.py": "f47970110b644760203a939d0ff647d3f325c7e6aa10bb582e10dfa768d5a1c1",
+  "scripts/149_v55_monitor.py": "da6906aa0eabe9a0d019bc730bdde001e1d115cc7d597d0bae9afca7b114246a",
+  "scripts/150_v55_analysis.py": "8f6654d24e6b70096be8373849a8631bda919571b2e1761838e1728617613413"
+ },
+ "note": "locked before any v55 feature or monitor score exists (only the anchor/site tables, which contain labels and text, exist). Exploratory note in the prereg (step -1 lie forecaster at chance) was computed on already-analysed trajectory data.",
+ "addenda": [
+  {
+   "at": "2026-10-06T12:38:14.511860",
+   "what": "PCA n_components = min(256, n-1, d) (robustness; caught by a synthetic dry run, no real v54/v55 output exists). Also slurm/v54.sh, slurm/v55_feat.sh job scripts.",
+   "sha256": {
+    "scripts/150_v55_analysis.py": "9a715133325ba3feb5980114eaf234d3490bcbd6a14ac5adea0ebd6334d2fbce",
+    "slurm/v54.sh": "0fec43dd53e4fc8cd4ab2ad142682618f82d9c3980d580afd303419d29b8aa06",
+    "slurm/v55_feat.sh": "0cf86de5d61dcd35918386c263aaec480ac5228751fe2ad2c7b8e9e2a2707b64"
+   }
+  }
+ ]
+}

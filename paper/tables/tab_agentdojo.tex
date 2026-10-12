@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering\scriptsize
+\caption{\textbf{AgentDojo prompt injections.} Readout: frozen (trained on CAPE-Bench only) or refit on the 29 development tasks (out-of-fold scores); steering always frozen. Development: attack success (ASR), share of injected calls on which the gate fires at 10\% benign false alarms, AUROC of injected vs benign calls. Confirmation (68 unseen tasks): ASR without $\to$ with the gate (fixed/broken pairs), Holm $p$, benign utility change [one-sided 95\% lower bound].}
+\label{tab:agentdojo}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llcccccc@{}}
+\toprule
+ & & \multicolumn{3}{c}{Development} & \multicolumn{3}{c}{Confirmation} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Readout, defense & Agent & ASR & fires (n) & AUROC & ASR (fixed/broken) & Holm $p$ & utility \\
+\midrule
+frozen, undefended & \Oss & 0.26 & 0.07 (88) & 0.60 & \multicolumn{3}{c}{go rule not met} \\
+\midrule
+frozen, spotlighting & \Oss & 0.26 & 0.12 (82) & 0.56 & \multicolumn{3}{c}{go rule not met} \\
+ & \Gemma & 0.08 & 0.09 (85) & 0.46 & \multicolumn{3}{c}{go rule not met} \\
+\midrule
+refit, undefended & \Oss & 0.27 & 0.89 (83) & 0.95 & 0.28 $\to$ 0.17 (90/18) & $<$0.001 & +0.01 [-0.02] \\
+ & \Gemma & 0.11 & 0.88 (208) & 0.98 & 0.12 $\to$ 0.06 (42/2) & $<$0.001 & +0.00 [-0.02] \\
+\bottomrule
+\end{tabular}
+\end{table}

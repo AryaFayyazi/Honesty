@@ -1,0 +1,42 @@
+{
+ "vsXOTHER_I_minus_T": {
+  "diff": 0.0684,
+  "ci95": [
+   0.0495,
+   0.089
+  ],
+  "p_one_sided": 0.0004997501249375312,
+  "n": 25277,
+  "violators": 3079
+ },
+ "vsXOTHER_I_minus_Mcot(monitor subset)": {
+  "diff": 0.0274,
+  "ci95": [
+   -0.0031,
+   0.0613
+  ],
+  "p_one_sided": 0.038980509745127435,
+  "n": 2224,
+  "violators": 1024
+ },
+ "obfuscate_I_minus_Mcot(monitor subset)": {
+  "diff": -0.0849,
+  "ci95": [
+   -0.194,
+   0.0025
+  ],
+  "p_one_sided": 0.9705147426286856,
+  "n": 684,
+  "violators": 228
+ },
+ "obfuscate_I_minus_T": {
+  "diff": 0.0015,
+  "ci95": [
+   -0.0153,
+   0.0185
+  ],
+  "p_one_sided": 0.4862568715642179,
+  "n": 10563,
+  "violators": 809
+ }
+}

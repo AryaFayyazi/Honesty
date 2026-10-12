@@ -1,0 +1,16 @@
+name: Qwen/Qwen3.8-27B
+hf_id: Qwen/Qwen3.8-27B
+# Locked snapshot present in /data/models (record in every run; never switch silently).
+revision: 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+local_path: /data/models/models--Qwen--Qwen3.8-27B/snapshots/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+family: qwen3_5
+num_layers: 64
+hidden_size: 5120
+# zero-based indices of full-attention layers (config.layer_types); every 4th layer
+full_attention_layers: [3, 7, 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63]
+pilot_layers: [15, 31, 47, 63]
+pilot_adjacent_deltanet: [14, 30, 46, 62]
+dtype: bfloat16
+chat:
+  enable_thinking: true
+  reasoning_effort: medium

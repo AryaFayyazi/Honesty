@@ -1,0 +1,41 @@
+{
+  "n_mixed_scenarios": 52,
+  "n_informed_unsafe_runs": 71,
+  "n_safe_runs": 127,
+  "H1'": {
+    "actor_within_scenario_auroc": 0.8616352201257862,
+    "null_mean": 0.5027044025157232,
+    "null_q95": 0.5849056603773585,
+    "p": 0.004975124378109453,
+    "p_holm": 0.009950248756218905,
+    "reject": true
+  },
+  "H2'": {
+    "actor_minus_observer": 0.06289308176100628,
+    "observer_within_scenario_auroc": 0.7987421383647799,
+    "null_q95": 0.08207547169811308,
+    "p": 0.14925373134328357,
+    "p_holm": 0.14925373134328357,
+    "reject": false
+  },
+  "decision": "NO-GO",
+  "n_perm": 200,
+  "frozen_choices": {
+    "actor_layer": 46,
+    "actor_pooling": "pre_action_last",
+    "actor_C": 0.001,
+    "cv_primary_metric_by_layer": {
+      "14": 0.6470588235294118,
+      "15": 0.6339869281045751,
+      "30": 0.6078431372549019,
+      "31": 0.5947712418300654,
+      "46": 0.7124183006535948,
+      "47": 0.6535947712418301,
+      "61": 0.5882352941176471,
+      "62": 0.6339869281045751,
+      "63": 0.6209150326797386
+    },
+    "observer_layer": 27,
+    "decided_before_fresh_data": true
+  }
+}

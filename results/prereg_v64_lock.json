@@ -1,0 +1,44 @@
+{
+ "locked_at": "2026-10-10T02:08:23.827624",
+ "sha256": {
+  "docs/preregistration_v64.md": "83f7879d96e0b456620d33500292f15a9a2be00a3c240a577c1efa2ee1a5d687",
+  "scripts/160_v59b_gate_always.py": "63c814a24d6ce3fe9276f49b729c52f723be711499d80ee405f2088e028b9343",
+  "scripts/165_v61_e2e.py": "935b58ede5ca49bd6c1dbf2a70f7a141d6d57a879a410e7ac149d9f38962ecd5",
+  "scripts/170_v64_e2e_all.py": "2cf69fc255b6a30e9dcbcc16b7200ccd5b37701b8033a9cdd5b4bcb5e51c744d",
+  "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41",
+  "slurm/v59d.sh": "a8987e745b758541df9ac8df64a5ab38a5f36830cc767db882a93ef27bd460a9",
+  "slurm/v64.sh": "d3e5f4b66b9ce83840c1530bee9d331c5db219071122b4e19221fb338ad21ddb"
+ },
+ "note": "locked before any v59d gpt-oss/Qwen/Muse data, before the Gemma rerun, and before any gate-then-ask report exists.",
+ "addenda": [
+  {
+   "at": "2026-10-10T03:35:00.242073",
+   "what": "Addendum 1: report-stage OOM fix, trajectories saved before reports, gpt-oss rerun tag _esc64; before any report exists",
+   "sha256": {
+    "docs/preregistration_v64.md": "48a337b44ceaed84158227fc7a7ca948ad9cd0395f24b4dfef1c2b07a63bb0eb",
+    "scripts/160_v59b_gate_always.py": "4d78ac0a6f96211b6d25baa02d90caf4bd4bfe4185d6bd90195d1ccff2b59012",
+    "scripts/170_v64_e2e_all.py": "0f571c3e19e91ec119ed59a15dbf684606f5dd820437a494d039d1e5948e289d",
+    "slurm/v64.sh": "8d034181d1e415f81c263643bf692f06402f10ad1397f5fdfc83d1b6977cc520",
+    "slurm/v64_gptoss.sh": "481f078f00cc3535d64984104af0181460bfaf2a1e3f49803556dc6865f07894"
+   }
+  },
+  {
+   "at": "2026-10-10T03:35:14.734440",
+   "what": "A1 loads both gpt-oss ask logs (_esc, _esc64); worst-case bounds use only the asks of the run that produced the episodes",
+   "sha256": {
+    "scripts/170_v64_e2e_all.py": "87a93b5fb2868888f85a5e2eb72386a4f351adc82c80352bae9e10d87e6a6e8c"
+   }
+  },
+  {
+   "at": "2026-10-11T06:24:22.594189",
+   "what": "Addendum 2: Qwen v59d run hit 8 h timeout in step 12; rerun _esc64 with 13 h timeout and reports; confirmatory rule fixed; before any Qwen report exists",
+   "sha256": {
+    "docs/preregistration_v64.md": "125a7cd7c65bb67b6ff3597e0d047deafb3207019d84391146e377de1a309785",
+    "scripts/160_v59b_gate_always.py": "4d78ac0a6f96211b6d25baa02d90caf4bd4bfe4185d6bd90195d1ccff2b59012",
+    "scripts/170_v64_e2e_all.py": "439b22ad8e0f2d1060b55191d367a8c4908587f719bf6d294d0ef395680991fb",
+    "slurm/v64_qwen.sh": "83ae489443272ce8c2c79b7dceee3e57811a8dfe126e74f97872cd9210450e35",
+    "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41"
+   }
+  }
+ ]
+}

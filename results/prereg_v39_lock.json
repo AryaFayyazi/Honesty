@@ -1,0 +1,26 @@
+{
+ "locked_at": "2026-10-04T09:22:15.130764",
+ "data_existing": [
+  "v37 labels (seen)",
+  "directions computed (held-out AUROC 0.879 / 0.810); no generation exists"
+ ],
+ "sha256": {
+  "docs/preregistration_v39.md": "b0c79c2ddfa62d9c00d885da1f05b0f135be209ad43e80e4831260974511f8b0",
+  "scripts/103_lie_steering.py": "7f668ba57bebe31e23cb4c4d351755abc8051636b93a40635a62f07eac46e8ec",
+  "outputs/reconcile/v39_directions.npz": "cda983cc17a70a0421cc75fb709f0548d77832cedd5e412f61b22cce4f08f15b",
+  "outputs/reconcile/v39_episodes.parquet": "abb8c9159b01c936ad3d1ff9587fea3d7df35ab5f894e87af52d8c9f678db53a",
+  "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41"
+ },
+ "deviation1": {
+  "at": "2026-10-04T09:27:41.737647",
+  "sha256": {
+   "docs/preregistration_v39.md": "f6da188a20ed0f534b1d84c47a9b560556d9c62bf2907b3d02d8395d7bd34b51",
+   "scripts/103_lie_steering.py": "035483e93be2af4c1f0bc987351f0e9cfb677d3cb99afbcf889d6b6ea3f55111"
+  }
+ },
+ "analysis_script": {
+  "at": "2026-10-04T09:29:27.003337",
+  "sha256": "b05e8c480f51449ff886590845f97d21aa096b0b16d759a378462fbef7b299f5",
+  "note": "written before any v39 full output"
+ }
+}

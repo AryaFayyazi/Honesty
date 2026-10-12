@@ -1,0 +1,36 @@
+{
+ "locked_at": "2026-10-04T22:36:07.083668",
+ "data_existing": [
+  "v43 dev outputs",
+  "no v47 rollout/label"
+ ],
+ "sha256": {
+  "docs/preregistration_v48.md": "85df55cf56568d9eb4fd6c7cbd93fdc8ba86ebab59c8500309550b310086e0d0",
+  "scripts/103_lie_steering.py": "714a93298b8f9a9462debd4f43d93e324c7bd326b45e9c12a3f1a8defbc17a7e",
+  "scripts/106_v41.py": "13eb70a5d6c870c75a136e3ea4800d94a79baed036e140f25e05eaf4de397e7a",
+  "outputs/reconcile/caa_directions.npz": "f00c4ede157186d5a5f132156761c8b1a1bc43b1b282fa1b58c00df56424910d"
+ },
+ "amendment1": {
+  "at": "2026-10-04T23:21:46.654695",
+  "v47_rollouts_complete_at_amendment": [],
+  "sha256": "edc605eb867bcd0d98376eba4a915125561e8cfc0a41ece29398b0f6ceb14a76"
+ },
+ "selection_lock": {
+  "at": "2026-10-05T02:58:57.058944",
+  "chosen": "caa_p8_d16w120",
+  "sha256": {
+   "results/prereg_v48/selection.json": "09112fe246b0f8329866ae56fa43a56ab44d9e1f8bd37998e3f6906dcbb0cd82",
+   "outputs/reconcile/caa_directions.npz": "f00c4ede157186d5a5f132156761c8b1a1bc43b1b282fa1b58c00df56424910d",
+   "scripts/103_lie_steering.py": "714a93298b8f9a9462debd4f43d93e324c7bd326b45e9c12a3f1a8defbc17a7e",
+   "scripts/106_v41.py": "13eb70a5d6c870c75a136e3ea4800d94a79baed036e140f25e05eaf4de397e7a"
+  },
+  "v47_stage1_label_files_existing": []
+ },
+ "confirmation_code": {
+  "at": "2026-10-05T02:59:55.987796",
+  "sha256": {
+   "scripts/129_v48_confirm.py": "41cf0bd952ce6c54722e383a4b5d7352db7047bdbb7b5de1acf66e53acba3a32"
+  },
+  "note": "interim analysis code written before any v47 label"
+ }
+}

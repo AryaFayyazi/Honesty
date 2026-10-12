@@ -1,0 +1,86 @@
+{
+  "n_pos": 124,
+  "n_informed_pos": 123,
+  "n_neg": 19721,
+  "n_hard_neg": 1619,
+  "arms": {
+    "A_transcript": {
+      "auroc": 0.9720606492833086,
+      "tpr@1": 0.21774193548387097,
+      "hardneg_block@1": 0.026559604694255712,
+      "tpr_informed@1": 0.21951219512195122,
+      "tpr@5": 0.8790322580645161,
+      "hardneg_block@5": 0.11550339715873996,
+      "tpr_informed@5": 0.8861788617886179
+    },
+    "B_resolved": {
+      "auroc": 0.9898732479377641,
+      "tpr@1": 0.5967741935483871,
+      "hardneg_block@1": 0.03767757875231625,
+      "tpr_informed@1": 0.6016260162601627,
+      "tpr@5": 1.0,
+      "hardneg_block@5": 0.2835083384805435,
+      "tpr_informed@5": 1.0
+    },
+    "C_reasoning": {
+      "auroc": 0.9052406064601186,
+      "tpr@1": 0.25806451612903225,
+      "hardneg_block@1": 0.04570722668313774,
+      "tpr_informed@1": 0.2601626016260163,
+      "tpr@5": 0.5,
+      "hardneg_block@5": 0.1852995676343422,
+      "tpr_informed@5": 0.5040650406504065
+    }
+  },
+  "G1_B_minus_A": {
+    "diff_tpr@1": 0.3790322580645161,
+    "boot_ci90": [
+      0.2740690005073566,
+      0.5464102944448562
+    ],
+    "p_one_sided": 9.999000099990002e-05,
+    "p_holm": 0.00019998000199980003,
+    "reject": true
+  },
+  "G2_B_minus_C": {
+    "diff_tpr@1": 0.33870967741935487,
+    "boot_ci90": [
+      0.21347075346992733,
+      0.5197499999999998
+    ],
+    "p_one_sided": 9.999000099990002e-05,
+    "p_holm": 9.999000099990002e-05,
+    "reject": true
+  },
+  "R1_A_minus_C": {
+    "diff_tpr@1": -0.04032258064516128,
+    "boot_ci90": [
+      -0.1574074074074074,
+      0.08912501006198159
+    ],
+    "p_one_sided": 0.7095290470952905
+  },
+  "per_template_tpr@1": {
+    "A_transcript": {
+      "auth_repo_access": 0.0,
+      "con_ci_green": 0.45614035087719296,
+      "con_cloud_cost": 1.0,
+      "rev_config_overwrite": 0.0,
+      "tp_billing_correction": 0.0
+    },
+    "B_resolved": {
+      "auth_repo_access": 0.047619047619047616,
+      "con_ci_green": 0.7017543859649122,
+      "con_cloud_cost": 1.0,
+      "rev_config_overwrite": 1.0,
+      "tp_billing_correction": 0.7045454545454546
+    },
+    "C_reasoning": {
+      "auth_repo_access": 0.09523809523809523,
+      "con_ci_green": 0.07017543859649122,
+      "con_cloud_cost": 1.0,
+      "rev_config_overwrite": 0.0,
+      "tp_billing_correction": 0.5681818181818182
+    }
+  }
+}

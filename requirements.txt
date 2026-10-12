@@ -1,0 +1,25 @@
+# Versions intentionally unpinned until the Qwen3.8-compatible stack is frozen.
+# Confirmed working stack (2026-09-28): torch 2.11.0+cu130, transformers 5.14.1, vllm 0.26.0
+torch
+transformers
+accelerate
+safetensors
+datasets
+huggingface_hub
+vllm
+peft
+trl
+scikit-learn
+scipy
+numpy
+pandas
+pyarrow
+zarr
+einops
+matplotlib
+tqdm
+hydra-core
+omegaconf
+rich
+flash-linear-attention
+pytest

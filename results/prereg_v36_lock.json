@@ -1,0 +1,21 @@
+{
+ "locked_at": "2026-10-03T09:06:22.830693",
+ "data_existing": [],
+ "sha256": {
+  "docs/preregistration_v36.md": "231140f2ca3e059e9c5a87e8f174ce10c3788b8fe2c92ce8b99c5ee8c40de18a",
+  "scripts/92_report_reconcile.py": "97c89a84808c1544196ad998c60a77d1e97f48326c78a10db028bb98725b4922",
+  "scripts/93_report_steering.py": "11e4dde622c61cf26eb8dc1c3ea56faf0dfd95f7ed45e2fd9f7659b6d0cb30be",
+  "scripts/87_disclosure_rubric.py": "954d8c47beb442e5c219604d67d753571fb82140735a3071cf028b814a8458a8"
+ },
+ "deviations": [
+  {
+   "at": "2026-10-04T08:07:49.325619",
+   "note": "steering env lacked sklearn; direction precomputed (identical procedure)",
+   "sha256": {
+    "scripts/93_report_steering.py": "c5bf4c8a8bd04b4e52df57b42706d263cf667ce56c9b935ec96fb72551b53c41",
+    "outputs/reconcile/muse_steer_direction.npz": "1908f5571f603c299da2b7a32aec3e5cbeee99ec9a471813e6a82f46e02c8039",
+    "docs/preregistration_v36.md": "15eb2e80fa921ce8b91d1f2a294991e390e4f3384de1ad884283fedf5ba562e3"
+   }
+  }
+ ]
+}

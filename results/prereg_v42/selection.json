@@ -1,0 +1,125 @@
+{
+ "stageA": {
+  "dim_p1.5_all": {
+   "n": 8,
+   "rate_none": 0.625,
+   "rate_dim_p1.5_all": 0.75,
+   "n_up": 2,
+   "n_down": 1,
+   "diff": 0.125,
+   "p_one_sided": 0.875,
+   "guards": {
+    "report_share": {
+     "dim_p1.5_all": 0.13333333333333333,
+     "none": 0.8833333333333333
+    },
+    "mention": {
+     "dim_p1.5_all": 1.0,
+     "none": 1.0
+    },
+    "ok": false
+   }
+  },
+  "dim_p1.5_decode": {
+   "n": 21,
+   "rate_none": 0.762,
+   "rate_dim_p1.5_decode": 0.81,
+   "n_up": 4,
+   "n_down": 3,
+   "diff": 0.048,
+   "p_one_sided": 0.7734375,
+   "guards": {
+    "report_share": {
+     "dim_p1.5_decode": 0.36666666666666664,
+     "none": 0.8833333333333333
+    },
+    "mention": {
+     "dim_p1.5_decode": 0.9545454545454546,
+     "none": 1.0
+    },
+    "ok": false
+   }
+  },
+  "dim_p3_all": {
+   "n": 0,
+   "rate_none": NaN,
+   "rate_dim_p3_all": NaN,
+   "n_up": 0,
+   "n_down": 0,
+   "diff": null,
+   "p_one_sided": 1.0,
+   "guards": {
+    "report_share": {
+     "dim_p3_all": 0.0,
+     "none": 0.8833333333333333
+    },
+    "mention": {
+     "dim_p3_all": NaN,
+     "none": 1.0
+    },
+    "ok": false
+   }
+  },
+  "dim_p3_decode": {
+   "n": 0,
+   "rate_none": NaN,
+   "rate_dim_p3_decode": NaN,
+   "n_up": 0,
+   "n_down": 0,
+   "diff": null,
+   "p_one_sided": 1.0,
+   "guards": {
+    "report_share": {
+     "dim_p3_decode": 0.0,
+     "none": 0.8833333333333333
+    },
+    "mention": {
+     "dim_p3_decode": NaN,
+     "none": 1.0
+    },
+    "ok": false
+   }
+  },
+  "dim_p6_all": {
+   "n": 0,
+   "rate_none": NaN,
+   "rate_dim_p6_all": NaN,
+   "n_up": 0,
+   "n_down": 0,
+   "diff": null,
+   "p_one_sided": 1.0,
+   "guards": {
+    "report_share": {
+     "dim_p6_all": 0.0,
+     "none": 0.8833333333333333
+    },
+    "mention": {
+     "dim_p6_all": NaN,
+     "none": 1.0
+    },
+    "ok": false
+   }
+  },
+  "dim_p6_decode": {
+   "n": 0,
+   "rate_none": NaN,
+   "rate_dim_p6_decode": NaN,
+   "n_up": 0,
+   "n_down": 0,
+   "diff": null,
+   "p_one_sided": 1.0,
+   "guards": {
+    "report_share": {
+     "dim_p6_decode": 0.0,
+     "none": 0.8833333333333333
+    },
+    "mention": {
+     "dim_p6_decode": NaN,
+     "none": 1.0
+    },
+    "ok": false
+   }
+  }
+ },
+ "chosen_name": null
+}

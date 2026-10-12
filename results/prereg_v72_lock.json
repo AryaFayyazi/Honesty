@@ -1,0 +1,15 @@
+{
+ "locked_at": "2026-10-11T23:21:21.447682",
+ "sha256": {
+  "docs/preregistration_v72.md": "1a74b8874706ff0bb4bda0cd84d7cc1ebb848f07f53acaae666b3c97dd3058c7",
+  "scripts/190_v72_refit.py": "387d60727ec360927ee768c7416992332c1580cb7bfdd6e57dd702cedc1f31da",
+  "scripts/187_v70_real_context.py": "983fcefbbfee7500867ff49a9ae192c727da5d47bd00ee1322640512a73d09f3",
+  "scripts/188_v70_analysis.py": "bdecdee5487918b9072714565500b5171a6f7e088d530e953ccf0ff7ef8241ed",
+  "scripts/174_vllm_steer.py": "773ae415dac136ff0b89a969318bf1a4aaaee4211281affc36161013d3ab8233",
+  "slurm/v72dev.sh": "bc894d3299d70f06aa7fa182269e02c98c1f2069dd2e60617980ff635af8d334",
+  "slurm/v72conf.sh": "9d0af16aac4447eb64ed77fdb574121b6751b7236211903a62e9d4557d7a2f35",
+  "outputs/v69/prefixes.jsonl": "480dd50d4d1f9f0e5b0b08ebe08661aabddcd736722f48d178818d528c2f9e53"
+ },
+ "note": "locked before any v72 feature, fit or generation",
+ "addenda": []
+}

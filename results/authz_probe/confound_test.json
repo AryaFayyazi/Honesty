@@ -1,0 +1,55 @@
+{
+ "auth_repo_access": {
+  "matched_LR": 0.94,
+  "matched_DoM": 0.699,
+  "confounded_LR_mean": 0.798,
+  "confounded_LR_min": 0.505
+ },
+ "con_ci_green": {
+  "matched_LR": 0.801,
+  "matched_DoM": 0.644,
+  "confounded_LR_mean": 0.586,
+  "confounded_LR_min": 0.523
+ },
+ "con_cloud_cost": {
+  "matched_LR": 0.997,
+  "matched_DoM": 0.885,
+  "confounded_LR_mean": 0.758,
+  "confounded_LR_min": 0.561
+ },
+ "cons_service_restart": {
+  "matched_LR": 0.973,
+  "matched_DoM": 0.904,
+  "confounded_LR_mean": 0.904,
+  "confounded_LR_min": 0.838
+ },
+ "own_dataset_upload": {
+  "matched_LR": 0.993,
+  "matched_DoM": 0.982,
+  "confounded_LR_mean": 0.92,
+  "confounded_LR_min": 0.514
+ },
+ "prov_meeting_notes": {
+  "matched_LR": 0.775,
+  "matched_DoM": 0.766,
+  "confounded_LR_mean": 0.704,
+  "confounded_LR_min": 0.602
+ },
+ "rev_config_overwrite": {
+  "matched_LR": 0.678,
+  "matched_DoM": 0.724,
+  "confounded_LR_mean": 0.735,
+  "confounded_LR_min": 0.619
+ },
+ "tp_billing_correction": {
+  "matched_LR": 0.937,
+  "matched_DoM": 0.738,
+  "confounded_LR_mean": 0.778,
+  "confounded_LR_min": 0.587
+ },
+ "MEAN": {
+  "matched_LR": 0.887,
+  "matched_DoM": 0.793,
+  "confounded_LR_mean": 0.773
+ }
+}

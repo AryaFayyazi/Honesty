@@ -1,0 +1,28 @@
+{
+ "locked_at": "2026-10-05T10:43:42.830171",
+ "sha256": {
+  "docs/preregistration_v51.md": "f6d3a0f873783f542058141e51c602b5800a004b6b5779906c337d4842c45921",
+  "scripts/131_v51_explore.py": "b7ca126adf7f5e072c118cd6c678ace76a3acdb21848b9f38a80cdab9cb0ee4e",
+  "scripts/132_cot_monitor.py": "1fe15ef78ccfcf83ad6a4041e18a698c964f4f656f0fa4f5a24b9f5e9c51f0d3",
+  "scripts/133_v51_freeze.py": "64f61e9b3ec4b6648aa784dfa4ddd168a47d0bbbbae3a3352e6b9ad107ab6cef",
+  "scripts/134_v51_confirm.py": "81cc1124dd4262d0c3bfb410c73e3b58356f73e2837225df0c40417b23e11274",
+  "results/prereg_v51/freeze_summary.json": "4ed137ec0b6aa2205baeff067734a93cba48c49c2a3440881127c103c9793e33",
+  "results/prereg_v51/frozen_gemma4.joblib": "90ca220300f852e7b55e781b0b407c3e46b8d4132532ac74d6591ac6db319d2a",
+  "results/prereg_v51/frozen_gptoss20b.joblib": "a98da2e06dfe4a10c3e22bde4d856b1cae4c6174042a8dd6777169737e457422",
+  "results/prereg_v51/frozen_museglimmer.joblib": "367b41a8a7152ea636b4f97ac611d9361b91a9684130014db6b041ce497d46ff",
+  "results/prereg_v51/frozen_qwen38.joblib": "4cf6f329ebb7d842dcd44003e6f327331d2d67fefd7276dae6133039b838630c"
+ },
+ "confirmation_label_files_existing": [
+  "outputs/disclosure_v37/xm_gemma4_core24b_minus2345_rubric.parquet",
+  "outputs/disclosure_v37/xm_gptoss20b_core24b_minus2345_rubric.parquet"
+ ],
+ "note": "131 RESERVED regex extended (adds _minus10111213) after 133 started; no _K features existed, so the development pool is unchanged",
+ "clarification": "The two files listed under confirmation_label_files_existing are the v37 C-set labels (xm_gemma4_/xm_gptoss20b_core24b_minus2345), matched by an over-broad substring meant for Qwen's set 'core24b_minus2345' (no prefix). They are NOT v51 confirmation data. At lock time no v51 confirmation set (Muse v47 stage-1, Qwen v49, Gemma/gpt-oss *_minus10111213) had labels.",
+ "deviations": [
+  {
+   "at": "2026-10-06T10:14:26.830957",
+   "note": "CoT monitor: 70% of Muse outputs had no PROBABILITY line (reasoning exhausted max_think). Fix before any v51 analysis: force the answer line after closing the reasoning, for unparsed items. Muse and Qwen monitor runs redone with the fix; Gemma/gpt-oss run with the fix. A `forced` flag is stored; sensitivity analysis on non-forced items will be reported.",
+   "sha256_132": "6f9b3945ff9f3d75d28e1dc068137e973018ed53761200ab1e805fe3be9db977"
+  }
+ ]
+}

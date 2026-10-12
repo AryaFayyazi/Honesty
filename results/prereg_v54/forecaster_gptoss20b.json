@@ -1,0 +1,16 @@
+{
+  "actor": "gptoss20b",
+  "n_minus": 300,
+  "n_plus": 300,
+  "cv_auroc_by_depth": [
+    0.9243,
+    0.9155,
+    0.9075,
+    0.9165,
+    0.9264
+  ],
+  "chosen_depth_index": 4,
+  "tau": -0.7796339988708496,
+  "dev_fire_rate_minus": 1.0,
+  "dev_fire_rate_plus": 0.1
+}

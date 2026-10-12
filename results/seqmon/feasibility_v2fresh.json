@@ -1,0 +1,26 @@
+[
+ {
+  "monitor":"single_event",
+  "false_alarm_authorized":0.0508,
+  "detect_before_harm":0.4076,
+  "n_informed":184,
+  "median_lead_events":6.0,
+  "guarantee":"tuned to ~0.01"
+ },
+ {
+  "monitor":"cusum",
+  "false_alarm_authorized":0.0339,
+  "detect_before_harm":0.1196,
+  "n_informed":184,
+  "median_lead_events":1.5,
+  "guarantee":"tuned to ~0.01"
+ },
+ {
+  "monitor":"anytime_eprocess",
+  "false_alarm_authorized":0.0751,
+  "detect_before_harm":0.5054,
+  "n_informed":184,
+  "median_lead_events":6.0,
+  "guarantee":"<=0.01 by Ville"
+ }
+]

@@ -1,0 +1,19 @@
+{
+ "locked_at": "2026-10-03T22:08:35.562401",
+ "data_existing": [
+  "v30 oracle labels",
+  "tau2 reader features",
+  "3 design-example trajectories (listed in doc)"
+ ],
+ "sha256": {
+  "docs/preregistration_v38.md": "d661d1a18f9d6a0e9049d579aee1fc3df87d3bbc966478c4948505fce67a4d2c",
+  "scripts/101_tau2_disclosure.py": "2e01c078e53a367f37275b941447309e10efb2f66fcda228ca0d2bdf80046b58"
+ },
+ "addendum1": {
+  "locked_at": "2026-10-03T23:09:36.297738",
+  "sha256": {
+   "docs/preregistration_v38.md": "0f09295a8d2de9bd522a6154fb5597c332506b0dcb50fa584d15c8b1845c2c64",
+   "results/v38/t1b_sheet.csv": "118d3bef4ca4437f479dd2ae29f48bda0b126dd63a4f034b8105ac1115a00864"
+  }
+ }
+}

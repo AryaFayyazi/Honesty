@@ -1,0 +1,129 @@
+{
+ "stageA": {
+  "caa_p12_r0": {
+   "n": 73,
+   "rate_none": 0.726,
+   "rate_caa_p12_r0": 0.123,
+   "n_up": 1,
+   "n_down": 45,
+   "diff": -0.603,
+   "p_one_sided": 6.679101716144942e-13,
+   "guards": {
+    "report_share": {
+     "caa_p12_r0": 0.6608695652173913,
+     "none": 0.8695652173913043
+    },
+    "mention": {
+     "caa_p12_r0": 0.5921052631578947,
+     "none": 1.0
+    },
+    "ok": false
+   },
+   "degradation": {
+    "degr": {
+     "caa_p12_r0": 0.6086956521739131,
+     "none": 0.13043478260869565
+    },
+    "tokens": {
+     "caa_p12_r0": 1202.9565217391305,
+     "none": 393.8086956521739
+    },
+    "ok": false
+   }
+  },
+  "caa_p16_r0": {
+   "n": 70,
+   "rate_none": 0.714,
+   "rate_caa_p16_r0": 0.0,
+   "n_up": 0,
+   "n_down": 50,
+   "diff": -0.714,
+   "p_one_sided": 8.881784197001252e-16,
+   "guards": {
+    "report_share": {
+     "caa_p16_r0": 0.6521739130434783,
+     "none": 0.8695652173913043
+    },
+    "mention": {
+     "caa_p16_r0": 0.24,
+     "none": 1.0
+    },
+    "ok": false
+   },
+   "degradation": {
+    "degr": {
+     "caa_p16_r0": 0.8434782608695652,
+     "none": 0.13043478260869565
+    },
+    "tokens": {
+     "caa_p16_r0": 1384.5739130434783,
+     "none": 393.8086956521739
+    },
+    "ok": false
+   }
+  },
+  "caa_p4_r0": {
+   "n": 91,
+   "rate_none": 0.769,
+   "rate_caa_p4_r0": 0.769,
+   "n_up": 7,
+   "n_down": 7,
+   "diff": 0.0,
+   "p_one_sided": 0.604736328125,
+   "guards": {
+    "report_share": {
+     "caa_p4_r0": 0.8173913043478261,
+     "none": 0.8695652173913043
+    },
+    "mention": {
+     "caa_p4_r0": 1.0,
+     "none": 1.0
+    },
+    "ok": false
+   },
+   "degradation": {
+    "degr": {
+     "caa_p4_r0": 0.1826086956521739,
+     "none": 0.13043478260869565
+    },
+    "tokens": {
+     "caa_p4_r0": 411.76521739130436,
+     "none": 393.8086956521739
+    },
+    "ok": false
+   }
+  },
+  "caa_p8_r0": {
+   "n": 90,
+   "rate_none": 0.733,
+   "rate_caa_p8_r0": 0.6,
+   "n_up": 10,
+   "n_down": 22,
+   "diff": -0.133,
+   "p_one_sided": 0.025051229866221547,
+   "guards": {
+    "report_share": {
+     "caa_p8_r0": 0.808695652173913,
+     "none": 0.8695652173913043
+    },
+    "mention": {
+     "caa_p8_r0": 0.9139784946236559,
+     "none": 1.0
+    },
+    "ok": false
+   },
+   "degradation": {
+    "degr": {
+     "caa_p8_r0": 0.2608695652173913,
+     "none": 0.13043478260869565
+    },
+    "tokens": {
+     "caa_p8_r0": 785.0956521739131,
+     "none": 393.8086956521739
+    },
+    "ok": false
+   }
+  }
+ },
+ "chosen_name": null
+}

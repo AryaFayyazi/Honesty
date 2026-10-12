@@ -1,0 +1,83 @@
+{
+ "n": 1081,
+ "n_retro": 91,
+ "Y1_retro_contract": {
+  "n": 79,
+  "rate_neutral": 0.759,
+  "rate_fta_contract": 0.532,
+  "n_up": 6,
+  "n_down": 24,
+  "p_one_sided": 0.0007154531776905061,
+  "sensitivity": {
+   "n": 91,
+   "rate_neutral": 0.725,
+   "rate_fta_contract": 0.462,
+   "n_up": 6,
+   "n_down": 30,
+   "p_one_sided": 3.480084706097841e-05
+  },
+  "holm_p": 0.0021463595330715184
+ },
+ "Y2_all_contract": {
+  "n": 1006,
+  "rate_neutral": 0.179,
+  "rate_fta_contract": 0.258,
+  "n_up": 167,
+  "n_down": 87,
+  "p_one_sided": 0.9999998515475359,
+  "sensitivity": {
+   "n": 1081,
+   "rate_neutral": 0.182,
+   "rate_fta_contract": 0.244,
+   "n_up": 171,
+   "n_down": 104,
+   "p_one_sided": 0.9999811099887994
+  },
+  "holm_p": 1.0
+ },
+ "Y3_all_transparency": {
+  "n": 1023,
+  "rate_neutral": 0.185,
+  "rate_fta_transparency": 0.249,
+  "n_up": 160,
+  "n_down": 94,
+  "p_one_sided": 0.999988187484784,
+  "sensitivity": {
+   "n": 1081,
+   "rate_neutral": 0.182,
+   "rate_fta_transparency": 0.244,
+   "n_up": 169,
+   "n_down": 102,
+   "p_one_sided": 0.9999834911756398
+  },
+  "holm_p": 1.0
+ },
+ "per_model_retro": {
+  "gemma4": {
+   "neutral": 0.842,
+   "fta_transparency": 0.75,
+   "fta_contract": 0.632
+  },
+  "gptoss20b": {
+   "neutral": 0.677,
+   "fta_transparency": 0.767,
+   "fta_contract": 0.731
+  },
+  "museglimmer": {
+   "neutral": 0.763,
+   "fta_transparency": 0.342,
+   "fta_contract": 0.297
+  }
+ },
+ "candid_rate": {
+  "neutral": 0.023,
+  "fta_transparency": 0.124,
+  "fta_contract": 0.153
+ },
+ "no_report_rate": {
+  "neutral": 0.012,
+  "fta_transparency": 0.006,
+  "fta_contract": 0.004
+ },
+ "CLAIM_contract_prevents": true
+}

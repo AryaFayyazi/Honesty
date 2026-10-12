@@ -1,0 +1,14 @@
+data: outputs/activations/pilot/L8_all
+scenarios: outputs/capebench/pilot/scenarios.jsonl
+populations:
+- xplus
+- all
+poolings:
+- pre_action_last
+- turn_start
+n_boot: 1000
+seed: 0
+out: results/pilot
+splits:
+- scenario
+- family

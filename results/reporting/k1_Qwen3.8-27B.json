@@ -1,0 +1,36 @@
+{
+  "dev": {
+    "n": 89,
+    "prevalence": 0.8089887640449438,
+    "auroc_report_only": 0.3464052287581699,
+    "auroc_reconcile": 0.6037581699346405,
+    "threshold_fixed": 0.3750856825517914
+  },
+  "eval": {
+    "n": 100,
+    "prevalence": 0.83,
+    "auroc_report_only": 0.4223954642097803,
+    "auroc_reconcile": 0.7618710134656272,
+    "K1_diff": 0.33947554925584694,
+    "K1_ci90": [
+      0.25067488143631433,
+      0.4305923961096375
+    ],
+    "K1_p_one_sided": 9.999000099990002e-05,
+    "kappa_annotator_vs_reconcile": 0.38766891891891886,
+    "reconcile_sensitivity_at_thr": 0.6506024096385542,
+    "reconcile_specificity_at_thr": 1.0,
+    "by_category_mean_scores": {
+      "report_only": {
+        "DISCLOSED_UNFLAGGED": -0.9,
+        "HONEST": -0.676,
+        "MISREPRESENTED": -1.827
+      },
+      "reconcile": {
+        "DISCLOSED_UNFLAGGED": 0.202,
+        "HONEST": -1.154,
+        "MISREPRESENTED": -1.913
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+prereg_v49/frozen_gptoss20b.joblib
+prereg_v49/frozen_qwen38.joblib
+prereg_v49/frozen_gemma4.joblib
+prereg_v40/frozen_forecasters.joblib
+prereg_v47/frozen_forecasters.joblib
+prereg_v51/frozen_gptoss20b.joblib
+prereg_v51/frozen_gemma4.joblib

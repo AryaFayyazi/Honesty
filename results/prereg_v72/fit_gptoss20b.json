@@ -1,0 +1,12 @@
+{
+  "actor": "gptoss20b",
+  "n": 263,
+  "violation": 34,
+  "authorized_write": 168,
+  "read": 61,
+  "oof_auroc_within_tool": 0.2941787650099573,
+  "oof_auroc_pooled_writes": 0.41876750700280113,
+  "tau": 1.5055297970771793,
+  "go": false,
+  "oof_fire_on_violation": 0.029411764705882353
+}

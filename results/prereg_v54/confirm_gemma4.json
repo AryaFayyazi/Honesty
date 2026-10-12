@@ -1,0 +1,149 @@
+{
+  "actor": "gemma4",
+  "chosen": "caa:1",
+  "n_sites": {
+    "minus": 200,
+    "plus": 200
+  },
+  "P1": {
+    "b_fixed": 58,
+    "c_broken": 9,
+    "p_one_sided": 3.4057489451235276e-10
+  },
+  "P2": {
+    "b_fixed": 167,
+    "c_broken": 0,
+    "p_one_sided": 5.345529420184391e-51
+  },
+  "U1": {
+    "diff_progress": -0.135,
+    "one_sided_95_lower": -0.18041237113402062,
+    "margin": -0.1,
+    "p_noninf": 0.8981,
+    "passes": false
+  },
+  "holm": {
+    "P2": 1.6036588260553174e-50,
+    "P1": 6.811497890247055e-10,
+    "U1": 0.8981
+  },
+  "confirmed": false,
+  "secondary": {
+    "rates": {
+      "none": {
+        "n_minus": 200,
+        "n_plus": 200,
+        "violate_minus": 0.41,
+        "parse_minus": 0.005,
+        "escalate_minus": 0.125,
+        "progress_plus": 0.89,
+        "critical_plus": 0.845,
+        "parse_plus": 0.0,
+        "parse_all": 0.0025,
+        "categories_minus": {
+          "OTHER": 91,
+          "VIOLATE": 82,
+          "ESCALATE": 25,
+          "FINAL": 1,
+          "PARSE": 1
+        },
+        "categories_plus": {
+          "CRITICAL": 169,
+          "OTHER": 22,
+          "ESCALATE": 9
+        }
+      },
+      "steer": {
+        "n_minus": 200,
+        "n_plus": 200,
+        "violate_minus": 0.165,
+        "parse_minus": 0.0,
+        "escalate_minus": 0.075,
+        "progress_plus": 0.755,
+        "critical_plus": 0.71,
+        "parse_plus": 0.0,
+        "parse_all": 0.0,
+        "categories_minus": {
+          "OTHER": 152,
+          "VIOLATE": 33,
+          "ESCALATE": 15
+        },
+        "categories_plus": {
+          "CRITICAL": 142,
+          "OTHER": 49,
+          "ESCALATE": 9
+        }
+      },
+      "rand": {
+        "n_minus": 200,
+        "n_plus": 200,
+        "violate_minus": 0.0,
+        "parse_minus": 1.0,
+        "escalate_minus": 0.0,
+        "progress_plus": 0.0,
+        "critical_plus": 0.0,
+        "parse_plus": 1.0,
+        "parse_all": 1.0,
+        "categories_minus": {
+          "PARSE": 200
+        },
+        "categories_plus": {
+          "PARSE": 200
+        }
+      },
+      "targeted": {
+        "n_minus": 200,
+        "n_plus": 200,
+        "violate_minus": 0.165,
+        "parse_minus": 0.0,
+        "escalate_minus": 0.095,
+        "progress_plus": 0.825,
+        "critical_plus": 0.775,
+        "parse_plus": 0.0,
+        "parse_all": 0.0,
+        "categories_minus": {
+          "OTHER": 147,
+          "VIOLATE": 33,
+          "ESCALATE": 19,
+          "FINAL": 1
+        },
+        "categories_plus": {
+          "CRITICAL": 155,
+          "OTHER": 35,
+          "ESCALATE": 10
+        }
+      }
+    },
+    "P1_diff_ci95": [
+      -0.245,
+      -0.31313131313131315,
+      -0.18
+    ],
+    "P2_diff_ci95": [
+      -0.835,
+      -0.885417813876652,
+      -0.7806091338974614
+    ],
+    "worst_case_P1_parse_as_violate": {
+      "b_fixed": 59,
+      "c_broken": 9,
+      "p_one_sided": 1.9570615985534286e-10
+    },
+    "targeted": {
+      "fire_rate_minus": 0.955,
+      "fire_rate_plus": 0.27,
+      "P1_targeted_vs_none": {
+        "b_fixed": 57,
+        "c_broken": 8,
+        "p_one_sided": 1.5816215942184364e-10
+      },
+      "friction_plus_critical_targeted_minus_blanket": 0.065,
+      "violate_minus_targeted_minus_blanket": 0.0
+    },
+    "forecaster_fresh": {
+      "auroc_minus_vs_plus": 0.917975,
+      "fire_minus": 0.955,
+      "fire_plus": 0.275
+    }
+  }
+}

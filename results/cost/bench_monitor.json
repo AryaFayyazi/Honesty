@@ -1,0 +1,50 @@
+{
+  "judge": "Qwen/Qwen3.8-27B",
+  "gpu": "NVIDIA H100 NVL",
+  "n": 24,
+  "prompt_tokens": {
+    "mean": 2713.6666666666665,
+    "p50": 2218.5,
+    "p90": 4357.599999999999,
+    "n": 24
+  },
+  "gen_tokens": {
+    "mean": 1823.3333333333333,
+    "p50": 1984.0,
+    "p90": 3050.0,
+    "n": 24
+  },
+  "t_call_batch1_s": {
+    "mean": 33.14490154210944,
+    "p50": 36.08687417302281,
+    "p90": 55.29158201627433,
+    "n": 24
+  },
+  "batched": {
+    "n": 24,
+    "wall_s": 76.16045896615833,
+    "gpu_s_per_call": 3.1733524569232636
+  },
+  "per_model": {
+    "gemma4": {
+      "prompt_tokens_mean": 3158.6666666666665,
+      "gen_tokens_mean": 2173.0,
+      "t_mean": 39.38156596462553
+    },
+    "gptoss20b": {
+      "prompt_tokens_mean": 1649.6666666666667,
+      "gen_tokens_mean": 1707.1666666666667,
+      "t_mean": 30.904579393565655
+    },
+    "museglimmer": {
+      "prompt_tokens_mean": 2807.5,
+      "gen_tokens_mean": 1736.5,
+      "t_mean": 31.621858176620055
+    },
+    "qwen38": {
+      "prompt_tokens_mean": 3238.8333333333335,
+      "gen_tokens_mean": 1676.6666666666667,
+      "t_mean": 30.67160263362651
+    }
+  }
+}

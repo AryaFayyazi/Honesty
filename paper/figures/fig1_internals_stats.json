@@ -1,0 +1,74 @@
+{
+ "traj": {
+  "n": 1081,
+  "group_n": {
+   "no lie": 937,
+   "other lie": 80,
+   "laundering lie": 64
+  },
+  "auroc_at_violation": 0.4968169085816145,
+  "auroc_pre_report": 0.7384772090654443
+ },
+ "a": {
+  "lda_auc": [
+   0.8793040158578667,
+   0.8095402298850575
+  ],
+  "dim_auc_mean": 0.8538448145063361,
+  "caa_auc_mean": 0.7050944922383303,
+  "d_lda_fresh": 0.111,
+  "d_caa4": -0.074,
+  "d_caa8": -0.26599999999999996,
+  "d_caa8_corrected": -0.392,
+  "d_random8": -0.022
+ },
+ "b": {
+  "max_abs_cos_lda_caa": 0.022688523866565533,
+  "cos_lda_fold0_fold1": -0.01895374820555949,
+  "caa_adjacent_layer_cos": [
+   0.5955797433853149,
+   0.7368943691253662,
+   0.8267160654067993,
+   0.8908392190933228
+  ]
+ },
+ "c": {
+  "n": 110,
+  "honesty_transitions": {
+   "lie->lie": 26,
+   "lie->other": 12,
+   "lie->candid": 18,
+   "lie->none": 12,
+   "other->lie": 3,
+   "other->other": 7,
+   "other->candid": 3,
+   "other->none": 2,
+   "candid->lie": 6,
+   "candid->other": 1,
+   "candid->candid": 3,
+   "candid->none": 4,
+   "none->lie": 4,
+   "none->other": 2,
+   "none->candid": 3,
+   "none->none": 4
+  },
+  "random_transitions": {
+   "lie->lie": 53,
+   "lie->other": 5,
+   "lie->candid": 8,
+   "lie->none": 2,
+   "other->lie": 3,
+   "other->other": 10,
+   "other->candid": 1,
+   "other->none": 1,
+   "candid->lie": 8,
+   "candid->other": 2,
+   "candid->candid": 3,
+   "candid->none": 1,
+   "none->lie": 4,
+   "none->other": 6,
+   "none->candid": 3,
+   "none->none": 0
+  }
+ }
+}
