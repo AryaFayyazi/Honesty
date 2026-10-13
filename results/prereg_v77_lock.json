@@ -1,0 +1,35 @@
+{
+ "locked_at": "2026-10-12T12:07:18.238356",
+ "sha256": {
+  "docs/preregistration_v77.md": "e0299bb7c2b12603ed00165f08f8262c5998ba7f66dd4213ae6daa852ff4be22",
+  "scripts/201_v77_belief.py": "96af5d359cf2522db622e89a949581cf79814ad1ca230559ef8d19e490eeeb64",
+  "scripts/191_v74_agentdojo.py": "a348b1ab28bc5252691bc8e5be569f192f4b9f4d32d3562ea29ffe7d0e9fa4ea",
+  "scripts/174_vllm_steer.py": "dbcfb7fc8bb5649b953534459fb149b95ad29ad445ba8ff074864411e828a285",
+  "slurm/v77swap.sh": "1e1309a63f1994e23f2a6fe98dc862132ddb54e24efada8457306c4c2d0070aa",
+  "slurm/v77behav.sh": "665b352d0a0770909a23651b52ef92bf5d9cdc2c06e1ad2567d0d0f3a18efa1f",
+  "outputs/v77/tau_gptoss20b.json": "69f7ae39851117a32980946ff09e548946a13bf983ccbdfb5b657f43f357c3e9",
+  "outputs/v77/tau_gemma4.json": "9c55292083376a8e02a542995907032901580d613b3b620f29f40ed35b8d94cd",
+  "outputs/v77/tau_museglimmer.json": "eff5ccab15219dae18a3f8b9c195df1975e4ab132872b519b2a12b95b56854c3",
+  "outputs/v54/gate_gptoss20b.npz": "3fc20b9cfc679108af0589845a6a49e1e06bb5425feeef65da494c5497bedd53",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24"
+ },
+ "note": "locked before any v77 generation; swap mechanism verified on CPU with a dummy LLM (identical contexts before the injection; only the injection text differs after); analysis tested on synthetic data. 174/191 changes additive (inactive without swap_messages / V74_SWAP / V74_ATTACK).",
+ "addenda": [
+  {
+   "at": "2026-10-12T12:17:33.562519",
+   "name": "Addendum 1 (Muse, Qwen)",
+   "sha256": {
+    "docs/preregistration_v77.md": "0ac737f460f161f692d848ec255c433470a6b8c8b941ac577c41933e37cb8c51",
+    "outputs/v54/gate_museglimmer.npz": "168a9a1816d2afadc529646e2b8a171a542f2ab8daa2ca301647270e97aa4f86",
+    "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f"
+   }
+  },
+  {
+   "at": "2026-10-13T11:59:08.518348",
+   "name": "Deviation 1 (Muse/Qwen not run: no injected calls in development)",
+   "sha256": {
+    "docs/preregistration_v77.md": "596b15ae7c056342867664a637f433573bf1ed96303ae7b232991ee90464ea85"
+   }
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "gptoss20b": {
+  "tau": 0.4380149692296982,
+  "injected_calls": 223,
+  "exposed_other_calls": 1411,
+  "unexposed_calls": 1106,
+  "pipeline_check_max_abs_diff_unexposed": 0.0,
+  "P1_mean_diff_injected": -0.0008915457206323008,
+  "P1_ci95": [
+   -0.014801111678047001,
+   0.012588557788002564
+  ],
+  "P1_p": 0.5496125968507873,
+  "mean_diff_exposed_other": -0.0015775461342584403,
+  "P2_did": 0.0006860004136261395,
+  "P2_ci95": [
+   -0.013515994522753514,
+   0.01580836539279189
+  ],
+  "P2_p": 0.48037990502374406,
+  "S1_fire_real": 0.17937219730941703,
+  "S1_fire_swap": 0.17937219730941703,
+  "S1_newly_fired": 3,
+  "S1_unfired": 3,
+  "S1_p": 0.65625,
+  "P1_holm": 1.0,
+  "P2_holm": 1.0,
+  "P1_pass": false,
+  "P2_pass": false
+ },
+ "gemma4": {
+  "tau": 0.3427344799041748,
+  "injected_calls": 651,
+  "exposed_other_calls": 5066,
+  "unexposed_calls": 5639,
+  "pipeline_check_max_abs_diff_unexposed": 0.0,
+  "P1_mean_diff_injected": -0.013202976904660692,
+  "P1_ci95": [
+   -0.028076373341723953,
+   -0.0014094759950576859
+  ],
+  "P1_p": 0.989502624343914,
+  "mean_diff_exposed_other": -0.014083094283671108,
+  "P2_did": 0.0008801173790104165,
+  "P2_ci95": [
+   -0.014494984694752805,
+   0.015040793869186064
+  ],
+  "P2_p": 0.4558860284928768,
+  "S1_fire_real": 0.08294930875576037,
+  "S1_fire_swap": 0.07834101382488479,
+  "S1_newly_fired": 5,
+  "S1_unfired": 8,
+  "S1_p": 0.8665771484375,
+  "P1_holm": 1.0,
+  "P2_holm": 1.0,
+  "P1_pass": false,
+  "P2_pass": false
+ }
+}

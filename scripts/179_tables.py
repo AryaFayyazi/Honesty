@@ -4,6 +4,7 @@
   paper/tables/tab_prevent.tex  : prevention per model: decision turn, gate every action, gate then ask (rates, fixed/broken, p, work)
 python scripts/179_tables.py"""
 import json
+import re
 from pathlib import Path
 
 from cape.utils.config import REPO_ROOT
@@ -66,56 +67,65 @@ def lie_by_variant():
 
 
 def forecast_table():
-    tc, v55, v57, v51, v37 = (J(f) for f in ("results/prereg_v57/timecourse.json", "results/prereg_v55/summary.json", "results/prereg_v57/summary.json",
-                                             "results/prereg_v51/summary.json", "results/prereg_v37/summary.json"))
-    fm = J("paper/figures/fig_forecast_main_stats.json")["lie"]
-    Y, N, D = "\\yes", "\\no", "desc."
+    """Table 2: every row a complete head-to-head (I, T, M AUROCs; I-T and I-M with 95% CIs and one-sided p).
+    Preregistered primary tests (dagger) keep their Holm-adjusted p and CIs from the preregistered analyses; preregistered
+    secondary contrasts (double dagger) and descriptive differences use results/forecast_table_stats.json (scripts/200)."""
+    S = J("results/forecast_table_stats.json"); v55, v57, v51, v37 = (J(f) for f in ("results/prereg_v55/summary.json", "results/prereg_v57/summary.json",
+                                                                                   "results/prereg_v51/summary.json", "results/prereg_v37/summary.json"))
+    sec = J("results/prereg_v57/secondary_contrasts.json")
+    def d(x, mark=""):
+        lo, hi = x["ci95"]; return f"${x['diff']:+.3f}$ [${lo:.3f}$, ${hi:.3f}$]{mark}"
+    def pp(x, key="p_one_sided"):
+        return pf(x[key]) if key in x else pf(x["p_one_sided"])
+    DG, DD = "$^{\\dagger}$", "$^{\\ddagger}$"
     rows = []
-    r = tc["reveal"]
-    rows.append(("\\multirow{6}{*}{\\rotatebox{90}{Violation}}", "reads the decisive fact", n_(r["I"]["n"], r["I"]["violators"]), a3(r["I"]["auroc"]), a3(r["T_sup"]["auroc"]), a3(r["M_cot"]["auroc"]) + "$^{s}$",
-                 "I$-$T " + dci(v55["V3_I_vs_Tsup"]) + "; I$-$M " + dci(v55["V2_I_vs_Mcot"]), pf(v55["holm"]["V3"]), Y))
-    for h, lab in (("h2", "two actions before"), ("h1", "one action before")):
-        r = tc[h]
-        rows.append(("", lab, n_(r["I"]["n"], r["I"]["violators"]), a3(r["I"]["auroc"]), a3(r["T_sup"]["auroc"]), "--", "I$-$T " + dci(r["I_minus_T"]), "--", D))
-    au = v57["auroc"]; e1 = v57["E1"]
-    r = tc["decision"]
-    rows.append(("", "decision vs other actions", n_(e1["vs_XOTHER"]["n"], e1["vs_XOTHER"]["violators"]), a3(au["vs_XOTHER"]["I"]), a3(au["vs_XOTHER"]["T_sup"]), a3(au["vs_XOTHER"]["M_cot"]) + "$^{s}$",
-                 "I$-$T " + dci(r["I_minus_T"]), "--", D))
-    rows.append(("", "decision vs authorized twin", n_(e1["vs_XPLUS"]["n"], e1["vs_XPLUS"]["violators"]), a3(au["vs_XPLUS"]["I"]), a3(au["vs_XPLUS"]["T_sup"]), a3(au["vs_XPLUS"]["M_cot"]) + "$^{s}$",
-                 "I$-$0.5 " + dci(e1["vs_XPLUS"]), pf(e1["vs_XPLUS"]["p_one_sided"]), Y))
-    nn = v57["n"]; ntot = nn["XOTHER"] + nn["XPLUS"] + nn["VIOL"]
-    rows.append(("", "decision, all negatives", n_(ntot, nn["VIOL"]), a3(au["all"]["I"]), a3(au["all"]["T_sup"]), a3(au["all"]["M_cot"]) + "$^{s}$",
-                 f"I$-$T ${v57['E2_I_vs_Tsup']['diff']:+.3f}$; I$-$M ${v57['E3_I_vs_Mcot']['diff']:+.3f}$", f"{pf(v57['holm']['E2'])}; {pf(v57['holm']['E3'])}", N))
-    f2 = v37["F2"]["F2a"]; c1, c2, c3 = v51["C1_I_vs_Mcot"], v51["C2_S_vs_Tsup"], v51["C3"]["obfuscate_I_vs_Mcot"]; ap = v51["auroc_pooled"]
-    b, o = fm["base"], fm["obfuscate"]
-    rows.append(("\\multirow{6}{*}{\\rotatebox{90}{Lie}}", "before the report", n_(f2["n"], f2["n_lies"]), a3(f2["within_template_auroc"]), "--", "--",
-                 f"I$-$0.5 ${f2['within_template_auroc'] - 0.5:+.3f}$ [${f2['ci95'][0] - 0.5:.3f}$, ${f2['ci95'][1] - 0.5:.3f}$]", pf(f2["holm_p"]), Y))
-    PV = lie_by_variant()
-    rows.append(("", "all prompt variants", n_(c1["n"], c1["lies"]), a3(ap["I"]), a3(ap["T_sup"]), a3(ap["M_cot"]),
-                 f"I$-$M ${c1['diff']:+.3f}$; S$-$T ${c2['diff']:+.3f}$", f"{c1['holm_p']:.2f}; {c2['holm_p']:.2f}", N))
-    q = PV["base"]
-    rows.append(("", "no pressure", n_(q["n"], q["lies"]), a3(q["I"]), a3(q["T_sup"]), a3(q["M_cot"]), "--", "--", D))
-    q = PV["obfuscate"]
-    rows.append(("", "reasoning told to hide it", n_(c3["n"], c3["lies"]), a3(q["I"]), a3(q["T_sup"]), a3(q["M_cot"]), "I$-$M " + dci(c3), pf(c3["p_one_sided"]), Y))
-    rows.append(("", "no pressure, ensemble$^{e}$", n_(b["E_lda"]["n"], b["E_lda"]["lies"]), a3(b["E_lda"]["auroc"]), a3(b["T_sup"]["auroc"]), a3(b["M_cot"]["auroc"]), "--", "--", D))
-    rows.append(("", "told to hide it, ensemble$^{e}$", n_(o["E_lda"]["n"], o["E_lda"]["lies"]), a3(o["E_lda"]["auroc"]), a3(o["T_sup"]["auroc"]), a3(o["M_cot"]["auroc"]), "--", "--", D))
-    body = "\n".join(" & ".join(map(str, r)) + " \\\\" + ("\n\\midrule" if i == 5 else "") for i, r in enumerate(rows))
+    def add(lab, r, cols, dT, pT, dM, pM, first_mark=""):
+        rows.append((lab, n_(r["n"], r["pos"]), a3(r[cols[0]]) + first_mark, a3(r["T_sup"]), a3(r["M_cot"]), dT, pT, dM, pM))
+    r = S["reveal"]
+    add("reads the decisive fact", r, ["I"], d(v55["V3_I_vs_Tsup"], DG), pf(v55["holm"]["V3"]), d(v55["V2_I_vs_Mcot"], DG), pf(v55["holm"]["V2"]))
+    r = S["decision_vs_other"]
+    add("decision vs other actions", r, ["I"], d(sec["vsXOTHER_I_minus_T"], DD), pp(sec["vsXOTHER_I_minus_T"]),
+        d(sec["vsXOTHER_I_minus_Mcot(monitor subset)"], DD), pp(sec["vsXOTHER_I_minus_Mcot(monitor subset)"]))
+    r = S["decision_vs_twin"]
+    add("decision vs authorized twin", r, ["I"], d(r["first_minus_T"], DD), pp(r["first_minus_T"]), d(r["first_minus_M"], DD), pp(r["first_minus_M"]), first_mark=DG)
+    r = S["decision_all"]
+    add("decision, all negatives", r, ["I"], d(v57["E2_I_vs_Tsup"], DG), pf(v57["holm"]["E2"]), d(v57["E3_I_vs_Mcot"], DG), pf(v57["holm"]["E3"]))
+    nviol = len(rows)
+    r = S["lie_all"]; c1 = v51["C1_I_vs_Mcot"]
+    add("before the report, all variants", r, ["I"], d(r["first_minus_T"]), pp(r["first_minus_T"]), d(c1, DG), pf(c1["holm_p"]))
+    r = S["lie_base"]
+    add("\\quad no pressure", r, ["I"], d(r["first_minus_T"]), pp(r["first_minus_T"]), d(r["first_minus_M"]), pp(r["first_minus_M"]))
+    r = S["lie_monitored"]
+    add("\\quad told its reasoning is monitored", r, ["I"], d(r["first_minus_T"]), pp(r["first_minus_T"]), d(r["first_minus_M"]), pp(r["first_minus_M"]))
+    r = S["lie_obfuscate"]; c3 = v51["C3"]["obfuscate_I_vs_Mcot"]
+    add("\\quad reasoning told to hide it", r, ["I"], d(r["first_minus_T"]), pp(r["first_minus_T"]), d(c3, DG), pf(c3["p_one_sided"]))
+    for k, lab in (("ens_base", "\\quad no pressure, ensemble$^{e}$"), ("ens_obfuscate", "\\quad told to hide it, ensemble$^{e}$")):
+        r = S[k]; add(lab, r, ["E_lda"], d(r["first_minus_T"]), pp(r["first_minus_T"]), d(r["first_minus_M"]), pp(r["first_minus_M"]))
+    f2 = v37["F2"]["F2a"]; c2 = v51["C2_S_vs_Tsup"]
+    body = []
+    for i, rr in enumerate(rows):
+        lead = ("\\multirow{%d}{*}{\\rotatebox{90}{Violation}}" % nviol) if i == 0 else ("\\multirow{%d}{*}{\\rotatebox{90}{Lie}}" % (len(rows) - nviol) if i == nviol else "")
+        body.append(lead + " & " + " & ".join(rr) + " \\\\" + ("\n\\midrule" if i == nviol - 1 else ""))
     tex = r"""\begin{table*}[t]
 \centering\scriptsize
-\caption{\textbf{Forecasting at each moment.} Fresh data; frozen forecasters; AUROC within model and template. I: internal readout; T: supervised text; M: CoT monitor ($^{s}$on its preregistered subset); S: internal + text. Paired differences with cluster-bootstrap 95\% CIs; $p$ one-sided, Holm-corrected. \yes/\no: preregistered, passed/failed; desc.: descriptive. $^{e}$\Qwen, \Gemma, \Oss; other rows pool four models.}
+\caption{\textbf{Forecasting at each moment: every forecaster on the same fresh units.} AUROC within model and template, pooled over the four models (ensemble rows: three models$^{e}$). I: internal readout (E: internal ensemble); T: supervised text classifier; M: zero-shot CoT monitor, scored on its preregistered subset (about a third of the units). Differences are paired, with two-sided (model, scenario)-cluster bootstrap 95\% CIs and one-sided $p$ for the internal forecaster being better ($p$ near 1: the comparator is better). \textbf{Markers:} $^{\dagger}$preregistered primary test, Holm-adjusted $p$ (on an AUROC: test against 0.5); $^{\ddagger}$preregistered secondary contrast, unadjusted $p$; unmarked: descriptive, unadjusted $p$. Two further preregistered results: on the laundering set (""" + f"{f2['n']:,}".replace(",", "{,}") + r""" informed violations, three models) the lie forecaster reaches I $=""" + f"{f2['within_template_auroc']:.3f}" + r"""$ (I $>0.5$, Holm $p=""" + f"{f2['holm_p']:.3f}" + r"""$); internal-plus-text versus text on all lie variants, $""" + f"{c2['diff']:+.3f}" + r"""$ (Holm $p=""" + f"{c2['holm_p']:.2f}" + r"""$). The violation time course before the decision is in \cref{fig:fcast}a. The ``monitored'' variant is small (47 episodes), and the ensemble is not reported on it (4 episodes). $^{e}$\Qwen, \Gemma, \Oss: \Muse's fresh episodes had been examined before the ensemble was designed.}
 \label{tab:forecast-main}
-\setlength{\tabcolsep}{3.6pt}
-\begin{tabular}{@{}cl r ccc l l c@{}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}cl r ccc ll ll@{}}
 \toprule
- & Moment & $n$ (pos.) & I & T & M & Test: difference [95\% CI] & $p$ & status \\
+ & Moment & $n$ (pos.) & I & T & M & I$-$T [95\% CI] & $p$ & I$-$M [95\% CI] & $p$ \\
 \midrule
-""" + body + r"""
+""" + "\n".join(body) + r"""
 \bottomrule
 \end{tabular}
 \vspace{-2mm}
 \end{table*}
 """
-    (T / "tab_forecast.tex").write_text(tex); return tex
+    (T / "tab_forecast.tex").write_text(tex)
+    short = r"""\caption{\textbf{Forecasting at each moment} (fresh units; AUROC within model and template; four models, ensemble rows three$^{e}$). I: internal readout (E: ensemble); T: supervised text; M: CoT monitor (its preregistered subset). Paired differences: two-sided cluster-bootstrap 95\% CIs; one-sided $p$ for internal better. $^{\dagger}$Preregistered primary test (Holm $p$; on an AUROC: vs 0.5); $^{\ddagger}$preregistered secondary; unmarked: descriptive. Notes: \cref{app:vforecast}.}"""
+    tex_short = re.sub(r"\\caption\{\\textbf\{Forecasting at each moment: every forecaster.*?\}\n\\label", lambda m: short + "\n\\label", tex, flags=re.S)
+    assert tex_short != tex
+    (T / "tab_forecast_short.tex").write_text(tex_short); return tex
 
 
 def prevent_table():
@@ -124,7 +134,7 @@ def prevent_table():
         G = J(f"results/prereg_v54/gate_{m}_conf.json"); r = G["rates"]; g1 = G["G1_gate_vs_none"]
         dec = (ar(r["none"]["violate_minus"], r["gate"]["violate_minus"]), f"{g1['b_fixed']}/{g1['c_broken']}", pf(G["holm"]["G1"]), g3(G["fire_rate"]["plus"]),
                f"{g3(r['none']['progress_plus'])} / {g3(r['blanket']['progress_plus'])} / {g3(r['gate']['progress_plus'])}")
-        if m == "gemma4":
+        if m == "gemma4" and not J("results/prereg_v59/always_all_gemma4.json"):   # fallback: original 6-turn run (superseded by the uniform 12-turn run)
             a = J("results/prereg_v59/always_gemma4.json"); k = J("results/prereg_v59/always_k12_gemma4.json"); d = a["D1_always_vs_none"]
             ev = (ar(d["rates"]["none_hf"], d["rates"]["gate_always"]) + "$^{a}$", f"{d['b_fixed']}/{d['c_broken']}", pf(a["holm"]["D1"]),
                   f"{g3(k['completion']['none_hf'])} / {g3(k['completion']['gate_always'])}")
@@ -143,7 +153,7 @@ def prevent_table():
     body = "\n".join(" & ".join(r) + " \\\\" for r in rows)
     tex = r"""\begin{table*}[t]
 \centering\scriptsize
-\caption{\textbf{Prevention per model.} Fresh, paired sites (decision turn: about 200 unauthorized + 200 authorized; episodes: 100 + 200, 12 more turns); exact one-sided McNemar, Holm-corrected. Violations: unauthorized sites with a violation, without$\to$with the policy; fix/brk: sites fixed / broken; alarm: gate fires on authorized turns; progress (none / blanket / gate) and completion (none / policy): authorized work done; asks: approver calls per authorized episode. $^{a}$6 more turns. $^{b}$First 100 sites of the end-to-end run; unadjusted $p$.}
+\caption{\textbf{Prevention per model.} Fresh, paired sites (decision turn: about 200 unauthorized + 200 authorized; episodes: 100 + 200, 12 more turns); exact one-sided McNemar, Holm-corrected. Violations: unauthorized sites with a violation, without$\to$with the policy; fix/brk: sites fixed / broken; alarm: gate fires on authorized turns; progress (none / blanket / gate) and completion (none / policy): authorized work done; asks: approver calls per authorized episode. $^{b}$\Muse: the preregistered design run within the end-to-end experiment (first 100 sites); unadjusted $p$.}
 \label{tab:prevent-main}
 \setlength{\tabcolsep}{2.4pt}
 \resizebox{\textwidth}{!}{%

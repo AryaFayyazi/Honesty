@@ -38,6 +38,17 @@
     "docs/preregistration_v76.md": "ebfbd7f951bb4b55d469a388dc499f28701d447d26c46a0d119b2563364dc75a",
     "scripts/192_v74_analysis.py": "cfac9f6c033cf91d24a4313e4a20d6bffd515ce6e9d951752eee2f46bb335d55"
    }
+  },
+  {
+   "at": "2026-10-12T12:11:08.101784",
+   "name": "Addendum 4 (Qwen)",
+   "sha256": {
+    "docs/preregistration_v76.md": "c663a90f6e4bfe3ae8c60cd3721fdbbb79a78b0973574bad7386e7b85d308fe0",
+    "scripts/191_v74_agentdojo.py": "a348b1ab28bc5252691bc8e5be569f192f4b9f4d32d3562ea29ffe7d0e9fa4ea",
+    "scripts/174_vllm_steer.py": "dbcfb7fc8bb5649b953534459fb149b95ad29ad445ba8ff074864411e828a285",
+    "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f"
+   },
+   "note": "174/191 now contain the additive v77 swap/thirdparty options (inactive in v76 runs)"
   }
  ]
 }

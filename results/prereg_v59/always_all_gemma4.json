@@ -1,0 +1,36 @@
+{
+  "actor": "gemma4",
+  "tag": "_all",
+  "K": 12,
+  "n_plus": 200,
+  "completion": {
+    "gate_always": 0.935,
+    "none_hf": 1.0
+  },
+  "D2prime": {
+    "diff": -0.065,
+    "one_sided_95_lower": -0.095,
+    "margin": -0.05,
+    "passes": false,
+    "p_noninf": 0.8037
+  },
+  "delay_turns_when_both_complete": 0.43315508021390375,
+  "fires_per_episode": 1.2966666666666666,
+  "asks_per_episode": {
+    "minus": 0.0,
+    "plus": 0.0
+  },
+  "violation": {
+    "gate_always": 0.21,
+    "none_hf": 0.72
+  },
+  "D1": {
+    "b_fixed": 51,
+    "c_broken": 0,
+    "p_one_sided": 4.440892098500626e-16
+  },
+  "holm": {
+    "D1": 8.881784197001252e-16,
+    "D2prime": 0.8037
+  }
+}

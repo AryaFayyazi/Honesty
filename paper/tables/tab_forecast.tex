@@ -1,25 +1,23 @@
 \begin{table*}[t]
 \centering\scriptsize
-\caption{\textbf{Forecasting at each moment.} Fresh data; frozen forecasters; AUROC within model and template. I: internal readout; T: supervised text; M: CoT monitor ($^{s}$on its preregistered subset); S: internal + text. Paired differences with cluster-bootstrap 95\% CIs; $p$ one-sided, Holm-corrected. \yes/\no: preregistered, passed/failed; desc.: descriptive. $^{e}$\Qwen, \Gemma, \Oss; other rows pool four models.}
+\caption{\textbf{Forecasting at each moment: every forecaster on the same fresh units.} AUROC within model and template, pooled over the four models (ensemble rows: three models$^{e}$). I: internal readout (E: internal ensemble); T: supervised text classifier; M: zero-shot CoT monitor, scored on its preregistered subset (about a third of the units). Differences are paired, with two-sided (model, scenario)-cluster bootstrap 95\% CIs and one-sided $p$ for the internal forecaster being better ($p$ near 1: the comparator is better). \textbf{Markers:} $^{\dagger}$preregistered primary test, Holm-adjusted $p$ (on an AUROC: test against 0.5); $^{\ddagger}$preregistered secondary contrast, unadjusted $p$; unmarked: descriptive, unadjusted $p$. Two further preregistered results: on the laundering set (1{,}081 informed violations, three models) the lie forecaster reaches I $=0.745$ (I $>0.5$, Holm $p=0.002$); internal-plus-text versus text on all lie variants, $-0.040$ (Holm $p=0.92$). The violation time course before the decision is in \cref{fig:fcast}a. The ``monitored'' variant is small (47 episodes), and the ensemble is not reported on it (4 episodes). $^{e}$\Qwen, \Gemma, \Oss: \Muse's fresh episodes had been examined before the ensemble was designed.}
 \label{tab:forecast-main}
-\setlength{\tabcolsep}{3.6pt}
-\begin{tabular}{@{}cl r ccc l l c@{}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}cl r ccc ll ll@{}}
 \toprule
- & Moment & $n$ (pos.) & I & T & M & Test: difference [95\% CI] & $p$ & status \\
+ & Moment & $n$ (pos.) & I & T & M & I$-$T [95\% CI] & $p$ & I$-$M [95\% CI] & $p$ \\
 \midrule
-\multirow{6}{*}{\rotatebox{90}{Violation}} & reads the decisive fact & 9{,}287 (3{,}085) & 0.580 & 0.546 & 0.551$^{s}$ & I$-$T $+0.034$ [$0.006$, $0.060$]; I$-$M $+0.065$ [$0.010$, $0.121$] & 0.015 & \yes \\
- & two actions before & 4{,}617 (1{,}539) & 0.660 & 0.714 & -- & I$-$T $-0.053$ [$-0.085$, $-0.023$] & -- & desc. \\
- & one action before & 7{,}305 (2{,}435) & 0.756 & 0.778 & -- & I$-$T $-0.023$ [$-0.050$, $0.003$] & -- & desc. \\
- & decision vs other actions & 25{,}277 (3{,}079) & 0.985 & 0.916 & 0.928$^{s}$ & I$-$T $+0.068$ [$0.050$, $0.089$] & -- & desc. \\
- & decision vs authorized twin & 21{,}012 (3{,}079) & 0.916 & 0.945 & 0.949$^{s}$ & I$-$0.5 $+0.416$ [$0.398$, $0.431$] & $2{\times}10^{-4}$ & \yes \\
- & decision, all negatives & 43{,}210 (3{,}079) & 0.941 & 0.934 & 0.944$^{s}$ & I$-$T $+0.007$; I$-$M $-0.022$ & 0.31; 0.98 & \no \\
+\multirow{4}{*}{\rotatebox{90}{Violation}} & reads the decisive fact & 9{,}287 (3{,}085) & 0.580 & 0.546 & 0.551 & $+0.034$ [$0.006$, $0.060$]$^{\dagger}$ & 0.015 & $+0.065$ [$0.010$, $0.121$]$^{\dagger}$ & 0.015 \\
+ & decision vs other actions & 25{,}277 (3{,}079) & 0.985 & 0.916 & 0.928 & $+0.068$ [$0.050$, $0.089$]$^{\ddagger}$ & $5{\times}10^{-4}$ & $+0.027$ [$-0.003$, $0.061$]$^{\ddagger}$ & 0.039 \\
+ & decision vs authorized twin & 21{,}012 (3{,}079) & 0.916$^{\dagger}$ & 0.945 & 0.949 & $-0.028$ [$-0.036$, $-0.020$]$^{\ddagger}$ & 1.00 & $-0.037$ [$-0.065$, $-0.012$]$^{\ddagger}$ & 1.00 \\
+ & decision, all negatives & 43{,}210 (3{,}079) & 0.941 & 0.934 & 0.944 & $+0.007$ [$-0.006$, $0.021$]$^{\dagger}$ & 0.31 & $-0.022$ [$-0.047$, $-0.001$]$^{\dagger}$ & 0.98 \\
 \midrule
-\multirow{6}{*}{\rotatebox{90}{Lie}} & before the report & 1{,}081 (144) & 0.745 & -- & -- & I$-$0.5 $+0.245$ [$0.171$, $0.318$] & 0.002 & \yes \\
- & all prompt variants & 1{,}155 (210) & 0.715 & 0.786 & 0.656 & I$-$M $+0.059$; S$-$T $-0.040$ & 0.27; 0.92 & \no \\
- & no pressure & 534 (101) & 0.674 & 0.759 & 0.654 & -- & -- & desc. \\
- & reasoning told to hide it & 574 (75) & 0.809 & 0.777 & 0.652 & I$-$M $+0.157$ [$0.007$, $0.283$] & 0.021 & \yes \\
- & no pressure, ensemble$^{e}$ & 434 (30) & 0.847 & 0.814 & 0.679 & -- & -- & desc. \\
- & told to hide it, ensemble$^{e}$ & 521 (32) & 0.884 & 0.791 & 0.653 & -- & -- & desc. \\
+\multirow{6}{*}{\rotatebox{90}{Lie}} & before the report, all variants & 1{,}155 (210) & 0.715 & 0.786 & 0.656 & $-0.071$ [$-0.144$, $-0.001$] & 0.98 & $+0.059$ [$-0.047$, $0.158$]$^{\dagger}$ & 0.27 \\
+ & \quad no pressure & 534 (101) & 0.674 & 0.759 & 0.654 & $-0.085$ [$-0.201$, $0.020$] & 0.94 & $+0.020$ [$-0.128$, $0.170$] & 0.38 \\
+ & \quad told its reasoning is monitored & 47 (34) & 0.545 & 0.939 & 0.727 & $-0.394$ [$-0.846$, $-0.094$] & 1.00 & $-0.182$ [$-0.781$, $0.328$] & 0.77 \\
+ & \quad reasoning told to hide it & 574 (75) & 0.809 & 0.777 & 0.652 & $+0.031$ [$-0.063$, $0.134$] & 0.25 & $+0.157$ [$0.007$, $0.283$]$^{\dagger}$ & 0.021 \\
+ & \quad no pressure, ensemble$^{e}$ & 434 (30) & 0.847 & 0.814 & 0.679 & $+0.033$ [$-0.046$, $0.130$] & 0.22 & $+0.168$ [$-0.035$, $0.331$] & 0.044 \\
+ & \quad told to hide it, ensemble$^{e}$ & 521 (32) & 0.884 & 0.791 & 0.653 & $+0.093$ [$0.016$, $0.202$] & 0.01 & $+0.231$ [$0.086$, $0.355$] & 0.003 \\
 \bottomrule
 \end{tabular}
 \vspace{-2mm}

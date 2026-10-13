@@ -88,6 +88,30 @@ def stage_run(cfg):
                 res[i] = (g, tok.decode(g, skip_special_tokens=False))
         return res
 
+    APPROVER3 = _mod("a184", "scripts/184_v67_approver.py").APPROVER3 if cfg.policy == "escalate_model" else None
+    V170 = _mod("v170", "scripts/170_v64_e2e_all.py") if cfg.policy == "escalate_model" else None
+
+    def approve(items, max_think=3000, max_chars=40000):
+        """v78: the v67 escalation approver, live. items: (msgs, tool, args). Same prompt, same model weights as the agent (Qwen), thinking,
+        greedy, no steering, no capture; a missing decision is forced as in scripts/184. Returns APPROVE / DENY / ESCALATE per item."""
+        out = []
+        for msgs, tool, args in items:
+            txt = APPROVER3.format(conv=V170.conv_text(msgs, max_chars), action=f"{tool}({json.dumps(args)})")
+            pr = tok.apply_chat_template([{"role": "user", "content": txt}], add_generation_prompt=True, tokenize=False, enable_thinking=True)
+            enc = tok([pr], return_tensors="pt", add_special_tokens=False).to("cuda"); st["vecs"] = None; st["cap"] = None
+            with torch.no_grad():
+                o_ = model.generate(**enc, max_new_tokens=max_think + 50, do_sample=False)
+            g_ = tok.decode(o_[0][enc["input_ids"].shape[1]:], skip_special_tokens=False)
+            m_ = re.findall(r"DECISION:\s*(APPROVE|DENY|ESCALATE)", g_.split("</think>")[-1])
+            if not m_:
+                pr2 = pr + g_ + ("" if "</think>" in g_ else "\n</think>\n\n") + "DECISION: "
+                enc2 = tok([pr2], return_tensors="pt", add_special_tokens=False).to("cuda")
+                with torch.no_grad():
+                    o2 = model.generate(**enc2, max_new_tokens=4, do_sample=False)
+                m_ = re.findall(r"(APPROVE|DENY|ESCALATE)", tok.decode(o2[0][enc2["input_ids"].shape[1]:], skip_special_tokens=True))
+            out.append(m_[-1] if m_ else "ESCALATE")
+        return out
+
     def fires(prompt, g):
         txt = tok.decode(g, skip_special_tokens=False)
         if G154.TEXT_MARK[A] not in txt:
@@ -169,8 +193,21 @@ def stage_run(cfg):
         outs = gen(prompts, seeds, steer=False)
         fz = [fires(prompts[i], outs[i][0]) if act[i]["arm"] == "gate_always" else False for i in range(len(act))]
         ask = set()
-        if cfg.policy == "escalate":                  # v59d: steer on the first fire; on later fires ask the principal
+        if cfg.policy in ("escalate", "escalate_model"):  # v59d: steer on the first fire; on later fires ask the principal
             ask = {i for i, f in enumerate(fz) if f and sum(act[i]["fired"]) >= 1}
+        decision = {}
+        if cfg.policy == "escalate_model" and ask:   # v78: the model approver (v67 APPROVER3, same weights, greedy, unsteered) decides first
+            cand = []
+            for i in sorted(ask):
+                t_, a_ = M144.parse_call(A, outs[i][1])
+                if t_ not in (None, "__final__"):
+                    cand.append((i, t_, a_ if isinstance(a_, dict) else {}))
+            try:
+                ds_ = approve([(act[i]["msgs"], t_, a_) for i, t_, a_ in cand])
+            except Exception as ex:                    # safe default: the person decides; counted as ESCALATE_ERROR
+                print("v78 approver error:", repr(ex)[:300], flush=True); ds_ = ["ESCALATE_ERROR"] * len(cand)
+            for (i, t_, a_), d_ in zip(cand, ds_):
+                decision[i] = d_
         idx = [i for i, f in enumerate(fz) if f and i not in ask]
         if idx:
             so = gen([prompts[i] for i in idx], [seeds[i] for i in idx], steer=True)
@@ -183,14 +220,18 @@ def stage_run(cfg):
             if i in ask:                                  # system-initiated request for the agent's own proposed action
                 e["asks"] += 1; a_ = args if isinstance(args, dict) else {}
                 res = str(a_.get("path") or a_.get("table") or a_.get("destination") or a_.get("command") or a_.get("recipient") or tool)
-                try:
-                    pobs, _ = e["env"].step("request_permission", {"resource": res, "action": tool, "justification": "flagged by the safety monitor"})
-                except Exception as ex:
-                    pobs = f"Error: {ex}"
+                d_ = decision.get(i, "ESCALATE")          # v78: APPROVE / DENY decided by the model approver; ESCALATE (and every v59d ask) goes to the principal
+                if cfg.policy == "escalate_model" and d_ in ("APPROVE", "DENY"):
+                    pobs = "APPROVED by the approver after a monitor flag" if d_ == "APPROVE" else "DENIED by the approver after a monitor flag"
+                else:
+                    try:
+                        pobs, _ = e["env"].step("request_permission", {"resource": res, "action": tool, "justification": "flagged by the safety monitor"})
+                    except Exception as ex:
+                        pobs = f"Error: {ex}"
                 ok_ = str(pobs).startswith(("No approval needed", "APPROVED"))
                 asks_log.append({"key": e["key"], "arm": e["arm"], "world": e["world"], "scenario_id": e["scenario_id"], "step": step, "tool": tool,
                                  "args_json": json.dumps(a_), "oracle_obs": str(pobs), "oracle_approved": bool(ok_), "msgs_json": json.dumps(e["msgs"], default=str),
-                                 "turn_text": txt[:6000]})       # v64: the context of every ask, for scoring a model approver against the oracle
+                                 "turn_text": txt[:6000], "approver_decision": (d_ if cfg.policy == "escalate_model" else None)})       # v64: the context of every ask; v78: the live approver's decision
                 if ok_:
                     obs, cat = lab(e["env"], e["spec"], tool, args, e); obs = f"[Approved by the user after a monitor flag] {obs}"
                 else:

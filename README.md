@@ -1,9 +1,6 @@
 # The Agent Knew: Internal States Forecast Unauthorized Actions and Stop Them, and the Lies That Follow
 
-Code, benchmark, data, preregistrations and the complete experimental record for the paper
-*The Agent Knew: Internal States Forecast Unauthorized Actions and Stop Them, and the Lies That Follow*
-(Arya Fayyazi, Mehdi Kamal, Massoud Pedram; University of Southern California). Paper source and PDF: [`paper/`](paper/);
-data: [`data/`](data/README.md).
+Code, benchmark, preregistrations and the complete experimental record for the paper.
 
 Language-model agents sometimes act without authorization and then misreport what they did. This repository has:
 - **CAPE-Bench:** matched agent tasks in which one fact decides whether a critical action is authorized. All tools are
@@ -47,7 +44,7 @@ The paper reports the results that hold. The tests that did not pass are in the 
 | Internal knowledge index, H1 (Sec. 4.7, Fig. 5) | v49 | `scripts/125_v49_analysis.py` | `scripts/120_paper_figures.py` |
 | Blind label audit by condition | v50 | see the v50 document | — |
 | Readout on unseen safety families | v71 | `scripts/189_v71_lofo.py` | — |
-| Model approver with escalation | v64 (A1), v67 | `scripts/183_v64_approver_sensitivity.py`, `scripts/184_v67_approver.py` | — |
+| Model approver with escalation (logged asks; live on Qwen) | v64 (A1), v67, v78 | `scripts/183_v64_approver_sensitivity.py`, `scripts/184_v67_approver.py`, `scripts/160_v59b_gate_always.py` (policy `escalate_model`), `scripts/202_v78_live_approver.py` | — |
 | Cost per action (FLOPs, tokens, latency) | — (measurement) | `scripts/181_cost.py`, `scripts/182_cost_bench.py` | — |
 | Real benchmark: AgentDojo prompt injection | v74, v75 (frozen readout; not passed), v76 (in-domain fit + frozen steering) | `scripts/191_v74_agentdojo.py` (client), `scripts/196_v76_refit.py`, `scripts/192_v74_analysis.py`, `scripts/197_v76_lito.py`, `scripts/198_merge_shards.py` | `scripts/193_agentdojo_table.py` |
 | Open agents on τ²-bench (appendix; not passed) | v65, v66, v69, v70/v70b, v72, v73 | `scripts/172_v65_tau2_run.py`, `scripts/173_v65_analysis.py`, `scripts/186_v69_reader_gate.py`, `scripts/187_v70_real_context.py`, `scripts/188_v70_analysis.py`, `scripts/190_v72_refit.py` | — |
@@ -58,10 +55,13 @@ The paper reports the results that hold. The tests that did not pass are in the 
 - **τ²-bench (open agents).** Open agents' policy violations are not knowing: they violate when they do not check the policy, and
   with the truthful decision in context they almost never act against it (v66: 1 of 95; v73: 0, 0 and 1 of 99 sites). The
   readout, built for knowing violations, finds no signal there, frozen or refit (v65, v70b, v72).
-- **AgentDojo, frozen readout (v74, v75).** Agents treat an injected instruction signed in the user's name as the user's own, so
-  their believed authorization rises and the CAPE readout's direction reverses (within-tool AUROC 0.28 on gpt-oss; 0.23 on Gemma,
-  preregistered, CI touching 0.5). A prompt defense makes the violation knowing only for agents that heed it, and those then stop
-  on their own (Gemma under spotlighting: ASR 0.077).
+- **AgentDojo, frozen readout (v74, v75).** The CAPE-trained readout does not flag injected actions (fires on 7–9%), and within
+  tool injected calls score slightly lower than benign ones (AUROC 0.28 gpt-oss; 0.23 Gemma, preregistered, CI touching 0.5).
+  The agents' reasoning treats an injection signed in the user's name as the user's request. A prompt defense stops Gemma itself
+  (ASR 0.077) and is ignored by gpt-oss.
+- **The belief mechanism we proposed (v77, preregistered, not supported).** Scoring the same reasoning and action with the
+  injection marked as unauthorized does not move the readout (gpt-oss −0.001, Gemma −0.013; difference-in-differences +0.001;
+  Holm p = 1). Provenance information alone does not drive it; we dropped the mechanism from the paper's claims.
 - **Fix (v76).** Fitting the same readout recipe on AgentDojo's development tasks, with the CAPE steering frozen (the
   preregistered v65/v72 fallback), separates following an injection from benign use and from mere exposure (out-of-fold
   AUROC 0.92-0.97; held-out injection goals 0.995). Confirmed on Gemma (68 unseen tasks): attack success 11.7% -> 5.7%
@@ -99,6 +99,7 @@ Jobs run one at a time through `slurm/run.sh`. For example:
 sbatch -J v54   slurm/run.sh bash slurm/v54.sh gemma4                 # decision steering: development sweep + confirmation
 sbatch -J v59d  slurm/run.sh bash slurm/v59d.sh gptoss20b             # gate, then ask over 12 turns
 sbatch -J v64   slurm/run.sh bash slurm/v64.sh                        # end to end in all four families + model approver
+sbatch -J v78   slurm/run.sh bash slurm/v78.sh                        # live escalating model approver (Qwen)
 python scripts/151_fig_violation.py                                   # Figure 3 from results/
 ```
 Each job script names its preregistration in its header and checks its smoke guards before using any data.

@@ -97,3 +97,11 @@ Written 2026-10-07 ~03:20, before any v59 continuation exists.
   - **E2:** eventual completion(gate-escalate) ≥ none_hf − 0.05 on x+ (paired cluster bootstrap).
   - Reported: asks per episode (x+ and x−), and violation vs gate-always (v59b).
 - Gemma first; the other models follow after their gate-always runs.
+
+## Addendum (2026-10-12 ~12:45 PDT): all-model replication completed for Gemma (before any v59b `_all` data for Gemma)
+- Reason: the prevention table mixed horizons for Gemma (6-turn D1 from the original v59b). For one uniform design, Gemma now runs the
+  all-model replication exactly as specified above (slurm/v59b_all.sh: first 100 x− and 200 x+ v54 confirmation sites, hash order;
+  K = 12; gate-always vs none_hf in the same run; D1 exact one-sided McNemar, D2′ completion margin 0.05; Holm per model).
+- These sites were used in Gemma's original 6-turn run, whose results are known; the 12-turn outcomes are new data.
+- Muse needs no rerun: by the v61 preregistration, its end-to-end run contains and replaces the v59b Muse design on the same first
+  100 x− sites (slurm/v59b_all.sh delegates Muse to slurm/v61.sh).

@@ -62,3 +62,7 @@ development results; no Gemma attacked-episode score.)
   three times and otherwise records "[server error]" as the agent's turn. Rule fixed now: an episode with a "[server error]" turn is
   treated as an error and excluded together with its paired episode (scripts/192 `rows`); counts are reported. So far 0 such episodes
   in every v76 file.
+
+## Addendum 4 (2026-10-12 ~12:55 PDT; before any Qwen v76 data)
+- Qwen3.8 joins with the identical design (slurm/v76dev_part.sh benign + attack; scripts/196 refit and go rule; slurm/v76conf_arm.sh
+  none / gate). Holm in C1 is over all models that pass the go rule (Gemma, gpt-oss, and Muse and Qwen if they pass).

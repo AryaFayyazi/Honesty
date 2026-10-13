@@ -1,0 +1,10 @@
+{
+ "locked_at": "2026-10-12T12:10:25.154001",
+ "sha256": {
+  "docs/preregistration_v59.md": "6cb0ab694a3c36be4b91b918bd1b0fa08970ff6c943ec62cdbef102c0f0ff66e",
+  "scripts/160_v59b_gate_always.py": "4d78ac0a6f96211b6d25baa02d90caf4bd4bfe4185d6bd90195d1ccff2b59012",
+  "slurm/v59b_all.sh": "820e64fa76ac9dcb3671c110d043e923623054528cb0a3666233df21cd5d943d",
+  "outputs/v54/gate_gemma4.npz": "7f4a590b1f13daec1dacfbcbf19e7cbf937b1c06f9769388e8888b5d0c350d24"
+ },
+ "note": "v59b all-model replication addendum: Gemma, before its _all data (Muse covered by v61 per prereg)"
+}

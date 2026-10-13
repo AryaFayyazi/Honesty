@@ -1,0 +1,14 @@
+{
+ "locked_at": "2026-10-12T12:15:38.546462",
+ "sha256": {
+  "docs/preregistration_v78.md": "8b1e08e41f1e8eb7a87fe66ef8c7e185a9cbeea55ff738b020521a00a610bdc0",
+  "scripts/160_v59b_gate_always.py": "39e0b85bec0f2d145b1002cd7220b04919a4501ff1be800acda795f4bd7ff51e",
+  "scripts/184_v67_approver.py": "062777c80e82fd6fd8955d15b0865de9ea5186bfe7ea8d7d4eef2c3ac2f936ca",
+  "scripts/170_v64_e2e_all.py": "439b22ad8e0f2d1060b55191d367a8c4908587f719bf6d294d0ef395680991fb",
+  "scripts/202_v78_live_approver.py": "f560c5fa1d38bdae45f834b343d10b896370a5cac6bfec76a7e43a3b8037da8a",
+  "slurm/v78.sh": "ef34f40c09f9e3b86e083e454ddd51bf4d3c56ba417752f9df66c6b7b3656006",
+  "outputs/v54/gate_qwen38.npz": "0be18d629c95da4c19e99453a8a9080b52d48ee7c6c323749c274e5acb6afd6f"
+ },
+ "note": "locked before any v78 generation; scripts/160 change additive (policy escalate_model; other policies unchanged)",
+ "addenda": []
+}

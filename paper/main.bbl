@@ -5,22 +5,13 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Anonymous(2026)]{memlaunder2026}
-Anonymous.
-\newblock Agent memory is a surface for endogenous authorization laundering.
-\newblock \emph{arXiv preprint arXiv:2609.01836}, 2026.
-
 \bibitem[{Anthropic}(2026)]{anthropic2026mythos}
 {Anthropic}.
-\newblock Claude mythos preview: System card and risk report, April 2026.
+\newblock System card: {Claude Mythos Preview}.
+\newblock \url{https://www.anthropic.com/claude-mythos-preview-system-card}, April 2026.
 
-\bibitem[{Anthropic Alignment Science}(2024)]{anthropic2024sleeperprobes}
-{Anthropic Alignment Science}.
-\newblock Simple probes can catch sleeper agents.
-\newblock Anthropic research note, 2024.
-
-\bibitem[Baker et~al.(2025)]{baker2025monitoring}
-Baker, B. et~al.
+\bibitem[Baker et~al.(2025)Baker, Huizinga, Gao, Dou, Guan, Madry, Zaremba, Pachocki, and Farhi]{baker2025monitoring}
+Baker, B., Huizinga, J., Gao, L., Dou, Z., Guan, M.~Y., Madry, A., Zaremba, W., Pachocki, J., and Farhi, D.
 \newblock Monitoring reasoning models for misbehavior and the risks of promoting obfuscation.
 \newblock \emph{arXiv preprint arXiv:2503.11926}, 2025.
 
@@ -29,19 +20,34 @@ Barres, V., Dong, H., Ray, S., Si, X., and Narasimhan, K.
 \newblock $\tau^2$-bench: Evaluating conversational agents in a dual-control environment.
 \newblock \emph{arXiv preprint arXiv:2506.07982}, 2025.
 
-\bibitem[Bergen et~al.(2026)Bergen, Bhalla, Lee, Widawsky, Nasvytis, Watts, Boppana, Baskaran, Hazra, Byun, Geiger, Lewis, Kowal, Shyam, Fel, McGrath, Lubana, and Merullo]{bergen2026reward}
+\bibitem[Bergen et~al.(2026{\natexlab{a}})Bergen, Bhalla, Lee, Widawsky, Nasvytis, Watts, Boppana, Baskaran, Hazra, Byun, Geiger, Lewis, Kowal, Shyam, Fel, McGrath, Lubana, and Merullo]{bergen2026reward}
 Bergen, L., Bhalla, U., Lee, A., Widawsky, B., Nasvytis, L., Watts, C., Boppana, S., Baskaran, S., Hazra, D., Byun, M., Geiger, A., Lewis, O., Kowal, M., Shyam, V., Fel, T., McGrath, T., Lubana, E.~S., and Merullo, J.
-\newblock Monitoring and discovering reward hacking with internal representations during {LLM} evaluations, 2026.
+\newblock Monitoring and discovering reward hacking with internal representations during {LLM} evaluations, 2026{\natexlab{a}}.
+
+\bibitem[Bergen et~al.(2026{\natexlab{b}})Bergen, Bhalla, Lee, Widawsky, Nasvytis, Watts, Boppana, Baskaran, Hazra, Byun, Geiger, Lewis, Kowal, Shyam, Fel, McGrath, Lubana, and Merullo]{goodfire2026reward}
+Bergen, L., Bhalla, U., Lee, A., Widawsky, B., Nasvytis, L., Watts, C., Boppana, S., Baskaran, S., Hazra, D., Byun, M., Geiger, A., Lewis, O., Kowal, M., Shyam, V., Fel, T., McGrath, T., Lubana, E.~S., and Merullo, J.
+\newblock Models know when they're reward hacking --- and we can catch them at scale.
+\newblock Goodfire research blog, \url{https://goodfire.com/research/reward-hacking-activation-monitors}, September 2026{\natexlab{b}}.
 
 \bibitem[Cao et~al.(2026)Cao, Driouich, and Thomas]{cao2026pae}
-Cao, Driouich, and Thomas.
+Cao, H., Driouich, I., and Thomas, E.
 \newblock Beyond task completion: Revealing corrupt success in {LLM} agents through procedure-aware evaluation.
 \newblock \emph{arXiv preprint arXiv:2603.03116}, 2026.
 
-\bibitem[Chen et~al.(2025)]{chen2025reasoning}
-Chen, Y. et~al.
+\bibitem[Cerruti et~al.(2026)Cerruti, Okamoto, and Erol]{memlaunder2026}
+Cerruti, T., Okamoto, M., and Erol, A.~K.
+\newblock Agent memory is a surface for endogenous authorization laundering.
+\newblock \emph{arXiv preprint arXiv:2609.01836}, 2026.
+
+\bibitem[Chen et~al.(2025)Chen, Benton, Radhakrishnan, Uesato, Denison, Schulman, Somani, Hase, Wagner, Roger, Mikulik, Bowman, Leike, Kaplan, and Perez]{chen2025reasoning}
+Chen, Y., Benton, J., Radhakrishnan, A., Uesato, J., Denison, C., Schulman, J., Somani, A., Hase, P., Wagner, M., Roger, F., Mikulik, V., Bowman, S.~R., Leike, J., Kaplan, J., and Perez, E.
 \newblock Reasoning models don't always say what they think.
 \newblock \emph{arXiv preprint arXiv:2505.05410}, 2025.
+
+\bibitem[Chowdhury et~al.(2025)Chowdhury, Johnson, Huang, Steinhardt, and Schwettmann]{transluce2025o3}
+Chowdhury, N., Johnson, D., Huang, V., Steinhardt, J., and Schwettmann, S.
+\newblock Investigating truthfulness in a pre-release o3 model.
+\newblock Transluce, \url{https://transluce.org/investigating-o3-truthfulness}, April 2025.
 
 \bibitem[Das et~al.(2026)Das, Ponde, More, and Gupta]{das2026activations}
 Das, A., Ponde, J., More, M., and Gupta, D.
@@ -64,17 +70,18 @@ Fayyazi, A. and Akrami, H.
 \bibitem[Fayyazi et~al.(2025{\natexlab{a}})Fayyazi, Kamal, and Pedram]{fayyazi2025facter}
 Fayyazi, A., Kamal, M., and Pedram, M.
 \newblock {FACTER}: Fairness-aware conformal thresholding and prompt engineering for enabling fair {LLM}-based recommender systems.
-\newblock In \emph{Proceedings of the 42nd International Conference on Machine Learning (ICML)}, 2025{\natexlab{a}}.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine Learning (ICML)}, volume 267 of \emph{PMLR}, pp.\  16407--16422, 2025{\natexlab{a}}.
 
 \bibitem[Fayyazi et~al.(2025{\natexlab{b}})Fayyazi, Xiao, Nuzzo, and Pedram]{fayyazi2025fairverify}
 Fayyazi, A., Xiao, Y., Nuzzo, P., and Pedram, M.
 \newblock Efficient counterexample-guided fairness verification and repair of neural networks using satisfiability modulo convex programming.
-\newblock In \emph{Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI)}, 2025{\natexlab{b}}.
+\newblock In \emph{Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI)}, pp.\  367--375, 2025{\natexlab{b}}.
+\newblock \doi{10.24963/ijcai.2025/42}.
 
 \bibitem[Fayyazi et~al.(2026{\natexlab{a}})Fayyazi, Kamal, and Pedram]{fayyazi2026coft}
 Fayyazi, A., Kamal, M., and Pedram, M.
-\newblock {COFT}: Counterfactual-conformal decoding for fair chain-of-thought reasoning in large language models.
-\newblock In \emph{Proceedings of the 43rd International Conference on Machine Learning (ICML)}, 2026{\natexlab{a}}.
+\newblock {COFT}: Counterfactual--conformal decoding for fair chain-of-thought reasoning in large language models.
+\newblock In \emph{Proceedings of the 43rd International Conference on Machine Learning (ICML)}, volume 306 of \emph{PMLR}, pp.\  29734--29763, 2026{\natexlab{a}}.
 
 \bibitem[Fayyazi et~al.(2026{\natexlab{b}})Fayyazi, Kamal, and Pedram]{fayyazi2026fairsight}
 Fayyazi, A., Kamal, M., and Pedram, M.
@@ -82,33 +89,27 @@ Fayyazi, A., Kamal, M., and Pedram, M.
 \newblock In \emph{Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)}, 2026{\natexlab{b}}.
 
 \bibitem[Fomin et~al.(2026)Fomin, David, and LeVi]{fomin2026probes}
-Fomin, David, and LeVi.
+Fomin, M., David, E., and LeVi, A.
 \newblock Internal-state probes read the situation, not the action: Three negative results for pre-action misalignment monitoring.
 \newblock \emph{arXiv preprint arXiv:2606.30449}, 2026.
 
 \bibitem[Goldowsky-Dill et~al.(2025)Goldowsky-Dill, Chughtai, Heimersheim, and Hobbhahn]{goldowskydill2025probes}
 Goldowsky-Dill, N., Chughtai, B., Heimersheim, S., and Hobbhahn, M.
-\newblock Detecting strategic deception using linear probes.
-\newblock In \emph{International Conference on Machine Learning}, 2025.
+\newblock Detecting strategic deception with linear probes.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine Learning (ICML)}, volume 267 of \emph{PMLR}, pp.\  19755--19786, 2025.
 
-\bibitem[{Goodfire}(2026)]{goodfire2026reward}
-{Goodfire}.
-\newblock Models know when they're reward hacking --- and we can catch them at scale.
-\newblock Goodfire research blog, 17 Sept.\ 2026, 2026.
-
-\bibitem[Guo et~al.(2026)]{guo2025upward}
-Guo et~al.
+\bibitem[Guo et~al.(2026)Guo, Liu, Liu, Ren, Shao, Qiu, Li, Fung, Ba, Dai, Ji, Chen, Tao, Yang, Shao, and Hu]{guo2025upward}
+Guo, D., Liu, Q., Liu, D., Ren, Q., Shao, S., Qiu, T.~A., Li, H., Fung, Y.~R., Ba, Z., Dai, J., Ji, J., Chen, Z., Tao, J., Yang, Y., Shao, J., and Hu, X.
 \newblock Are your agents upward deceivers?
-\newblock In \emph{International Conference on Machine Learning (ICML)}, 2026.
-\newblock arXiv:2512.04864.
+\newblock In \emph{Proceedings of the 43rd International Conference on Machine Learning (ICML)}, volume 306 of \emph{PMLR}, pp.\  38052--38092, 2026.
 
 \bibitem[Gupta \& Jenner(2025)Gupta and Jenner]{gupta2025rlobf}
-Gupta and Jenner.
+Gupta, R. and Jenner, E.
 \newblock {RL}-obfuscation: Can language models learn to evade latent-space monitors?
 \newblock \emph{arXiv preprint arXiv:2506.14261}, 2025.
 
 \bibitem[Han et~al.(2026)Han, Yan, and Zhang]{han2026twin}
-Han, Yan, and Zhang.
+Han, Y., Yan, C., and Zhang, W.
 \newblock More rejective, not more discriminative: The unit of verification in pre-execution {LLM} oversight.
 \newblock \emph{arXiv preprint arXiv:2608.23941}, 2026.
 
@@ -116,9 +117,10 @@ Han, Yan, and Zhang.
 Hanley, J.~A. and McNeil, B.~J.
 \newblock The meaning and use of the area under a receiver operating characteristic ({ROC}) curve.
 \newblock \emph{Radiology}, 143\penalty0 (1):\penalty0 29--36, 1982.
+\newblock \doi{10.1148/radiology.143.1.7063747}.
 
 \bibitem[Herbster et~al.(2026)Herbster, Zborowski, Tosato, Gidel, and Tosato]{herbster2026steer}
-Herbster, Zborowski, Tosato, A., Gidel, and Tosato, T.
+Herbster, N., Zborowski, M., Tosato, A., Gidel, G., and Tosato, T.
 \newblock Activation steering for aligned open-ended generation without sacrificing coherence.
 \newblock \emph{arXiv preprint arXiv:2604.08169}, 2026.
 
@@ -130,10 +132,11 @@ Hines, K., Lopez, G., Hall, M., Zarfati, F., Zunger, Y., and Kiciman, E.
 Holm, S.
 \newblock A simple sequentially rejective multiple test procedure.
 \newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0 65--70, 1979.
+\newblock \doi{10.2307/4615733}.
 
 \bibitem[Hu(2026)]{hu2026verification}
-Hu.
-\newblock Verification-status laundering.
+Hu, Y.
+\newblock Silence is endorsement: Verification-status laundering in {LLM} agent pipelines.
 \newblock \emph{arXiv preprint arXiv:2609.20211}, 2026.
 
 \bibitem[Huang et~al.(2026)Huang, Fan, Humayun, Chen, Qin, Chen, Navalpakkam, and Gu]{huang2026insecure}
@@ -141,17 +144,12 @@ Huang, J.~Y., Fan, J., Humayun, A.~I., Chen, M., Qin, T., Chen, R., Navalpakkam,
 \newblock Language models are ``insecure'' reporters, 2026.
 
 \bibitem[Jha et~al.(2026)Jha, Triedman, Bhattacharya, and Shmatikov]{jha2026meltdowns}
-Jha, Triedman, Bhattacharya, and Shmatikov.
-\newblock Agent meltdowns.
+Jha, R., Triedman, H., Bhattacharya, A., and Shmatikov, V.
+\newblock Agent meltdowns: The road to hell is paved with helpful agents.
 \newblock \emph{arXiv preprint arXiv:2605.19149}, 2026.
 
-\bibitem[Keenan et~al.(2026)Keenan, Leckie, and Erfani]{keenan2026evade}
-Keenan, Leckie, and Erfani.
-\newblock {LLMs} learn to evade latent monitors from prior feedback alone.
-\newblock \emph{arXiv preprint arXiv:2609.36490}, 2026.
-
-\bibitem[Korbak et~al.(2025)]{korbak2025cot}
-Korbak, T. et~al.
+\bibitem[Korbak et~al.(2025)Korbak, Balesni, Barnes, Bengio, Benton, Bloom, Chen, Cooney, Dafoe, Dragan, Emmons, Evans, Farhi, Greenblatt, Hendrycks, Hobbhahn, Hubinger, Irving, Jenner, Kokotajlo, Krakovna, Legg, Lindner, Luan, Madry, Michael, Nanda, Orr, Pachocki, Perez, Phuong, Roger, Saxe, Shlegeris, Soto, Steinberger, Wang, Zaremba, Baker, Shah, and Mikulik]{korbak2025cot}
+Korbak, T., Balesni, M., Barnes, E., Bengio, Y., Benton, J., Bloom, J., Chen, M., Cooney, A., Dafoe, A., Dragan, A., Emmons, S., Evans, O., Farhi, D., Greenblatt, R., Hendrycks, D., Hobbhahn, M., Hubinger, E., Irving, G., Jenner, E., Kokotajlo, D., Krakovna, V., Legg, S., Lindner, D., Luan, D., Madry, A., Michael, J., Nanda, N., Orr, D., Pachocki, J., Perez, E., Phuong, M., Roger, F., Saxe, J., Shlegeris, B., Soto, M., Steinberger, E., Wang, J., Zaremba, W., Baker, B., Shah, R., and Mikulik, V.
 \newblock Chain of thought monitorability: A new and fragile opportunity for {AI} safety.
 \newblock \emph{arXiv preprint arXiv:2507.11473}, 2025.
 
@@ -162,20 +160,20 @@ Kortukov, E., Komorowski, P., Klein, F., Engl, P., Sarti, G., Oh, S.~J., Lapusch
 \bibitem[Li et~al.(2023)Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg]{li2023iti}
 Li, K., Patel, O., Vi{\'e}gas, F., Pfister, H., and Wattenberg, M.
 \newblock Inference-time intervention: Eliciting truthful answers from a language model.
-\newblock In \emph{Advances in Neural Information Processing Systems}, 2023.
+\newblock In \emph{Advances in Neural Information Processing Systems}, volume~36, 2023.
 
 \bibitem[Li et~al.(2026)Li, Guo, Liu, Mao, Fung, Zou, Hu, and Liu]{li2026before}
 Li, X., Guo, D., Liu, Q., Mao, Q., Fung, Y.~R., Zou, N., Hu, X., and Liu, D.
 \newblock Before agent tells the lie: Has deception already been represented?, 2026.
 
-\bibitem[Liu et~al.(2026{\natexlab{a}})Liu, Zhao, Yuan, Ma, Huang, and Jiang]{liu2026knownlie}
-Liu, Zhao, Yuan, Ma, Huang, and Jiang.
-\newblock Knowledge-verified emergent deception in {LLM} agents under conflicting incentives.
-\newblock \emph{arXiv preprint arXiv:2608.26372}, 2026{\natexlab{a}}.
-
-\bibitem[Liu et~al.(2026{\natexlab{b}})Liu, Zhang, Kasprova, Rabbani, Zahraei, Zhang, Ebrahimpour-Boroojeny, and Chandrasekaran]{liu2026agentabstain}
+\bibitem[Liu et~al.(2026{\natexlab{a}})Liu, Zhang, Kasprova, Rabbani, Zahraei, Zhang, Ebrahimpour-Boroojeny, and Chandrasekaran]{liu2026agentabstain}
 Liu, X., Zhang, Y.~E., Kasprova, V., Rabbani, P., Zahraei, P.~S., Zhang, T., Ebrahimpour-Boroojeny, A., and Chandrasekaran, V.
-\newblock {AgentAbstain}: Do {LLM} agents know when not to act?, 2026{\natexlab{b}}.
+\newblock {AgentAbstain}: Do {LLM} agents know when not to act?, 2026{\natexlab{a}}.
+
+\bibitem[Liu et~al.(2026{\natexlab{b}})Liu, Zhao, Yuan, Ma, Huang, and Jiang]{liu2026knownlie}
+Liu, Z., Zhao, W., Yuan, X., Ma, N., Huang, Y., and Jiang, M.
+\newblock Knowledge-verified emergent deception in {LLM} agents under conflicting incentives.
+\newblock \emph{arXiv preprint arXiv:2608.26372}, 2026{\natexlab{b}}.
 
 \bibitem[Luo et~al.(2026)Luo, Zhang, Quan, Jin, Cai, Xiao, Niu, and Xiang]{luo2026mechsuits}
 Luo, W., Zhang, Q., Quan, Y., Jin, M., Cai, J., Xiao, C., Niu, J., and Xiang, Z.
@@ -184,7 +182,17 @@ Luo, W., Zhang, Q., Quan, Y., Jin, M., Cai, J., Xiao, C., Niu, J., and Xiang, Z.
 \bibitem[Lynch et~al.(2026)Lynch, Hughes, Serrano, Kirk, and Bowman]{lynch2026summer}
 Lynch, A., Hughes, J., Serrano, A., Kirk, R., and Bowman, S.~R.
 \newblock Agentic misalignment in summer 2026.
-\newblock Anthropic Alignment Science blog, July 2026.
+\newblock Anthropic Alignment Science Blog, \url{https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/}, July 2026.
+
+\bibitem[Lyons~Keenan et~al.(2026)Lyons~Keenan, Leckie, and Erfani]{keenan2026evade}
+Lyons~Keenan, H., Leckie, C., and Erfani, S.
+\newblock {LLMs} learn to evade latent monitors from prior feedback alone.
+\newblock \emph{arXiv preprint arXiv:2609.36490}, 2026.
+
+\bibitem[MacDiarmid et~al.(2024)MacDiarmid, Maxwell, Schiefer, Mu, Kaplan, Duvenaud, Bowman, Tamkin, Perez, Sharma, Denison, and Hubinger]{anthropic2024sleeperprobes}
+MacDiarmid, M., Maxwell, T., Schiefer, N., Mu, J., Kaplan, J., Duvenaud, D., Bowman, S., Tamkin, A., Perez, E., Sharma, M., Denison, C., and Hubinger, E.
+\newblock Simple probes can catch sleeper agents.
+\newblock Anthropic Alignment Note, \url{https://www.anthropic.com/research/probes-catch-sleeper-agents}, April 2024.
 
 \bibitem[Meinke et~al.(2024)Meinke, Schoen, Scheurer, Balesni, Shah, and Hobbhahn]{meinke2024scheming}
 Meinke, A., Schoen, B., Scheurer, J., Balesni, M., Shah, R., and Hobbhahn, M.
@@ -198,12 +206,17 @@ Merrill, S. and Srivastava, S.
 \bibitem[{OpenAI}(2026)]{openai2026gpt56card}
 {OpenAI}.
 \newblock {GPT-5.6} preview system card.
-\newblock \url{https://deploymentsafety.openai.com}, June 2026.
+\newblock OpenAI Deployment Safety Hub, \url{https://deploymentsafety.openai.com/gpt-5-6-preview}, June 2026.
+
+\bibitem[Page(2026)]{register2026astra}
+Page, C.
+\newblock {OpenAI} benches {GPT-6.1 Astra} for overstepping the mark.
+\newblock The Register, \url{https://www.theregister.com/ai-and-ml/2026/09/29/openai-benches-gpt-61-astra-for-overstepping-the-mark/5299743}, September 2026.
 
 \bibitem[Rimsky et~al.(2024)Rimsky, Gabrieli, Schulz, Tong, Hubinger, and Turner]{rimsky2024caa}
-Rimsky, N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E., and Turner, A.~M.
+Rimsky, N., Gabrieli, N., Schulz, J., Tong, M., Hubinger, E., and Turner, A.
 \newblock Steering {Llama 2} via contrastive activation addition.
-\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics}, 2024.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pp.\  15504--15522, 2024.
 
 \bibitem[Scheurer et~al.(2023)Scheurer, Balesni, and Hobbhahn]{scheurer2023deceive}
 Scheurer, J., Balesni, M., and Hobbhahn, M.
@@ -213,37 +226,28 @@ Scheurer, J., Balesni, M., and Hobbhahn, M.
 Smith, L., Chughtai, B., and Nanda, N.
 \newblock Difficulties with evaluating a deception detector for {AIs}, 2025.
 
-\bibitem[Smyth et~al.(2026)]{smyth2026overclaim}
-Smyth et~al.
+\bibitem[Smyth et~al.(2026)Smyth, Mantilla-Ramos, Tikeng~Notsawo, Helbling, Tosato, Merzouk, Dziri, Gidel, and Tosato]{smyth2026overclaim}
+Smyth, N., Mantilla-Ramos, Y.-J., Tikeng~Notsawo, P.~J., Helbling, S., Tosato, A., Merzouk, M.~A., Dziri, N., Gidel, G., and Tosato, T.
 \newblock Quantifying overclaiming propensity in frontier {LLM} agents.
 \newblock \emph{arXiv preprint arXiv:2609.20812}, 2026.
 
-\bibitem[Tang et~al.(2026)]{tang2026coding}
-Tang et~al.
-\newblock How coding agents fail their users.
+\bibitem[Tang et~al.(2026)Tang, Chen, Xu, Shi, Huang, McMillan, Dong, and Li]{tang2026coding}
+Tang, N., Chen, C., Xu, G., Shi, Y., Huang, Y., McMillan, C., Dong, T., and Li, T. J.-J.
+\newblock How coding agents fail their users: A large-scale analysis of developer-agent misalignment in 20,574 real-world sessions.
 \newblock \emph{arXiv preprint arXiv:2605.29442}, 2026.
 
-\bibitem[{The Register}(2026)]{register2026astra}
-{The Register}.
-\newblock {OpenAI} shelves {GPT-6.1 Astra} over scope, authorization and reporting concerns, September 2026.
-\newblock News report, 29 Sep 2026; OpenAI statements to the press.
-
-\bibitem[{Transluce}(2025)]{transluce2025o3}
-{Transluce}.
-\newblock Investigating truthfulness in a pre-release o3 model, April 2025.
-
-\bibitem[Zhang \& {Transluce Docent team}(2026)Zhang and {Transluce Docent team}]{transluce2026wild}
-Zhang, S. and {Transluce Docent team}.
+\bibitem[Zhang \& {The Docent Team}(2026)Zhang and {The Docent Team}]{transluce2026wild}
+Zhang, S. and {The Docent Team}.
 \newblock Measuring coding agent misalignment in the wild.
 \newblock Transluce blog, \url{https://transluce.org/docent/blog/coding-agent-behaviors}, August 2026.
 
-\bibitem[Zhu et~al.(2026)]{zhu2026fta}
-Zhu et~al.
-\newblock Failure-transparent agents.
+\bibitem[Zhu et~al.(2026)Zhu, Xie, Chen, Ding, Tang, Qi, and Fei]{zhu2026fta}
+Zhu, J., Xie, S., Chen, A. L.~F., Ding, X., Tang, C., Qi, R., and Fei, Y.
+\newblock Failure-transparent agents: Benchmarking post-failure reporting in tool-using language models.
 \newblock \emph{arXiv preprint arXiv:2609.35732}, 2026.
 
-\bibitem[Zou et~al.(2023)Zou, Phan, Chen, et~al.]{zou2023repe}
-Zou, A., Phan, L., Chen, S., et~al.
+\bibitem[Zou et~al.(2023)Zou, Phan, Chen, Campbell, Guo, Ren, Pan, Yin, Mazeika, Dombrowski, Goel, Li, Byun, Wang, Mallen, Basart, Koyejo, Song, Fredrikson, Kolter, and Hendrycks]{zou2023repe}
+Zou, A., Phan, L., Chen, S., Campbell, J., Guo, P., Ren, R., Pan, A., Yin, X., Mazeika, M., Dombrowski, A.-K., Goel, S., Li, N., Byun, M.~J., Wang, Z., Mallen, A., Basart, S., Koyejo, S., Song, D., Fredrikson, M., Kolter, J.~Z., and Hendrycks, D.
 \newblock Representation engineering: A top-down approach to {AI} transparency.
 \newblock \emph{arXiv preprint arXiv:2310.01405}, 2023.
 

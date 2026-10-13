@@ -237,6 +237,10 @@ def stage_serve(cfg):
                     if ids is None or len(ids) >= cfg.max_model_len - 2:
                         continue
                     r["feat"] = S.features(ids); r["score"] = score(r["feat"])
+                    if r.get("ids_swap") is not None:
+                        ids_s = S.pre_action_ids(r["ids_swap"], r["out"][0])
+                        if ids_s is not None and len(ids_s) < cfg.max_model_len - 2:
+                            r["score_swap"] = score(S.features(ids_s))
                     if r["mode"] == "gate" and r["score"] > tau:
                         r["fired"] = True; fire.append(r)
                 if fire:
@@ -245,7 +249,7 @@ def stage_serve(cfg):
                 for r in batch:
                     msg, tool, args, cid = to_message(r["out"][1], r["is_agent"], r.get("tools"))
                     if r["is_agent"]:
-                        row = {"ts": time.time(), "mode": r["mode"], "seed": r["samp"]["seed"], "call_id": cid, "tool": tool, "args": args, "score": r.get("score"),
+                        row = {"ts": time.time(), "mode": r["mode"], "seed": r["samp"]["seed"], "call_id": cid, "tool": tool, "args": args, "score": r.get("score"), "score_swap": r.get("score_swap"),
                                "fired": bool(r.get("fired")), "n_prompt_tokens": len(r["ids"])}
                         if r.get("orig") is not None:
                             ot, oa = M144.parse_call(A, r["orig"][1]); row.update({"orig_tool": ot, "orig_args": oa})
@@ -292,11 +296,22 @@ def stage_serve(cfg):
             return {"error": "render failed"}
         ids = S.tok(prompt, add_special_tokens=False)["input_ids"]; mx = int(b.get("max_tokens") or 2048)
         ids = ids[-(int(cfg.max_model_len) - mx - 8):]
+        ids_swap = None
+        if b.get("swap_messages"):
+            # v77 (additive): the same request's counterfactual context (injection marked as from a third party), scored on the same generated tokens
+            ms = M171.to_hf_messages(b["swap_messages"])
+            for m_ in (ms, S.X56._merge_content_into_thinking(ms)):          # same rendering rule as the actual prompt
+                try:
+                    ps = S.tok.apply_chat_template(m_, tools=b.get("tools") or None, tokenize=False, add_generation_prompt=True, **kw)
+                    ids_swap = S.tok(ps, add_special_tokens=False)["input_ids"][-(int(cfg.max_model_len) - mx - 8):]; break
+                except Exception:
+                    continue
         samp = {"temperature": b.get("temperature"), "top_p": b.get("top_p"), "top_k": b.get("top_k"), "max_tokens": mx,
                 "seed": int(b["seed"]) if b.get("seed") is not None else int(hashlib.md5(prompt.encode()).hexdigest(), 16) % 2**31}   # v70 Add. 1: optional override
         fut = loop_ref["loop"].create_future()
         with lock:
-            q.append({"ids": ids, "samp": samp, "mode": mode, "is_agent": is_agent, "fut": fut, "tools": b.get("tools"), "rid": (b.get("metadata") or {}).get("rid")})
+            q.append({"ids": ids, "samp": samp, "mode": mode, "is_agent": is_agent, "fut": fut, "tools": b.get("tools"), "rid": (b.get("metadata") or {}).get("rid"),
+                      "ids_swap": ids_swap})
         msg = await fut
         return {"id": "chatcmpl-" + uuid.uuid4().hex[:12], "object": "chat.completion", "created": int(time.time()), "model": name,
                 "choices": [{"index": 0, "message": msg, "finish_reason": "tool_calls" if msg.get("tool_calls") else "stop"}],

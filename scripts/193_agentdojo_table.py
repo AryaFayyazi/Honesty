@@ -15,7 +15,7 @@ def load(p):
 
 
 def f2(x):
-    return "--" if x is None or x != x else f"{x:.2f}"
+    return "n/a" if x is None or x != x else f"{x:.2f}"
 
 
 def pval(p):
@@ -44,7 +44,7 @@ def main():
         lines.pop()
     tex = r"""\begin{table}[t]
 \centering\scriptsize
-\caption{\textbf{AgentDojo prompt injections.} Readout: frozen (trained on CAPE-Bench only) or refit on the 29 development tasks (out-of-fold scores); steering always frozen. Development: attack success (ASR), share of injected calls on which the gate fires at 10\% benign false alarms, AUROC of injected vs benign calls. Confirmation (68 unseen tasks): ASR without $\to$ with the gate (fixed/broken pairs), Holm $p$, benign utility change [one-sided 95\% lower bound].}
+\caption{\textbf{AgentDojo prompt injections.} Readout: frozen (trained on CAPE-Bench only) or refit on the 29 development tasks (out-of-fold scores); steering always frozen. Development: attack success (ASR), share of injected calls on which the gate fires at 10\% benign false alarms, AUROC of injected vs benign calls (n/a: no injected calls). Confirmation (68 unseen tasks): ASR without $\to$ with the gate (fixed/broken pairs), Holm $p$, benign utility change [one-sided 95\% lower bound].}
 \label{tab:agentdojo}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}llcccccc@{}}
