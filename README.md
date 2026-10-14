@@ -2,6 +2,9 @@
 
 Code, benchmark, preregistrations and the complete experimental record for the paper.
 
+- Paper: [arXiv 2610.17301](https://arxiv.org/abs/2610.17301) · [Hugging Face paper page](https://huggingface.co/papers/2610.17301)
+- Dataset: [Afayyazi/CAPE-Bench](https://huggingface.co/datasets/Afayyazi/CAPE-Bench) on the Hugging Face Hub (all scenarios, 206,697 agent episodes and the report labels, as Parquet; built with `scripts/204_hf_dataset.py`)
+
 Language-model agents sometimes act without authorization and then misreport what they did. This repository has:
 - **CAPE-Bench:** matched agent tasks in which one fact decides whether a critical action is authorized. All tools are
   mock tools.

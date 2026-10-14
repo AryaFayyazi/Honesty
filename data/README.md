@@ -17,6 +17,9 @@ This creates `<name>/` with the original layout (as under `outputs/` in the scri
 | `v65`-`v73` | Open agents on τ²-bench airline (our episodes and labels) |
 | `v74`-`v76` | AgentDojo prompt-injection experiments (our episodes, server logs, calibrated readouts) |
 
+The complete CAPE-Bench data (all scenarios, every agent episode with its full event log, and the report labels) is on the
+Hugging Face Hub as Parquet: https://huggingface.co/datasets/Afayyazi/CAPE-Bench. The archives here omit files larger than 5 MB.
+
 Not included:
 - Regenerable caches: residual-stream activations and pre-action feature files larger than 5 MB (recompute with
   the scripts from the episodes and the public model weights) and one token-id parquet.
