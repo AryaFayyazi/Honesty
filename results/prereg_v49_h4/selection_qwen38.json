@@ -1,0 +1,147 @@
+{
+ "actor": "qwen38",
+ "conditions": {
+  "caa_p12_d16": {
+   "n": 12,
+   "rate_none": 0.917,
+   "rate": 0.75,
+   "diff": -0.167,
+   "n_down": 2,
+   "n_up": 0,
+   "p_one_sided": 0.25,
+   "guards": {
+    "report_share": [
+     0.48148148148148145,
+     0.8518518518518519
+    ],
+    "mention": [
+     1.0,
+     1.0
+    ],
+    "degradation": [
+     0.5185185185185185,
+     0.14814814814814814
+    ],
+    "median_tokens": [
+     355.0,
+     273.0
+    ]
+   },
+   "ok": false
+  },
+  "caa_p2_d16": {
+   "n": 22,
+   "rate_none": 0.955,
+   "rate": 0.909,
+   "diff": -0.045,
+   "n_down": 1,
+   "n_up": 0,
+   "p_one_sided": 0.5,
+   "guards": {
+    "report_share": [
+     0.9259259259259259,
+     0.8518518518518519
+    ],
+    "mention": [
+     1.0,
+     1.0
+    ],
+    "degradation": [
+     0.07407407407407407,
+     0.14814814814814814
+    ],
+    "median_tokens": [
+     271.0,
+     273.0
+    ]
+   },
+   "ok": true
+  },
+  "caa_p4_d16": {
+   "n": 22,
+   "rate_none": 1.0,
+   "rate": 0.773,
+   "diff": -0.227,
+   "n_down": 5,
+   "n_up": 0,
+   "p_one_sided": 0.03125,
+   "guards": {
+    "report_share": [
+     0.8518518518518519,
+     0.8518518518518519
+    ],
+    "mention": [
+     1.0,
+     1.0
+    ],
+    "degradation": [
+     0.14814814814814814,
+     0.14814814814814814
+    ],
+    "median_tokens": [
+     215.0,
+     273.0
+    ]
+   },
+   "ok": true
+  },
+  "caa_p8_d16": {
+   "n": 21,
+   "rate_none": 0.952,
+   "rate": 0.714,
+   "diff": -0.238,
+   "n_down": 5,
+   "n_up": 0,
+   "p_one_sided": 0.03125,
+   "guards": {
+    "report_share": [
+     0.8518518518518519,
+     0.8518518518518519
+    ],
+    "mention": [
+     1.0,
+     1.0
+    ],
+    "degradation": [
+     0.14814814814814814,
+     0.14814814814814814
+    ],
+    "median_tokens": [
+     204.0,
+     273.0
+    ]
+   },
+   "ok": true
+  },
+  "rand_p8_d16": {
+   "n": 22,
+   "rate_none": 0.955,
+   "rate": 0.773,
+   "diff": -0.182,
+   "n_down": 4,
+   "n_up": 0,
+   "p_one_sided": 0.0625,
+   "guards": {
+    "report_share": [
+     0.9259259259259259,
+     0.8518518518518519
+    ],
+    "mention": [
+     1.0,
+     1.0
+    ],
+    "degradation": [
+     0.07407407407407407,
+     0.14814814814814814
+    ],
+    "median_tokens": [
+     261.0,
+     273.0
+    ]
+   },
+   "ok": true
+  }
+ },
+ "chosen": "caa_p8_d16",
+ "verdict": "chosen"
+}

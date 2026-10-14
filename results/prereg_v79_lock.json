@@ -1,0 +1,33 @@
+{
+ "locked_at": "2026-10-13T20:44:51",
+ "sha256": {
+  "docs/preregistration_v79.md": "f97718e40b6114fa1e1a04eaaca7bf96ef8b8739413aab856c559f4452ab6552",
+  "scripts/203_h4_confirm.py": "f283c8e51eff82c19cc31bf363fb2400827e5ee3c3a06e9b9e59db6e4ae01b05",
+  "slurm/h4_conf.sh": "f01063b762617795176fd9eb5f750c782e11850ab6613513f7f7e15690a55fd5",
+  "scripts/127_steer_multi.py": "b92be345d15cbb775ec96e365ed43ed17c37acc826c05ca86a1d09aa6e08428b",
+  "scripts/97_rubric_timeline.py": "dec0e94f1c87ac7678a2fb46234224079677da3b852cc5e136b4ea9a60e35f41",
+  "scripts/126_caa_multi.py": "f667771558faeafdbca4608be2a3e5a4c1ca07ca0048c98fd5eb9566f216a671",
+  "results/prereg_v49_h4/selection_gemma4.json": "77d4a60e9c4136ba7041ac5ae693af6954fc50bd400095c7474b393d6ae438e2",
+  "results/prereg_v49_h4/selection_qwen38.json": "65381333cfc0b9c7deeca82c593a553a6d04673db9ed0aade1086258deb338de",
+  "outputs/reconcile/caa_gemma4_directions.npz": "4bba20b75fe1e4600c198b2966d2f34a50a8d807ed6d0f4fec259d7fa118b615",
+  "outputs/reconcile/caa_qwen38_directions.npz": "d128782b5b089d09fcf989da2c7136a5ef0da25c8df89f6a23b288d07ed820c7",
+  "outputs/reconcile/caa_gptoss20b_directions.npz": "9cb2ee2622edc28ab2e6703b4901085a502fe91da5bf757b671467ebcdc6ec9f",
+  "results/prereg_v79/power_gemma4.json": "9c7eb0d62057e5e2eaf868a71f0f8aff4177b4d16507db7628a9f4204abb08ca",
+  "results/prereg_v79/power_qwen38.json": "b508c0bb967618d5d8f3e11e3d9c2cd236eb8245ad1ef949142122f27cf41140"
+ },
+ "note": "v79 per-model honesty-steering confirmation (Gemma K=8, Qwen K=8; gpt-oss after its selection, by addendum). No confirmation generation exists.",
+ "confirmation_outputs_existing": [],
+ "addenda": [
+  {
+   "at": "2026-10-13T22:52:08",
+   "note": "Addendum 1: gpt-oss caa_p4_d16, K=4",
+   "sha256": {
+    "docs/preregistration_v79.md": "ea3728aac2245f17e12229422de52436523aa93fd5ea88a925f1e64deaa8673a",
+    "results/prereg_v49_h4/selection_gptoss20b.json": "7b01a901b74dc210acd260eaf5b0001bb3fa6bf6b395ff9723f683eb7a88e94b",
+    "results/prereg_v79/power_gptoss20b.json": "c3b059895f843ad7c393f4f9dfc6e9d0307afa19b96965d92a6bd78cc2d193af",
+    "outputs/reconcile/h4conf_gptoss20b_episodes.parquet": "4a6591aa2c2c541315dff5cee516080e72b5035b1bc5dc2b1a6c1235c0540240"
+   },
+   "gptoss_confirmation_outputs_existing": []
+  }
+ ]
+}

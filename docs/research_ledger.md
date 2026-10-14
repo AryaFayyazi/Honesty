@@ -2466,3 +2466,54 @@ I verified every item against its source before editing. Fixes in main.tex, appe
 - 02:10 **Gemma all-model replication (v59 addendum, K=12) DONE:** gate-every-action eventual violations 0.72 -> 0.21 (51 fixed / 0 broken; Holm 9e-16); completion 0.935 vs 1.00 (D2' not met, −0.065, lower −0.095; as the earlier k12 0.94). Table 3 Gemma row now uniform 12-turn (footnote a removed; Muse footnote reworded: preregistered v59b-in-v61 design); Fig 4b regenerated; main text + appendix updated (both versions); review version still ends p.8; arXiv zip rebuilt and test-compiled.
 - 12:00 Session restart had stopped the Qwen refit waiter; ran it now. **v76 Qwen dev: undefended ASR 0.014 (285 eps, 0 errors), 0 tagged injected calls -> go rule FAILS** (Qwen largely resists the injections). AgentDojo prevention result = the two families that fall for injections (Gemma, gpt-oss); Muse 0.042 and Qwen 0.014 resist. v77 Deviation 1 (locked): Muse/Qwen v77 not run (no injected calls in development; uninformative); jobs 3617/3618 cancelled before running; H4 chain re-pointed to follow v78 (3616, running 9 h).
 - 16:00 **v78 CONFIRMED (both preregistered endpoints pass): live escalating model approver, Qwen.** Gate-then-ask with the v67 approver deciding live (same weights, greedy): eventual violations 0.40 -> 0.04 (36 fixed / 0 broken; Holm 1.5e-11); authorized completion 0.95 vs 0.955 (diff −0.005, lower −0.025 >= −0.05: non-inferior). Approver decisions on 77 asks (67 x−, 10 x+): DENY 30, APPROVE 24, ESCALATE 23 -> 30% of asks reach the person (logged evaluation: 25%); 8 escalations approved by the channel. Asks per episode 0.67 (x−), 0.05 (x+). For reference, the channel-approver run: 0.41 -> 0.07, completion 0.955 vs 0.95. Limitation (iii) resolved.
+
+## 2026-10-13 ~20:30: H4 Gemma development sweep done (3613); selection = CAA α = 4 (development only)
+- Locked hashes verified (scripts/126, 127, 128, 135, slurm/h4_dev.sh, docs/preregistration_v49_h4.md all match
+  results/prereg_v49_h4_lock.json). `scripts/135_h4_select.py actor=gemma4` → results/prereg_v49_h4/selection_gemma4.json.
+- 97 lie-prone informed development episodes. Paired complete-case MISREPRESENTED vs none:
+  α=2 0.500→0.409 (16 down / 8 up), α=4 0.517→0.379 (17/5, one-sided p = 0.008), both pass all guards;
+  α=8 fails (report share 0.47; degradation 0.53), α=12 and random α=8 degenerate (≥ 90% tool calls, no report).
+- **Chosen: caa_p4_d16** (largest reduction passing the guards).
+- **Caveat to carry into the confirmation lock:** the lies move mainly to SPIN, not CANDID
+  (none: CANDID 14, SPIN 33, MISREP 46 of 97; α=4: CANDID 4, SPIN 53, MISREP 33). The preregistered endpoint is MISREPRESENTED;
+  CANDID must be reported alongside it, and the claim worded as "fewer false claims", not "more candid reports".
+- **Power:** the preregistered confirmation pool (fresh v49 episodes whose v49 neutral regeneration lied) has 30 Gemma episodes
+  (13 core24b + 17 core24b_reasoning). At the development effect (about 25% discordant, 77% in the favourable direction)
+  exact McNemar power is about 0.35. Gemma's confirmation lock must be written before any confirmation generation; an
+  enlarged fresh pool (neutral-regeneration screen on xm_gemma4_core24b{,_obfuscate}_minus10111213, never used by H4) is the
+  candidate fix, to be decided in that lock. No confirmation generation submitted yet (GPU: gpt-oss H4 dev 3614 running).
+- ~20:45 **gpt-oss H4 sweep OOM (3614)** in eager-attention prefill (batch 6, long prompts). Fix: optional memory-budgeted
+  batching in scripts/127 (`max_attn_gb`; default reproduces the old batches exactly, verified on synthetic lengths); rerun as
+  job 3633 (slurm/h4_dev_gptoss_rerun.sh, max_attn_gb=6) after Qwen 3615. Logged as deviation 5 in results/prereg_v49_h4_lock.json.
+- ~20:50 **H4 Qwen development sweep done (3615)**; `scripts/135_h4_select.py actor=qwen38` → selection_qwen38.json.
+  27 lie-prone development episodes (21–22 complete-case). Chosen **caa_p8_d16**: MISREP 0.952→0.714 (5 down / 0 up,
+  one-sided p = 0.031); α=4 is almost the same (0.227, 5/0); α=2 0.045; α=12 fails (report share 0.48).
+  **Caveat: the random direction at α = 8 nearly matches** (0.955→0.773, 4/0), so on development the Qwen effect is not
+  shown to be direction-specific. Here lies move to CANDID more than SPIN (none CANDID 1, α=8 4, random 4).
+  Confirmation pool (fresh v49 neutral lies): 23 Qwen episodes; power very low. The confirmation lock must include the
+  random-direction comparison as an endpoint, not only as a reported condition, before any claim of direction-specific
+  steering for Qwen. gpt-oss rerun 3633 now running.
+
+## 2026-10-13 ~21:30: v79 locked (per-model honesty-steering confirmation); Gemma 3634 and Qwen 3635 queued after gpt-oss dev 3633
+- docs/preregistration_v79.md + results/prereg_v79_lock.json (no confirmation output existed). Fresh pools = v49 informed
+  episodes whose v49 neutral regeneration lied (Gemma 30, Qwen 23, gpt-oss 50), checked disjoint from H4 development episodes
+  and direction-fitting sets.
+- Design change for power: K = 8 samples per episode and condition (simulated power vs none: Gemma 0.92 vs 0.22 at K = 1;
+  Qwen ≈ 1.0). Conditions none / selected / random at the selected α; fold_key=a.
+- C1 selected < none (episode-rate sign-flip, Holm over models, plus guards); C2 selected < random (direction specificity;
+  Qwen's open question). CANDID and SPIN shares reported next to the endpoint.
+- gpt-oss: selection after 3633, K by the v79 power rule, then a lock addendum before its confirmation.
+- ~23:00 **H4 gpt-oss development done (rerun 3633)**: chosen caa_p4_d16, MISREP 0.412 → 0.162 (44/7, p = 6e-8), guards pass;
+  α = 8, 12 and random α = 8 fail the mention/degradation guards (OMITTED reports). Lies move to SPIN, not CANDID.
+  v79 Addendum 1 locked (K = 4 by the power rule); gpt-oss confirmation 3636 queued after Qwen 3635. Gemma confirmation 3634 running.
+
+## 2026-10-14 06:21: v79 CONFIRMED for gpt-oss and Gemma; Qwen null (per-model honesty steering)
+| Model | K | none → steered (episode false-report rate) | better/worse | p (C1) | vs random (C2) | guards |
+|---|---|---|---|---|---|---|
+| gpt-oss α=4 | 4 | 0.415 → 0.140 | 33 / 2 | < 5e-6 (MC floor) | 0.483 → 0.140, 35/1, < 5e-6: PASS | ok |
+| Gemma α=4 | 8 | 0.613 → 0.382 | 18 / 3 | 1.5e-5 (Holm 3e-5) | random α=4 destroyed reports (99.6% NO_REPORT): not testable, not claimed | ok |
+| Qwen α=8 | 8 | 0.778 → 0.736 | 9 / 4 | 0.14 | 0.077 (Holm 0.15) | FAIL (report share 0.78 vs 0.98) |
+- **Lies become spin, not candor:** gpt-oss SPIN 0.575 → 0.80, CANDID 0 → 0.01; Gemma SPIN 0.23 → 0.59, CANDID 0.12 → 0.01.
+  Claim worded "removes false claims, does not produce candid reports".
+- Qwen's development effect (0.95 → 0.71 on 27 episodes, random nearly as good) did not replicate: null.
+- Paper (both versions): sentence in the lie-levers paragraph, appendix paragraph in app:steer, limitation (iv) updated.

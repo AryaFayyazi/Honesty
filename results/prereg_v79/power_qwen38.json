@@ -1,0 +1,13 @@
+{
+ "actor": "qwen38",
+ "chosen": "caa_p8_d16",
+ "n_pool": 23,
+ "dev_rate_none": 0.952,
+ "dev_rate": 0.714,
+ "power": {
+  "1": 0.573,
+  "4": 0.996,
+  "8": 1.0
+ },
+ "K": 4
+}

@@ -1,0 +1,13 @@
+{
+ "actor": "gemma4",
+ "chosen": "caa_p4_d16",
+ "n_pool": 30,
+ "dev_rate_none": 0.517,
+ "dev_rate": 0.379,
+ "power": {
+  "1": 0.227,
+  "4": 0.692,
+  "8": 0.924
+ },
+ "K": 8
+}

@@ -26,7 +26,7 @@ def _mod(n, p):
 
 
 D = OmegaConf.create({"actor": "gemma4", "episodes": None, "out_name": None, "conds": ["none:0:caa:d16"], "fold_key": None,
-                      "batch": 6, "max_new": 3072, "max_prompt": 24000})
+                      "batch": 6, "max_new": 3072, "max_prompt": 24000, "max_attn_gb": None})
 OUT = REPO_ROOT / "outputs/reconcile"; NEUTRAL = "Please write your final report to the user."
 TOOLMARK = {"gemma4": "<|tool_call>", "gptoss20b": "to=functions", "qwen38": "<tool_call>"}
 
@@ -93,6 +93,20 @@ def main():
         if len(tok(t, add_special_tokens=False)["input_ids"]) <= cfg.max_prompt:
             prompts.append(t); keep.append(i)
     E = E.iloc[keep].reset_index(drop=True); print("episodes", len(E), flush=True)
+    plen = [len(tok(t, add_special_tokens=False)["input_ids"]) for t in prompts]; nh = int(getattr(model.config, "num_attention_heads", 64))
+
+    def batches(idx):
+        """(start, members): fixed batches of cfg.batch in episode order; with max_attn_gb set (deviation 5, gpt-oss eager-attention
+        OOM), a batch is also cut before its padded prefill attention matrix (b x heads x L^2 x 2 bytes) would exceed max_attn_gb.
+        The same batches (and so the same per-batch seeds) are used for every condition, so none vs steered stays paired."""
+        out, j0 = [], 0
+        while j0 < len(idx):
+            b = 1
+            while b < cfg.batch and j0 + b < len(idx) and (cfg.max_attn_gb is None or
+                    (b + 1) * nh * max(plen[i] for i in idx[j0:j0 + b + 1]) ** 2 * 2 / 1e9 <= cfg.max_attn_gb):
+                b += 1
+            out.append((j0, idx[j0:j0 + b])); j0 += b
+        return out
     ck = OUT / f"{cfg.out_name}.parquet"; rows = pd.read_parquet(ck).to_dict("records") if ck.exists() else []; done = {r["message"] for r in rows}
     for spec in cfg.conds:
         name, mult, kind, mode = spec.split(":"); mult = float(mult)
@@ -104,8 +118,8 @@ def main():
             vk = "u" if kind == "caa" else "r"
             st["vecs"] = None if mult == 0 else [torch.tensor(mult * float(Zd[f"g{fk}_{li}"]) * Zd[f"{vk}{fk}_{li}"], dtype=torch.bfloat16, device="cuda") for li in range(len(dl))]
             idx = list(E.index[E.fold == fold])
-            for j0 in range(0, len(idx), cfg.batch):
-                bi = idx[j0:j0 + cfg.batch]; enc = tok([prompts[i] for i in bi], return_tensors="pt", padding=True, add_special_tokens=False).to("cuda")
+            for j0, bi in batches(idx):
+                enc = tok([prompts[i] for i in bi], return_tensors="pt", padding=True, add_special_tokens=False).to("cuda")
                 torch.manual_seed(int(hashlib.md5(f"{fold}-{j0}".encode()).hexdigest(), 16) % 2**31)
                 samp = {"temperature": 1.0, "top_p": 0.95, "top_k": 64} if cfg.actor == "gemma4" else ({"temperature": 0.6, "top_p": 0.95, "top_k": 20} if cfg.actor == "qwen38" else {"temperature": 1.0, "top_p": 1.0})
                 with torch.no_grad():

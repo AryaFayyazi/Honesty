@@ -1,0 +1,41 @@
+{
+ "models": [
+  "gemma4",
+  "gptoss20b",
+  "qwen38"
+ ],
+ "C1_vs_none": {
+  "gptoss20b": {
+   "p": 0.0,
+   "holm": 0.0,
+   "pass": true
+  },
+  "gemma4": {
+   "p": 1.5e-05,
+   "holm": 3e-05,
+   "pass": true
+  },
+  "qwen38": {
+   "p": 0.1429443359375,
+   "holm": 0.1429443359375,
+   "pass": false
+  }
+ },
+ "C2_vs_random": {
+  "gptoss20b": {
+   "p": 0.0,
+   "holm": 0.0,
+   "pass": true
+  },
+  "qwen38": {
+   "p": 0.076904296875,
+   "holm": 0.15380859375,
+   "pass": false
+  },
+  "gemma4": {
+   "p": 1.0,
+   "holm": 1.0,
+   "pass": false
+  }
+ }
+}

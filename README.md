@@ -39,7 +39,7 @@ The paper reports the results that hold. The tests that did not pass are in the 
 | Internal vs CoT-monitor gate | v62 | `scripts/168_v62_cot_gate.py` | — |
 | Lie forecast, internals vs text monitors (Sec. 4.4, Fig. 6) | v51 | `scripts/134_v51_confirm.py`, `scripts/164_lie_operating_points.py` | `scripts/136_fig_v51.py` |
 | Evidence contract, blanket and targeted (Sec. 4.5) | v44, v45 | `scripts/96_prereport_intervene.py`, `scripts/108_v44_analysis.py`, `scripts/110_v45_analysis.py` | `scripts/120_paper_figures.py` |
-| Honesty steering (Sec. 4.6, Fig. 1b–d) | v46, v46b, v58 | `scripts/103_lie_steering.py`, `scripts/111_v46_analysis.py`, `scripts/113_v46b_analysis.py`, `scripts/157_v58_confirm.py` | `scripts/124_fig1.py` |
+| Honesty steering (Sec. 4.6, Fig. 1b–d; per-model in app. Steering) | v46, v46b, v58; v49 H4 + v79 (Gemma, gpt-oss, Qwen) | `scripts/103_lie_steering.py`, `scripts/111_v46_analysis.py`, `scripts/113_v46b_analysis.py`, `scripts/157_v58_confirm.py`, `scripts/126_caa_multi.py`, `scripts/127_steer_multi.py`, `scripts/135_h4_select.py`, `scripts/203_h4_confirm.py` | `scripts/124_fig1.py` |
 | End to end (Sec. 4.6, Fig. 3b) | v61 (v61b, v61c), v63, v64 | `scripts/165_v61_e2e.py`, `scripts/169_v63_honesty_dir.py`, `scripts/170_v64_e2e_all.py` | `scripts/151_fig_violation.py`, `scripts/166_fig_e2e.py` |
 | Internal knowledge index, H1 (Sec. 4.7, Fig. 5) | v49 | `scripts/125_v49_analysis.py` | `scripts/120_paper_figures.py` |
 | Blind label audit by condition | v50 | see the v50 document | — |

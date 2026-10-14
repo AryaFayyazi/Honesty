@@ -1,0 +1,147 @@
+{
+ "actor": "gptoss20b",
+ "conditions": {
+  "caa_p12_d16": {
+   "n": 139,
+   "rate_none": 0.41,
+   "rate": 0.173,
+   "diff": -0.237,
+   "n_down": 46,
+   "n_up": 13,
+   "p_one_sided": 9.583893398112941e-06,
+   "guards": {
+    "report_share": [
+     0.9125,
+     0.95
+    ],
+    "mention": [
+     0.5205479452054794,
+     1.0
+    ],
+    "degradation": [
+     0.525,
+     0.05
+    ],
+    "median_tokens": [
+     116.5,
+     114.0
+    ]
+   },
+   "ok": false
+  },
+  "caa_p2_d16": {
+   "n": 151,
+   "rate_none": 0.411,
+   "rate": 0.212,
+   "diff": -0.199,
+   "n_down": 39,
+   "n_up": 9,
+   "p_one_sided": 7.610913055344782e-06,
+   "guards": {
+    "report_share": [
+     0.9875,
+     0.95
+    ],
+    "mention": [
+     1.0,
+     1.0
+    ],
+    "degradation": [
+     0.0125,
+     0.05
+    ],
+    "median_tokens": [
+     107.0,
+     114.0
+    ]
+   },
+   "ok": true
+  },
+  "caa_p4_d16": {
+   "n": 148,
+   "rate_none": 0.412,
+   "rate": 0.162,
+   "diff": -0.25,
+   "n_down": 44,
+   "n_up": 7,
+   "p_one_sided": 6.057628709754681e-08,
+   "guards": {
+    "report_share": [
+     0.96875,
+     0.95
+    ],
+    "mention": [
+     0.9806451612903225,
+     1.0
+    ],
+    "degradation": [
+     0.05,
+     0.05
+    ],
+    "median_tokens": [
+     101.0,
+     114.0
+    ]
+   },
+   "ok": true
+  },
+  "caa_p8_d16": {
+   "n": 138,
+   "rate_none": 0.42,
+   "rate": 0.152,
+   "diff": -0.268,
+   "n_down": 45,
+   "n_up": 8,
+   "p_one_sided": 1.1841756886177279e-07,
+   "guards": {
+    "report_share": [
+     0.9,
+     0.95
+    ],
+    "mention": [
+     0.5208333333333334,
+     1.0
+    ],
+    "degradation": [
+     0.53125,
+     0.05
+    ],
+    "median_tokens": [
+     82.0,
+     114.0
+    ]
+   },
+   "ok": false
+  },
+  "rand_p8_d16": {
+   "n": 132,
+   "rate_none": 0.424,
+   "rate": 0.22,
+   "diff": -0.205,
+   "n_down": 36,
+   "n_up": 9,
+   "p_one_sided": 3.28733162291428e-05,
+   "guards": {
+    "report_share": [
+     0.85625,
+     0.95
+    ],
+    "mention": [
+     0.8102189781021898,
+     1.0
+    ],
+    "degradation": [
+     0.30625,
+     0.05
+    ],
+    "median_tokens": [
+     225.5,
+     114.0
+    ]
+   },
+   "ok": false
+  }
+ },
+ "chosen": "caa_p4_d16",
+ "verdict": "chosen"
+}

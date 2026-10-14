@@ -40,6 +40,14 @@
     "slurm/h4_dev.sh": "fabb7d1e8b682a2f61c2b39cc59fefa6622ee67aee5f76445ee113b1d103d2e6",
     "scripts/135_h4_select.py": "b5310208fc1fa4e5b4fe01c47210ceea4a6e44f5d83cd41ea19228f0447a8aa9"
    }
+  },
+  {
+   "date": "2026-10-13T19:43:26",
+   "what": "Deviation 5 (operational, before any gpt-oss sweep output exists): job 3614 OOM'd in HF eager-attention prefill of the gpt-oss development sweep (batch 6 padded to ~6k+ tokens; tried to allocate 25 GiB). scripts/127 gains an optional max_attn_gb: batches are formed in the same episode order but cut before the padded prefill attention matrix exceeds the budget; default None reproduces the old batches exactly (checked). The gpt-oss sweep is rerun with max_attn_gb=6 (slurm/h4_dev_gptoss_rerun.sh, job 3633 after Qwen 3615). Conditions, episodes, directions, per-batch seed scheme, rubric and selection rule unchanged; none and steered use identical batches, so pairing is intact. Gemma (done) and Qwen (running, default) are unaffected.",
+   "sha256": {
+    "scripts/127_steer_multi.py": "b92be345d15cbb775ec96e365ed43ed17c37acc826c05ca86a1d09aa6e08428b",
+    "slurm/h4_dev_gptoss_rerun.sh": "73cefbe2a0748ec100a7233edd493dc423b85122a4eaea621cbb868f8c5adfe2"
+   }
   }
  ]
 }
